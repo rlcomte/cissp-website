@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CISSP Domain 4 – Communication and Network Security</title>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">CISSP Domain 4 · Teaching Web Page</div>
+    <h1>Communication and Network Security</h1>
+    <p class="subtitle">Protecting data in transit, securing network architectures, and applying protocols and controls to maintain confidentiality, integrity, and availability.</p>
+  </div>
+</header>
+<nav>
+  <div class="wrap">
+    <a href="cissp_homepage.html">Home</a>
+    <a href="#intro">Introduction</a>
+    <a href="#figures">Figures</a>
+    <a href="#cases">Case examples</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#review">Review questions</a>
+  </div>
+</nav>
+<main class="wrap">
+  <section id="intro" class="card">
+    <h2>Domain introduction</h2>
+    <p>This domain focuses on how systems communicate and how those communications are protected. It covers network architectures, protocols, segmentation, encryption in transit, and monitoring controls.</p>
+    <p>For ICT students, the key is understanding how data moves through networks and where controls such as firewalls, VPNs, and secure protocols should be applied.</p>
+    <div class="grid">
+      <div class="mini"><span class="tag">Outcome 1</span><h3>Understand layers</h3><p>Explain OSI and TCP/IP models and where controls apply.</p></div>
+      <div class="mini"><span class="tag">Outcome 2</span><h3>Secure traffic</h3><p>Use TLS, VPNs, and secure protocols to protect data in transit.</p></div>
+      <div class="mini"><span class="tag">Outcome 3</span><h3>Segment networks</h3><p>Limit attack spread using segmentation and zoning.</p></div>
+    </div>
+  </section>
+
+  <section id="figures" class="card">
+    <h2>Figures and mental models</h2>
+    <h3>Figure 1 — Network layers (simplified)</h3>
+    <div class="figure">
+      <div class="layers">
+        <div><span>Application</span>HTTP, DNS, SMTP</div>
+        <div><span>Transport</span>TCP, UDP, TLS</div>
+        <div><span>Network</span>IP, routing</div>
+        <div><span>Link</span>Ethernet, Wi‑Fi</div>
+      </div>
+    </div>
+    <h3>Figure 2 — Secure data path</h3>
+    <div class="figure">
+      <div class="flow">
+        <div><span>Client</span>User device initiates request</div>
+        <div><span>TLS</span>Encrypt channel</div>
+        <div><span>Firewall</span>Filter traffic</div>
+        <div><span>App</span>Process request</div>
+        <div><span>Logs</span>Monitor & record</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="card">
+    <h2>Case examples</h2>
+    <div class="two-col">
+      <div class="case">
+        <h3>Case 1 — Public web application</h3>
+        <p>A company hosts a public website accessed globally.</p>
+        <ul>
+          <li><strong>Controls:</strong> HTTPS (TLS), WAF, load balancer, logging.</li>
+          <li><strong>Design:</strong> DMZ, segmented internal network.</li>
+          <li><strong>Question:</strong> What happens if TLS is misconfigured?</li>
+        </ul>
+      </div>
+      <div class="case">
+        <h3>Case 2 — Remote workforce</h3>
+        <p>Employees connect from home networks to internal systems.</p>
+        <ul>
+          <li><strong>Controls:</strong> VPN, MFA, endpoint checks.</li>
+          <li><strong>Risk:</strong> insecure home networks.</li>
+          <li><strong>Question:</strong> When is zero trust better than VPN?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary" class="card">
+    <h2>Glossary — 50 core terms</h2>
+    <table>
+      <thead><tr><th>#</th><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Network Architecture</td><td>Design of networks including devices, paths, protocols, and controls enabling secure communication.</td></tr>
+        <tr><td>2</td><td>OSI Model</td><td>Seven-layer framework describing how data moves through networks from physical transmission to applications.</td></tr>
+        <tr><td>3</td><td>TCP/IP Model</td><td>Four-layer model used on the internet defining data transmission and routing.</td></tr>
+        <tr><td>4</td><td>Network Protocol</td><td>Rules governing how devices communicate and exchange data.</td></tr>
+        <tr><td>5</td><td>Packet</td><td>Small unit of data transmitted across networks and reassembled at destination.</td></tr>
+        <tr><td>6</td><td>Firewall</td><td>Filters network traffic based on rules to prevent unauthorized access.</td></tr>
+        <tr><td>7</td><td>Packet Filtering</td><td>Filters packets using headers like IP and port.</td></tr>
+        <tr><td>8</td><td>Stateful Firewall</td><td>Tracks connections and filters traffic based on session state.</td></tr>
+        <tr><td>9</td><td>Application Firewall</td><td>Inspects application-layer traffic for attacks.</td></tr>
+        <tr><td>10</td><td>DMZ</td><td>Network zone for public-facing systems separated from internal network.</td></tr>
+        <tr><td>11</td><td>Segmentation</td><td>Dividing networks to limit attack spread.</td></tr>
+        <tr><td>12</td><td>Isolation</td><td>Separating systems to prevent unauthorized interaction.</td></tr>
+        <tr><td>13</td><td>VPN</td><td>Encrypted tunnel for secure remote access.</td></tr>
+        <tr><td>14</td><td>Encryption in Transit</td><td>Protecting data while traveling across networks.</td></tr>
+        <tr><td>15</td><td>TLS</td><td>Protocol securing communication with encryption and integrity.</td></tr>
+        <tr><td>16</td><td>SSH</td><td>Secure remote administration protocol.</td></tr>
+        <tr><td>17</td><td>HTTPS</td><td>HTTP over TLS providing secure web communication.</td></tr>
+        <tr><td>18</td><td>DNS</td><td>Translates domain names to IP addresses.</td></tr>
+        <tr><td>19</td><td>DNSSEC</td><td>Adds integrity and authenticity to DNS responses.</td></tr>
+        <tr><td>20</td><td>NAT</td><td>Maps private addresses to public addresses.</td></tr>
+        <tr><td>21</td><td>Routing</td><td>Determining paths for packets across networks.</td></tr>
+        <tr><td>22</td><td>Router</td><td>Forwards packets between networks.</td></tr>
+        <tr><td>23</td><td>Switch</td><td>Connects devices within a LAN.</td></tr>
+        <tr><td>24</td><td>Load Balancer</td><td>Distributes traffic across servers.</td></tr>
+        <tr><td>25</td><td>Proxy</td><td>Intermediary handling requests and filtering traffic.</td></tr>
+        <tr><td>26</td><td>NAC</td><td>Controls device access to networks.</td></tr>
+        <tr><td>27</td><td>IDS</td><td>Detects suspicious network activity.</td></tr>
+        <tr><td>28</td><td>IPS</td><td>Blocks malicious traffic automatically.</td></tr>
+        <tr><td>29</td><td>Monitoring</td><td>Observing network activity continuously.</td></tr>
+        <tr><td>30</td><td>Logging</td><td>Recording network events for analysis.</td></tr>
+        <tr><td>31</td><td>Wireless Network</td><td>Communication using radio signals instead of cables.</td></tr>
+        <tr><td>32</td><td>Wireless Encryption</td><td>Protecting Wi‑Fi traffic with encryption.</td></tr>
+        <tr><td>33</td><td>WPA3</td><td>Modern Wi‑Fi security protocol.</td></tr>
+        <tr><td>34</td><td>Wireless Authentication</td><td>Verifying users/devices on Wi‑Fi.</td></tr>
+        <tr><td>35</td><td>Hardening</td><td>Reducing attack surface through configuration.</td></tr>
+        <tr><td>36</td><td>DPI</td><td>Inspecting packet contents for threats.</td></tr>
+        <tr><td>37</td><td>Perimeter</td><td>Boundary between trusted and untrusted networks.</td></tr>
+        <tr><td>38</td><td>Gateway</td><td>Connects networks and translates protocols.</td></tr>
+        <tr><td>39</td><td>Bandwidth</td><td>Maximum data transmission capacity.</td></tr>
+        <tr><td>40</td><td>Latency</td><td>Delay in network communication.</td></tr>
+        <tr><td>41</td><td>Multicast</td><td>Sending data to multiple recipients efficiently.</td></tr>
+        <tr><td>42</td><td>Reliability</td><td>Consistent delivery of network services.</td></tr>
+        <tr><td>43</td><td>Availability</td><td>Ensuring network services remain accessible.</td></tr>
+        <tr><td>44</td><td>Traffic Analysis</td><td>Examining patterns for anomalies.</td></tr>
+        <tr><td>45</td><td>Network Forensics</td><td>Investigating traffic after incidents.</td></tr>
+        <tr><td>46</td><td>Secure Routing</td><td>Protecting routing protocols.</td></tr>
+        <tr><td>47</td><td>SDN</td><td>Centralized software-based network control.</td></tr>
+        <tr><td>48</td><td>Infrastructure</td><td>Physical and logical network components.</td></tr>
+        <tr><td>49</td><td>Service Availability</td><td>Ensuring uptime of services.</td></tr>
+        <tr><td>50</td><td>Secure Communication</td><td>Ensuring confidentiality, integrity, and authenticity in data transmission.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="review" class="card">
+    <h2>Review questions</h2>
+    <ol>
+      <li>Why is segmentation important for limiting attacks?</li>
+      <li>What is the difference between IDS and IPS?</li>
+      <li>Why is TLS critical for web security?</li>
+      <li>What risks exist in wireless networks?</li>
+      <li>How does zero trust change network design?</li>
+    </ol>
+  </section>
+</main>
+<footer><div class="wrap">CISSP Domain 4 teaching page · Communication and Network Security</div></footer>
+</body>
+</html>

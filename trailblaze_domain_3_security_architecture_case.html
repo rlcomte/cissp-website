@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 3 Security Architecture and Engineering Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 3 Case</div>
+<h1>Security Architecture and Engineering</h1>
+<p class="subtitle">A classroom and workshop case about secure design, trusted components, cryptography, resilience, and engineering decisions in TrailBlaze’s global platform.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 3 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Platform Redesign</h2>
+<p class="lead">TrailBlaze Adventures is redesigning its core digital platform to support global growth, real-time safety tracking, and stronger protection of customer and operational data.</p>
+<p>The company is planning a major architecture upgrade that combines:</p>
+<ul>
+<li><strong>Multi-region cloud services</strong> for booking, customer profiles, and expedition management</li>
+<li><strong>Mobile apps and field devices</strong> used by guides in remote environments</li>
+<li><strong>GPS and safety systems</strong> that support real-time location and emergency coordination</li>
+<li><strong>Third-party integrations</strong> for payments, insurance, local partners, and messaging</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Engineering pressure</h3>
+<ul>
+<li>New features must ship quickly to support business expansion.</li>
+<li>Systems need to remain available during high travel seasons and emergencies.</li>
+<li>Remote operations require resilient offline and sync-safe designs.</li>
+<li>Sensitive data must remain protected across devices, apps, and cloud systems.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Architecture concerns</h3>
+<ul>
+<li>Different teams make inconsistent security design decisions.</li>
+<li>Cryptographic key handling is not standardized across services.</li>
+<li>Hardware trust, secure boot, and device integrity are not fully defined.</li>
+<li>Resilience and failover requirements vary by system and region.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Design a secure architecture for TrailBlaze that protects critical systems, supports resilient operations, and builds security into the platform from the start.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase">
+<div class="phase-num">1</div>
+<div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze scenario and identify <strong>key challenges related to security architecture and engineering</strong>.</p>
+<ul>
+<li>Which systems are most critical to protect and keep available?</li>
+<li>Where are trust boundaries weak or unclear?</li>
+<li>Which components need stronger encryption or key protection?</li>
+<li>How should resilience and fault tolerance be designed?</li>
+<li>Which design choices reduce long-term attack surface?</li>
+</ul>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">2</div>
+<div>
+<h3>Identify Domain 3 challenges</h3>
+<p>Group findings under secure design, trusted components, cryptography, platform security, isolation, resilience, and hardware or firmware trust.</p>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">3</div>
+<div>
+<h3>Link challenges to Domain 3 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 3 concepts and explain why that concept matters in the TrailBlaze architecture.</p>
+</div>
+</div>
+<div class="deliverable">
+<strong>Deliverable:</strong> A structured list of <strong>at least 10 security architecture and engineering challenges</strong>, each linked to one or more Domain 3 concepts.
+</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 3 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge architecture"><h3>Secure Design</h3><ul>
+<li>No consistent architecture principles are enforced across teams.</li>
+<li>Security is sometimes added late instead of being designed in.</li>
+<li>System boundaries and trust relationships are not always explicit.</li>
+</ul></div>
+<div class="challenge crypto"><h3>Cryptography &amp; Key Protection</h3><ul>
+<li>Encryption exists, but key management differs by platform and provider.</li>
+<li>Some field systems may store secrets insecurely on mobile devices.</li>
+<li>Certificate handling and rotation are not uniformly automated.</li>
+</ul></div>
+<div class="challenge resilience"><h3>Resilience &amp; Availability</h3><ul>
+<li>Emergency support services require high availability across regions.</li>
+<li>Failover and redundancy expectations differ between business units.</li>
+<li>Offline guides need systems that remain safe during sync failures or outages.</li>
+</ul></div>
+<div class="challenge trust"><h3>Trusted Components</h3><ul>
+<li>Device integrity checks are incomplete for GPS and field equipment.</li>
+<li>Secure boot, firmware trust, and root-of-trust controls are not standardized.</li>
+<li>Shared infrastructure increases risk if isolation is weak.</li>
+</ul></div>
+<div class="challenge architecture"><h3>Isolation &amp; Segmentation</h3><ul>
+<li>Customer systems, admin functions, and partner services need clearer separation.</li>
+<li>Test and production environments may be too closely connected.</li>
+<li>Compromise in one component could spread to high-value systems.</li>
+</ul></div>
+<div class="challenge resilience"><h3>Modern Platforms</h3><ul>
+<li>Cloud-native services, mobile apps, and IoT devices create varied attack surfaces.</li>
+<li>Container and API security must align with architecture decisions.</li>
+<li>Engineering teams need reusable secure patterns for future growth.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 3 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 3 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 3 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Teams make inconsistent design decisions</td><td><strong>Secure Design Principles</strong></td><td>Shared design principles such as least privilege, defense in depth, and fail secure reduce architectural weaknesses.</td></tr>
+<tr><td>Critical safety systems must remain available</td><td><strong>Resilience / Fault Tolerance / Redundancy</strong></td><td>High-availability systems need resilient design, backup capacity, and recovery planning.</td></tr>
+<tr><td>Mobile and field devices may store secrets insecurely</td><td><strong>Secure Storage / Trusted Platform Controls</strong></td><td>Secrets should be protected using secure hardware features, protected keystores, or strong platform controls.</td></tr>
+<tr><td>Certificates and keys are handled inconsistently</td><td><strong>Cryptography / PKI / Key Management</strong></td><td>Strong encryption depends on secure lifecycle management for keys, certificates, and trust chains.</td></tr>
+<tr><td>Customer and admin systems are not clearly separated</td><td><strong>Isolation / Security Boundaries</strong></td><td>Architectural separation reduces the chance that compromise of one component affects another.</td></tr>
+<tr><td>Field equipment integrity is uncertain</td><td><strong>Secure Boot / Root of Trust / Trusted Computing</strong></td><td>Trusted startup and verified firmware reduce tampering and unauthorized code execution.</td></tr>
+<tr><td>Cloud and partner services expand the attack surface</td><td><strong>Attack Surface Management / Architecture Patterns</strong></td><td>Reusable secure patterns help control complexity as the system grows.</td></tr>
+<tr><td>Offline operations may fail during sync or outage</td><td><strong>Fail Secure / Availability Engineering</strong></td><td>Systems should preserve security and essential operations even when communication is disrupted.</td></tr>
+<tr><td>Shared infrastructure creates cross-system risk</td><td><strong>Virtualization / Container Isolation</strong></td><td>Isolation in modern platforms is essential to prevent compromise between workloads.</td></tr>
+<tr><td>New features ship without architecture review</td><td><strong>Security Engineering Governance</strong></td><td>Secure engineering processes ensure architecture risk is reviewed before implementation decisions become permanent.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Design securely</h3><p>Apply secure design principles to complex business platforms with cloud, mobile, and field systems.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Protect trust</h3><p>Understand how trusted components, cryptography, and secure boot support system integrity.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Build resilience</h3><p>Evaluate redundancy, failover, and fault tolerance requirements for real-world operational environments.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Control boundaries</h3><p>Analyze how isolation and architectural boundaries reduce attack surface and limit compromise.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Model</h3><p>Students map the major systems, trust boundaries, and high-value components.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Evaluate</h3><p>Students identify design weaknesses in trust, resilience, and key protection.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Redesign</h3><p>Students propose a more secure architecture with clear controls and tradeoffs.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 3 Security Architecture and Engineering classroom case</div></footer>
+</body>
+</html>

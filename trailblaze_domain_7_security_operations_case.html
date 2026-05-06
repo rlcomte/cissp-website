@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 7 Security Operations Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 7 Case</div>
+<h1>Security Operations</h1>
+<p class="subtitle">A classroom and workshop case about monitoring, incident response, forensics, threat intelligence, recovery, and operational resilience in a global adventure travel company.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 7 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Global Incident Response Breakdown</h2>
+<p class="lead">TrailBlaze Adventures has grown into a global, always-on travel platform, but its security operations capability has not matured at the same speed.</p>
+<p>During a busy holiday travel period, the company experiences several suspicious events at the same time. Support agents report account takeover complaints, guides in Peru report delayed GPS updates, the SOC receives alerts from cloud systems in Europe, and the social platform moderation team notices phishing links being sent through private messages.</p>
+<ul>
+<li><strong>Customer platform:</strong> login anomalies, password reset spikes, and complaints about unauthorized booking changes.</li>
+<li><strong>Guide mobile app:</strong> delayed GPS updates, failed synchronization, and unusual device behavior after using public Wi-Fi.</li>
+<li><strong>Social platform:</strong> scam messages, malicious links, fake guide profiles, and suspicious media uploads.</li>
+<li><strong>Cloud infrastructure:</strong> unusual API traffic, privilege escalation alerts, and increased database read activity.</li>
+<li><strong>Rental operations:</strong> missing GPS trackers and incomplete device-return records after expeditions.</li>
+<li><strong>Support operations:</strong> overwhelmed staff, unclear escalation paths, and inconsistent incident documentation.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current operations concerns</h3>
+<ul>
+<li>Logs exist across cloud, mobile, API, support, and social systems, but correlation is limited.</li>
+<li>The SOC receives many alerts, but analysts lack clear prioritization and playbooks.</li>
+<li>Incident response procedures exist, but regional teams interpret them differently.</li>
+<li>Evidence collection is inconsistent, especially for mobile devices and field equipment.</li>
+<li>Backup and recovery processes exist, but not all critical systems have recently tested recovery procedures.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Operational pressure</h3>
+<ul>
+<li>Expeditions are currently active in remote areas, so availability and safety are critical.</li>
+<li>Management wants fast public communication, but legal and security teams want verified facts first.</li>
+<li>Support teams need guidance on whether to lock accounts, reset credentials, or escalate cases.</li>
+<li>Marketing worries that visible platform restrictions will damage customer trust.</li>
+<li>Security leadership wants to understand whether this is one coordinated incident or several unrelated events.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Stabilize operations, determine what is happening, protect customers and guides, preserve evidence, and restore confidence without disrupting active expeditions.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze scenario and identify <strong>key challenges related to security operations</strong>.</p>
+<ul>
+<li>Which events should be treated as possible security incidents?</li>
+<li>Which logs and evidence sources are needed to understand what happened?</li>
+<li>Which response actions should happen first to protect customers and active expeditions?</li>
+<li>How should the SOC prioritize alerts and coordinate with support, legal, operations, and management?</li>
+<li>What recovery, communication, and lessons-learned activities are needed after containment?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 7 challenges</h3>
+<p>Group your findings under monitoring, alert triage, incident response, digital forensics, evidence handling, threat intelligence, recovery, and operational resilience.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 7 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 7 concepts and explain why that concept is relevant for security operations at TrailBlaze.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 security operations challenges</strong>, each linked to one or more Domain 7 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 7 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge soc"><h3>SOC Monitoring and Alert Triage</h3><ul>
+<li>Alerts arrive from multiple systems without consistent prioritization.</li>
+<li>Cloud, API, mobile, support, and social logs are not fully correlated.</li>
+<li>Analysts cannot quickly determine whether events are related.</li>
+</ul></div>
+<div class="challenge incident"><h3>Incident Response Coordination</h3><ul>
+<li>Regional teams interpret incident procedures differently.</li>
+<li>Support, legal, operations, marketing, and security teams need coordinated decisions.</li>
+<li>There is uncertainty about when to contain, communicate, or escalate.</li>
+</ul></div>
+<div class="challenge forensics"><h3>Digital Forensics and Evidence</h3><ul>
+<li>Mobile guide devices and GPS trackers may contain important evidence.</li>
+<li>Evidence collection is inconsistent and could damage forensic reliability.</li>
+<li>Chain of custody is not clearly defined for field equipment.</li>
+</ul></div>
+<div class="challenge threat"><h3>Threat Intelligence and Detection</h3><ul>
+<li>Phishing links and fake guide profiles may indicate an organized fraud campaign.</li>
+<li>Indicators of compromise need to be identified and shared across systems.</li>
+<li>Threat intelligence could help distinguish automated abuse from targeted attacks.</li>
+</ul></div>
+<div class="challenge resilience"><h3>Recovery and Operational Resilience</h3><ul>
+<li>Active expeditions depend on GPS, emergency alerts, and guide communication.</li>
+<li>Recovery processes are not recently tested for all critical systems.</li>
+<li>Containment actions may reduce platform availability or field safety.</li>
+</ul></div>
+<div class="challenge soc"><h3>Documentation and Continuous Improvement</h3><ul>
+<li>Incident documentation differs by region and team.</li>
+<li>Lessons learned are not consistently converted into improved playbooks.</li>
+<li>Metrics such as detection and response time are not used systematically.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 7 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 7 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 7 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Many alerts arrive from different systems without prioritization</td><td><strong>SOC / SIEM / Security Alert</strong></td><td>A SOC needs correlation, prioritization, and triage processes to turn raw alerts into actionable incidents.</td></tr>
+<tr><td>Cloud, API, mobile, and social logs are difficult to connect</td><td><strong>Log Management / Event Correlation</strong></td><td>Centralized logging and correlation help analysts identify patterns across distributed systems.</td></tr>
+<tr><td>Unclear whether events are coordinated</td><td><strong>Threat Investigation / Threat Intelligence</strong></td><td>Threat intelligence and investigation help determine whether multiple events represent one campaign or unrelated issues.</td></tr>
+<tr><td>Support staff do not know when to escalate account takeover reports</td><td><strong>Incident Escalation / Incident Classification</strong></td><td>Clear classification and escalation rules ensure serious incidents reach the correct responders quickly.</td></tr>
+<tr><td>Regional teams apply different response procedures</td><td><strong>Incident Response Plan / Security Playbook</strong></td><td>Standardized playbooks help teams respond consistently during high-pressure incidents.</td></tr>
+<tr><td>Guide devices and GPS trackers may contain evidence</td><td><strong>Digital Forensics / Evidence Collection</strong></td><td>Potential evidence must be collected carefully to support investigation without altering important data.</td></tr>
+<tr><td>Evidence handling is inconsistent in remote locations</td><td><strong>Chain of Custody</strong></td><td>Chain of custody records who handled evidence and preserves reliability for legal or disciplinary use.</td></tr>
+<tr><td>Phishing links spread through social messaging</td><td><strong>Threat Detection / Indicators of Compromise</strong></td><td>Indicators such as URLs, accounts, and message patterns can be used to detect and block further abuse.</td></tr>
+<tr><td>Emergency services must continue during containment</td><td><strong>Operational Resilience / Service Availability</strong></td><td>Response actions must protect safety-critical services and avoid unnecessary disruption to active expeditions.</td></tr>
+<tr><td>Recovery procedures have not been recently tested</td><td><strong>Disaster Recovery Testing / Backup Management</strong></td><td>Recovery capability must be tested before incidents to ensure systems and data can actually be restored.</td></tr>
+<tr><td>Incident documentation differs by region</td><td><strong>Security Incident Report / Operational Logging</strong></td><td>Consistent documentation supports analysis, compliance, communication, and lessons learned.</td></tr>
+<tr><td>No consistent improvement after incidents</td><td><strong>Lessons Learned / Continuous Improvement</strong></td><td>Post-incident reviews should update controls, playbooks, monitoring rules, and training.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Analyze operations</h3><p>Identify security events, incidents, logs, evidence sources, and operational dependencies in a global environment.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Coordinate response</h3><p>Apply incident response, escalation, containment, recovery, and communication principles to realistic events.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Preserve evidence</h3><p>Explain how forensics, evidence collection, and chain of custody support reliable investigations.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Improve resilience</h3><p>Evaluate backups, recovery, service availability, and continuous improvement for safety-critical operations.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Triage</h3><p>Students classify events, prioritize alerts, and decide what requires immediate escalation.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Respond</h3><p>Students define containment, communication, evidence collection, and recovery actions.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Improve</h3><p>Students write lessons learned and propose improvements to monitoring, playbooks, and resilience.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 7 Security Operations classroom case</div></footer>
+</body>
+</html>

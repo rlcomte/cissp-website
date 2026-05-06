@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Company Case and Security SWOT</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">CISSP Integrated Case Scenario</div>
+<h1>TrailBlaze Adventures – Company Case and Security SWOT</h1>
+<p class="subtitle">A global outdoor experience company used as a teaching scenario for CISSP knowledge and capabilities.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#overview">Company overview</a>
+<a href="#structure">Organization</a>
+<a href="#ecosystem">Digital ecosystem</a>
+<a href="#context">Security context</a>
+<a href="#swot">Security SWOT</a>
+<a href="#teaching">Teaching value</a>
+</div>
+</nav>
+<main class="wrap">
+<section class="card image-panel">
+<img class="case-top-image" src="images/trailblaze.png" alt="TrailBlaze Adventures" />
+</section>
+<section id="overview" class="card">
+<h2>Company Overview — “TrailBlaze Adventures”</h2>
+<p class="lead">TrailBlaze Adventures is a <strong>global outdoor experience company</strong> that designs, organizes, and operates adventure travel journeys across more than 40 countries.</p>
+<p>Its offerings include:</p>
+<ul>
+<li>Guided trekking expeditions (e.g., Himalayas, Andes)</li>
+<li>Extreme sports experiences (rafting, climbing, skiing)</li>
+<li>Eco-tourism and sustainability-focused travel</li>
+<li>Equipment rental and logistics support</li>
+<li>A proprietary <strong>social platform</strong> where travelers share experiences, media, and reviews</li>
+</ul>
+</section>
+<section id="structure" class="card">
+<h2>Organizational Structure</h2>
+<p>TrailBlaze operates with a <strong>distributed, digital-first architecture</strong>, combining physical operations with global IT systems.</p>
+<h3>Core Business Functions</h3>
+<table>
+<thead><tr><th>Function</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Marketing &amp; Sales</td><td>Digital campaigns, influencer partnerships, personalized travel recommendations</td></tr>
+<tr><td>Product Management</td><td>Design of travel packages, pricing, and partnerships with local operators</td></tr>
+<tr><td>Operations &amp; Logistics</td><td>Coordination of guides, transport, safety protocols, and equipment</td></tr>
+<tr><td>Rental Services</td><td>Inventory and tracking of gear (GPS, climbing gear, tents)</td></tr>
+<tr><td>Customer Platform</td><td>Booking system, payments, profiles, travel history</td></tr>
+<tr><td>Social Platform</td><td>User-generated content (photos, videos, reviews, messaging)</td></tr>
+<tr><td>Support Services</td><td>24/7 global support, emergency response coordination</td></tr>
+<tr><td>Finance &amp; Compliance</td><td>Payments, refunds, taxation, regulatory compliance</td></tr>
+</tbody>
+</table>
+</section>
+<section id="ecosystem" class="card">
+<h2>Digital Ecosystem</h2>
+<p>TrailBlaze relies heavily on interconnected systems:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Cloud</span><h3>Cloud-based infrastructure</h3><p>Multi-region deployment</p></div>
+<div class="mini"><span class="tag">Mobile</span><h3>Mobile apps</h3><p>For customers and field guides</p></div>
+<div class="mini"><span class="tag">IoT</span><h3>IoT devices</h3><p>GPS trackers, smart wearables for safety monitoring</p></div>
+<div class="mini"><span class="tag">Payments</span><h3>Payment systems</h3><p>Multi-currency, global providers</p></div>
+<div class="mini"><span class="tag">Analytics</span><h3>Data analytics platform</h3><p>User behavior, recommendations</p></div>
+<div class="mini"><span class="tag">Social</span><h3>Social media platform</h3><p>Profiles, messaging, media uploads, community groups</p></div>
+</div>
+</section>
+<section id="context" class="card">
+<h2>Security Context</h2>
+<p>This company has a <strong>complex attack surface</strong>:</p>
+<ul>
+<li>Global users and employees</li>
+<li>Sensitive personal data (identity, health, travel data)</li>
+<li>Real-time safety-critical systems (GPS, emergency alerts)</li>
+<li>Financial transactions</li>
+<li>Public-facing social platform (high abuse risk)</li>
+</ul>
+</section>
+<section id="swot" class="card">
+<h2>Security SWOT Analysis</h2>
+<div class="swot-grid">
+<div class="swot strengths">
+<h3>🟢 Strengths (Internal Positive)</h3>
+<h4>1. Cloud-native Architecture</h4>
+<ul><li>Scalable infrastructure with built-in redundancy</li><li>Ability to implement modern security controls (IAM, monitoring, encryption)</li></ul>
+<h4>2. Centralized Identity Management</h4>
+<ul><li>Unified login across booking, rental, and social platform</li><li>Potential for strong IAM (SSO, MFA, federation)</li></ul>
+<h4>3. Data-driven Operations</h4>
+<ul><li>Strong logging and analytics capabilities</li><li>Enables <strong>threat detection and behavioral monitoring</strong></li></ul>
+<h4>4. Global Standardization</h4>
+<ul><li>Security policies can be centrally defined and enforced</li><li>Opportunity for consistent compliance across regions</li></ul>
+<h4>5. Modern Development Practices</h4>
+<ul><li>DevOps pipelines allow integration of <strong>DevSecOps</strong></li><li>Automated testing and deployment improve patching speed</li></ul>
+</div>
+<div class="swot weaknesses">
+<h3>🔴 Weaknesses (Internal Negative)</h3>
+<h4>1. Large Attack Surface</h4>
+<ul><li>Multiple platforms (web, mobile, IoT, social)</li><li>Many integration points → increased vulnerability exposure</li></ul>
+<h4>2. Complex Identity Landscape</h4>
+<ul><li>Customers, guides, partners, admins</li><li>Risk of <strong>privilege misconfiguration</strong> and identity sprawl</li></ul>
+<h4>3. Third-party Dependencies</h4>
+<ul><li>Local guides, logistics providers, payment systems</li><li>Limited control over partner security posture</li></ul>
+<h4>4. Social Platform Risks</h4>
+<ul><li>User-generated content → XSS, abuse, phishing vectors</li><li>Moderation and data privacy challenges</li></ul>
+<h4>5. Field Operations Security</h4>
+<ul><li>Remote environments with poor connectivity, unmanaged devices, physical security risks</li></ul>
+</div>
+<div class="swot opportunities">
+<h3>🟡 Opportunities (External Positive)</h3>
+<h4>1. Zero Trust Implementation</h4>
+<ul><li>Ideal use case: global, distributed workforce</li><li>Continuous authentication for guides, partners, and users</li></ul>
+<h4>2. Advanced Monitoring &amp; AI</h4>
+<ul><li>Behavioral analytics for fraud detection</li><li>Threat intelligence integration for global threats</li></ul>
+<h4>3. Security as a Brand Differentiator</h4>
+<ul><li>Positioning as a <strong>“safe adventure provider”</strong></li><li>Trust increases customer retention and partnerships</li></ul>
+<h4>4. Privacy-by-Design Expansion</h4>
+<ul><li>Strong GDPR / international compliance posture</li><li>Competitive advantage in handling sensitive traveler data</li></ul>
+<h4>5. Secure IoT Innovation</h4>
+<ul><li>Enhanced safety systems (real-time tracking, alerts)</li><li>Opportunity to lead in <strong>secure adventure tech</strong></li></ul>
+</div>
+<div class="swot threats">
+<h3>🔵 Threats (External Negative)</h3>
+<h4>1. Cyber Attacks on Customer Platform</h4>
+<ul><li>Credential stuffing, account takeover</li><li>Payment fraud and identity theft</li></ul>
+<h4>2. Social Engineering</h4>
+<ul><li>Targeting support staff or guides</li><li>Phishing via social platform messaging</li></ul>
+<h4>3. Data Breaches</h4>
+<ul><li>Exposure of personal, location, or health data</li><li>Regulatory and reputational impact</li></ul>
+<h4>4. Supply Chain Attacks</h4>
+<ul><li>Compromised third-party software or partners</li><li>Malicious updates or integrations</li></ul>
+<h4>5. Physical + Cyber Combined Risks</h4>
+<ul><li>Theft or tampering of field devices</li><li>GPS manipulation or tracking interference</li></ul>
+<h4>6. Regulatory Complexity</h4>
+<ul><li>Different data protection laws across regions</li><li>Risk of non-compliance penalties</li></ul>
+</div>
+</div>
+</section>
+<section id="teaching" class="card">
+<h2>Teaching Value (Why this case works)</h2>
+<p>This scenario enables you to cover <strong>all 8 CISSP domains</strong> in one coherent system:</p>
+<ul class="domain-list">
+<li><strong>Domain 1:</strong> Risk, governance, compliance (global operations)</li>
+<li><strong>Domain 2:</strong> Data classification (customer + health + location data)</li>
+<li><strong>Domain 3:</strong> Architecture (cloud, IoT, mobile)</li>
+<li><strong>Domain 4:</strong> Network security (global connectivity, APIs)</li>
+<li><strong>Domain 5:</strong> IAM (users, guides, partners)</li>
+<li><strong>Domain 6:</strong> Testing (platform + app + APIs)</li>
+<li><strong>Domain 7:</strong> Operations (SOC, incident response, monitoring)</li>
+<li><strong>Domain 8:</strong> Software security (social platform, mobile apps)</li>
+</ul>
+</section>
+</main>
+<footer><div class="wrap">TrailBlaze Adventures case scenario · CISSP classroom and workshop material</div></footer>
+</body>
+</html>

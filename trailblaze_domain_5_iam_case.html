@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 5 IAM Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 5 Case</div>
+<h1>Identity and Access Management</h1>
+<p class="subtitle">A classroom and workshop case about identities, authentication, authorization, privileged access, federation, and access governance in a global adventure travel platform.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 5 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Identity Sprawl and Access Control Challenge</h2>
+<p class="lead">TrailBlaze Adventures operates a global digital ecosystem where customers, guides, employees, local partners, suppliers, support agents, and administrators all need different types of access.</p>
+<p>As the company expanded rapidly, identity and access management became fragmented. Different regions created their own accounts, partner portals, admin groups, and access practices. Some users authenticate through the central identity provider, while others still use local accounts or partner-managed credentials.</p>
+<ul>
+<li><strong>Customers</strong> use accounts for booking, payments, social posts, private messages, reviews, and travel history.</li>
+<li><strong>Guides</strong> access trip manifests, customer safety notes, offline maps, emergency contacts, GPS tools, and incident forms.</li>
+<li><strong>Support agents</strong> access customer profiles, booking changes, refunds, complaints, and emergency support workflows.</li>
+<li><strong>Local partners</strong> access selected itinerary data, equipment reservations, customer pickup details, and operational schedules.</li>
+<li><strong>Administrators</strong> manage content moderation, user reports, payment settings, guide assignments, and infrastructure dashboards.</li>
+<li><strong>Developers and DevOps engineers</strong> access repositories, cloud consoles, deployment pipelines, logs, secrets, and production systems.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current IAM concerns</h3>
+<ul>
+<li>Some regional partners still use shared accounts to access the partner portal.</li>
+<li>MFA is required for administrators but optional for guides and support staff.</li>
+<li>Role definitions are inconsistent between regions and business units.</li>
+<li>Former seasonal guides sometimes retain mobile-app access after contracts end.</li>
+<li>Privileged access to cloud consoles and production databases is not consistently monitored.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Business pressure</h3>
+<ul>
+<li>TrailBlaze wants fast onboarding for temporary guides during peak travel seasons.</li>
+<li>Partners need limited access without complex account administration.</li>
+<li>Customers expect easy login, social sharing, and account recovery.</li>
+<li>Support teams need enough access to help travelers during emergencies.</li>
+<li>Security teams want stronger access control without blocking field operations.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Design an IAM approach that supports global users, temporary guides, partners, and administrators while reducing account takeover, privilege misuse, and unauthorized access.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze IAM scenario and identify <strong>key challenges related to identity and access management</strong>.</p>
+<ul>
+<li>Which user groups and system identities exist in the environment?</li>
+<li>Which users require strong authentication or multi-factor authentication?</li>
+<li>Where do permissions appear excessive, unclear, or inconsistent?</li>
+<li>Which identities need lifecycle controls for onboarding, role changes, and offboarding?</li>
+<li>Where should privileged access management, federation, or access reviews be applied?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 5 challenges</h3>
+<p>Group your findings under authentication, authorization, access control models, identity lifecycle, privileged access, federation, and access governance.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 5 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 5 concepts and explain why that concept is relevant for managing TrailBlaze identities securely.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 IAM challenges</strong>, each linked to one or more Domain 5 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 5 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge auth"><h3>Authentication and Account Takeover</h3><ul>
+<li>MFA is not consistently required for guides, support staff, and partners.</li>
+<li>Customer accounts are exposed to credential stuffing because reused passwords are common.</li>
+<li>Account recovery workflows may allow social engineering against support teams.</li>
+</ul></div>
+<div class="challenge access"><h3>Authorization and Access Models</h3><ul>
+<li>Roles differ between regions, creating inconsistent access rights.</li>
+<li>Support agents may have broader access to customer data than required.</li>
+<li>Partner access is not consistently limited to necessary itinerary and logistics data.</li>
+</ul></div>
+<div class="challenge lifecycle"><h3>Identity Lifecycle Management</h3><ul>
+<li>Seasonal guides need fast onboarding and reliable offboarding.</li>
+<li>Former contractors may retain access after contracts end.</li>
+<li>Role changes are not always reflected in permissions quickly.</li>
+</ul></div>
+<div class="challenge privileged"><h3>Privileged Access</h3><ul>
+<li>Cloud administrators and DevOps engineers have powerful access to production systems.</li>
+<li>Privileged actions are not always logged, reviewed, or approved.</li>
+<li>Emergency access may bypass normal controls without sufficient oversight.</li>
+</ul></div>
+<div class="challenge federation"><h3>Federation and Partner Identity</h3><ul>
+<li>Some local partners use shared accounts instead of named identities.</li>
+<li>Partner-managed identities are not consistently trusted or verified.</li>
+<li>Federated access could simplify partner onboarding but introduces trust dependencies.</li>
+</ul></div>
+<div class="challenge access"><h3>Access Governance</h3><ul>
+<li>Access reviews are irregular and mostly manual.</li>
+<li>There is no clear evidence that users still need their assigned permissions.</li>
+<li>Identity governance is not yet integrated with compliance and audit requirements.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 5 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 5 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 5 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>MFA is optional for guides and support staff</td><td><strong>Multi-Factor Authentication / Strong Authentication</strong></td><td>Users with access to sensitive customer or operational data require stronger authentication to reduce account takeover risk.</td></tr>
+<tr><td>Customers reuse passwords across platforms</td><td><strong>Credential Management / Credential Stuffing</strong></td><td>Credential stuffing attacks exploit reused passwords, so monitoring, MFA, and password protections are needed.</td></tr>
+<tr><td>Support agents have broad customer-data access</td><td><strong>Least Privilege / Role-Based Access Control</strong></td><td>Support roles should only receive permissions necessary for specific support tasks.</td></tr>
+<tr><td>Regional roles are inconsistent</td><td><strong>Role Engineering / RBAC</strong></td><td>Roles must be standardized and designed around business functions to avoid privilege drift.</td></tr>
+<tr><td>Partners use shared accounts</td><td><strong>Identification / Accountability</strong></td><td>Shared accounts prevent reliable accountability because actions cannot be linked to a specific person.</td></tr>
+<tr><td>Partner access depends on external organizations</td><td><strong>Federated Identity / Identity Provider</strong></td><td>Federation can support partner access but requires trust in external identity providers and clear governance.</td></tr>
+<tr><td>Former seasonal guides retain access</td><td><strong>Deprovisioning / Identity Lifecycle</strong></td><td>Access must be removed when users leave or contracts end to prevent unauthorized use.</td></tr>
+<tr><td>Guides need different access based on trip context</td><td><strong>Attribute-Based Access Control</strong></td><td>Access can depend on attributes such as assigned trip, region, time, role, and device.</td></tr>
+<tr><td>Cloud admins have powerful production access</td><td><strong>Privileged Access Management</strong></td><td>Privileged accounts require approval, monitoring, session recording, and strict access controls.</td></tr>
+<tr><td>Emergency access bypasses normal controls</td><td><strong>Access Governance / Audit Trail</strong></td><td>Emergency access may be necessary but must be logged, reviewed, and justified afterward.</td></tr>
+<tr><td>Access reviews are manual and irregular</td><td><strong>Access Review / Identity Governance</strong></td><td>Periodic reviews verify that users still require their permissions and support compliance evidence.</td></tr>
+<tr><td>Users access multiple platforms separately</td><td><strong>Single Sign-On / Identity Federation</strong></td><td>SSO can improve usability and centralize authentication controls across TrailBlaze systems.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Analyze identities</h3><p>Identify human, partner, administrative, and system identities in a complex global platform.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Apply authentication controls</h3><p>Determine where MFA, adaptive authentication, credential protections, and account recovery controls are needed.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Design authorization</h3><p>Apply RBAC, ABAC, least privilege, and need-to-know principles to practical access decisions.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Govern access</h3><p>Plan identity lifecycle, privileged access management, access reviews, and federation controls.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Map identities</h3><p>Students identify all user groups, service accounts, partner identities, and privileged accounts.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Analyze access</h3><p>Students decide which access model fits each group and where MFA or PAM is required.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Design IAM controls</h3><p>Students propose lifecycle workflows, access reviews, federation rules, and privileged access governance.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 5 Identity and Access Management classroom case</div></footer>
+</body>
+</html>

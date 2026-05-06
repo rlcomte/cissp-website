@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 4 Communication and Network Security Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 4 Case</div>
+<h1>Communication and Network Security</h1>
+<p class="subtitle">A classroom and workshop case about secure data transmission, network zoning, remote access, wireless risks, and monitoring across TrailBlaze’s global operations.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 4 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Global Connectivity Problem</h2>
+<p class="lead">TrailBlaze Adventures depends on constant communication between customers, headquarters, remote guides, partner operators, payment services, and safety systems spread across many countries.</p>
+<p>Its network environment includes:</p>
+<ul>
+<li><strong>Public-facing web platforms</strong> for bookings, payments, and user accounts</li>
+<li><strong>Remote guide connectivity</strong> over hotel Wi-Fi, mobile networks, and satellite links</li>
+<li><strong>Partner integrations</strong> with regional operators, insurance firms, and transport providers</li>
+<li><strong>Monitoring and logging systems</strong> that support threat detection and incident response</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Operational pressure</h3>
+<ul>
+<li>Field teams need fast and reliable access from unpredictable networks.</li>
+<li>Customers expect secure booking and messaging from anywhere in the world.</li>
+<li>Critical alerts and location updates must arrive without delay.</li>
+<li>Regional growth increases dependence on APIs and external services.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Network concerns</h3>
+<ul>
+<li>Remote and public networks may expose traffic to interception.</li>
+<li>Internal segmentation is uneven between environments and regions.</li>
+<li>Some services rely on broad network trust instead of stricter access validation.</li>
+<li>Visibility into partner and wireless traffic is incomplete.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Improve TrailBlaze’s network and communication security so that global operations remain connected, monitored, and protected against interception, lateral movement, and misuse.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase">
+<div class="phase-num">1</div>
+<div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze scenario and identify <strong>key challenges related to communication and network security</strong>.</p>
+<ul>
+<li>Where does sensitive data travel across insecure or shared networks?</li>
+<li>Which network zones need stronger separation?</li>
+<li>How should remote guides and partners connect securely?</li>
+<li>Which traffic needs stronger monitoring or filtering?</li>
+<li>How can network design limit the impact of a compromised system?</li>
+</ul>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">2</div>
+<div>
+<h3>Identify Domain 4 challenges</h3>
+<p>Group findings under segmentation, secure protocols, remote access, wireless security, monitoring, traffic filtering, and network architecture.</p>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">3</div>
+<div>
+<h3>Link challenges to Domain 4 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 4 concepts and explain why that concept is relevant in the TrailBlaze environment.</p>
+</div>
+</div>
+<div class="deliverable">
+<strong>Deliverable:</strong> A structured list of <strong>at least 10 communication and network security challenges</strong>, each linked to one or more Domain 4 concepts.
+</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 4 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge networking"><h3>Network Architecture</h3><ul>
+<li>Public web systems, internal tools, and partner integrations need clearer zoning.</li>
+<li>Some regions use inherited network designs that do not match current risk.</li>
+<li>Critical services may be reachable from broader network segments than necessary.</li>
+</ul></div>
+<div class="challenge transport"><h3>Data in Transit</h3><ul>
+<li>Guide devices and partner systems use varied networks with different trust levels.</li>
+<li>Traffic between services must be protected against interception and tampering.</li>
+<li>TLS deployment and certificate assurance may differ by platform.</li>
+</ul></div>
+<div class="challenge monitoring"><h3>Monitoring &amp; Detection</h3><ul>
+<li>Network visibility is weaker for remote, wireless, and third-party traffic.</li>
+<li>Security teams need stronger logging, correlation, and alerting.</li>
+<li>Suspicious lateral movement may go unnoticed without segmented monitoring.</li>
+</ul></div>
+<div class="challenge transport"><h3>Remote Access</h3><ul>
+<li>Guides and support staff connect from airports, hotels, and field locations.</li>
+<li>Traditional VPN trust may be too broad for distributed operations.</li>
+<li>Endpoint health and user identity should affect access decisions.</li>
+</ul></div>
+<div class="challenge networking"><h3>Segmentation &amp; Containment</h3><ul>
+<li>Booking, admin, payment, and support systems need stronger separation.</li>
+<li>Compromise in one network zone should not expose all internal systems.</li>
+<li>APIs and partner links require tighter boundaries and filtering.</li>
+</ul></div>
+<div class="challenge monitoring"><h3>Wireless &amp; Partner Networks</h3><ul>
+<li>TrailBlaze depends on Wi-Fi, mobile networks, and partner infrastructure.</li>
+<li>Untrusted networks create interception and rogue-access risks.</li>
+<li>Wireless usage policies and secure communication standards are inconsistent.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 4 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 4 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 4 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Public and internal services are not clearly separated</td><td><strong>Segmentation / DMZ / Network Zoning</strong></td><td>Separating network zones limits exposure and reduces the spread of compromise.</td></tr>
+<tr><td>Guides connect from untrusted networks worldwide</td><td><strong>VPN / Zero Trust Network Access / Secure Remote Access</strong></td><td>Remote access should be encrypted and tightly controlled based on identity and device context.</td></tr>
+<tr><td>Service-to-service traffic is inconsistent</td><td><strong>TLS / Encryption in Transit</strong></td><td>Sensitive communications should be protected against interception and tampering across all paths.</td></tr>
+<tr><td>Partner APIs increase external exposure</td><td><strong>Proxying / Filtering / Secure Gateways</strong></td><td>Intermediary controls help validate, restrict, and monitor traffic to external parties.</td></tr>
+<tr><td>Remote and wireless traffic is hard to inspect</td><td><strong>Monitoring / IDS / IPS / Logging</strong></td><td>Effective detection depends on visibility into traffic flows and suspicious patterns.</td></tr>
+<tr><td>One compromised system could move laterally</td><td><strong>Containment through Segmentation</strong></td><td>Internal segmentation and access rules reduce attacker movement across network boundaries.</td></tr>
+<tr><td>Hotel or field Wi-Fi may expose communications</td><td><strong>Wireless Security / Secure Protocols</strong></td><td>Untrusted wireless environments require strong encryption and safer connection patterns.</td></tr>
+<tr><td>Critical alerts must remain reliable</td><td><strong>Availability / Network Resilience</strong></td><td>Communication paths need reliability and redundancy for safety-related functions.</td></tr>
+<tr><td>Certificate assurance varies across systems</td><td><strong>PKI / Trust Validation</strong></td><td>Trusted certificates and proper validation are necessary for secure network communications.</td></tr>
+<tr><td>Legacy network trust is too broad</td><td><strong>Modern Network Architecture / Least Trust</strong></td><td>Modern designs reduce implicit trust and enforce narrower access between systems.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Map communication paths</h3><p>Identify where sensitive data travels and where communication channels need stronger protection.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Design secure networks</h3><p>Apply zoning, segmentation, and secure remote access principles to global operations.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Protect traffic</h3><p>Understand how secure protocols, filtering, and certificate trust protect data in transit.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Improve visibility</h3><p>Evaluate how monitoring and detection controls support incident response and containment.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Trace</h3><p>Students map network flows between users, guides, partners, and core systems.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Expose</h3><p>Students identify weak points in segmentation, remote access, and communication security.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Harden</h3><p>Students propose improved zoning, secure protocols, and monitoring controls.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 4 Communication and Network Security classroom case</div></footer>
+</body>
+</html>

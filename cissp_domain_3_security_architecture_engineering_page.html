@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CISSP Domain 3 – Security Architecture and Engineering</title>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">CISSP Domain 3 · Teaching Web Page</div>
+    <h1>Security Architecture and Engineering</h1>
+    <p class="subtitle">Designing and building secure systems using models, cryptography, trusted components, and resilient architectures.</p>
+  </div>
+</header>
+<nav>
+  <div class="wrap">
+    <a href="cissp_homepage.html">Home</a>
+    <a href="#intro">Introduction</a>
+    <a href="#figures">Figures</a>
+    <a href="#cases">Case examples</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#review">Review questions</a>
+  </div>
+</nav>
+<main class="wrap">
+
+<section id="intro" class="card">
+  <h2>Domain introduction</h2>
+  <p>This domain focuses on designing and engineering secure systems. It includes security models, cryptographic systems, hardware protections, and architectural principles such as defense in depth and least privilege.</p>
+  <p>For ICT students, the key insight is that security must be embedded in system design from the beginning rather than added afterward as a patch or workaround.</p>
+
+  <div class="grid">
+    <div class="mini"><span class="tag">Outcome 1</span><h3>Secure design</h3><p>Apply architectural principles to build systems that resist attacks.</p></div>
+    <div class="mini"><span class="tag">Outcome 2</span><h3>Cryptography</h3><p>Understand how encryption and hashing protect data.</p></div>
+    <div class="mini"><span class="tag">Outcome 3</span><h3>System trust</h3><p>Identify trusted components and enforce boundaries.</p></div>
+  </div>
+</section>
+
+<section id="figures" class="card">
+  <h2>Figures and mental models</h2>
+  <h3>Defense in depth</h3>
+  <div class="figure">
+    <div class="layers">
+      <div><span>Perimeter</span>Firewalls and gateways filtering traffic</div>
+      <div><span>Network</span>Segmentation and monitoring controls</div>
+      <div><span>Host</span>Hardening and endpoint protection</div>
+      <div><span>Application</span>Secure coding and validation</div>
+      <div><span>Data</span>Encryption and integrity checks</div>
+    </div>
+  </div>
+
+  <h3>CIA in architecture</h3>
+  <div class="figure">
+    <div class="triad">
+      <div><strong>Confidentiality</strong>Encryption and access control mechanisms protect sensitive data from unauthorized disclosure.</div>
+      <div><strong>Integrity</strong>Validation, hashing, and controls ensure data remains accurate and unaltered.</div>
+      <div><strong>Availability</strong>Redundancy and failover systems ensure continuous access to services.</div>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="card">
+  <h2>Case examples</h2>
+  <div class="two-col">
+    <div class="case">
+      <h3>Case 1 — Secure banking system</h3>
+      <p>A banking platform must protect financial transactions and sensitive customer data.</p>
+      <ul>
+        <li><strong>Controls:</strong> encryption, strong authentication, logging, and secure architecture.</li>
+        <li><strong>Design:</strong> layered security and strict separation of components.</li>
+      </ul>
+    </div>
+    <div class="case">
+      <h3>Case 2 — IoT environment</h3>
+      <p>Smart devices communicate over insecure networks.</p>
+      <ul>
+        <li><strong>Risk:</strong> weak firmware security and lack of updates.</li>
+        <li><strong>Controls:</strong> secure boot, encryption, and device isolation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="glossary" class="card">
+  <h2>Glossary — 50 core terms</h2>
+  <table>
+    <thead><tr><th>#</th><th>Term</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Security Architecture</td><td>Structured design of security controls across systems, networks, and applications to ensure consistent protection aligned with organizational policies and risk management objectives.</td></tr>
+      <tr><td>2</td><td>Security Engineering</td><td>Discipline that applies engineering principles to design, implement, and maintain secure systems capable of resisting attacks while meeting performance and reliability requirements.</td></tr>
+      <tr><td>3</td><td>Defense in Depth</td><td>Security strategy that uses multiple layers of controls so that failure of one mechanism does not result in complete system compromise.</td></tr>
+      <tr><td>4</td><td>Security Model</td><td>Formal representation of security policies that defines how subjects access objects while maintaining confidentiality, integrity, or other security goals.</td></tr>
+      <tr><td>5</td><td>Trusted Computing Base</td><td>Set of hardware, software, and controls responsible for enforcing security policy and therefore must be protected from tampering or compromise.</td></tr>
+      <tr><td>6</td><td>Reference Monitor</td><td>Concept ensuring every access request is validated against security policy and that the mechanism enforcing it is tamper-proof and always invoked.</td></tr>
+      <tr><td>7</td><td>Security Kernel</td><td>Core component of an operating system that implements access control and enforces security policies reliably and securely.</td></tr>
+      <tr><td>8</td><td>Bell-LaPadula</td><td>Security model focused on confidentiality that prevents unauthorized data disclosure by restricting read and write operations across classification levels.</td></tr>
+      <tr><td>9</td><td>Biba Model</td><td>Integrity-focused model that prevents data corruption by restricting how subjects read and write information based on integrity levels.</td></tr>
+      <tr><td>10</td><td>Clark-Wilson Model</td><td>Integrity model that enforces well-formed transactions and separation of duties to ensure data remains accurate and consistent.</td></tr>
+      <tr><td>11</td><td>Cryptography</td><td>Practice of securing information using mathematical techniques such as encryption and hashing to ensure confidentiality, integrity, and authenticity.</td></tr>
+      <tr><td>12</td><td>Symmetric Encryption</td><td>Encryption method using a single shared key for both encryption and decryption, providing efficient protection for large amounts of data.</td></tr>
+      <tr><td>13</td><td>Asymmetric Encryption</td><td>Encryption method using a public and private key pair, commonly used for secure key exchange and digital signatures.</td></tr>
+      <tr><td>14</td><td>Hash Function</td><td>Mathematical function that converts data into a fixed-length value used to verify data integrity without revealing original content.</td></tr>
+      <tr><td>15</td><td>Digital Signature</td><td>Cryptographic mechanism that verifies authenticity and integrity of data using private key encryption and public key verification.</td></tr>
+      <tr><td>16</td><td>PKI</td><td>Public Key Infrastructure manages digital certificates and keys to support secure communication and identity verification across systems.</td></tr>
+      <tr><td>17</td><td>Certificate Authority</td><td>Trusted organization that issues and manages digital certificates linking public keys with identities.</td></tr>
+      <tr><td>18</td><td>Secure Boot</td><td>Process ensuring that only trusted and verified software is loaded during system startup to prevent malware execution.</td></tr>
+      <tr><td>19</td><td>TPM</td><td>Hardware component that securely stores cryptographic keys and supports platform integrity verification mechanisms.</td></tr>
+      <tr><td>20</td><td>HSM</td><td>Dedicated hardware device that securely generates, stores, and manages cryptographic keys while performing encryption operations.</td></tr>
+      <tr><td>21</td><td>Least Privilege</td><td>Principle that users and systems should only be granted permissions necessary to perform their tasks, reducing potential damage from misuse.</td></tr>
+      <tr><td>22</td><td>Zero Trust</td><td>Security model requiring continuous verification of identity and context, assuming no implicit trust based on network location.</td></tr>
+      <tr><td>23</td><td>Virtualization</td><td>Technology allowing multiple virtual systems to run on a single physical machine, requiring isolation to maintain security.</td></tr>
+      <tr><td>24</td><td>Hypervisor</td><td>Software layer that manages virtual machines and ensures separation between them to prevent cross-VM attacks.</td></tr>
+      <tr><td>25</td><td>Containers</td><td>Lightweight virtualization method packaging applications and dependencies, requiring isolation and runtime security controls.</td></tr>
+      <tr><td>26</td><td>Sandboxing</td><td>Technique for executing code in a restricted environment to prevent it from affecting the rest of the system.</td></tr>
+      <tr><td>27</td><td>Memory Protection</td><td>Mechanism that isolates process memory spaces to prevent unauthorized access or modification by other processes.</td></tr>
+      <tr><td>28</td><td>ASLR</td><td>Security technique that randomizes memory addresses to make exploitation of vulnerabilities more difficult.</td></tr>
+      <tr><td>29</td><td>Fault Tolerance</td><td>Capability of a system to continue operating despite failures in hardware or software components.</td></tr>
+      <tr><td>30</td><td>Redundancy</td><td>Duplication of system components or data to improve reliability and availability in case of failure.</td></tr>
+      <tr><td>31</td><td>Resilience</td><td>Ability of a system to recover quickly from disruptions and maintain essential operations.</td></tr>
+      <tr><td>32</td><td>Secure Design</td><td>Approach that integrates security considerations into system architecture from the beginning of development.</td></tr>
+      <tr><td>33</td><td>Secure Hardware</td><td>Hardware designed to resist tampering, unauthorized access, and physical attacks.</td></tr>
+      <tr><td>34</td><td>Embedded Systems</td><td>Special-purpose computing systems requiring security controls tailored to limited resources and specific operational contexts.</td></tr>
+      <tr><td>35</td><td>ICS</td><td>Industrial Control Systems manage industrial processes and require high availability and specialized security protections.</td></tr>
+      <tr><td>36</td><td>SCADA</td><td>Supervisory Control and Data Acquisition systems monitor and control large-scale industrial operations and infrastructure.</td></tr>
+      <tr><td>37</td><td>Isolation</td><td>Separation of systems or components to prevent unauthorized interaction or spread of compromise.</td></tr>
+      <tr><td>38</td><td>Abstraction</td><td>Design principle that simplifies complex systems by separating layers, aiding security management and control.</td></tr>
+      <tr><td>39</td><td>Platform Security</td><td>Protection of operating systems, firmware, and hardware to ensure a trusted computing environment.</td></tr>
+      <tr><td>40</td><td>Trusted Path</td><td>Secure communication channel between user and system for sensitive operations such as authentication.</td></tr>
+      <tr><td>41</td><td>Secure Firmware</td><td>Firmware designed with protections against unauthorized modification or exploitation.</td></tr>
+      <tr><td>42</td><td>Side-Channel Attack</td><td>Attack exploiting physical characteristics like timing or power consumption to extract sensitive information.</td></tr>
+      <tr><td>43</td><td>Trusted Computing</td><td>Concept ensuring systems operate as expected by verifying integrity of hardware and software components.</td></tr>
+      <tr><td>44</td><td>Secure Principles</td><td>Guidelines such as least privilege and defense in depth used to design secure systems.</td></tr>
+      <tr><td>45</td><td>Fail Secure</td><td>System behavior that defaults to a secure state when a failure occurs.</td></tr>
+      <tr><td>46</td><td>Security Boundary</td><td>Logical or physical separation that defines trust limits between systems or components.</td></tr>
+      <tr><td>47</td><td>Root of Trust</td><td>Trusted component that establishes the basis for system security and integrity verification.</td></tr>
+      <tr><td>48</td><td>Secure Architecture Pattern</td><td>Reusable design solutions addressing common security challenges within system architectures.</td></tr>
+      <tr><td>49</td><td>Threat Modeling</td><td>Process of identifying and evaluating potential threats during system design.</td></tr>
+      <tr><td>50</td><td>Attack Surface</td><td>Total set of points where an attacker can attempt to exploit vulnerabilities within a system.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="review" class="card">
+  <h2>Review questions</h2>
+  <ol>
+    <li>Why is defense in depth more effective than a single security control?</li>
+    <li>How do confidentiality and integrity models differ?</li>
+    <li>What role does cryptography play in system design?</li>
+    <li>Why is hardware-based security important?</li>
+    <li>How does secure design reduce long-term risk?</li>
+  </ol>
+</section>
+
+</main>
+<footer><div class="wrap">CISSP Domain 3 teaching page · Security Architecture and Engineering</div></footer>
+</body>
+</html>

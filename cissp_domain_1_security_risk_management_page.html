@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CISSP Domain 1 – Security and Risk Management</title>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">CISSP Domain 1 · Teaching Web Page</div>
+      <h1>Security and Risk Management</h1>
+      <p class="subtitle">A student-friendly introduction to governance, risk, compliance, security principles, business continuity, incident response, privacy, and professional responsibility.</p>
+    </div>
+  </header>
+
+<nav>
+  <div class="wrap">
+    <a href="cissp_homepage.html">Home</a>
+    <a href="#intro">Introduction</a>
+    <a href="#figures">Figures</a>
+    <a href="#cases">Case examples</a>
+    <a href="#glossary">Glossary</a>
+      <a href="#review">Review questions</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="card image-panel">
+      <img class="panel-image" src="images/domain1-overview.png" alt="CISSP Domain 1 overview" />
+    </section>
+
+    <section id="intro" class="card">
+      <h2>Domain introduction</h2>
+      <p>Security and Risk Management is the foundation of the CISSP body of knowledge. It explains how organizations decide what must be protected, which risks are acceptable, and which controls are needed to reduce unacceptable risk. This domain connects technical cybersecurity work to business objectives, legal obligations, ethical responsibilities, and governance structures.</p>
+      <p>For ICT students, this domain is important because security decisions are rarely only technical. A firewall, encryption system, access policy, or backup strategy should always be connected to organizational risk, compliance requirements, and the value of the asset being protected.</p>
+
+      <div class="grid" aria-label="Learning outcomes">
+        <div class="mini">
+          <span class="tag">Learning outcome 1</span>
+          <h3>Explain security objectives</h3>
+          <p>Describe confidentiality, integrity, availability, and how these principles influence technical and organizational controls.</p>
+        </div>
+        <div class="mini">
+          <span class="tag">Learning outcome 2</span>
+          <h3>Reason about risk</h3>
+          <p>Identify assets, threats, vulnerabilities, likelihood, and impact to choose suitable risk treatment options.</p>
+        </div>
+        <div class="mini">
+          <span class="tag">Learning outcome 3</span>
+          <h3>Connect security to governance</h3>
+          <p>Relate policies, standards, compliance, privacy, business continuity, and ethics to everyday ICT decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="figures" class="card">
+      <h2>Figures and mental models</h2>
+      <h3>Figure 1 — CIA Triad</h3>
+      <div class="figure">
+        <div class="triad">
+          <div><strong>Confidentiality</strong><span>Only authorized people and systems can access information.</span></div>
+          <div><strong>Integrity</strong><span>Information remains accurate, complete, and trustworthy.</span></div>
+          <div><strong>Availability</strong><span>Systems and data are accessible when needed.</span></div>
+        </div>
+      </div>
+
+      <h3>Figure 2 — Basic risk management cycle</h3>
+      <div class="figure">
+        <div class="flow">
+          <div><span>1. Identify</span>Find assets, threats, vulnerabilities, and business dependencies.</div>
+          <div><span>2. Analyze</span>Estimate likelihood, impact, and possible consequences.</div>
+          <div><span>3. Treat</span>Mitigate, transfer, avoid, or accept the risk.</div>
+          <div><span>4. Monitor</span>Check whether risks and controls change over time.</div>
+          <div><span>5. Improve</span>Update policies, controls, training, and incident procedures.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="card">
+      <h2>Case examples for class discussion</h2>
+      <div class="two-col">
+        <div class="case">
+          <h3>Case 1 — Ransomware at a regional hospital</h3>
+          <p>A hospital’s file servers become encrypted by ransomware. Patient care is disrupted because staff cannot access treatment records or scheduling systems.</p>
+          <ul>
+            <li><strong>CIA impact:</strong> availability is immediately affected, but confidentiality may also be at risk if data was stolen.</li>
+            <li><strong>Risk treatment:</strong> backups, incident response, network segmentation, staff awareness, and vendor security reviews reduce future exposure.</li>
+            <li><strong>Discussion:</strong> What is the acceptable recovery time for critical healthcare systems?</li>
+          </ul>
+        </div>
+        <div class="case">
+          <h3>Case 2 — Student data in a cloud service</h3>
+          <p>A university wants to store student records in a cloud platform. The records include names, grades, contact details, and study progress information.</p>
+          <ul>
+            <li><strong>Governance issue:</strong> the university remains accountable for privacy and data protection, even when a vendor processes the data.</li>
+            <li><strong>Controls:</strong> data classification, contractual requirements, encryption, audit rights, and access reviews should be considered.</li>
+            <li><strong>Discussion:</strong> Which risks can be transferred to the vendor, and which risks remain with the university?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="glossary" class="card">
+      <h2>Glossary — 50 core terms</h2>
+      <p>The definitions below reuse the approved Domain 1 terminology and are written for undergraduate ICT students.</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Term</th><th>Definition</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Confidentiality</td><td>Confidentiality means protecting information so that it is only accessible to authorized users, systems, or processes. It prevents sensitive data from being disclosed to people who are not permitted to see it.</td></tr>
+          <tr><td>2</td><td>Integrity</td><td>Integrity ensures that information remains accurate, complete, and trustworthy. Security mechanisms such as hashing, checksums, and access controls prevent unauthorized modification or corruption of data.</td></tr>
+          <tr><td>3</td><td>Availability</td><td>Availability ensures that systems, applications, and data are accessible when users need them. Redundancy, backups, fault tolerance, and disaster recovery mechanisms help maintain availability during failures or attacks.</td></tr>
+          <tr><td>4</td><td>CIA Triad</td><td>The CIA Triad is the foundational security model consisting of confidentiality, integrity, and availability. These three principles guide the design, evaluation, and management of information security controls.</td></tr>
+          <tr><td>5</td><td>Asset</td><td>An asset is anything valuable to an organization that requires protection. Assets may include data, software, hardware, services, intellectual property, reputation, and even employees.</td></tr>
+          <tr><td>6</td><td>Threat</td><td>A threat is any circumstance, event, or actor capable of causing harm to an information system. Threats may be natural, accidental, or intentional, such as hackers, malware, or human error.</td></tr>
+          <tr><td>7</td><td>Vulnerability</td><td>A vulnerability is a weakness in a system, application, process, or control that could be exploited by a threat. Vulnerabilities often arise from software bugs, misconfigurations, or poor security practices.</td></tr>
+          <tr><td>8</td><td>Risk</td><td>Risk represents the potential for loss or damage when a threat exploits a vulnerability. In cybersecurity, risk is often described as the combination of likelihood and potential impact.</td></tr>
+          <tr><td>9</td><td>Risk Assessment</td><td>Risk assessment is the systematic process of identifying assets, threats, and vulnerabilities, and evaluating the likelihood and impact of security incidents that could affect the organization.</td></tr>
+          <tr><td>10</td><td>Risk Analysis</td><td>Risk analysis evaluates identified risks by estimating their probability and potential impact. The results help organizations prioritize which security risks require immediate attention and mitigation.</td></tr>
+          <tr><td>11</td><td>Risk Management</td><td>Risk management is the ongoing process of identifying, analyzing, prioritizing, and responding to security risks. The goal is to reduce risk to an acceptable level for the organization.</td></tr>
+          <tr><td>12</td><td>Risk Mitigation</td><td>Risk mitigation involves implementing controls that reduce the likelihood or impact of a risk. Examples include security patches, firewalls, encryption, and security awareness training.</td></tr>
+          <tr><td>13</td><td>Risk Transfer</td><td>Risk transfer shifts the financial or operational impact of risk to another party. Organizations commonly transfer risk through insurance policies, outsourcing services, or contractual agreements with suppliers.</td></tr>
+          <tr><td>14</td><td>Risk Acceptance</td><td>Risk acceptance occurs when an organization decides to tolerate a risk without implementing additional controls. This decision is usually made when mitigation costs exceed the potential damage.</td></tr>
+          <tr><td>15</td><td>Risk Avoidance</td><td>Risk avoidance eliminates a risk entirely by discontinuing the activity that creates it. For example, an organization may stop offering a risky online service to avoid potential security exposure.</td></tr>
+          <tr><td>16</td><td>Risk Appetite</td><td>Risk appetite describes the amount of risk an organization is willing to accept in pursuit of its objectives. It is typically defined by senior management.</td></tr>
+          <tr><td>17</td><td>Risk Tolerance</td><td>Risk tolerance defines the acceptable variation around the organization’s risk appetite. It helps determine when risk levels exceed acceptable boundaries and require mitigation.</td></tr>
+          <tr><td>18</td><td>Risk Register</td><td>A risk register is a structured document used to track identified risks, their likelihood, impact, mitigation strategies, and responsible stakeholders within an organization.</td></tr>
+          <tr><td>19</td><td>Security Governance</td><td>Security governance refers to the leadership, policies, processes, and organizational structures that ensure cybersecurity activities align with business objectives and regulatory requirements.</td></tr>
+          <tr><td>20</td><td>Policy</td><td>A policy is a high-level management statement that defines the organization’s security objectives and rules. Policies guide decision-making and establish expectations for security behavior.</td></tr>
+          <tr><td>21</td><td>Standard</td><td>A standard specifies mandatory technical or procedural requirements that support policies. Standards ensure consistent implementation of security practices across systems and departments.</td></tr>
+          <tr><td>22</td><td>Procedure</td><td>A procedure describes the detailed step-by-step process for performing a specific task. Procedures translate policies and standards into operational instructions for employees.</td></tr>
+          <tr><td>23</td><td>Guideline</td><td>Guidelines are recommended practices that help employees implement policies and procedures. Unlike standards, guidelines are flexible and can be adapted depending on the situation.</td></tr>
+          <tr><td>24</td><td>Compliance</td><td>Compliance means adhering to laws, regulations, industry standards, and organizational policies related to information security and data protection.</td></tr>
+          <tr><td>25</td><td>Regulation</td><td>A regulation is a legally binding rule issued by a governmental authority. Organizations must comply with regulations such as GDPR or HIPAA to avoid penalties.</td></tr>
+          <tr><td>26</td><td>Due Care</td><td>Due care means taking reasonable steps to protect information systems and data. Organizations demonstrate due care by implementing security controls and enforcing policies.</td></tr>
+          <tr><td>27</td><td>Due Diligence</td><td>Due diligence refers to continuously monitoring, evaluating, and improving security practices. It ensures that security controls remain effective over time.</td></tr>
+          <tr><td>28</td><td>Security Awareness</td><td>Security awareness programs educate employees about cybersecurity risks and safe practices, such as recognizing phishing emails and protecting passwords.</td></tr>
+          <tr><td>29</td><td>Security Training</td><td>Security training provides employees with practical skills and knowledge needed to perform their roles securely, often including technical or role-specific cybersecurity instruction.</td></tr>
+          <tr><td>30</td><td>Ethics</td><td>Ethics refers to moral principles guiding professional behavior in cybersecurity. Security professionals are expected to protect society, respect privacy, and act responsibly.</td></tr>
+          <tr><td>31</td><td>Accountability</td><td>Accountability ensures individuals are responsible for their actions within information systems. Logging, auditing, and authentication mechanisms help enforce accountability.</td></tr>
+          <tr><td>32</td><td>Non-repudiation</td><td>Non-repudiation ensures that a person cannot deny performing an action, such as sending a message or approving a transaction. Digital signatures commonly support non-repudiation.</td></tr>
+          <tr><td>33</td><td>Security Culture</td><td>Security culture describes the shared attitudes and behaviors within an organization regarding cybersecurity responsibilities and safe digital practices.</td></tr>
+          <tr><td>34</td><td>Audit</td><td>An audit is a formal review of systems, processes, and controls to verify compliance with security policies, regulations, and standards.</td></tr>
+          <tr><td>35</td><td>Business Continuity</td><td>Business continuity ensures that critical business functions continue operating during and after disruptions such as cyberattacks, power failures, or natural disasters.</td></tr>
+          <tr><td>36</td><td>Business Impact Analysis</td><td>A business impact analysis identifies critical processes and evaluates the consequences of disruptions. It helps organizations prioritize recovery strategies.</td></tr>
+          <tr><td>37</td><td>Disaster Recovery</td><td>Disaster recovery focuses on restoring IT infrastructure, applications, and data after major disruptions. Recovery plans define procedures and recovery time objectives.</td></tr>
+          <tr><td>38</td><td>Incident Response</td><td>Incident response is the structured process for detecting, analyzing, containing, and recovering from security incidents such as cyberattacks or data breaches.</td></tr>
+          <tr><td>39</td><td>Third-Party Risk</td><td>Third-party risk arises when vendors, partners, or service providers introduce security weaknesses into an organization’s systems or data environment.</td></tr>
+          <tr><td>40</td><td>Vendor Risk Management</td><td>Vendor risk management evaluates and monitors suppliers to ensure they maintain appropriate security practices when handling organizational data or services.</td></tr>
+          <tr><td>41</td><td>Privacy</td><td>Privacy refers to individuals’ rights to control how their personal information is collected, processed, stored, and shared by organizations.</td></tr>
+          <tr><td>42</td><td>Personal Data</td><td>Personal data is any information that can identify an individual directly or indirectly, such as names, identification numbers, or online identifiers.</td></tr>
+          <tr><td>43</td><td>Data Protection</td><td>Data protection involves implementing technical and organizational measures to safeguard personal and sensitive information from unauthorized access or misuse.</td></tr>
+          <tr><td>44</td><td>Intellectual Property</td><td>Intellectual property includes creations such as software, inventions, designs, and written works that are legally protected to preserve ownership rights.</td></tr>
+          <tr><td>45</td><td>Copyright</td><td>Copyright protects original works of authorship such as books, music, and software from unauthorized reproduction or distribution.</td></tr>
+          <tr><td>46</td><td>Patent</td><td>A patent grants inventors exclusive rights to produce and sell an invention for a limited period in exchange for publicly disclosing the invention.</td></tr>
+          <tr><td>47</td><td>Trade Secret</td><td>A trade secret is confidential business information that provides a competitive advantage, such as algorithms, formulas, or manufacturing processes.</td></tr>
+          <tr><td>48</td><td>Security Strategy</td><td>A security strategy defines long-term goals, priorities, and investments that guide how an organization protects its information systems and data.</td></tr>
+          <tr><td>49</td><td>Security Program</td><td>A security program is the organized collection of policies, technologies, procedures, and people responsible for protecting an organization’s information assets.</td></tr>
+          <tr><td>50</td><td>Governance Framework</td><td>A governance framework defines the structures, roles, and processes used to manage cybersecurity activities and ensure accountability across the organization.</td></tr>
+        </tbody>
+      </table>
+      <p class="source-note">Teaching reference basis: CISSP Domain 1 concepts, ISC2-style terminology, NIST risk-management vocabulary, ISO governance concepts, and common privacy/compliance language.</p>
+    </section>
+
+    <section id="review" class="card">
+      <h2>Review questions</h2>
+      <ol>
+        <li>How do confidentiality, integrity, and availability conflict with each other in real ICT systems?</li>
+        <li>What is the difference between a threat, a vulnerability, and a risk?</li>
+        <li>When would an organization accept a risk instead of mitigating it?</li>
+        <li>Why is third-party risk still the responsibility of the organization using the supplier?</li>
+        <li>How do policies, standards, procedures, and guidelines differ in daily security management?</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">CISSP Domain 1 teaching page · Security and Risk Management · Designed for undergraduate ICT education.</div>
+  </footer>
+</body>
+</html>

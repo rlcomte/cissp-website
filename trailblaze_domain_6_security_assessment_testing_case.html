@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 6 Security Assessment and Testing Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 6 Case</div>
+<h1>Security Assessment and Testing</h1>
+<p class="subtitle">A classroom and workshop case about vulnerability assessment, penetration testing, control validation, audit evidence, security metrics, and continuous monitoring.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 6 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Security Testing Before Global Launch</h2>
+<p class="lead">TrailBlaze Adventures is preparing a major platform release before peak travel season. The release includes new mobile features, partner APIs, social-platform improvements, payment changes, and IoT integration for GPS trackers and smart wearables.</p>
+<p>The release is business-critical because TrailBlaze wants to expand into new markets quickly. However, several previous incidents have raised concern about whether security testing is deep enough and whether controls are actually working as intended.</p>
+<ul>
+<li><strong>Customer web platform:</strong> booking flows, account management, payments, profile updates, and social sharing features.</li>
+<li><strong>Mobile apps:</strong> customer app and guide app with offline mode, route data, emergency contacts, GPS sync, and incident reporting.</li>
+<li><strong>Partner APIs:</strong> local operator integrations, equipment rental partners, insurance partners, transport providers, and payment providers.</li>
+<li><strong>Cloud infrastructure:</strong> API gateways, managed databases, storage buckets, CI/CD pipelines, identity provider, monitoring, and logs.</li>
+<li><strong>Social platform:</strong> media upload, messaging, reviews, content moderation, notifications, and community groups.</li>
+<li><strong>IoT systems:</strong> firmware updates, device enrollment, telemetry, GPS tracking, and emergency-alert communication.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current testing concerns</h3>
+<ul>
+<li>Development teams run automated tests, but security test coverage differs across web, mobile, API, and IoT components.</li>
+<li>Vulnerability scans are performed monthly, but findings are not consistently prioritized or remediated.</li>
+<li>Penetration testing has focused mostly on the public website, not mobile offline mode, partner APIs, or cloud misconfigurations.</li>
+<li>Some security controls exist in documentation, but nobody has recently validated whether they work in production-like conditions.</li>
+<li>Compliance teams need audit evidence, but test results, exceptions, and remediation decisions are scattered across tools.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Business pressure</h3>
+<ul>
+<li>Marketing wants the new social features launched before the travel season starts.</li>
+<li>Operations wants GPS and emergency features tested without disrupting active expeditions.</li>
+<li>Developers are concerned that late security findings will delay the release.</li>
+<li>Management wants a clear risk-based recommendation: launch, delay, or launch with compensating controls.</li>
+<li>External partners want API access quickly, but security teams need confidence in integration testing.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Create an assessment and testing approach that gives us evidence-based confidence before launch and helps us prioritize what must be fixed first.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze release scenario and identify <strong>key challenges related to security assessment and testing</strong>.</p>
+<ul>
+<li>Which systems, applications, APIs, and infrastructure components require security testing?</li>
+<li>Which testing methods are most appropriate for web, mobile, cloud, API, IoT, and social-platform components?</li>
+<li>Which controls need validation before the release decision?</li>
+<li>How should findings be prioritized, reported, and tracked to remediation?</li>
+<li>What evidence is needed for audit, compliance, and management decision-making?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 6 challenges</h3>
+<p>Group your findings under vulnerability assessment, penetration testing, test coverage, control validation, compliance testing, reporting, and continuous monitoring.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 6 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 6 concepts and explain why that concept is relevant for assessing TrailBlaze security.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 security assessment and testing challenges</strong>, each linked to one or more Domain 6 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 6 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge assessment"><h3>Assessment Scope and Coverage</h3><ul>
+<li>Testing has focused on the website but not the full ecosystem.</li>
+<li>Partner APIs, mobile offline mode, IoT firmware, and cloud configurations may be under-tested.</li>
+<li>Students must determine what should be included in a complete assessment scope.</li>
+</ul></div>
+<div class="challenge testing"><h3>Testing Methods</h3><ul>
+<li>Different components require different methods such as SAST, DAST, API testing, mobile testing, and configuration review.</li>
+<li>Automated tests may miss business logic flaws or authorization weaknesses.</li>
+<li>Manual testing may be needed for complex workflows and abuse cases.</li>
+</ul></div>
+<div class="challenge coverage"><h3>Vulnerability Management</h3><ul>
+<li>Scan findings are not consistently prioritized or remediated.</li>
+<li>False positives and false negatives may distort risk decisions.</li>
+<li>There is no clear deadline model for fixing critical vulnerabilities before launch.</li>
+</ul></div>
+<div class="challenge audit"><h3>Control Validation and Audit Evidence</h3><ul>
+<li>Some documented controls may not be functioning in practice.</li>
+<li>Audit evidence is scattered across tools and teams.</li>
+<li>Management needs defensible evidence to support launch decisions.</li>
+</ul></div>
+<div class="challenge monitoring"><h3>Continuous Monitoring</h3><ul>
+<li>Security testing should not stop after launch.</li>
+<li>New risks may appear when customers, partners, and guides use the platform at scale.</li>
+<li>Continuous monitoring should feed future assessments and testing priorities.</li>
+</ul></div>
+<div class="challenge assessment"><h3>Risk-Based Release Decision</h3><ul>
+<li>The organization needs to decide whether to launch, delay, or launch with compensating controls.</li>
+<li>Security findings must be translated into business impact and risk language.</li>
+<li>Students must recommend a decision based on evidence, severity, and operational impact.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 6 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 6 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 6 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Testing only covers the public website</td><td><strong>Security Assessment / Security Test Plan</strong></td><td>A complete test plan defines scope across web, mobile, API, cloud, IoT, and social-platform components.</td></tr>
+<tr><td>Automated scans identify many findings without prioritization</td><td><strong>Vulnerability Assessment / Risk-Based Testing</strong></td><td>Findings must be prioritized by exploitability, business impact, exposure, and affected assets.</td></tr>
+<tr><td>Mobile offline workflows are not deeply tested</td><td><strong>Dynamic Analysis / Manual Testing</strong></td><td>Runtime and manual testing are needed to evaluate offline synchronization, cached data, and workflow abuse.</td></tr>
+<tr><td>Source code changes are deployed quickly</td><td><strong>SAST / Code Review</strong></td><td>Static analysis and code review help detect vulnerabilities before code reaches production.</td></tr>
+<tr><td>Partner APIs may expose excessive data</td><td><strong>Penetration Testing / Authorization Testing</strong></td><td>API testing should verify authentication, authorization, rate limiting, and data exposure risks.</td></tr>
+<tr><td>Cloud storage and network settings differ between regions</td><td><strong>Configuration Review / Security Baseline</strong></td><td>Configuration reviews compare systems against approved baselines and detect insecure deviations.</td></tr>
+<tr><td>Documented controls are not recently validated</td><td><strong>Security Control Testing / Control Validation</strong></td><td>Controls must be tested to verify they actually function as intended in realistic conditions.</td></tr>
+<tr><td>IoT firmware update mechanisms need assurance</td><td><strong>Security Testing / Threat Simulation</strong></td><td>Testing should simulate realistic attacks against firmware update, enrollment, and communication processes.</td></tr>
+<tr><td>Audit evidence is scattered across tools</td><td><strong>Security Assessment Report / Compliance Testing</strong></td><td>Assessment results must be documented clearly for compliance, governance, and management decisions.</td></tr>
+<tr><td>Launch decision requires clear security evidence</td><td><strong>Security Metrics / Security Scorecard</strong></td><td>Metrics translate technical findings into risk indicators that support launch, delay, or mitigation decisions.</td></tr>
+<tr><td>Security risks continue after launch</td><td><strong>Continuous Monitoring / Risk Monitoring</strong></td><td>Continuous monitoring detects new vulnerabilities, configuration drift, and emerging threats after deployment.</td></tr>
+<tr><td>False positives slow the remediation process</td><td><strong>Tool Validation / Security Review</strong></td><td>Findings need validation so teams focus on real risks instead of inaccurate tool output.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Define scope</h3><p>Identify which systems, data flows, applications, APIs, and infrastructure components require assessment.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Select test methods</h3><p>Choose appropriate assessment methods such as scanning, penetration testing, code review, SAST, DAST, and configuration review.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Validate controls</h3><p>Evaluate whether security controls are implemented correctly and provide evidence that they operate effectively.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Report risk</h3><p>Translate technical findings into prioritized remediation actions and management-level release recommendations.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Scope the assessment</h3><p>Students map systems and decide which components require testing before release.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Select methods</h3><p>Students assign testing techniques to each component and justify their choices.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Make a release decision</h3><p>Students use findings to recommend launch, delay, or launch with compensating controls.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 6 Security Assessment and Testing classroom case</div></footer>
+</body>
+</html>

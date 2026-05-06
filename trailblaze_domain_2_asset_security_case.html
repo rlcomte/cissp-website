@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 2 Asset Security Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 2 Case</div>
+<h1>Asset Security</h1>
+<p class="subtitle">A classroom and workshop case about protecting information assets, classifying data, assigning ownership, managing lifecycle risks, and securing storage and disposal.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 2 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Data Sprawl Problem</h2>
+<p class="lead">TrailBlaze Adventures has grown into a global digital travel company with large volumes of customer, operational, social, financial, and safety-related data distributed across many platforms and regions.</p>
+<p>As the company expands, information assets are created and reused across business functions:</p>
+<ul>
+<li><strong>Customer profiles</strong> contain identity information, passport details, emergency contacts, preferences, booking history, and payment references.</li>
+<li><strong>Health and safety data</strong> includes allergies, medical conditions, fitness declarations, insurance details, and emergency-response notes.</li>
+<li><strong>Location data</strong> is collected from GPS trackers, mobile apps, guide devices, and expedition safety systems.</li>
+<li><strong>Rental data</strong> tracks equipment ownership, maintenance history, deposits, damage reports, and device assignments.</li>
+<li><strong>Social platform content</strong> includes photos, videos, comments, private messages, community groups, and user reviews.</li>
+<li><strong>Partner data</strong> includes guide contracts, local operator agreements, risk assessments, certifications, and incident reports.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current situation</h3>
+<ul>
+<li>Different regions use different file-sharing and cloud storage practices.</li>
+<li>Production customer data is sometimes copied into test environments.</li>
+<li>Marketing exports customer and social-platform data for campaign analytics.</li>
+<li>Guides download trip manifests onto mobile devices for offline use.</li>
+<li>Old trip records and GPS logs are retained indefinitely because nobody defined deletion rules.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Management concern</h3>
+<ul>
+<li>Data is valuable for operations and personalization, but also creates privacy and safety risks.</li>
+<li>It is unclear who owns each data set and who decides retention or deletion.</li>
+<li>Backups exist, but restoration testing and encryption status are inconsistent.</li>
+<li>Several third-party platforms store copies of TrailBlaze data.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Create an asset security approach that tells us what data we have, how sensitive it is, who owns it, how long we keep it, and how we protect it throughout its lifecycle.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze scenario and identify <strong>key challenges related to asset security</strong>.</p>
+<ul>
+<li>Which information assets are most sensitive or business-critical?</li>
+<li>Which data sets require classification, labeling, or special handling?</li>
+<li>Who should own, steward, and technically protect each major data set?</li>
+<li>Where does data move across platforms, partners, regions, and devices?</li>
+<li>Which lifecycle stages create the highest risk: creation, storage, usage, sharing, archiving, or disposal?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 2 challenges</h3>
+<p>Group your findings under data classification, ownership, lifecycle management, storage security, retention, disposal, backups, and data protection controls.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 2 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 2 concepts and explain why that concept is relevant for protecting TrailBlaze assets.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 asset security challenges</strong>, each linked to one or more Domain 2 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 2 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge classification"><h3>Data Classification &amp; Labeling</h3><ul>
+<li>No consistent classification scheme for customer, health, GPS, rental, and social data.</li>
+<li>Health and location data may require higher protection than general booking information.</li>
+<li>Exports used by marketing may lose classification labels and handling instructions.</li>
+</ul></div>
+<div class="challenge ownership"><h3>Ownership &amp; Responsibility</h3><ul>
+<li>Unclear data owners for customer profiles, GPS logs, and social content.</li>
+<li>IT operates systems but business units make unclear decisions about use and retention.</li>
+<li>Data stewards are not assigned to maintain quality and correct use.</li>
+</ul></div>
+<div class="challenge lifecycle"><h3>Data Lifecycle Management</h3><ul>
+<li>Trip manifests are downloaded for offline use but not always removed after journeys.</li>
+<li>Old GPS logs and trip records are retained indefinitely without business justification.</li>
+<li>Production data is copied into test environments without masking or minimization.</li>
+</ul></div>
+<div class="challenge storage"><h3>Storage &amp; Protection</h3><ul>
+<li>Cloud storage practices differ between regions and partners.</li>
+<li>Backup encryption and restoration testing are inconsistent.</li>
+<li>Mobile guide devices store sensitive data in remote environments with physical theft risk.</li>
+</ul></div>
+<div class="challenge classification"><h3>Sharing &amp; Third Parties</h3><ul>
+<li>Local operators and guides receive personal data and trip information.</li>
+<li>Payment providers, analytics tools, and social integrations store copies of data.</li>
+<li>Data sharing lacks clear handling requirements and transfer controls.</li>
+</ul></div>
+<div class="challenge lifecycle"><h3>Retention &amp; Disposal</h3><ul>
+<li>No clear retention policy for medical declarations, emergency contacts, or incident reports.</li>
+<li>Old rental device data may remain on GPS trackers or mobile phones.</li>
+<li>Secure deletion and media sanitization procedures are not standardized globally.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 2 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 2 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 2 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>No classification for health and location data</td><td><strong>Data Classification / Information Sensitivity</strong></td><td>Sensitive health and GPS data require stronger controls than ordinary marketing or booking data.</td></tr>
+<tr><td>Unclear responsibility for customer records</td><td><strong>Data Owner / Data Steward / Data Custodian</strong></td><td>Ownership clarifies who decides classification, access, retention, quality, and technical protection.</td></tr>
+<tr><td>Production data copied into test systems</td><td><strong>Data Masking / Data Minimization</strong></td><td>Testing should use masked or minimized data to reduce privacy and breach impact.</td></tr>
+<tr><td>Guides download manifests for offline use</td><td><strong>Secure Data Handling / Secure Storage</strong></td><td>Offline copies require encryption, access control, deletion procedures, and device protection.</td></tr>
+<tr><td>GPS logs retained indefinitely</td><td><strong>Data Retention / Information Lifecycle Management</strong></td><td>Retention rules should define how long location data is kept and when it is deleted.</td></tr>
+<tr><td>Old rental devices still contain trip data</td><td><strong>Media Sanitization / Secure Deletion</strong></td><td>Devices must be wiped or sanitized before reuse, repair, return, or disposal.</td></tr>
+<tr><td>Backups exist but are inconsistently protected</td><td><strong>Backup Strategy / Storage Encryption</strong></td><td>Backups must be encrypted, tested, protected, and aligned with recovery requirements.</td></tr>
+<tr><td>Marketing exports personal data</td><td><strong>Data Loss Prevention / Data Handling Policy</strong></td><td>Exports create leakage risk and need handling rules, access controls, and monitoring.</td></tr>
+<tr><td>Third-party platforms store TrailBlaze data</td><td><strong>Data Governance / Secure Data Sharing</strong></td><td>Data shared externally still requires classification, protection requirements, and accountability.</td></tr>
+<tr><td>Social media content mixes public and private data</td><td><strong>Information Labeling / Access Control</strong></td><td>Different content types need clear visibility rules, labeling, and privacy-aware access controls.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Identify information assets</h3><p>Recognize different types of organizational data and determine which assets are sensitive or business-critical.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Apply classification</h3><p>Use classification and labeling to determine appropriate handling and protection requirements.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Manage lifecycle risk</h3><p>Analyze risks across data creation, storage, usage, sharing, archiving, and disposal.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Assign responsibility</h3><p>Differentiate data owner, custodian, and steward responsibilities in practical organizational contexts.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Inventory</h3><p>Students identify and group TrailBlaze information assets.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Classify</h3><p>Students assign sensitivity levels and define handling requirements.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Control</h3><p>Students propose lifecycle controls, ownership, retention, and secure disposal measures.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 2 Asset Security classroom case</div></footer>
+</body>
+</html>

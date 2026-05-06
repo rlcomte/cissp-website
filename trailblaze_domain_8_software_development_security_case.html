@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 8 Software Development Security Case</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 8 Case</div>
+<h1>Software Development Security</h1>
+<p class="subtitle">A classroom and workshop case about secure SDLC, DevSecOps, secure coding, API security, dependency risk, CI/CD pipelines, and secure release practices.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="index.html">Home</a>
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 8 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Secure Feature Release</h2>
+<p class="lead">TrailBlaze Adventures is preparing a major software release for its customer platform, mobile apps, partner APIs, and social platform before the global travel season begins.</p>
+<p>The release introduces new features that are valuable for growth but also security-sensitive. Development teams are under pressure to deliver quickly, while the security team is concerned that secure design and testing are not consistently embedded in the software lifecycle.</p>
+<ul>
+<li><strong>Social platform features:</strong> live trip stories, media uploads, private group chats, comments, reviews, and user tagging.</li>
+<li><strong>Customer platform:</strong> booking updates, profile management, payment flows, account recovery, and personalized recommendations.</li>
+<li><strong>Guide mobile app:</strong> offline trip data, incident reporting, GPS synchronization, emergency notes, and document upload.</li>
+<li><strong>Partner APIs:</strong> itinerary updates, rental availability, transport schedules, insurance checks, and operational status messages.</li>
+<li><strong>CI/CD pipelines:</strong> automated builds, dependency updates, container images, deployment scripts, and infrastructure configuration.</li>
+<li><strong>Third-party components:</strong> open-source packages, media-processing libraries, chat SDKs, payment SDKs, analytics tools, and mobile frameworks.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current development concerns</h3>
+<ul>
+<li>Threat modeling is performed for some major features, but not consistently for smaller releases.</li>
+<li>Developers rely heavily on open-source packages, but dependency scanning and SBOM management are incomplete.</li>
+<li>Input validation differs across web, mobile, and API components.</li>
+<li>Media upload and chat features process untrusted user-generated content.</li>
+<li>Secrets have occasionally appeared in development logs, configuration files, and temporary scripts.</li>
+<li>Security testing is often performed late, after features are mostly complete.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Business pressure</h3>
+<ul>
+<li>Marketing wants the social features released before influencer campaigns start.</li>
+<li>Operations needs guide app updates before remote expeditions begin.</li>
+<li>Product teams want fast experimentation and feature toggles.</li>
+<li>Developers want automated security checks that do not block every deployment.</li>
+<li>Security leadership wants a secure SDLC that prevents vulnerabilities earlier in development.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable">
+<strong>Management request:</strong> “Integrate security into the software development process so TrailBlaze can release features quickly without exposing customers, guides, partners, or operational systems to avoidable software vulnerabilities.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze release scenario and identify <strong>key challenges related to software development security</strong>.</p>
+<ul>
+<li>Which features introduce the greatest software security risk?</li>
+<li>Where should secure design, threat modeling, and security requirements be applied?</li>
+<li>Which common vulnerabilities could affect the social platform, APIs, mobile apps, and account workflows?</li>
+<li>How should the CI/CD pipeline enforce secure build, testing, dependency, and secrets-management practices?</li>
+<li>How should TrailBlaze manage open-source dependencies and third-party SDK risk?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 8 challenges</h3>
+<p>Group your findings under secure SDLC, secure coding, application testing, API security, dependency management, DevSecOps, secure deployment, and software supply-chain security.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 8 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 8 concepts and explain why that concept is relevant for developing secure TrailBlaze software.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 software development security challenges</strong>, each linked to one or more Domain 8 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 8 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge sdlc"><h3>Secure SDLC and Requirements</h3><ul>
+<li>Security requirements are not consistently defined before features are built.</li>
+<li>Threat modeling is performed inconsistently across releases and teams.</li>
+<li>Security testing often happens late, making fixes more expensive and disruptive.</li>
+</ul></div>
+<div class="challenge code"><h3>Secure Coding and Common Vulnerabilities</h3><ul>
+<li>User-generated content creates risk of XSS, unsafe file handling, and malicious media uploads.</li>
+<li>Inconsistent input validation creates injection and business-logic risks.</li>
+<li>Account recovery and session handling may be vulnerable to abuse.</li>
+</ul></div>
+<div class="challenge api"><h3>API and Mobile Application Security</h3><ul>
+<li>Partner APIs may expose excessive data or allow unauthorized actions.</li>
+<li>Mobile offline mode stores sensitive data and synchronizes later.</li>
+<li>Guide app uploads incident reports and documents from uncontrolled environments.</li>
+</ul></div>
+<div class="challenge pipeline"><h3>DevSecOps and CI/CD Pipelines</h3><ul>
+<li>Automated security checks are inconsistent between repositories and services.</li>
+<li>Container images and deployment scripts are not always scanned before release.</li>
+<li>Feature toggles and rapid releases can introduce unreviewed security behavior.</li>
+</ul></div>
+<div class="challenge supply"><h3>Dependency and Supply Chain Risk</h3><ul>
+<li>Open-source packages and SDKs are used widely without complete inventory.</li>
+<li>Dependency vulnerabilities may be missed if scanning and SBOMs are incomplete.</li>
+<li>Third-party media, chat, payment, and analytics components expand the attack surface.</li>
+</ul></div>
+<div class="challenge pipeline"><h3>Secrets and Secure Deployment</h3><ul>
+<li>Secrets have appeared in logs, configuration files, or temporary scripts.</li>
+<li>Deployment credentials may be shared between environments.</li>
+<li>Production configuration may differ from tested security assumptions.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 8 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 8 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 8 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Security requirements are missing from early feature design</td><td><strong>Secure SDLC / Security Requirements</strong></td><td>Security must be integrated from requirements and design rather than added after implementation.</td></tr>
+<tr><td>Threat modeling is inconsistent across releases</td><td><strong>Threat Modeling / Secure Design</strong></td><td>Threat modeling helps teams identify misuse cases and security controls before code is written.</td></tr>
+<tr><td>User-generated content can contain malicious scripts</td><td><strong>Cross-Site Scripting / Output Encoding</strong></td><td>Social features require output encoding and content handling to prevent script execution in users’ browsers.</td></tr>
+<tr><td>Input validation differs between web, mobile, and APIs</td><td><strong>Input Validation / Injection Prevention</strong></td><td>Consistent validation reduces injection attacks and prevents malformed data from reaching sensitive logic.</td></tr>
+<tr><td>Partner APIs may expose too much information</td><td><strong>Secure API Design / Authorization Controls</strong></td><td>APIs must enforce authentication, authorization, data minimization, and rate limiting.</td></tr>
+<tr><td>Mobile app stores sensitive data offline</td><td><strong>Secure Mobile Development / Secure Storage</strong></td><td>Offline data requires encryption, session protection, and careful synchronization logic.</td></tr>
+<tr><td>Open-source dependencies are not fully inventoried</td><td><strong>Dependency Management / SBOM</strong></td><td>An SBOM and dependency scanning help identify vulnerable components and support remediation.</td></tr>
+<tr><td>Container images are not always scanned</td><td><strong>Secure Build Process / DevSecOps</strong></td><td>Automated pipeline checks can prevent vulnerable images from reaching production.</td></tr>
+<tr><td>Secrets appear in logs or scripts</td><td><strong>Secrets Management / Secure Configuration</strong></td><td>Credentials must be stored securely and never exposed in code, logs, or temporary files.</td></tr>
+<tr><td>Security testing happens late in development</td><td><strong>SAST / DAST / Security Testing</strong></td><td>Early and continuous testing reduces cost and helps detect vulnerabilities before release.</td></tr>
+<tr><td>Deployment behavior differs from tested assumptions</td><td><strong>Secure Deployment / Configuration Management</strong></td><td>Deployment environments must match tested security configurations and be controlled through repeatable processes.</td></tr>
+<tr><td>Rapid feature toggles introduce unexpected access paths</td><td><strong>Secure Configuration / Change Control</strong></td><td>Feature flags and configuration changes should be reviewed, tested, logged, and reversible.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Analyze secure SDLC</h3><p>Identify where security requirements, threat modeling, testing, and review should occur during development.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Recognize software vulnerabilities</h3><p>Explain how injection, XSS, insecure sessions, and weak authorization can appear in real applications.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Secure pipelines</h3><p>Apply DevSecOps practices to CI/CD, secrets management, code scanning, dependency scanning, and secure deployment.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Manage supply-chain risk</h3><p>Evaluate risks from open-source libraries, SDKs, containers, and third-party software components.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Model the feature release</h3><p>Students identify applications, APIs, pipelines, data flows, and third-party components involved in the release.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Find software risks</h3><p>Students identify likely vulnerabilities, insecure design choices, weak dependency practices, and pipeline gaps.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Design SDLC controls</h3><p>Students propose threat modeling, coding standards, pipeline gates, testing methods, and secure release controls.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 8 Software Development Security classroom case</div></footer>
+</body>
+</html>

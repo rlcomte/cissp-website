@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 3 Security Architecture and Engineering Case</title>
+<style>
+:root{--bg:#f6f8fb;--panel:#fff;--ink:#172033;--muted:#5f6f89;--line:#d9e2ef;--accent:#2457a6;--accent-2:#eaf1ff;--green:#e8f7ee;--yellow:#fff4dd;--red:#fdecec;--blue:#eaf1ff;--purple:#f0eafe;--shadow:0 12px 30px rgba(20,35,60,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,#17396f,#2d69c4);color:#fff;padding:64px 24px 56px}.wrap{max-width:1180px;margin:0 auto}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;font-weight:700;opacity:.85;margin-bottom:10px}
+h1{font-size:clamp(2rem,4vw,4rem);line-height:1.05;margin:0 0 18px;max-width:980px}.subtitle{font-size:1.16rem;max-width:850px;color:rgba(255,255,255,.9);margin:0}
+nav{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 24px}nav a{color:var(--accent);text-decoration:none;font-weight:700;white-space:nowrap;font-size:.95rem}
+main{padding:34px 24px 72px}.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;margin:0 auto 34px}h2{margin-top:0;font-size:1.75rem;line-height:1.2}h3{margin-bottom:8px;color:#183966}.lead{font-size:1.08rem;color:#34445f}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fbfdff}.mini p{margin-bottom:0;color:var(--muted)}.tag{display:inline-flex;align-items:center;border-radius:999px;background:var(--accent-2);color:var(--accent);padding:4px 10px;font-weight:700;font-size:.8rem;margin-bottom:8px}.callout{border-left:5px solid var(--accent);background:#fbfdff;padding:18px 20px;border-radius:14px}.challenge{border-radius:18px;border:1px solid var(--line);padding:20px;background:#fbfdff}.challenge h3{margin-top:0}.architecture{background:var(--blue)}.crypto{background:var(--yellow)}.mobile{background:var(--red)}.resilience{background:var(--green)}.iot{background:var(--purple)}
+table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;font-size:.95rem}th,td{border-bottom:1px solid var(--line);padding:13px 14px;vertical-align:top;text-align:left}th{background:#eaf1ff;color:#17396f}tr:nth-child(even) td{background:#fbfdff}td:first-child{font-weight:800;color:#17396f;width:270px}.deliverable{background:#fff4dd;border:1px solid #eed39b;border-radius:18px;padding:20px}.phase{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;margin-bottom:14px}.phase-num{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:900;font-size:1.2rem}li{margin-bottom:8px}footer{padding:28px 24px;background:#172033;color:rgba(255,255,255,.78)}@media(max-width:850px){.grid,.two-col{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 3 Case</div>
+<h1>Security Architecture and Engineering</h1>
+<p class="subtitle">A classroom and workshop case about secure system design, cloud architecture, cryptography, mobile and IoT security, trusted components, and resilience.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 3 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Platform Architecture Redesign</h2>
+<p class="lead">TrailBlaze Adventures is redesigning its digital platform to support global growth, safety-critical expedition services, real-time mobile use, and a fast-growing social platform.</p>
+<p>The company currently uses a mixture of modern cloud services and older regional systems. Several teams have built solutions independently, creating architectural inconsistency and unclear trust boundaries.</p>
+<ul>
+<li><strong>Customer platform:</strong> booking, payments, profiles, emergency contacts, health declarations, and travel history.</li>
+<li><strong>Guide mobile app:</strong> trip manifests, offline route data, GPS tracking, emergency alerts, and customer safety notes.</li>
+<li><strong>IoT and field devices:</strong> GPS trackers, satellite communicators, smart wearables, and rental equipment sensors.</li>
+<li><strong>Social platform:</strong> user profiles, photos, videos, private messages, reviews, and community groups.</li>
+<li><strong>Analytics platform:</strong> personalization, fraud detection, trip recommendations, and operational dashboards.</li>
+<li><strong>Cloud infrastructure:</strong> multi-region hosting, API gateways, object storage, managed databases, and CI/CD pipelines.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Architecture concerns</h3>
+<ul>
+<li>Trust boundaries between mobile apps, APIs, cloud services, partners, and IoT devices are unclear.</li>
+<li>Some APIs are directly reachable from the internet without consistent gateway controls.</li>
+<li>Encryption is used in many places, but key ownership and rotation practices differ between teams.</li>
+<li>Older regional systems exchange data with the cloud platform through poorly documented integrations.</li>
+<li>Developers disagree whether the architecture should prioritize speed of delivery, strict isolation, or operational resilience.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Safety-critical pressure</h3>
+<ul>
+<li>GPS and emergency-alert services must remain available during remote expeditions.</li>
+<li>Guides need offline access, but cached data creates confidentiality and integrity risks.</li>
+<li>IoT devices may be lost, stolen, tampered with, or used in harsh environments.</li>
+<li>Customers expect privacy, but also expect real-time sharing and safety monitoring.</li>
+<li>Management wants one architecture that supports security, scalability, and rapid product innovation.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable" style="margin-top:18px">
+<strong>Management request:</strong> “Design a security architecture that protects customers, supports global growth, secures mobile and IoT systems, and keeps safety-critical services resilient.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze architecture scenario and identify <strong>key challenges related to security architecture and engineering</strong>.</p>
+<ul>
+<li>Where are the most important <strong>trust boundaries</strong>?</li>
+<li>Which components require <strong>strong isolation</strong>?</li>
+<li>Where should <strong>encryption, hashing, and key management</strong> be applied?</li>
+<li>Which systems are <strong>safety-critical</strong> and require resilience or fault tolerance?</li>
+<li>How should mobile, cloud, IoT, and legacy systems be integrated securely?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 3 challenges</h3>
+<p>Group your findings under secure architecture, cryptographic design, trusted components, mobile and IoT security, system isolation, and resilience.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 3 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 3 concepts and explain why that concept is relevant for engineering secure TrailBlaze systems.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 architecture and engineering challenges</strong>, each linked to one or more Domain 3 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 3 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge architecture"><h3>Security Architecture &amp; Trust Boundaries</h3><ul>
+<li>Trust boundaries between customers, guides, APIs, partners, and cloud services are poorly defined.</li>
+<li>Public APIs, internal services, and partner integrations require different security zones.</li>
+<li>The architecture lacks a consistent defense-in-depth model across regions and platforms.</li>
+</ul></div>
+<div class="challenge crypto"><h3>Cryptography &amp; Key Management</h3><ul>
+<li>Encryption is used inconsistently across mobile apps, databases, object storage, and backups.</li>
+<li>Key ownership, rotation, storage, and revocation are not standardized.</li>
+<li>Digital signatures may be needed for firmware, mobile updates, and critical safety messages.</li>
+</ul></div>
+<div class="challenge mobile"><h3>Mobile and Offline Security</h3><ul>
+<li>Guide devices cache sensitive trip and health data for offline use.</li>
+<li>Lost or stolen mobile devices could expose customer information or route details.</li>
+<li>Offline synchronization creates integrity risks when data is changed without immediate server validation.</li>
+</ul></div>
+<div class="challenge iot"><h3>IoT and Field Device Security</h3><ul>
+<li>GPS trackers and wearables may be tampered with, stolen, or replaced by attackers.</li>
+<li>Firmware update mechanisms may lack strong validation.</li>
+<li>Field devices need secure boot, device identity, and tamper-resistant design where feasible.</li>
+</ul></div>
+<div class="challenge resilience"><h3>Availability and Resilience</h3><ul>
+<li>Emergency alerting and GPS tracking are safety-critical and require high availability.</li>
+<li>Remote regions may have unstable connectivity, requiring resilient offline/online design.</li>
+<li>Multi-region cloud architecture must handle failures without losing critical expedition data.</li>
+</ul></div>
+<div class="challenge architecture"><h3>Legacy Integration and Secure Design</h3><ul>
+<li>Older regional systems exchange data with new cloud services through unclear interfaces.</li>
+<li>Legacy systems may not support modern encryption, identity, or logging controls.</li>
+<li>Secure architecture patterns are needed to isolate and modernize risky integrations.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 3 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 3 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 3 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Unclear boundaries between apps, APIs, partners, and cloud services</td><td><strong>Security Architecture / Security Boundary</strong></td><td>Security boundaries define where trust changes and where controls such as authentication, segmentation, and validation must be enforced.</td></tr>
+<tr><td>Multiple platforms with inconsistent controls</td><td><strong>Defense in Depth</strong></td><td>Layered controls reduce dependence on any single mechanism and help protect complex, distributed systems.</td></tr>
+<tr><td>Guide devices cache sensitive data offline</td><td><strong>Secure Storage / Encryption / Least Privilege</strong></td><td>Offline data requires encryption, restricted access, and minimal local storage to reduce exposure if devices are lost.</td></tr>
+<tr><td>Inconsistent encryption and key practices</td><td><strong>Cryptography / Key Management</strong></td><td>Encryption is only effective if keys are generated, stored, rotated, and revoked securely.</td></tr>
+<tr><td>Firmware updates for GPS trackers are not strongly validated</td><td><strong>Secure Boot / Digital Signature / Secure Firmware</strong></td><td>Devices should verify trusted firmware before execution to prevent malicious updates or tampering.</td></tr>
+<tr><td>IoT devices may be stolen or physically manipulated</td><td><strong>Secure Hardware / Trusted Computing / Tamper Resistance</strong></td><td>Field devices need protections that reduce the impact of physical access by attackers.</td></tr>
+<tr><td>Emergency services must remain available during outages</td><td><strong>Resilience / Fault Tolerance / Redundancy</strong></td><td>Safety-critical systems require redundant components, failover, and offline continuity strategies.</td></tr>
+<tr><td>Legacy systems connect to modern cloud APIs</td><td><strong>Secure Architecture Pattern / Isolation</strong></td><td>Risky legacy systems should be isolated through gateways, controlled interfaces, and compensating controls.</td></tr>
+<tr><td>Social platform processes untrusted user content</td><td><strong>Sandboxing / Input Validation / Secure Design</strong></td><td>User-generated content should be isolated and validated to prevent compromise of other services.</td></tr>
+<tr><td>Architecture prioritizes speed over secure design</td><td><strong>Secure Design / Threat Modeling</strong></td><td>Security requirements should be included early so design trade-offs are understood before implementation.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Analyze architecture</h3><p>Identify security boundaries, trust relationships, and risky integrations in a distributed platform.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Apply secure design</h3><p>Use defense in depth, least privilege, isolation, and secure architecture patterns to reduce risk.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Use cryptography appropriately</h3><p>Explain where encryption, signatures, hashing, certificates, and key management are needed.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Engineer resilience</h3><p>Design availability, redundancy, and fault-tolerance mechanisms for safety-critical services.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Draw the architecture</h3><p>Students sketch systems, data flows, trust boundaries, and external dependencies.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Find weak design points</h3><p>Students identify where confidentiality, integrity, or availability could fail.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Engineer controls</h3><p>Students propose architectural controls, cryptographic protections, and resilience improvements.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 3 Security Architecture and Engineering classroom case</div></footer>
+</body>
+</html>

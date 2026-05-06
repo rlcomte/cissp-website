@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrailBlaze Adventures – Domain 4 Communication and Network Security Case</title>
+<style>
+:root{--bg:#f6f8fb;--panel:#fff;--ink:#172033;--muted:#5f6f89;--line:#d9e2ef;--accent:#2457a6;--accent-2:#eaf1ff;--green:#e8f7ee;--yellow:#fff4dd;--red:#fdecec;--blue:#eaf1ff;--purple:#f0eafe;--shadow:0 12px 30px rgba(20,35,60,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,#17396f,#2d69c4);color:#fff;padding:64px 24px 56px}.wrap{max-width:1180px;margin:0 auto}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;font-weight:700;opacity:.85;margin-bottom:10px}
+h1{font-size:clamp(2rem,4vw,4rem);line-height:1.05;margin:0 0 18px;max-width:980px}.subtitle{font-size:1.16rem;max-width:850px;color:rgba(255,255,255,.9);margin:0}
+nav{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 24px}nav a{color:var(--accent);text-decoration:none;font-weight:700;white-space:nowrap;font-size:.95rem}
+main{padding:34px 24px 72px}.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;margin:0 auto 34px}h2{margin-top:0;font-size:1.75rem;line-height:1.2}h3{margin-bottom:8px;color:#183966}.lead{font-size:1.08rem;color:#34445f}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fbfdff}.mini p{margin-bottom:0;color:var(--muted)}.tag{display:inline-flex;align-items:center;border-radius:999px;background:var(--accent-2);color:var(--accent);padding:4px 10px;font-weight:700;font-size:.8rem;margin-bottom:8px}.callout{border-left:5px solid var(--accent);background:#fbfdff;padding:18px 20px;border-radius:14px}.challenge{border-radius:18px;border:1px solid var(--line);padding:20px;background:#fbfdff}.challenge h3{margin-top:0}.network{background:var(--blue)}.remote{background:var(--yellow)}.wireless{background:var(--red)}.monitoring{background:var(--green)}.api{background:var(--purple)}
+table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;font-size:.95rem}th,td{border-bottom:1px solid var(--line);padding:13px 14px;vertical-align:top;text-align:left}th{background:#eaf1ff;color:#17396f}tr:nth-child(even) td{background:#fbfdff}td:first-child{font-weight:800;color:#17396f;width:270px}.deliverable{background:#fff4dd;border:1px solid #eed39b;border-radius:18px;padding:20px}.phase{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;margin-bottom:14px}.phase-num{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:900;font-size:1.2rem}li{margin-bottom:8px}footer{padding:28px 24px;background:#172033;color:rgba(255,255,255,.78)}@media(max-width:850px){.grid,.two-col{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">TrailBlaze Adventures · CISSP Domain 4 Case</div>
+<h1>Communication and Network Security</h1>
+<p class="subtitle">A classroom and workshop case about securing global connectivity, APIs, mobile communications, partner networks, field operations, and data in transit.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="#scenario">Scenario</a>
+<a href="#assignment">Student assignment</a>
+<a href="#challenges">Domain 4 challenges</a>
+<a href="#mapping">Concept mapping</a>
+<a href="#outcomes">Learning outcomes</a>
+<a href="#instructor">Instructor tip</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="scenario" class="card">
+<h2>Scenario — TrailBlaze Adventures Global Connectivity Challenge</h2>
+<p class="lead">TrailBlaze Adventures depends on secure, reliable communication between customers, guides, partners, cloud services, mobile apps, IoT devices, and regional offices across the world.</p>
+<p>The company’s network environment is highly distributed. Customers book and share journeys through web and mobile platforms, guides operate in remote regions, local partners connect through APIs, and safety devices transmit GPS and emergency data over unstable networks.</p>
+<ul>
+<li><strong>Customer access:</strong> public web platform, mobile app, social platform, payments, and profile services.</li>
+<li><strong>Guide connectivity:</strong> mobile devices, satellite communication, offline synchronization, and emergency-alert workflows.</li>
+<li><strong>Partner integration:</strong> local operators, transport providers, rental partners, payment providers, and insurance partners.</li>
+<li><strong>Cloud networking:</strong> multi-region services, API gateways, load balancers, databases, object storage, and logging systems.</li>
+<li><strong>IoT communications:</strong> GPS trackers, smart wearables, rental sensors, and field devices transmitting operational data.</li>
+<li><strong>Corporate connectivity:</strong> remote employees, regional offices, support teams, and administrators accessing internal systems.</li>
+</ul>
+<div class="two-col">
+<div class="callout">
+<h3>Current network concerns</h3>
+<ul>
+<li>Some APIs are exposed directly to the internet without consistent gateway, firewall, or rate-limiting controls.</li>
+<li>Network segmentation between public services, internal systems, analytics, and partner integrations is inconsistent.</li>
+<li>Remote guides use hotel Wi-Fi, mobile networks, and satellite links with varying levels of security and reliability.</li>
+<li>TLS is widely used, but certificate management, protocol versions, and configuration standards differ between teams.</li>
+<li>DNS records for regional services are managed by different teams, creating risk of misconfiguration or hijacking.</li>
+</ul>
+</div>
+<div class="callout">
+<h3>Operational pressure</h3>
+<ul>
+<li>Emergency alerts and GPS tracking must work even when connectivity is unstable or slow.</li>
+<li>Customers expect fast access to social media features, images, videos, and booking services worldwide.</li>
+<li>Partners need limited network access, but must not gain visibility into internal TrailBlaze systems.</li>
+<li>Support staff require secure remote access from many countries and time zones.</li>
+<li>Management wants stronger monitoring without slowing down product innovation or field operations.</li>
+</ul>
+</div>
+</div>
+<div class="deliverable" style="margin-top:18px">
+<strong>Management request:</strong> “Design a communication and network security approach that protects global connectivity, secures data in transit, isolates risky systems, and keeps safety-critical services available.”
+</div>
+</section>
+
+<section id="assignment" class="card">
+<h2>Student assignment</h2>
+<div class="phase"><div class="phase-num">1</div><div>
+<h3>Investigate the case</h3>
+<p>Analyze the TrailBlaze connectivity scenario and identify <strong>key challenges related to communication and network security</strong>.</p>
+<ul>
+<li>Which communication paths carry sensitive or safety-critical data?</li>
+<li>Where should segmentation, isolation, or firewall rules be applied?</li>
+<li>Which systems require TLS, VPN, secure routing, or stronger authentication?</li>
+<li>Where could attackers intercept, manipulate, or disrupt communication?</li>
+<li>How should TrailBlaze monitor global network traffic without overwhelming operations?</li>
+</ul>
+</div></div>
+<div class="phase"><div class="phase-num">2</div><div>
+<h3>Identify Domain 4 challenges</h3>
+<p>Group your findings under network architecture, segmentation, secure protocols, remote access, wireless and field networks, DNS/TLS, API exposure, and monitoring.</p>
+</div></div>
+<div class="phase"><div class="phase-num">3</div><div>
+<h3>Link challenges to Domain 4 concepts</h3>
+<p>Connect each identified challenge to CISSP Domain 4 concepts and explain why that concept is relevant for securing TrailBlaze communication.</p>
+</div></div>
+<div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 communication and network security challenges</strong>, each linked to one or more Domain 4 concepts.</div>
+</section>
+
+<section id="challenges" class="card">
+<h2>Domain 4 challenges to investigate</h2>
+<div class="grid">
+<div class="challenge network"><h3>Network Architecture &amp; Segmentation</h3><ul>
+<li>Public services, internal systems, partner APIs, and analytics platforms are not consistently separated.</li>
+<li>Regional cloud environments use different network designs and firewall rules.</li>
+<li>Attackers compromising the social platform may be able to move toward internal services.</li>
+</ul></div>
+<div class="challenge api"><h3>API Exposure and Perimeter Controls</h3><ul>
+<li>Some APIs are internet-facing without consistent API gateway protection.</li>
+<li>Rate limiting, traffic filtering, and application firewall controls are uneven.</li>
+<li>Partner integrations need controlled access without exposing internal networks.</li>
+</ul></div>
+<div class="challenge remote"><h3>Remote Access and Global Workforce</h3><ul>
+<li>Guides and support staff connect from untrusted networks across many countries.</li>
+<li>VPN use is inconsistent, and some teams prefer direct cloud access.</li>
+<li>Remote administration requires strong authentication and restricted network paths.</li>
+</ul></div>
+<div class="challenge wireless"><h3>Wireless and Field Communications</h3><ul>
+<li>Guides use hotel Wi-Fi, mobile networks, and satellite links in remote regions.</li>
+<li>GPS trackers and IoT devices transmit data over unreliable and sometimes untrusted links.</li>
+<li>Offline synchronization can cause delayed, duplicated, or conflicting network updates.</li>
+</ul></div>
+<div class="challenge monitoring"><h3>Monitoring, Logging, and Detection</h3><ul>
+<li>Network logs are distributed across cloud regions, partners, and field systems.</li>
+<li>Suspicious traffic patterns are difficult to correlate across services.</li>
+<li>IDS/IPS coverage is inconsistent between public, internal, and partner-facing networks.</li>
+</ul></div>
+<div class="challenge api"><h3>DNS, TLS, and Secure Protocols</h3><ul>
+<li>Certificate configuration differs between regions and services.</li>
+<li>DNS records are managed by different teams, creating misconfiguration risk.</li>
+<li>Legacy integrations may rely on older protocols or weak encryption settings.</li>
+</ul></div>
+</div>
+</section>
+
+<section id="mapping" class="card">
+<h2>Link challenges to Domain 4 concepts</h2>
+<p>Students must connect each identified challenge to <strong>CISSP Domain 4 concepts</strong>.</p>
+<table>
+<thead><tr><th>Challenge</th><th>Domain 4 Concept</th><th>Explanation</th></tr></thead>
+<tbody>
+<tr><td>Public, internal, partner, and analytics systems are not consistently separated</td><td><strong>Network Architecture / Network Segmentation</strong></td><td>Segmentation limits attacker movement and allows different security controls for different trust zones.</td></tr>
+<tr><td>Social platform compromise could expose internal systems</td><td><strong>DMZ / Network Isolation</strong></td><td>Public-facing services should be isolated from sensitive internal systems through DMZ-style network design.</td></tr>
+<tr><td>APIs exposed directly to the internet</td><td><strong>Firewall / Proxy / Application Firewall</strong></td><td>Perimeter and application-layer controls filter traffic, enforce rules, and reduce exposure of backend services.</td></tr>
+<tr><td>Partner systems need limited access</td><td><strong>Network Access Control / Secure Gateway</strong></td><td>Partner connectivity should be authenticated, restricted, monitored, and separated from internal networks.</td></tr>
+<tr><td>Guides connect from untrusted networks</td><td><strong>VPN / Secure Remote Access</strong></td><td>Encrypted tunnels and strong access controls protect communication over hotel Wi-Fi, mobile networks, or satellite links.</td></tr>
+<tr><td>Customer data and GPS data travel over networks</td><td><strong>TLS / Encryption in Transit</strong></td><td>Sensitive data must be encrypted during transmission to protect confidentiality and integrity.</td></tr>
+<tr><td>Certificate configuration differs between services</td><td><strong>TLS Configuration / Certificate Management</strong></td><td>Secure communication depends on properly configured certificates, protocols, and cryptographic settings.</td></tr>
+<tr><td>DNS records are managed inconsistently</td><td><strong>DNS Security / DNSSEC</strong></td><td>DNS misconfiguration or manipulation can redirect users or disrupt services, so DNS must be protected and governed.</td></tr>
+<tr><td>Network logs are difficult to correlate globally</td><td><strong>Network Monitoring / Network Logging</strong></td><td>Centralized logging and monitoring help detect suspicious activity across distributed environments.</td></tr>
+<tr><td>Emergency alerts must remain available during connectivity problems</td><td><strong>Network Resilience / Service Availability</strong></td><td>Safety-critical communications require redundancy, fallback channels, and resilient network design.</td></tr>
+<tr><td>IoT trackers communicate over unstable networks</td><td><strong>Secure Communication / Wireless Security</strong></td><td>Field devices require authenticated, encrypted, and reliable communication despite untrusted or unreliable networks.</td></tr>
+<tr><td>Legacy integrations use weak protocols</td><td><strong>Secure Protocols / Network Hardening</strong></td><td>Older protocols should be replaced or isolated to reduce exposure to interception or exploitation.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="outcomes" class="card">
+<h2>Learning outcomes</h2>
+<div class="grid">
+<div class="mini"><span class="tag">Outcome 1</span><h3>Analyze network architecture</h3><p>Identify communication paths, trust zones, and segmentation needs in a global distributed platform.</p></div>
+<div class="mini"><span class="tag">Outcome 2</span><h3>Protect data in transit</h3><p>Explain where TLS, VPNs, secure protocols, and certificate management are required.</p></div>
+<div class="mini"><span class="tag">Outcome 3</span><h3>Secure remote and partner access</h3><p>Design controls for guides, support staff, partners, APIs, and untrusted networks.</p></div>
+<div class="mini"><span class="tag">Outcome 4</span><h3>Monitor and maintain availability</h3><p>Apply network monitoring, logging, resilience, and availability concepts to safety-critical services.</p></div>
+</div>
+</section>
+
+<section id="instructor" class="card">
+<h2>Instructor tip</h2>
+<p>Use this case in <strong>three phases</strong>:</p>
+<div class="grid">
+<div class="mini"><span class="tag">Phase 1</span><h3>Map communication paths</h3><p>Students draw how customers, guides, APIs, cloud systems, partners, and IoT devices communicate.</p></div>
+<div class="mini"><span class="tag">Phase 2</span><h3>Find network risks</h3><p>Students identify exposed APIs, weak segmentation, insecure remote access, and monitoring gaps.</p></div>
+<div class="mini"><span class="tag">Phase 3</span><h3>Design controls</h3><p>Students propose segmentation, encryption, secure protocols, remote access controls, and monitoring improvements.</p></div>
+</div>
+</section>
+
+</main>
+<footer><div class="wrap">TrailBlaze Adventures · Domain 4 Communication and Network Security classroom case</div></footer>
+</body>
+</html>

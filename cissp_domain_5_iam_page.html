@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CISSP Domain 5 – Identity and Access Management</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>Identity and Access Management</h1>
+<p>Designing systems that ensure only authorized identities access resources securely and efficiently.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="cissp_homepage.html">Home</a>
+<a href="#intro">Intro</a>
+<a href="#figures">Figures</a>
+<a href="#cases">Cases</a>
+<a href="#glossary">Glossary</a>
+</div>
+</nav>
+<main class="wrap">
+<section id="intro" class="card">
+<h2>Introduction</h2>
+<p>Identity and Access Management (IAM) ensures that users, devices, and services are properly identified, authenticated, and authorized before accessing resources. It is a central control point for enforcing security policies.</p>
+<p>For ICT professionals, IAM failures are a leading cause of breaches. Poor authentication, excessive privileges, or weak lifecycle management can allow attackers to gain and maintain access.</p>
+<div class="grid">
+<div><strong>Outcome 1</strong><p>Understand authentication mechanisms and identity verification methods.</p></div>
+<div><strong>Outcome 2</strong><p>Apply access control models such as RBAC and ABAC effectively.</p></div>
+<div><strong>Outcome 3</strong><p>Manage identity lifecycle and enforce governance policies.</p></div>
+</div>
+</section>
+<section id="figures" class="card">
+<h2>Figures</h2>
+<div class="figure">
+<h3>Authentication Flow</h3>
+<div class="flow">
+<div>Identify</div>
+<div>Authenticate</div>
+<div>Authorize</div>
+<div>Access</div>
+</div>
+</div>
+<div class="figure">
+<h3>Access Control Models</h3>
+<div class="models">
+<div><strong>RBAC</strong><p>Access based on roles assigned to users.</p></div>
+<div><strong>ABAC</strong><p>Access based on attributes and context.</p></div>
+<div><strong>MAC/DAC</strong><p>System vs owner-controlled access decisions.</p></div>
+</div>
+</div>
+</section>
+<section id="cases" class="card">
+<h2>Case Examples</h2>
+<div class="case">
+<h3>Credential Theft</h3>
+<p>Attackers obtain passwords via phishing and access systems.</p>
+<ul><li>MFA reduces risk</li><li>Monitor anomalies</li></ul>
+</div>
+<div class="case">
+<h3>Privilege Escalation</h3>
+<p>User gains higher permissions than intended.</p>
+<ul><li>Apply least privilege</li><li>Review access regularly</li></ul>
+</div>
+</section>
+<section id="glossary" class="card">
+<h2>Glossary (50 Terms)</h2>
+<table>
+<tr><th>#</th><th>Term</th><th>Definition</th></tr>
+<tr><td>1</td><td>Identity</td><td>A unique digital representation of a user, system, or service that enables authentication, authorization, and accountability within an information system environment.</td></tr>
+<tr><td>2</td><td>Authentication</td><td>The process of verifying a claimed identity using credentials such as passwords, tokens, or biometrics before granting access to systems or data.</td></tr>
+<tr><td>3</td><td>Authorization</td><td>The process of determining what actions an authenticated identity is allowed to perform, based on policies, roles, or contextual attributes.</td></tr>
+<tr><td>4</td><td>Access Control</td><td>A set of mechanisms and policies that restrict access to resources, ensuring only authorized users or systems can perform specific actions.</td></tr>
+<tr><td>5</td><td>MFA</td><td>Multi-factor authentication requires multiple independent credentials, such as something you know, have, or are, significantly improving resistance to credential theft attacks.</td></tr>
+<tr><td>6</td><td>RBAC</td><td>Role-Based Access Control assigns permissions based on predefined roles within an organization, simplifying management and ensuring consistent access rights aligned with job functions.</td></tr>
+<tr><td>7</td><td>ABAC</td><td>Attribute-Based Access Control evaluates multiple attributes such as user role, device, time, and location to dynamically determine whether access should be granted.</td></tr>
+<tr><td>8</td><td>Least Privilege</td><td>A security principle ensuring users and systems receive only the minimum permissions necessary to perform tasks, reducing potential damage from misuse or compromise.</td></tr>
+<tr><td>9</td><td>Provisioning</td><td>The process of creating user accounts and assigning appropriate roles and permissions based on job responsibilities and organizational policies.</td></tr>
+<tr><td>10</td><td>Deprovisioning</td><td>The process of removing user accounts and revoking access rights when they are no longer required, such as after role changes or termination.</td></tr>
+<tr><td>11</td><td>Identity Lifecycle</td><td>The complete management process of identities from creation and maintenance to eventual removal, ensuring access rights remain appropriate over time.</td></tr>
+<tr><td>12</td><td>SSO</td><td>Single Sign-On allows users to authenticate once and access multiple systems without re-entering credentials, improving usability while requiring strong security controls.</td></tr>
+<tr><td>13</td><td>Federation</td><td>An identity management approach that enables multiple organizations or systems to share authentication information through trusted relationships and standardized protocols.</td></tr>
+<tr><td>14</td><td>Kerberos</td><td>A network authentication protocol that uses tickets and symmetric cryptography to securely verify identities without transmitting passwords over the network.</td></tr>
+<tr><td>15</td><td>SAML</td><td>Security Assertion Markup Language is a standard for exchanging authentication and authorization data between identity providers and service providers in federated environments.</td></tr>
+<tr><td>16</td><td>OAuth</td><td>An authorization framework that allows applications to access user resources on another service without exposing user credentials directly.</td></tr>
+<tr><td>17</td><td>OpenID Connect</td><td>An authentication protocol built on OAuth that verifies user identity and provides standardized identity information to applications.</td></tr>
+<tr><td>18</td><td>Privileged Account</td><td>An account with elevated permissions capable of modifying system configurations, managing users, or accessing sensitive data, requiring strict monitoring and controls.</td></tr>
+<tr><td>19</td><td>PAM</td><td>Privileged Access Management focuses on securing, monitoring, and controlling privileged accounts to reduce the risk of misuse or compromise.</td></tr>
+<tr><td>20</td><td>Directory Service</td><td>A centralized system that stores identity information, authentication data, and access permissions for users and devices within an organization.</td></tr>
+<tr><td>21</td><td>Biometrics</td><td>An authentication method using unique physical or behavioral characteristics such as fingerprints, facial recognition, or voice patterns to verify identity.</td></tr>
+<tr><td>22</td><td>Token</td><td>A physical or digital device used to generate or store authentication credentials, often as part of multi-factor authentication systems.</td></tr>
+<tr><td>23</td><td>Password Policy</td><td>A set of rules defining password complexity, length, expiration, and reuse to reduce the risk of weak or compromised credentials.</td></tr>
+<tr><td>24</td><td>Session Management</td><td>The process of securely maintaining user sessions after authentication, including handling session tokens, timeouts, and protection against hijacking attacks.</td></tr>
+<tr><td>25</td><td>Access Review</td><td>A periodic process of evaluating user permissions to ensure access rights remain appropriate and aligned with current roles and responsibilities.</td></tr>
+<tr><td>26</td><td>Identity Provider</td><td>A system responsible for authenticating users and issuing identity assertions that can be used by other systems for access decisions.</td></tr>
+<tr><td>27</td><td>Service Provider</td><td>An application or system that relies on an external identity provider to authenticate users and grant access to its resources.</td></tr>
+<tr><td>28</td><td>Adaptive Authentication</td><td>An authentication approach that dynamically adjusts required security measures based on contextual risk factors such as location or device.</td></tr>
+<tr><td>29</td><td>Account Lockout</td><td>A security control that disables an account after a number of failed login attempts to prevent brute force attacks.</td></tr>
+<tr><td>30</td><td>Credential Management</td><td>The processes and tools used to securely store, manage, and protect authentication credentials throughout their lifecycle.</td></tr>
+<tr><td>31</td><td>Zero Trust</td><td>A security model that assumes no implicit trust and requires continuous verification of identity and context for every access request.</td></tr>
+<tr><td>32</td><td>Identity Governance</td><td>A framework ensuring identity and access management processes comply with policies, regulations, and business requirements through oversight and controls.</td></tr>
+<tr><td>33</td><td>ACL</td><td>An Access Control List specifies which users or systems have access to a resource and defines the permitted actions for each entity.</td></tr>
+<tr><td>34</td><td>Role Engineering</td><td>The process of designing and defining roles and associated permissions within an organization to support efficient and secure access control.</td></tr>
+<tr><td>35</td><td>Identity Assurance</td><td>The level of confidence that an identity has been correctly verified, often based on the strength of authentication methods used.</td></tr>
+<tr><td>36</td><td>Identity Verification</td><td>The process of confirming an individual’s real-world identity before granting access to systems or sensitive information.</td></tr>
+<tr><td>37</td><td>Authentication Server</td><td>A system responsible for validating user credentials and confirming identity during login attempts.</td></tr>
+<tr><td>38</td><td>Authorization Server</td><td>A system that issues access tokens and enforces access control policies for authenticated users.</td></tr>
+<tr><td>39</td><td>Access Token</td><td>A credential issued after authentication that allows a user or system to access protected resources for a limited time.</td></tr>
+<tr><td>40</td><td>Federated Identity</td><td>An identity management approach that enables users to authenticate across multiple systems using a single identity provider.</td></tr>
+<tr><td>41</td><td>Single Factor Authentication</td><td>An authentication method using only one type of credential, typically a password, which provides lower security compared to multi-factor approaches.</td></tr>
+<tr><td>42</td><td>Strong Authentication</td><td>An authentication method using multiple or high-assurance factors to significantly reduce the likelihood of unauthorized access.</td></tr>
+<tr><td>43</td><td>Credential Stuffing</td><td>An attack where stolen credentials from one service are reused to gain unauthorized access to other systems.</td></tr>
+<tr><td>44</td><td>Brute Force Attack</td><td>An attack method that systematically attempts many password combinations until the correct one is found.</td></tr>
+<tr><td>45</td><td>Session Hijacking</td><td>An attack where an attacker takes over an active user session to gain unauthorized access to a system.</td></tr>
+<tr><td>46</td><td>Identity Store</td><td>A repository that contains user credentials, identity attributes, and authentication data used by identity management systems.</td></tr>
+<tr><td>47</td><td>Access Policy</td><td>A set of rules defining who can access resources and under what conditions, based on organizational security requirements.</td></tr>
+<tr><td>48</td><td>Delegation</td><td>The process of granting authority to another user or system to perform actions on behalf of an identity.</td></tr>
+<tr><td>49</td><td>Separation of Duties</td><td>A security principle that divides responsibilities among multiple individuals to reduce the risk of fraud or unauthorized actions.</td></tr>
+<tr><td>50</td><td>Identity Federation Protocol</td><td>A standardized protocol such as SAML or OAuth that enables secure sharing of identity and authentication information across systems.</td></tr>
+</table>
+</section>
+</main>
+</body>
+</html>

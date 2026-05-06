@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CISSP Domain 8 – Software Development Security</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>Software Development Security</h1>
+<p>Integrating security into the software lifecycle to prevent vulnerabilities through design, coding, testing, and deployment practices.</p>
+</div>
+</header>
+<nav>
+<div class="wrap">
+<a href="cissp_homepage.html">Home</a>
+<a href="#intro">Intro</a>
+<a href="#figures">Figures</a>
+<a href="#cases">Cases</a>
+<a href="#glossary">Glossary</a>
+</div>
+</nav>
+<main class="wrap">
+
+<section id="intro" class="card">
+<h2>Introduction</h2>
+<p>This domain focuses on embedding security throughout the Software Development Life Cycle (SDLC), including requirements, design, implementation, testing, deployment, and maintenance phases.</p>
+<p>For ICT professionals, most vulnerabilities originate during development. Applying secure design and coding practices early reduces risk, cost, and complexity later.</p>
+<div class="grid">
+<div><strong>Outcome 1</strong><p>Understand secure SDLC models and practices.</p></div>
+<div><strong>Outcome 2</strong><p>Identify and prevent common software vulnerabilities.</p></div>
+<div><strong>Outcome 3</strong><p>Apply testing and review techniques to ensure security.</p></div>
+</div>
+</section>
+
+<section id="figures" class="card">
+<h2>Figures</h2>
+<div class="figure">
+<h3>Secure SDLC</h3>
+<div class="flow">
+<div>Design</div>
+<div>Build</div>
+<div>Test</div>
+<div>Deploy</div>
+<div>Operate</div>
+<div>Improve</div>
+</div>
+</div>
+<div class="figure">
+<h3>Security Testing Types</h3>
+<div class="flow">
+<div>SAST</div>
+<div>DAST</div>
+<div>IAST</div>
+<div>RASP</div>
+<div>Fuzzing</div>
+<div>Code Review</div>
+</div>
+</div>
+</section>
+
+<section id="cases" class="card">
+<h2>Case Examples</h2>
+<div class="case">
+<h3>SQL Injection</h3>
+<p>Improper input validation allows attackers to manipulate database queries and access or modify sensitive data.</p>
+<ul><li>Use parameterized queries</li><li>Validate input properly</li></ul>
+</div>
+<div class="case">
+<h3>Vulnerable Dependency</h3>
+<p>Using outdated libraries introduces known vulnerabilities into applications, allowing attackers to exploit publicly documented weaknesses.</p>
+<ul><li>Use dependency scanning</li><li>Maintain updates</li></ul>
+</div>
+</section>
+
+<section id="glossary" class="card">
+<h2>Glossary (50 Terms)</h2>
+<table>
+<tr><th>#</th><th>Term</th><th>Definition</th></tr>
+<tr><td>1</td><td>SDLC</td><td>The structured process of planning, designing, building, testing, deploying, and maintaining software systems with integrated security practices.</td></tr>
+<tr><td>2</td><td>Secure Coding</td><td>Practices that ensure software is written to prevent vulnerabilities such as injection, buffer overflows, and improper input handling.</td></tr>
+<tr><td>3</td><td>Threat Modeling</td><td>A process used during design to identify potential threats, vulnerabilities, and mitigations before implementation begins.</td></tr>
+<tr><td>4</td><td>SAST</td><td>Static Application Security Testing analyzes source code without execution to identify vulnerabilities early in the development process.</td></tr>
+<tr><td>5</td><td>DAST</td><td>Dynamic Application Security Testing evaluates running applications to identify vulnerabilities during execution.</td></tr>
+<tr><td>6</td><td>IAST</td><td>Interactive Application Security Testing combines static and dynamic techniques by analyzing applications during runtime with instrumentation.</td></tr>
+<tr><td>7</td><td>RASP</td><td>Runtime Application Self-Protection monitors application behavior and blocks attacks during execution in real time.</td></tr>
+<tr><td>8</td><td>Fuzz Testing</td><td>Testing technique that sends random or malformed input to identify unexpected behavior and vulnerabilities.</td></tr>
+<tr><td>9</td><td>Code Review</td><td>Manual or automated examination of source code to identify security flaws and ensure adherence to secure coding standards.</td></tr>
+<tr><td>10</td><td>Input Validation</td><td>Ensuring that user input is properly checked and sanitized to prevent injection and other attacks.</td></tr>
+<tr><td>11</td><td>Output Encoding</td><td>Encoding data before output to prevent injection attacks such as cross-site scripting.</td></tr>
+<tr><td>12</td><td>Authentication Logic</td><td>Code that verifies user identity and must be implemented securely to prevent bypass or exploitation.</td></tr>
+<tr><td>13</td><td>Session Management</td><td>Handling user sessions securely, including session tokens, expiration, and protection against hijacking.</td></tr>
+<tr><td>14</td><td>Dependency Management</td><td>Managing third-party libraries to ensure they are secure and up to date.</td></tr>
+<tr><td>15</td><td>OWASP Top 10</td><td>A widely recognized list of common web application security risks used as a guideline for secure development.</td></tr>
+<tr><td>16</td><td>Buffer Overflow</td><td>A vulnerability where data exceeds allocated memory, potentially allowing execution of malicious code.</td></tr>
+<tr><td>17</td><td>SQL Injection</td><td>An attack that manipulates database queries through unsanitized input to access or modify data.</td></tr>
+<tr><td>18</td><td>XSS</td><td>Cross-site scripting allows attackers to inject malicious scripts into web applications viewed by other users.</td></tr>
+<tr><td>19</td><td>CSRF</td><td>Cross-site request forgery tricks users into performing unintended actions on authenticated applications.</td></tr>
+<tr><td>20</td><td>Secure Design</td><td>Incorporating security principles into system architecture from the beginning of development.</td></tr>
+<tr><td>21</td><td>DevSecOps</td><td>Integrating security practices into DevOps workflows to ensure continuous security throughout development.</td></tr>
+<tr><td>22</td><td>CI/CD</td><td>Continuous integration and deployment pipelines that automate building, testing, and deploying software.</td></tr>
+<tr><td>23</td><td>Code Signing</td><td>Using digital signatures to verify the authenticity and integrity of software code.</td></tr>
+<tr><td>24</td><td>Secure Build</td><td>Ensuring that build processes are protected against tampering and produce trusted outputs.</td></tr>
+<tr><td>25</td><td>Secrets Management</td><td>Secure handling of credentials such as API keys and passwords within applications.</td></tr>
+<tr><td>26</td><td>Static Analysis</td><td>Analyzing code without execution to identify vulnerabilities and coding issues.</td></tr>
+<tr><td>27</td><td>Dynamic Analysis</td><td>Analyzing applications during execution to detect runtime vulnerabilities.</td></tr>
+<tr><td>28</td><td>Software Assurance</td><td>Confidence that software is free from vulnerabilities and functions as intended securely.</td></tr>
+<tr><td>29</td><td>Security Requirements</td><td>Defined security expectations that must be met during software development.</td></tr>
+<tr><td>30</td><td>Secure API</td><td>Designing APIs with proper authentication, validation, and access controls to prevent misuse.</td></tr>
+<tr><td>31</td><td>Microservices Security</td><td>Protecting distributed services through secure communication and isolation.</td></tr>
+<tr><td>32</td><td>Container Security</td><td>Ensuring containers are securely configured and isolated from other environments.</td></tr>
+<tr><td>33</td><td>Supply Chain Security</td><td>Protecting software from vulnerabilities introduced through third-party components or processes.</td></tr>
+<tr><td>34</td><td>Vulnerability Management</td><td>Identifying, prioritizing, and fixing software vulnerabilities throughout its lifecycle.</td></tr>
+<tr><td>35</td><td>Patch Management</td><td>Applying updates to fix software vulnerabilities and improve security.</td></tr>
+<tr><td>36</td><td>Security Testing</td><td>Evaluating applications to identify vulnerabilities and weaknesses.</td></tr>
+<tr><td>37</td><td>Secure Deployment</td><td>Ensuring applications are deployed in hardened and secure environments.</td></tr>
+<tr><td>38</td><td>Logging</td><td>Recording application events to support monitoring and incident investigation.</td></tr>
+<tr><td>39</td><td>Monitoring</td><td>Observing application behavior to detect anomalies and threats.</td></tr>
+<tr><td>40</td><td>Secure Configuration</td><td>Applying secure settings to systems and applications to reduce attack surface.</td></tr>
+<tr><td>41</td><td>Hardening</td><td>Reducing vulnerabilities by disabling unnecessary features and applying secure configurations.</td></tr>
+<tr><td>42</td><td>Secure Defaults</td><td>Designing systems with secure configurations enabled by default.</td></tr>
+<tr><td>43</td><td>Error Handling</td><td>Managing errors securely to avoid revealing sensitive information.</td></tr>
+<tr><td>44</td><td>Code Quality</td><td>Maintaining high standards in code to reduce bugs and vulnerabilities.</td></tr>
+<tr><td>45</td><td>Security Review</td><td>Evaluating software for compliance with security requirements and best practices.</td></tr>
+<tr><td>46</td><td>Penetration Testing</td><td>Simulating attacks against applications to identify exploitable vulnerabilities.</td></tr>
+<tr><td>47</td><td>Compliance</td><td>Ensuring software meets regulatory and organizational security standards.</td></tr>
+<tr><td>48</td><td>Security Architecture</td><td>Designing application structures that enforce security principles and controls.</td></tr>
+<tr><td>49</td><td>Continuous Improvement</td><td>Iteratively improving software security based on testing results and emerging threats.</td></tr>
+<tr><td>50</td><td>Secure Lifecycle</td><td>Integrating security practices throughout all phases of software development and maintenance.</td></tr>
+</table>
+</section>
+
+</main>
+</body>
+</html>
