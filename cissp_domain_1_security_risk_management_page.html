@@ -41,16 +41,25 @@
           <span class="tag">Learning outcome 1</span>
           <h3>Explain security objectives</h3>
           <p>Describe confidentiality, integrity, availability, and how these principles influence technical and organizational controls.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="cia-dialog" aria-label="Open CIA triad image">
+            <img src="images/cia.png" alt="CIA triad overview" />
+          </button>
         </div>
         <div class="mini">
           <span class="tag">Learning outcome 2</span>
           <h3>Reason about risk</h3>
           <p>Identify assets, threats, vulnerabilities, likelihood, and impact to choose suitable risk treatment options.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="riskcycle-dialog" aria-label="Open risk cycle image">
+            <img src="images/riskcycle2.png" alt="Risk management cycle overview" />
+          </button>
         </div>
         <div class="mini">
           <span class="tag">Learning outcome 3</span>
           <h3>Connect security to governance</h3>
           <p>Relate policies, standards, compliance, privacy, business continuity, and ethics to everyday ICT decisions.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="security-policy-governance-dialog" aria-label="Open security policy governance image">
+            <img src="images/security-policy-governance.png" alt="Security policy governance overview" />
+          </button>
         </div>
       </div>
     </section>
@@ -180,5 +189,38 @@
   <footer>
     <div class="wrap">CISSP Domain 1 teaching page · Security and Risk Management · Designed for undergraduate ICT education.</div>
   </footer>
+
+  <dialog class="image-dialog" id="security-policy-governance-dialog" aria-label="Security policy governance image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/security-policy-governance.png" alt="Security policy governance overview" />
+  </dialog>
+
+  <dialog class="image-dialog" id="cia-dialog" aria-label="CIA triad image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/cia.png" alt="CIA triad overview" />
+  </dialog>
+
+  <dialog class="image-dialog" id="riskcycle-dialog" aria-label="Risk cycle image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/riskcycle2.png" alt="Risk management cycle overview" />
+  </dialog>
+
+  <script>
+    const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+    imageDialogTriggers.forEach((trigger) => {
+      const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+      trigger.addEventListener("click", () => {
+        dialog.showModal();
+      });
+    });
+
+    document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.closest("dialog").close();
+      });
+    });
+  </script>
 </body>
 </html>
