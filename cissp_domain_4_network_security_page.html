@@ -25,14 +25,39 @@
   </div>
 </nav>
 <main class="wrap">
+  <section class="card image-panel">
+    <img class="panel-image" src="images/domain4-overview.png" alt="CISSP Domain 4 overview" />
+  </section>
+
   <section id="intro" class="card">
     <h2>Domain introduction</h2>
     <p>This domain focuses on how systems communicate and how those communications are protected. It covers network architectures, protocols, segmentation, encryption in transit, and monitoring controls.</p>
     <p>For ICT students, the key is understanding how data moves through networks and where controls such as firewalls, VPNs, and secure protocols should be applied.</p>
     <div class="grid">
-      <div class="mini"><span class="tag">Outcome 1</span><h3>Understand layers</h3><p>Explain OSI and TCP/IP models and where controls apply.</p></div>
-      <div class="mini"><span class="tag">Outcome 2</span><h3>Secure traffic</h3><p>Use TLS, VPNs, and secure protocols to protect data in transit.</p></div>
-      <div class="mini"><span class="tag">Outcome 3</span><h3>Segment networks</h3><p>Limit attack spread using segmentation and zoning.</p></div>
+      <div class="mini">
+        <span class="tag">Learning outcome 1</span>
+        <h3>Understand layers</h3>
+        <p>Explain OSI and TCP/IP models and where controls apply.</p>
+        <button class="thumbnail-button" type="button" data-dialog-target="domain4-communication-dialog" aria-label="Open communication layers image">
+          <img src="images/domain4-communication.png" alt="Communication layers overview" />
+        </button>
+      </div>
+      <div class="mini">
+        <span class="tag">Learning outcome 2</span>
+        <h3>Secure traffic</h3>
+        <p>Use TLS, VPNs, and secure protocols to protect data in transit.</p>
+        <button class="thumbnail-button" type="button" data-dialog-target="domain4-transit-dialog" aria-label="Open secure traffic image">
+          <img src="images/domain4-transit.png" alt="Secure traffic overview" />
+        </button>
+      </div>
+      <div class="mini">
+        <span class="tag">Learning outcome 3</span>
+        <h3>Segment networks</h3>
+        <p>Limit attack spread using segmentation and zoning.</p>
+        <button class="thumbnail-button" type="button" data-dialog-target="domain4-network-dialog" aria-label="Open network segmentation image">
+          <img src="images/domain4-network.png" alt="Network segmentation overview" />
+        </button>
+      </div>
     </div>
   </section>
 
@@ -154,5 +179,38 @@
   </section>
 </main>
 <footer><div class="wrap">CISSP Domain 4 teaching page · Communication and Network Security</div></footer>
+
+<dialog class="image-dialog" id="domain4-communication-dialog" aria-label="Communication layers image">
+  <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+  <img src="images/domain4-communication.png" alt="Communication layers overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain4-transit-dialog" aria-label="Secure traffic image">
+  <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+  <img src="images/domain4-transit.png" alt="Secure traffic overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain4-network-dialog" aria-label="Network segmentation image">
+  <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+  <img src="images/domain4-network.png" alt="Network segmentation overview" />
+</dialog>
+
+<script>
+  const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+  imageDialogTriggers.forEach((trigger) => {
+    const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+    trigger.addEventListener("click", () => {
+      dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.closest("dialog").close();
+    });
+  });
+</script>
 </body>
 </html>
