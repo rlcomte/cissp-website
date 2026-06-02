@@ -27,6 +27,10 @@
   </nav>
 
   <main class="wrap">
+    <section class="card image-panel">
+      <img class="panel-image" src="images/domain2-overview.png" alt="CISSP Domain 2 overview" />
+    </section>
+
     <section id="intro" class="card">
       <h2>Domain introduction</h2>
       <p>Asset Security focuses on protecting information and other valuable assets throughout their lifecycle. In practice, this means knowing what data exists, who owns it, how sensitive it is, where it is stored, who may access it, how long it must be retained, and how it should be destroyed when no longer needed.</p>
@@ -37,16 +41,25 @@
           <span class="tag">Learning outcome 1</span>
           <h3>Classify data</h3>
           <p>Explain how public, internal, confidential, and restricted data require different handling and protection measures.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="data-classification-dialog" aria-label="Open data classification image">
+            <img src="images/domain2-data-classification.png" alt="Data classification overview" />
+          </button>
         </div>
         <div class="mini">
           <span class="tag">Learning outcome 2</span>
           <h3>Manage lifecycle risks</h3>
           <p>Identify security risks during data creation, storage, use, sharing, archival, and disposal.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="data-lifecycle-dialog" aria-label="Open data lifecycle image">
+            <img src="images/domain2-data-lifecycle.png" alt="Data lifecycle overview" />
+          </button>
         </div>
         <div class="mini">
           <span class="tag">Learning outcome 3</span>
           <h3>Assign responsibility</h3>
           <p>Distinguish between data owners, custodians, stewards, and users in protecting organizational information.</p>
+          <button class="thumbnail-button" type="button" data-dialog-target="roles-responsibilities-dialog" aria-label="Open roles and responsibilities image">
+            <img src="images/domain2-roles-responsibilities.png" alt="Asset security roles and responsibilities overview" />
+          </button>
         </div>
       </div>
     </section>
@@ -72,6 +85,11 @@
           <div class="role-card"><span>Data Custodian</span>Operates systems and implements technical safeguards such as backups and encryption.</div>
           <div class="role-card"><span>Data Steward</span>Maintains data quality, consistency, and correct use across processes.</div>
         </div>
+      </div>
+
+      <h3>Figure 3 — Access control models</h3>
+      <div class="figure">
+        <img class="panel-image" src="images/domain2-access-models.png" alt="Access control models overview" />
       </div>
     </section>
 
@@ -177,5 +195,38 @@
   <footer>
     <div class="wrap">CISSP Domain 2 teaching page · Asset Security · Designed for undergraduate ICT education.</div>
   </footer>
+
+  <dialog class="image-dialog" id="data-classification-dialog" aria-label="Data classification image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/domain2-data-classification.png" alt="Data classification overview" />
+  </dialog>
+
+  <dialog class="image-dialog" id="data-lifecycle-dialog" aria-label="Data lifecycle image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/domain2-data-lifecycle.png" alt="Data lifecycle overview" />
+  </dialog>
+
+  <dialog class="image-dialog" id="roles-responsibilities-dialog" aria-label="Roles and responsibilities image">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+    <img src="images/domain2-roles-responsibilities.png" alt="Asset security roles and responsibilities overview" />
+  </dialog>
+
+  <script>
+    const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+    imageDialogTriggers.forEach((trigger) => {
+      const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+      trigger.addEventListener("click", () => {
+        dialog.showModal();
+      });
+    });
+
+    document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.closest("dialog").close();
+      });
+    });
+  </script>
 </body>
 </html>
