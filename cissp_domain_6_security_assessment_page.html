@@ -24,6 +24,10 @@
 </nav>
 <main class="wrap">
 
+<section class="card image-panel">
+<img class="panel-image" src="images/domain6-overview.png" alt="CISSP Domain 6 overview" />
+</section>
+
 <section id="intro" class="card">
 <h2>Introduction</h2>
 <p>This domain focuses on how organizations verify that security controls are properly implemented and effective. It includes testing, auditing, vulnerability management, and continuous monitoring.</p>
@@ -57,6 +61,14 @@
 <div>Pentest</div>
 <div>Audit</div>
 <div>Monitoring</div>
+</div>
+<div class="thumbnail-row">
+<button class="thumbnail-button" type="button" data-dialog-target="domain6-pentest-dialog" aria-label="Open penetration testing image">
+<img src="images/domain6-pentest.png" alt="Penetration testing overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain6-monitoring-dialog" aria-label="Open security monitoring image">
+<img src="images/domain6-monitoring.png" alt="Security monitoring overview" />
+</button>
 </div>
 </div>
 </section>
@@ -133,5 +145,33 @@
 </section>
 
 </main>
+
+<dialog class="image-dialog" id="domain6-pentest-dialog" aria-label="Penetration testing image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain6-pentest.png" alt="Penetration testing overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain6-monitoring-dialog" aria-label="Security monitoring image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain6-monitoring.png" alt="Security monitoring overview" />
+</dialog>
+
+<script>
+const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+imageDialogTriggers.forEach((trigger) => {
+const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+trigger.addEventListener("click", () => {
+dialog.showModal();
+});
+});
+
+document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+button.addEventListener("click", () => {
+button.closest("dialog").close();
+});
+});
+</script>
 </body>
 </html>

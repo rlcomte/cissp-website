@@ -225,6 +225,33 @@ h3 {
   border-radius: 10px;
 }
 
+.thumbnail-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(20, 35, 60, 0.08);
+}
+
+.thumbnail-row .thumbnail-button {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.thumbnail-row .thumbnail-button:hover,
+.thumbnail-row .thumbnail-button:focus-visible {
+  transform: none;
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
@@ -651,6 +678,10 @@ footer {
 
 @media (max-width: 600px) {
   .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnail-row {
     grid-template-columns: 1fr;
   }
 }
