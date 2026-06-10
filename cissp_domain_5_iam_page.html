@@ -23,6 +23,10 @@
 </div>
 </nav>
 <main class="wrap">
+<section class="card image-panel">
+<img class="panel-image" src="images/domain5-overview.png" alt="CISSP Domain 5 overview" />
+</section>
+
 <section id="intro" class="card">
 <h2>Introduction</h2>
 <p>Identity and Access Management (IAM) ensures that users, devices, and services are properly identified, authenticated, and authorized before accessing resources. It is a central control point for enforcing security policies.</p>
@@ -50,6 +54,20 @@
 <div><strong>RBAC</strong><p>Access based on roles assigned to users.</p></div>
 <div><strong>ABAC</strong><p>Access based on attributes and context.</p></div>
 <div><strong>MAC/DAC</strong><p>System vs owner-controlled access decisions.</p></div>
+</div>
+</div>
+<div class="figure">
+<h3>Identity, Authentication, and Authorization</h3>
+<div class="thumbnail-row thumbnail-row-three">
+<button class="thumbnail-button" type="button" data-dialog-target="domain5-identity-dialog" aria-label="Open identity image">
+<img src="images/domain5-identity.png" alt="Identity overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain5-authentication-dialog" aria-label="Open authentication image">
+<img src="images/domain5-authentication.png" alt="Authentication overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain5-authorization-dialog" aria-label="Open authorization image">
+<img src="images/domain5-authorization.png" alt="Authorization overview" />
+</button>
 </div>
 </div>
 </section>
@@ -123,5 +141,38 @@
 </table>
 </section>
 </main>
+
+<dialog class="image-dialog" id="domain5-identity-dialog" aria-label="Identity image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain5-identity.png" alt="Identity overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain5-authentication-dialog" aria-label="Authentication image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain5-authentication.png" alt="Authentication overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain5-authorization-dialog" aria-label="Authorization image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain5-authorization.png" alt="Authorization overview" />
+</dialog>
+
+<script>
+const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+imageDialogTriggers.forEach((trigger) => {
+const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+trigger.addEventListener("click", () => {
+dialog.showModal();
+});
+});
+
+document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+button.addEventListener("click", () => {
+button.closest("dialog").close();
+});
+});
+</script>
 </body>
 </html>
