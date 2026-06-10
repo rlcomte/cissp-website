@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opdracht: Secure Communication & Network Architecture voor TrailBlaze Adventures</title>
+  <style>
+    :root {
+      --navy: #082b4c;
+      --blue: #0b65c2;
+      --green: #2f7d32;
+      --orange: #f47b20;
+      --purple: #6a3fa0;
+      --teal: #008c95;
+      --red: #d93025;
+      --light: #f6f9fc;
+      --border: #d5e1ef;
+      --text: #102033;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
+      line-height: 1.55;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 42px 24px 36px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 16px auto 0;
+      max-width: 950px;
+      font-size: 1.25rem;
+      color: #dbeeff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    section, .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 4px 14px rgba(8, 43, 76, 0.06);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--navy);
+      border-bottom: 3px solid var(--blue);
+      padding-bottom: 8px;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+    }
+
+    .quote {
+      border-left: 6px solid var(--green);
+      background: #eef7ef;
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 18px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      background: var(--light);
+    }
+
+    .mini-card h3 { margin-top: 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.98rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--navy);
+      color: white;
+      text-align: left;
+    }
+
+    .measure-list {
+      columns: 2;
+      column-gap: 40px;
+    }
+
+    .measure-list li {
+      break-inside: avoid;
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+
+    .b-blue { background: var(--blue); }
+    .b-green { background: var(--green); }
+    .b-orange { background: var(--orange); }
+    .b-purple { background: var(--purple); }
+    .b-teal { background: var(--teal); }
+    .b-red { background: var(--red); }
+
+    .checklist li { margin-bottom: 8px; }
+
+    footer {
+      text-align: center;
+      color: #5a6b7a;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+
+    @media print {
+      body { background: white; }
+      section, .card { box-shadow: none; page-break-inside: avoid; }
+      header { background: #082b4c !important; color: white !important; }
+      .measure-list { columns: 2; }
+    }
+
+    @media (max-width: 700px) {
+      .measure-list { columns: 1; }
+      section, .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Secure Communication & Network Architecture</h1>
+    <p>Grote opdracht CISSP Domain 4 voor TrailBlaze Adventures</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Context</h2>
+      <p>TrailBlaze Adventures is een internationale aanbieder van outdoor- en adventure-activiteiten. De organisatie gebruikt een moderne digitale infrastructuur met cloud-native applicaties, mobiele apps, IoT-apparatuur, analytics, betaalsystemen, sociale media koppelingen en externe leveranciers.</p>
+      <p>Jullie zijn ingehuurd als cybersecurity consultants om een veilige communicatie- en netwerkarchitectuur te ontwerpen voor TrailBlaze.</p>
+      <div class="quote">Management-eis: ontwerp een netwerkarchitectuur die veilig, schaalbaar en beheersbaar is, waarbij communicatie tussen alle systemen adequaat wordt beschermd tegen cyberaanvallen.</div>
+    </section>
+
+    <section>
+      <h2>Leerdoelen</h2>
+      <ul class="checklist">
+        <li>Netwerksegmentatie ontwerpen.</li>
+        <li>Communicatiebeveiliging toepassen.</li>
+        <li>Netwerkrisico's analyseren.</li>
+        <li>Security controls selecteren en onderbouwen.</li>
+        <li>Een professionele security architectuur visualiseren.</li>
+        <li>Security maatregelen koppelen aan concrete dreigingen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Deliverable</h2>
+      <p>Maak een professionele architectuurplaat waarin alle onderdelen van de TrailBlaze infrastructuur voorkomen. De architectuurplaat moet worden voorzien van een toelichtend rapport.</p>
+      <div class="grid">
+        <div class="mini-card"><h3>Architectuurplaat</h3><p>Laat netwerksegmenten, datastromen, security maatregelen en vertrouwenszones duidelijk zien.</p></div>
+        <div class="mini-card"><h3>Toelichtend rapport</h3><p>Onderbouw keuzes, risico's, maatregelen en plaatsing van controls.</p></div>
+        <div class="mini-card"><h3>Onderzoek</h3><p>Onderzoek zelfstandig technische details van geselecteerde security measures.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 1 – Analyse van de omgeving</h2>
+      <p>Bestudeer de aangeleverde TrailBlaze Digital Infrastructure. Beschrijf minimaal de volgende gebruikersgroepen:</p>
+      <ul>
+        <li>Klanten</li><li>Gidsen</li><li>Systeembeheerders</li><li>Data-analisten</li><li>Helpdeskmedewerkers</li><li>Marketingmedewerkers</li><li>Externe leveranciers</li><li>Cloud engineers</li>
+      </ul>
+      <p>Beschrijf per gebruikersgroep welke systemen zij gebruiken, welke gegevens zij verwerken, welke rechten zij nodig hebben en vanuit welke locatie zij werken.</p>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 2 – Netwerkzones ontwerpen</h2>
+      <p>Maak een logisch netwerkontwerp met minimaal deze zones:</p>
+      <div class="grid">
+        <div class="mini-card"><span class="badge b-blue">Zone</span><h3>Internet Zone</h3><p>Publiek internet en externe toegang.</p></div>
+        <div class="mini-card"><span class="badge b-orange">Zone</span><h3>DMZ</h3><p>Publieke systemen zoals webserver, API gateway, reverse proxy en load balancer.</p></div>
+        <div class="mini-card"><span class="badge b-green">Zone</span><h3>Internal Network</h3><p>Interne bedrijfsdiensten.</p></div>
+        <div class="mini-card"><span class="badge b-purple">Zone</span><h3>Management Network</h3><p>Beheeromgeving voor beheerders en cloud engineers.</p></div>
+        <div class="mini-card"><span class="badge b-teal">Zone</span><h3>Database Network</h3><p>Databases en gevoelige opslag.</p></div>
+        <div class="mini-card"><span class="badge b-red">Zone</span><h3>Analytics Network</h3><p>Data Lake en analytics platform.</p></div>
+        <div class="mini-card"><span class="badge b-blue">Zone</span><h3>IoT Network</h3><p>GPS trackers, SOS devices en sensoren.</p></div>
+        <div class="mini-card"><span class="badge b-green">Zone</span><h3>Guest Network</h3><p>Netwerk voor bezoekers, gescheiden van interne systemen.</p></div>
+        <div class="mini-card"><span class="badge b-orange">Zone</span><h3>Cloud Network</h3><p>AWS/Azure omgeving met private subnets, security groups en logging.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 3 – Risicoanalyse</h2>
+      <p>Voer een risicoanalyse uit met minimaal 15 risico's.</p>
+      <table>
+        <thead><tr><th>Onderdeel</th><th>Beschrijving</th></tr></thead>
+        <tbody>
+          <tr><td>Asset</td><td>Wat wordt beschermd?</td></tr>
+          <tr><td>Threat</td><td>Welke dreiging?</td></tr>
+          <tr><td>Vulnerability</td><td>Welke kwetsbaarheid?</td></tr>
+          <tr><td>Impact</td><td>Wat is het mogelijke gevolg?</td></tr>
+          <tr><td>Likelihood</td><td>Hoe waarschijnlijk is het risico?</td></tr>
+          <tr><td>Risk Score</td><td>Laag, middel of hoog.</td></tr>
+          <tr><td>Mitigation</td><td>Welke maatregel verlaagt het risico?</td></tr>
+        </tbody>
+      </table>
+      <p>Voorbeelden: ransomware, DDoS, man-in-the-middle, credential theft, rogue access point, insider threat, DNS poisoning, session hijacking, API abuse, IoT compromise, data exfiltration, privilege escalation, lateral movement, supply chain attack en cloud misconfiguration.</p>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 4 – Security Architecture</h2>
+      <p>Voeg security maatregelen toe aan jullie architectuur. Teken ze op de juiste plaats in het netwerk. Beschrijf voor iedere maatregel:</p>
+      <ul>
+        <li>Waar wordt deze geplaatst?</li>
+        <li>Waarom daar?</li>
+        <li>Tegen welke dreigingen beschermt deze?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Verplichte Security Measures</h2>
+      <p>Gebruik minimaal 25 maatregelen uit onderstaande lijst.</p>
+      <ol class="measure-list">
+        <li>Next Generation Firewall (NGFW)</li>
+        <li>Web Application Firewall (WAF)</li>
+        <li>DDoS Protection</li>
+        <li>Reverse Proxy</li>
+        <li>API Gateway</li>
+        <li>VLAN Segmentation</li>
+        <li>DMZ</li>
+        <li>Micro-segmentation</li>
+        <li>Private Subnets</li>
+        <li>Network Access Control (NAC)</li>
+        <li>Security Groups</li>
+        <li>Network ACLs</li>
+        <li>Least Privilege Access</li>
+        <li>Role Based Access Control (RBAC)</li>
+        <li>Privileged Access Management (PAM)</li>
+        <li>WPA3 Enterprise</li>
+        <li>802.1X Authentication</li>
+        <li>RADIUS Server</li>
+        <li>Rogue AP Detection</li>
+        <li>Guest WiFi Isolation</li>
+        <li>TLS 1.3</li>
+        <li>IPsec VPN</li>
+        <li>Site-to-Site VPN</li>
+        <li>SSH</li>
+        <li>Secure DNS / DNSSEC</li>
+        <li>IDS</li>
+        <li>IPS</li>
+        <li>Security Information and Event Management (SIEM)</li>
+        <li>Security Operations Center (SOC)</li>
+        <li>NetFlow Monitoring</li>
+        <li>Mobile Device Management (MDM)</li>
+        <li>Endpoint Detection & Response (EDR)</li>
+        <li>IoT Device Authentication</li>
+        <li>Device Certificates</li>
+        <li>Cloud Security Groups</li>
+        <li>Zero Trust Access</li>
+        <li>Bastion Host</li>
+        <li>Cloud Logging</li>
+        <li>Backup Network</li>
+        <li>Redundant Firewalls</li>
+        <li>High Availability VPN</li>
+        <li>Disaster Recovery Site</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 5 – Onderzoek Security Controls</h2>
+      <p>Iedere groep kiest 10 maatregelen uit de lijst en onderzoekt per maatregel:</p>
+      <ul>
+        <li>Wat is het?</li>
+        <li>Hoe werkt het technisch?</li>
+        <li>Waar wordt het toegepast binnen de TrailBlaze architectuur?</li>
+        <li>Welke aanval wordt voorkomen of beperkt?</li>
+        <li>Wat zijn de beperkingen?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 6 – Security Operations Center</h2>
+      <p>Ontwerp een SOC voor TrailBlaze. Beschrijf welke bronnen logs leveren, welke detecties plaatsvinden en welke acties het SOC uitvoert.</p>
+      <div class="grid">
+        <div class="mini-card"><h3>Logbronnen</h3><p>Firewalls, VPN, servers, cloud, databases, IoT devices, mobile apps.</p></div>
+        <div class="mini-card"><h3>Detecties</h3><p>Brute force, VPN abuse, malware, data exfiltration, DDoS, privilege escalation, rogue AP detection.</p></div>
+        <div class="mini-card"><h3>Acties</h3><p>Analyse, incident response, containment en recovery.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opdrachtdeel 7 – Architectuurdiagram</h2>
+      <p>Het einddiagram bevat minimaal:</p>
+      <ul>
+        <li>Gebruikers: klanten, gidsen, medewerkers en beheerders.</li>
+        <li>Zones: Internet, DMZ, Cloud, Internal Network, IoT Network, Analytics Network en Management Network.</li>
+        <li>Security controls: minimaal 25.</li>
+        <li>Monitoring: IDS, IPS, SIEM en SOC.</li>
+        <li>Communicatiebeveiliging: TLS, VPN, WPA3 en RADIUS.</li>
+        <li>Segmentatie: VLAN's, Security Groups en ACL's.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Bonusopdracht – Zero Trust</h2>
+      <p>Ontwerp de architectuur volgens een Zero Trust model. Beschrijf authenticatie, autorisatie, apparaatvalidatie, micro-segmentatie en continue verificatie.</p>
+    </section>
+
+    <section>
+      <h2>Beoordelingscriteria</h2>
+      <table>
+        <thead><tr><th>Onderdeel</th><th>Weging</th></tr></thead>
+        <tbody>
+          <tr><td>Architectuurkwaliteit</td><td>25%</td></tr>
+          <tr><td>Risicoanalyse</td><td>20%</td></tr>
+          <tr><td>Correct gebruik security controls</td><td>20%</td></tr>
+          <tr><td>Technische onderbouwing</td><td>15%</td></tr>
+          <tr><td>SOC ontwerp</td><td>10%</td></tr>
+          <tr><td>Presentatie & visualisatie</td><td>10%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Eindresultaat</h2>
+      <p>Een professioneel beveiligingsontwerp dat vergelijkbaar is met een high-level enterprise network security architecture zoals gebruikt wordt door cloud-native organisaties. Het ontwerp laat zien hoe Communication & Network Security uit CISSP Domain 4 in de praktijk wordt toegepast.</p>
+    </section>
+  </main>
+
+  <footer>
+    TrailBlaze Adventures – CISSP Domain 4 opdracht
+  </footer>
+</body>
+</html>

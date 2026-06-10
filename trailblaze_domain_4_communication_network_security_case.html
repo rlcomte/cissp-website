@@ -10,7 +10,7 @@
 header{background:linear-gradient(135deg,#17396f,#2d69c4);color:#fff;padding:64px 24px 56px}.wrap{max-width:1180px;margin:0 auto}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;font-weight:700;opacity:.85;margin-bottom:10px}
 h1{font-size:clamp(2rem,4vw,4rem);line-height:1.05;margin:0 0 18px;max-width:980px}.subtitle{font-size:1.16rem;max-width:850px;color:rgba(255,255,255,.9);margin:0}
 nav{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 24px}nav a{color:var(--accent);text-decoration:none;font-weight:700;white-space:nowrap;font-size:.95rem}
-main{padding:34px 24px 72px}.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;margin:0 auto 34px}h2{margin-top:0;font-size:1.75rem;line-height:1.2}h3{margin-bottom:8px;color:#183966}.lead{font-size:1.08rem;color:#34445f}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fbfdff}.mini p{margin-bottom:0;color:var(--muted)}.tag{display:inline-flex;align-items:center;border-radius:999px;background:var(--accent-2);color:var(--accent);padding:4px 10px;font-weight:700;font-size:.8rem;margin-bottom:8px}.callout{border-left:5px solid var(--accent);background:#fbfdff;padding:18px 20px;border-radius:14px}.challenge{border-radius:18px;border:1px solid var(--line);padding:20px;background:#fbfdff}.challenge h3{margin-top:0}.network{background:var(--blue)}.remote{background:var(--yellow)}.wireless{background:var(--red)}.monitoring{background:var(--green)}.api{background:var(--purple)}
+main{padding:34px 24px 72px}.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px;margin:0 auto 34px}h2{margin-top:0;font-size:1.75rem;line-height:1.2}h3{margin-bottom:8px;color:#183966}.lead{font-size:1.08rem;color:#34445f}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fbfdff}.mini p{margin-bottom:0;color:var(--muted)}.resource-link{display:block;height:100%;color:inherit;text-decoration:none}.resource-link .mini{height:100%;transition:border-color .2s,transform .2s}.resource-link:hover .mini,.resource-link:focus-visible .mini{border-color:var(--accent);transform:translateY(-2px)}.resource-link:focus-visible{outline:3px solid rgba(36,87,166,.22);outline-offset:4px;border-radius:18px}.tag{display:inline-flex;align-items:center;border-radius:999px;background:var(--accent-2);color:var(--accent);padding:4px 10px;font-weight:700;font-size:.8rem;margin-bottom:8px}.callout{border-left:5px solid var(--accent);background:#fbfdff;padding:18px 20px;border-radius:14px}.challenge{border-radius:18px;border:1px solid var(--line);padding:20px;background:#fbfdff}.challenge h3{margin-top:0}.network{background:var(--blue)}.remote{background:var(--yellow)}.wireless{background:var(--red)}.monitoring{background:var(--green)}.api{background:var(--purple)}
 table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;font-size:.95rem}th,td{border-bottom:1px solid var(--line);padding:13px 14px;vertical-align:top;text-align:left}th{background:#eaf1ff;color:#17396f}tr:nth-child(even) td{background:#fbfdff}td:first-child{font-weight:800;color:#17396f;width:270px}.deliverable{background:#fff4dd;border:1px solid #eed39b;border-radius:18px;padding:20px}.phase{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;margin-bottom:14px}.phase-num{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:900;font-size:1.2rem}li{margin-bottom:8px}footer{padding:28px 24px;background:#172033;color:rgba(255,255,255,.78)}@media(max-width:850px){.grid,.two-col{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.card{padding:20px}}
 </style>
 </head>
@@ -26,6 +26,7 @@ table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;fon
 <div class="wrap">
 <a href="#scenario">Scenario</a>
 <a href="#assignment">Student assignment</a>
+<a href="#opdrachten">Opdrachten</a>
 <a href="#challenges">Domain 4 challenges</a>
 <a href="#mapping">Concept mapping</a>
 <a href="#outcomes">Learning outcomes</a>
@@ -95,6 +96,27 @@ table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;fon
 <p>Connect each identified challenge to CISSP Domain 4 concepts and explain why that concept is relevant for securing TrailBlaze communication.</p>
 </div></div>
 <div class="deliverable"><strong>Deliverable:</strong> A structured list of <strong>at least 10 communication and network security challenges</strong>, each linked to one or more Domain 4 concepts.</div>
+</section>
+
+<section id="opdrachten" class="card">
+<h2>Network security opdrachten</h2>
+<p class="lead">Use these larger TrailBlaze exercises to turn the Domain 4 case into a defensive architecture assignment and an offensive review challenge.</p>
+<div class="two-col">
+<a class="resource-link" href="trailblaze_network_security_defense_opdracht.html">
+<div class="mini">
+<span class="tag">Defense</span>
+<h3>Secure Communication &amp; Network Architecture</h3>
+<p>Design a secure, scalable network architecture for TrailBlaze with segmentation, protected communication paths, security controls, monitoring, and a supporting report.</p>
+</div>
+</a>
+<a class="resource-link" href="trailblaze_network_security_offensive_opdracht.html">
+<div class="mini">
+<span class="tag">Offense</span>
+<h3>Red Team Assessment Framework</h3>
+<p>Challenge the defensive design by testing whether internet exposure, lateral movement, wireless risks, VPN access, cloud access, IoT paths, and data-in-transit controls are properly defended.</p>
+</div>
+</a>
+</div>
 </section>
 
 <section id="challenges" class="card">

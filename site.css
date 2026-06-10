@@ -169,6 +169,30 @@ h3 {
   color: var(--muted);
 }
 
+.resource-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.resource-link .mini {
+  height: 100%;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.resource-link:hover .mini,
+.resource-link:focus-visible .mini {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.resource-link:focus-visible {
+  outline: 3px solid rgba(36, 87, 166, 0.22);
+  outline-offset: 4px;
+  border-radius: 18px;
+}
+
 .thumbnail-button {
   display: block;
   width: 100%;
