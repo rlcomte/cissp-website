@@ -62,7 +62,10 @@
 <div>Audit</div>
 <div>Monitoring</div>
 </div>
-<div class="thumbnail-row">
+<div class="thumbnail-row thumbnail-row-three">
+<button class="thumbnail-button" type="button" data-dialog-target="domain6-vulnerability-dialog" aria-label="Open vulnerability assessment image">
+<img src="images/domain6-vulnerability.png" alt="Vulnerability assessment overview" />
+</button>
 <button class="thumbnail-button" type="button" data-dialog-target="domain6-pentest-dialog" aria-label="Open penetration testing image">
 <img src="images/domain6-pentest.png" alt="Penetration testing overview" />
 </button>
@@ -145,6 +148,11 @@
 </section>
 
 </main>
+
+<dialog class="image-dialog" id="domain6-vulnerability-dialog" aria-label="Vulnerability assessment image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain6-vulnerability.png" alt="Vulnerability assessment overview" />
+</dialog>
 
 <dialog class="image-dialog" id="domain6-pentest-dialog" aria-label="Penetration testing image">
 <button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
