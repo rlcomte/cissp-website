@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const STORAGE_KEY = "cissp-progress-v1";
 
@@ -80,8 +80,8 @@ export function useProgress() {
     persist(defaultData);
   }, [persist]);
 
-  const knownSet = new Set(data.known);
-  const favoriteSet = new Set(data.favorites);
+  const knownSet = useMemo(() => new Set(data.known), [data.known]);
+  const favoriteSet = useMemo(() => new Set(data.favorites), [data.favorites]);
 
   return {
     ready,

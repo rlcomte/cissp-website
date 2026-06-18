@@ -126,30 +126,6 @@
       0 0 0 1px oklch(1 0 0 / 10%),
       0 0 24px oklch(1 0 0 / 4%);
   }
-  .flip-scene {
-    perspective: 1200px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .flip-inner {
-    position: relative;
-    width: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .flip-inner.flipped {
-    transform: rotateY(180deg);
-  }
-  .flip-face {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
-  }
-  .flip-back {
-    transform: rotateY(180deg) translate3d(0, 0, 0);
-  }
   .search-highlight {
     @apply rounded-sm bg-primary/15 text-foreground font-medium;
   }
