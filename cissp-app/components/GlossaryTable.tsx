@@ -46,7 +46,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
   const rowVirtualizer = useVirtualizer({
     count: results.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 120,
+    estimateSize: () => 140,
     overscan: 8,
   });
 
@@ -109,7 +109,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
       </p>
 
       <div className="rounded-xl border border-border overflow-hidden bg-card">
-        <div className="grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border bg-secondary/40 px-4 py-3 text-xs font-medium text-muted-foreground">
+        <div className="grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border bg-secondary/40 px-4 py-3.5 text-sm font-medium text-muted-foreground">
           <span>#</span>
           <span>{t("term", language)}</span>
           <span>{t("definition", language)}</span>
@@ -126,7 +126,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
                   key={term.id}
                   data-index={virtualRow.index}
                   ref={rowVirtualizer.measureElement}
-                  className="absolute left-0 w-full grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border/50 px-4 py-3 text-sm hover:bg-secondary/30 transition-colors"
+                  className="absolute left-0 w-full grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border/50 px-4 py-3.5 text-base hover:bg-secondary/30 transition-colors"
                   style={{
                     transform: `translateY(${virtualRow.start}px)`,
                   }}
@@ -140,7 +140,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
                     )}
                     {getTermLabel(term, language)}
                   </span>
-                  <p className="text-muted-foreground leading-relaxed whitespace-normal">
+                  <p className="text-muted-foreground leading-relaxed whitespace-normal text-[1.05rem]">
                     {getTermDefinition(term, language)}
                   </p>
                   <div>

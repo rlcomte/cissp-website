@@ -145,7 +145,7 @@ const TermCard = memo(function TermCard({
               </Badge>
             )}
           </div>
-          <CardTitle className="text-base font-semibold">
+          <CardTitle className="text-lg font-semibold">
             <HighlightText text={label} query={query} />
           </CardTitle>
           <p className="text-xs text-muted-foreground truncate">{domain}</p>
@@ -166,7 +166,7 @@ const TermCard = memo(function TermCard({
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="text-sm text-muted-foreground leading-relaxed">
+      <CardContent className="text-base text-muted-foreground leading-relaxed">
         <HighlightText text={definition} query={query} />
       </CardContent>
     </Card>

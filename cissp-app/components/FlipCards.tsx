@@ -36,13 +36,16 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
   const [flipped, setFlipped] = useState(false);
 
   const pool = useMemo(() => {
-    if (selectedDomain === "all") return glossary;
-    return glossary.filter((t) => t.domain === Number(selectedDomain));
-  }, [selectedDomain]);
+    const domainPool =
+      selectedDomain === "all"
+        ? glossary
+        : glossary.filter((t) => t.domain === Number(selectedDomain));
+    return domainPool.filter((t) => !knownSet.has(t.id));
+  }, [selectedDomain, knownSet]);
 
   const resetDeck = useCallback(
     (shuffled = true) => {
-      setDeck(shuffled ? shuffle(pool) : pool);
+      setDeck(shuffled ? shuffle(pool) : [...pool]);
       setIndex(0);
       setFlipped(false);
     },
@@ -58,9 +61,24 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
   const nextCard = useCallback(
     (mark?: boolean) => {
       if (!current) return;
-      if (mark !== undefined) markKnown(current.id, mark);
       setFlipped(false);
-      setIndex((i) => (i + 1 >= deck.length ? 0 : i + 1));
+
+      if (mark === true) {
+        markKnown(current.id, true);
+        setDeck((prev) => {
+          const next = prev.filter((t) => t.id !== current.id);
+          return next;
+        });
+        setIndex((i) => {
+          const remaining = deck.length - 1;
+          if (remaining <= 0) return 0;
+          return i >= remaining ? 0 : i;
+        });
+        return;
+      }
+
+      if (mark === false) markKnown(current.id, false);
+      setIndex((i) => (deck.length <= 1 ? 0 : i + 1 >= deck.length ? 0 : i + 1));
     },
     [current, deck.length, markKnown],
   );
@@ -84,6 +102,24 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [nextCard, prevCard]);
+
+  if (pool.length === 0) {
+    return (
+      <Card className="py-16 text-center space-y-2">
+        <p className="text-lg font-medium">
+          {language === "nl" ? "Alles geleerd!" : "All learned!"}
+        </p>
+        <p className="text-sm text-muted-foreground">
+          {language === "nl"
+            ? "Je hebt alle begrippen in deze selectie als geleerd gemarkeerd."
+            : "You marked all terms in this selection as learned."}
+        </p>
+        <p className="text-xs text-muted-foreground font-mono">
+          {knownCount}/400 {t("learned", language)}
+        </p>
+      </Card>
+    );
+  }
 
   if (!current) {
     return (
@@ -124,7 +160,8 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             {index + 1}/{deck.length}
           </Badge>
           <Badge variant="outline" className="font-mono text-success border-success/30">
-            {knownCount} {t("learned", language)}
+            {knownCount} {t("learned", language)} · {pool.length}{" "}
+            {language === "nl" ? "te oefenen" : "left"}
           </Badge>
         </div>
       </div>

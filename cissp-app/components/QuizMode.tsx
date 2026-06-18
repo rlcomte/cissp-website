@@ -20,8 +20,12 @@ import {
 } from "@/components/ui/select";
 import { CheckCircle2, XCircle } from "lucide-react";
 
-function buildOptions(correct: GlossaryTerm, pool: GlossaryTerm[], lang: "en" | "nl") {
-  const wrong = shuffle(pool.filter((t) => t.id !== correct.id)).slice(0, 3);
+function buildOptions(
+  correct: GlossaryTerm,
+  distractorPool: GlossaryTerm[],
+  lang: "en" | "nl",
+) {
+  const wrong = shuffle(distractorPool.filter((t) => t.id !== correct.id)).slice(0, 3);
   const options = shuffle([
     { id: correct.id, text: getTermDefinition(correct, lang), correct: true },
     ...wrong.map((t) => ({
@@ -39,7 +43,7 @@ type QuizModeProps = {
 
 export function QuizMode({ domainFilter }: QuizModeProps) {
   const { language } = useLanguage();
-  const { markKnown } = useProgress();
+  const { markKnown, knownSet, knownCount } = useProgress();
   const [selectedDomain, setSelectedDomain] = useState<string>(
     domainFilter ? String(domainFilter) : "all",
   );
@@ -51,21 +55,36 @@ export function QuizMode({ domainFilter }: QuizModeProps) {
   const [selected, setSelected] = useState<number | null>(null);
   const [streak, setStreak] = useState(0);
 
-  const pool = useMemo(() => {
+  const fullPool = useMemo(() => {
     if (selectedDomain === "all") return glossary;
     return glossary.filter((t) => t.domain === Number(selectedDomain));
   }, [selectedDomain]);
 
+  const pool = useMemo(
+    () => fullPool.filter((t) => !knownSet.has(t.id)),
+    [fullPool, knownSet],
+  );
+
   const nextQuestion = useCallback(() => {
+    if (pool.length === 0) {
+      setCurrent(null);
+      return;
+    }
     const term = pool[Math.floor(Math.random() * pool.length)];
     setCurrent(term);
-    setOptions(buildOptions(term, pool, language));
+    setOptions(buildOptions(term, fullPool, language));
     setSelected(null);
-  }, [pool, language]);
+  }, [pool, fullPool, language]);
 
   useEffect(() => {
-    if (!current && pool.length) nextQuestion();
-  }, [current, pool.length, nextQuestion]);
+    if (pool.length === 0) {
+      setCurrent(null);
+      return;
+    }
+    if (!current) {
+      nextQuestion();
+    }
+  }, [pool.length, selectedDomain, current, nextQuestion]);
 
   function pickOption(id: number, correct: boolean) {
     if (selected !== null) return;
@@ -80,6 +99,24 @@ export function QuizMode({ domainFilter }: QuizModeProps) {
     } else {
       setStreak(0);
     }
+  }
+
+  if (pool.length === 0) {
+    return (
+      <Card className="py-16 text-center space-y-2 max-w-2xl mx-auto">
+        <p className="text-lg font-medium">
+          {language === "nl" ? "Alles geleerd!" : "All learned!"}
+        </p>
+        <p className="text-sm text-muted-foreground">
+          {language === "nl"
+            ? "Je hebt alle begrippen in deze selectie als geleerd gemarkeerd."
+            : "You marked all terms in this selection as learned."}
+        </p>
+        <p className="text-xs text-muted-foreground font-mono">
+          {knownCount}/400 {t("learned", language)}
+        </p>
+      </Card>
+    );
   }
 
   if (!current) return null;
@@ -114,6 +151,9 @@ export function QuizMode({ domainFilter }: QuizModeProps) {
               🔥 {streak}
             </Badge>
           )}
+          <Badge variant="outline" className="font-mono text-success border-success/30">
+            {pool.length} {language === "nl" ? "te oefenen" : "left"}
+          </Badge>
         </div>
       </div>
 

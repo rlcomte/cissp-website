@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { BookOpen, GraduationCap, Layers, Search, Sparkles, Table2 } from "lucide-react";
 
 const nav = [
@@ -50,7 +51,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm transition-colors",
+                    "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[0.95rem] transition-colors",
                     active
                       ? "bg-secondary text-foreground"
                       : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
@@ -71,6 +72,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
             )}
             <CommandTrigger />
+            <ThemeToggle />
             <div className="flex rounded-lg border border-border p-0.5">
               <Button
                 variant={language === "en" ? "secondary" : "ghost"}

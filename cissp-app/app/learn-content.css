@@ -1,17 +1,31 @@
-/* Dark-themed styles for imported HTML learning content */
+/* Learning content — light & dark via CSS variables */
 .learn-content {
-  --lc-bg: oklch(0.1 0 0);
-  --lc-card: oklch(0.13 0 0);
-  --lc-border: oklch(1 0 0 / 10%);
-  --lc-muted: oklch(0.65 0 0);
-  --lc-accent: oklch(0.85 0 0);
+  --lc-card: oklch(1 0 0);
+  --lc-border: oklch(0.88 0.005 260);
+  --lc-muted: oklch(0.45 0.02 260);
+  --lc-text: oklch(0.28 0.02 260);
+  --lc-heading: oklch(0.15 0.03 260);
+  --lc-subtle: oklch(0.96 0.005 260);
+  --lc-good: oklch(0.94 0.04 155);
+  --lc-warn: oklch(0.96 0.04 85);
+  --lc-danger: oklch(0.96 0.04 25);
+  --lc-purple: oklch(0.96 0.03 300);
+  color: var(--lc-text);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.dark .learn-content {
+  --lc-card: oklch(0.16 0.012 260);
+  --lc-border: oklch(1 0 0 / 12%);
+  --lc-muted: oklch(0.68 0.01 260);
+  --lc-text: oklch(0.82 0.01 260);
+  --lc-heading: oklch(0.96 0 0);
+  --lc-subtle: oklch(0.2 0.015 260);
   --lc-good: oklch(0.25 0.05 155);
   --lc-warn: oklch(0.25 0.05 85);
   --lc-danger: oklch(0.25 0.05 25);
   --lc-purple: oklch(0.2 0.04 300);
-  color: oklch(0.92 0 0);
-  line-height: 1.6;
-  font-size: 0.95rem;
 }
 
 .learn-content .card,
@@ -24,81 +38,86 @@
 }
 
 .learn-content h2 {
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 700;
   margin: 0 0 1rem;
-  color: oklch(0.98 0 0);
+  color: var(--lc-heading);
   letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .learn-content h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin: 1.25rem 0 0.5rem;
-  color: oklch(0.95 0 0);
+  color: var(--lc-heading);
 }
 
 .learn-content p {
-  margin: 0 0 0.75rem;
-  color: oklch(0.78 0 0);
+  margin: 0 0 0.85rem;
+  color: var(--lc-text);
 }
 
 .learn-content p.lead {
-  font-size: 1.05rem;
-  color: oklch(0.88 0 0);
+  font-size: 1.125rem;
+  color: var(--lc-heading);
 }
 
 .learn-content ul,
 .learn-content ol {
   margin: 0 0 1rem;
-  padding-left: 1.25rem;
-  color: oklch(0.78 0 0);
+  padding-left: 1.35rem;
+  color: var(--lc-text);
 }
 
 .learn-content li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 .learn-content strong {
-  color: oklch(0.95 0 0);
+  color: var(--lc-heading);
   font-weight: 600;
 }
 
 .learn-content a {
-  color: oklch(0.85 0 0);
+  color: oklch(0.35 0.06 260);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
+.dark .learn-content a {
+  color: oklch(0.82 0.02 260);
+}
+
 .learn-content a:hover {
-  color: oklch(1 0 0);
+  opacity: 0.85;
 }
 
 .learn-content table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   margin: 1rem 0;
 }
 
 .learn-content th {
-  background: oklch(0.18 0 0);
-  color: oklch(0.85 0 0);
+  background: var(--lc-subtle);
+  color: var(--lc-heading);
   text-align: left;
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 0.9rem;
   font-weight: 600;
   border-bottom: 1px solid var(--lc-border);
 }
 
 .learn-content td {
-  padding: 0.6rem 0.85rem;
+  padding: 0.7rem 0.9rem;
   border-bottom: 1px solid var(--lc-border);
-  color: oklch(0.75 0 0);
+  color: var(--lc-text);
   vertical-align: top;
 }
 
 .learn-content tr:hover td {
-  background: oklch(1 0 0 / 3%);
+  background: oklch(0.5 0 0 / 4%);
 }
 
 .learn-content .grid,
@@ -125,7 +144,7 @@
 }
 
 .learn-content .mini {
-  background: oklch(0.11 0 0);
+  background: var(--lc-subtle);
   border: 1px solid var(--lc-border);
   border-radius: 10px;
   padding: 1rem;
@@ -133,12 +152,12 @@
 
 .learn-content .mini h3 {
   margin-top: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .learn-content .tag {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -147,7 +166,7 @@
 }
 
 .learn-content .figure {
-  background: oklch(0.11 0 0);
+  background: var(--lc-subtle);
   border: 1px solid var(--lc-border);
   border-radius: 10px;
   padding: 1rem;
@@ -162,16 +181,16 @@
 
 .learn-content .triad div,
 .learn-content .flow div {
-  background: oklch(0.15 0 0);
+  background: var(--lc-card);
   border: 1px solid var(--lc-border);
   border-radius: 8px;
-  padding: 0.85rem;
+  padding: 0.9rem;
 }
 
 .learn-content .triad span,
 .learn-content .flow span {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--lc-muted);
   margin-top: 0.25rem;
 }
@@ -203,7 +222,7 @@
 }
 
 .learn-content .thumbnail-button:hover {
-  border-color: oklch(1 0 0 / 25%);
+  border-color: oklch(0.4 0.04 260 / 40%);
 }
 
 .learn-content .thumbnail-button img {
@@ -214,23 +233,23 @@
 }
 
 .learn-content .source-note {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--lc-muted);
   font-style: italic;
   margin-top: 1rem;
 }
 
 .learn-content .good { background: var(--lc-good); border-radius: 8px; padding: 0.85rem; }
-.learn-content .warn { background: var(--lc-warn); border-radius: 8px; padding: 0.85rem; }
+.learn-content .warn { background: var(--lc-warning, var(--lc-warn)); border-radius: 8px; padding: 0.85rem; }
 .learn-content .danger { background: var(--lc-danger); border-radius: 8px; padding: 0.85rem; }
 .learn-content .purple { background: var(--lc-purple); border-radius: 8px; padding: 0.85rem; }
 
 .learn-content .callout,
 .learn-content blockquote {
-  border-left: 3px solid oklch(1 0 0 / 20%);
+  border-left: 3px solid var(--lc-border);
   padding-left: 1rem;
   margin: 1rem 0;
-  color: oklch(0.8 0 0);
+  color: var(--lc-text);
 }
 
 .learn-content .image-dialog {
@@ -239,11 +258,11 @@
   border-radius: 12px;
   padding: 0;
   background: var(--lc-card);
-  color: oklch(0.95 0 0);
+  color: var(--lc-heading);
 }
 
 .learn-content .image-dialog::backdrop {
-  background: oklch(0 0 0 / 75%);
+  background: oklch(0 0 0 / 60%);
   backdrop-filter: blur(4px);
 }
 
@@ -256,17 +275,18 @@
 .learn-content .dialog-close {
   display: block;
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.85rem;
   border: none;
   border-bottom: 1px solid var(--lc-border);
-  background: oklch(0.15 0 0);
-  color: oklch(0.9 0 0);
+  background: var(--lc-subtle);
+  color: var(--lc-heading);
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .learn-content .dialog-close:hover {
-  background: oklch(0.2 0 0);
+  opacity: 0.85;
 }
 
 .learn-page-nav {
@@ -275,22 +295,22 @@
   overflow-x: auto;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid oklch(1 0 0 / 8%);
+  border-bottom: 1px solid var(--border);
   scrollbar-width: none;
 }
 
 .learn-page-nav a {
   white-space: nowrap;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: oklch(0.65 0 0);
+  color: var(--muted-foreground);
   text-decoration: none;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 999px;
   transition: all 0.15s;
 }
 
 .learn-page-nav a:hover {
-  color: oklch(0.95 0 0);
-  background: oklch(1 0 0 / 8%);
+  color: var(--foreground);
+  background: var(--secondary);
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { CommandMenuProvider } from "@/components/command-menu";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
@@ -22,19 +23,27 @@ export const metadata: Metadata = {
     "Leer 400 CISSP-begrippen met snelle zoekfunctie, flashcards, quiz en voortgangstracking.",
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem("cissp-theme");if(t==="dark")document.documentElement.classList.add("dark");}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="nl"
-      className={`dark ${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
         <TooltipProvider>
-          <LanguageProvider>
-            <CommandMenuProvider>{children}</CommandMenuProvider>
-          </LanguageProvider>
+          <ThemeProvider>
+            <LanguageProvider>
+              <CommandMenuProvider>{children}</CommandMenuProvider>
+            </LanguageProvider>
+          </ThemeProvider>
         </TooltipProvider>
       </body>
     </html>
