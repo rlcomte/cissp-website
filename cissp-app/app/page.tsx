@@ -87,10 +87,10 @@ export default function HomePage() {
             <ArrowRight className="size-4" />
           </Link>
           <Link
-            href="/glossary?mode=quiz"
+            href="/learn"
             className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-background px-4 text-sm font-medium hover:bg-muted transition-colors"
           >
-            {language === "nl" ? "Start quiz" : "Start quiz"}
+            {language === "nl" ? "Leermateriaal (21 pagina's)" : "Learning material (21 pages)"}
           </Link>
         </div>
       </section>

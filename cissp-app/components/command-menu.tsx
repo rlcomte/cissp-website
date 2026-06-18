@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/command";
 import { useLanguage } from "@/components/LanguageProvider";
 import { getTermDefinition, getTermLabel } from "@/lib/glossary";
+import { getAllPages as getLearnPages, getPageTitle as getLearnPageTitle } from "@/lib/pages";
 import { searchGlossary } from "@/lib/search";
 import { t } from "@/lib/i18n";
 import { Badge } from "@/components/ui/badge";
@@ -56,6 +57,18 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
   }, []);
 
   const results = query.trim() ? searchGlossary(query).slice(0, 12) : [];
+  const pageResults = query.trim()
+    ? getLearnPages()
+        .filter((p) => {
+          const q = query.toLowerCase();
+          return (
+            p.title.toLowerCase().includes(q) ||
+            p.titleNl.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q)
+          );
+        })
+        .slice(0, 6)
+    : [];
 
   const navigate = useCallback(
     (path: string) => {
@@ -91,6 +104,10 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
                   <BookOpen />
                   Home
                 </CommandItem>
+                <CommandItem onSelect={() => navigate("/learn")}>
+                  <BookOpen />
+                  {language === "nl" ? "Leermateriaal" : "Learning material"}
+                </CommandItem>
                 <CommandItem onSelect={() => navigate("/glossary?mode=search")}>
                   <Search />
                   {language === "nl" ? "Snel zoeken" : "Fast search"}
@@ -120,6 +137,26 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
                 ))}
               </CommandGroup>
             </>
+          )}
+
+          {query && pageResults.length > 0 && (
+            <CommandGroup heading={language === "nl" ? "Leerpagina's" : "Learning pages"}>
+              {pageResults.map((page) => (
+                <CommandItem
+                  key={page.slug}
+                  value={`${page.title} ${page.titleNl}`}
+                  onSelect={() => navigate(`/learn/${page.slug}`)}
+                >
+                  <BookOpen className="size-3.5" />
+                  <span className="font-medium">{getLearnPageTitle(page, language)}</span>
+                  {page.domainId && (
+                    <Badge variant="secondary" className="ml-auto font-mono text-[10px]">
+                      D{page.domainId}
+                    </Badge>
+                  )}
+                </CommandItem>
+              ))}
+            </CommandGroup>
           )}
 
           {query && results.length > 0 && (

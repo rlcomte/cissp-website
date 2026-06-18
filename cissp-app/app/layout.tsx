@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import { CommandMenuProvider } from "@/components/command-menu";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
+import "./learn-content.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

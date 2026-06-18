@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { BookOpen, Layers, Search, Sparkles, Table2 } from "lucide-react";
+import { BookOpen, GraduationCap, Layers, Search, Sparkles, Table2 } from "lucide-react";
 
 const nav = [
   { href: "/", label: { en: "Home", nl: "Home" }, icon: BookOpen },
+  { href: "/learn", label: { en: "Learn", nl: "Leren" }, icon: GraduationCap },
   { href: "/glossary?mode=search", label: { en: "Search", nl: "Zoeken" }, icon: Search },
   { href: "/glossary?mode=table", label: { en: "Table", nl: "Tabel" }, icon: Table2 },
   { href: "/glossary?mode=cards", label: { en: "Cards", nl: "Kaarten" }, icon: Layers },
@@ -41,7 +42,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               const active =
                 item.href === "/"
                   ? pathname === "/"
-                  : pathname.startsWith("/glossary") && item.href.includes("mode=");
+                  : item.href === "/learn"
+                    ? pathname.startsWith("/learn")
+                    : pathname.startsWith("/glossary") && item.href.includes("mode=");
               return (
                 <Link
                   key={item.href}
