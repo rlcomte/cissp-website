@@ -1,0 +1,4002 @@
+[
+  {
+    "id": 1,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Confidentiality",
+    "definition": "Confidentiality means protecting information so that it is only accessible to authorized users, systems, or processes. It prevents sensitive data from being disclosed to people who are not permitted to see it.",
+    "termNl": "Vertrouwelijkheid",
+    "definitionNl": "Vertrouwelijkheid betekent dat informatie wordt beschermd zodat alleen geautoriseerde gebruikers, systemen of processen er toegang toe hebben. Het voorkomt dat gevoelige gegevens worden vrijgegeven aan personen die deze niet mogen inzien."
+  },
+  {
+    "id": 2,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Integrity",
+    "definition": "Integrity ensures that information remains accurate, complete, and trustworthy. Security mechanisms such as hashing, checksums, and access controls prevent unauthorized modification or corruption of data.",
+    "termNl": "Integriteit",
+    "definitionNl": "Integriteit zorgt ervoor dat informatie nauwkeurig, volledig en betrouwbaar blijft. Beveiligingsmechanismen zoals hashing, checksums en toegangscontroles voorkomen ongeautoriseerde wijziging of corruptie van gegevens."
+  },
+  {
+    "id": 3,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Availability",
+    "definition": "Availability ensures that systems, applications, and data are accessible when users need them. Redundancy, backups, fault tolerance, and disaster recovery mechanisms help maintain availability during failures or attacks.",
+    "termNl": "Beschikbaarheid",
+    "definitionNl": "Beschikbaarheid zorgt ervoor dat systemen, applicaties en gegevens toegankelijk zijn wanneer gebruikers ze nodig hebben. Redundantie, back-ups, fouttolerantie en disaster recovery-mechanismen helpen beschikbaarheid te handhaven tijdens storingen of aanvallen."
+  },
+  {
+    "id": 4,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "CIA Triad",
+    "definition": "The CIA Triad is the foundational security model consisting of confidentiality, integrity, and availability. These three principles guide the design, evaluation, and management of information security controls.",
+    "termNl": "CIA-triade",
+    "definitionNl": "De CIA-triade is het fundamentele beveiligingsmodel dat bestaat uit vertrouwelijkheid (confidentiality), integriteit en beschikbaarheid (availability). Deze drie principes sturen het ontwerp, de evaluatie en het beheer van informatiebeveiligingsmaatregelen."
+  },
+  {
+    "id": 5,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Asset",
+    "definition": "An asset is anything valuable to an organization that requires protection. Assets may include data, software, hardware, services, intellectual property, reputation, and even employees.",
+    "termNl": "Asset",
+    "definitionNl": "Een asset is alles wat waardevol is voor een organisatie en bescherming vereist. Assets kunnen gegevens, software, hardware, diensten, intellectueel eigendom, reputatie en zelfs medewerkers omvatten."
+  },
+  {
+    "id": 6,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Threat",
+    "definition": "A threat is any circumstance, event, or actor capable of causing harm to an information system. Threats may be natural, accidental, or intentional, such as hackers, malware, or human error.",
+    "termNl": "Dreiging",
+    "definitionNl": "Een dreiging is elke omstandigheid, gebeurtenis of actor die schade kan toebrengen aan een informatiesysteem. Dreigingen kunnen natuurlijk, accidenteel of opzettelijk zijn, zoals hackers, malware of menselijke fouten."
+  },
+  {
+    "id": 7,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Vulnerability",
+    "definition": "A vulnerability is a weakness in a system, application, process, or control that could be exploited by a threat. Vulnerabilities often arise from software bugs, misconfigurations, or poor security practices.",
+    "termNl": "Kwetsbaarheid",
+    "definitionNl": "Een kwetsbaarheid is een zwakte in een systeem, applicatie, proces of controle die door een dreiging kan worden misbruikt. Kwetsbaarheden ontstaan vaak door softwarefouten, verkeerde configuraties of onvoldoende beveiligingspraktijken."
+  },
+  {
+    "id": 8,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk",
+    "definition": "Risk represents the potential for loss or damage when a threat exploits a vulnerability. In cybersecurity, risk is often described as the combination of likelihood and potential impact.",
+    "termNl": "Risico",
+    "definitionNl": "Risico vertegenwoordigt de mogelijkheid op verlies of schade wanneer een dreiging een kwetsbaarheid misbruikt. In cybersecurity wordt risico vaak beschreven als de combinatie van waarschijnlijkheid en potentiële impact."
+  },
+  {
+    "id": 9,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Assessment",
+    "definition": "Risk assessment is the systematic process of identifying assets, threats, and vulnerabilities, and evaluating the likelihood and impact of security incidents that could affect the organization.",
+    "termNl": "Risicobeoordeling",
+    "definitionNl": "Risicobeoordeling is het systematische proces van het identificeren van assets, dreigingen en kwetsbaarheden, en het evalueren van de waarschijnlijkheid en impact van beveiligingsincidenten die de organisatie kunnen treffen."
+  },
+  {
+    "id": 10,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Analysis",
+    "definition": "Risk analysis evaluates identified risks by estimating their probability and potential impact. The results help organizations prioritize which security risks require immediate attention and mitigation.",
+    "termNl": "Risicoanalyse",
+    "definitionNl": "Risicoanalyse evalueert geïdentificeerde risico's door hun waarschijnlijkheid en potentiële impact in te schatten. De resultaten helpen organisaties te prioriteren welke beveiligingsrisico's onmiddellijke aandacht en mitigatie vereisen."
+  },
+  {
+    "id": 11,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Management",
+    "definition": "Risk management is the ongoing process of identifying, analyzing, prioritizing, and responding to security risks. The goal is to reduce risk to an acceptable level for the organization.",
+    "termNl": "Risicobeheer",
+    "definitionNl": "Risicobeheer is het doorlopende proces van identificeren, analyseren, prioriteren en reageren op beveiligingsrisico's. Het doel is het risico terug te brengen tot een acceptabel niveau voor de organisatie."
+  },
+  {
+    "id": 12,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Mitigation",
+    "definition": "Risk mitigation involves implementing controls that reduce the likelihood or impact of a risk. Examples include security patches, firewalls, encryption, and security awareness training.",
+    "termNl": "Risicobeperking",
+    "definitionNl": "Risicobeperking omvat het implementeren van maatregelen die de waarschijnlijkheid of impact van een risico verminderen. Voorbeelden zijn beveiligingspatches, firewalls, encryptie en security awareness-training."
+  },
+  {
+    "id": 13,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Transfer",
+    "definition": "Risk transfer shifts the financial or operational impact of risk to another party. Organizations commonly transfer risk through insurance policies, outsourcing services, or contractual agreements with suppliers.",
+    "termNl": "Risico-overdracht",
+    "definitionNl": "Risico-overdracht verschuift de financiële of operationele impact van een risico naar een andere partij. Organisaties dragen risico's vaak over via verzekeringen, uitbesteding van diensten of contractuele afspraken met leveranciers."
+  },
+  {
+    "id": 14,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Acceptance",
+    "definition": "Risk acceptance occurs when an organization decides to tolerate a risk without implementing additional controls. This decision is usually made when mitigation costs exceed the potential damage.",
+    "termNl": "Risico-acceptatie",
+    "definitionNl": "Risico-acceptatie treedt op wanneer een organisatie besluit een risico te tolereren zonder aanvullende maatregelen te implementeren. Deze beslissing wordt meestal genomen wanneer de mitigatiekosten hoger zijn dan de potentiële schade."
+  },
+  {
+    "id": 15,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Avoidance",
+    "definition": "Risk avoidance eliminates a risk entirely by discontinuing the activity that creates it. For example, an organization may stop offering a risky online service to avoid potential security exposure.",
+    "termNl": "Risico-vermijding",
+    "definitionNl": "Risico-vermijding elimineert een risico volledig door de activiteit die het veroorzaakt te staken. Een organisatie kan bijvoorbeeld stoppen met het aanbieden van een risicovolle online dienst om potentiële beveiligingsblootstelling te vermijden."
+  },
+  {
+    "id": 16,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Appetite",
+    "definition": "Risk appetite describes the amount of risk an organization is willing to accept in pursuit of its objectives. It is typically defined by senior management.",
+    "termNl": "Risicobereidheid",
+    "definitionNl": "Risicobereidheid beschrijft de hoeveelheid risico die een organisatie bereid is te accepteren bij het nastreven van haar doelstellingen. Dit wordt doorgaans vastgesteld door het senior management."
+  },
+  {
+    "id": 17,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Tolerance",
+    "definition": "Risk tolerance defines the acceptable variation around the organization’s risk appetite. It helps determine when risk levels exceed acceptable boundaries and require mitigation.",
+    "termNl": "Risicotolerantie",
+    "definitionNl": "Risicotolerantie definieert de acceptabele variatie rond de risicobereidheid van de organisatie. Het helpt bepalen wanneer risiconiveaus acceptabele grenzen overschrijden en mitigatie vereisen."
+  },
+  {
+    "id": 18,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Risk Register",
+    "definition": "A risk register is a structured document used to track identified risks, their likelihood, impact, mitigation strategies, and responsible stakeholders within an organization.",
+    "termNl": "Risicoregister",
+    "definitionNl": "Een risicoregister is een gestructureerd document waarmee geïdentificeerde risico's, hun waarschijnlijkheid, impact, mitigatiestrategieën en verantwoordelijke belanghebbenden binnen een organisatie worden bijgehouden."
+  },
+  {
+    "id": 19,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Governance",
+    "definition": "Security governance refers to the leadership, policies, processes, and organizational structures that ensure cybersecurity activities align with business objectives and regulatory requirements.",
+    "termNl": "Security governance",
+    "definitionNl": "Security governance verwijst naar het leiderschap, beleid, processen en organisatiestructuren die ervoor zorgen dat cybersecurity-activiteiten aansluiten bij bedrijfsdoelstellingen en regelgevingsvereisten."
+  },
+  {
+    "id": 20,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Policy",
+    "definition": "A policy is a high-level management statement that defines the organization’s security objectives and rules. Policies guide decision-making and establish expectations for security behavior.",
+    "termNl": "Beleid",
+    "definitionNl": "Een beleid is een beleidsverklaring op managementniveau die de beveiligingsdoelstellingen en regels van de organisatie definieert. Beleid stuurt besluitvorming en legt verwachtingen vast voor beveiligingsgedrag."
+  },
+  {
+    "id": 21,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Standard",
+    "definition": "A standard specifies mandatory technical or procedural requirements that support policies. Standards ensure consistent implementation of security practices across systems and departments.",
+    "termNl": "Standaard",
+    "definitionNl": "Een standaard specificeert verplichte technische of procedurele vereisten die beleid ondersteunen. Standaarden zorgen voor consistente implementatie van beveiligingspraktijken in systemen en afdelingen."
+  },
+  {
+    "id": 22,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Procedure",
+    "definition": "A procedure describes the detailed step-by-step process for performing a specific task. Procedures translate policies and standards into operational instructions for employees.",
+    "termNl": "Procedure",
+    "definitionNl": "Een procedure beschrijft het gedetailleerde stapsgewijze proces voor het uitvoeren van een specifieke taak. Procedures vertalen beleid en standaarden naar operationele instructies voor medewerkers."
+  },
+  {
+    "id": 23,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Guideline",
+    "definition": "Guidelines are recommended practices that help employees implement policies and procedures. Unlike standards, guidelines are flexible and can be adapted depending on the situation.",
+    "termNl": "Richtlijn",
+    "definitionNl": "Richtlijnen zijn aanbevolen praktijken die medewerkers helpen bij het implementeren van beleid en procedures. In tegenstelling tot standaarden zijn richtlijnen flexibel en kunnen ze per situatie worden aangepast."
+  },
+  {
+    "id": 24,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Compliance",
+    "definition": "Compliance means adhering to laws, regulations, industry standards, and organizational policies related to information security and data protection.",
+    "termNl": "Compliance",
+    "definitionNl": "Compliance betekent het naleven van wetten, regelgeving, industriestandaarden en organisatiebeleid met betrekking tot informatiebeveiliging en gegevensbescherming."
+  },
+  {
+    "id": 25,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Regulation",
+    "definition": "A regulation is a legally binding rule issued by a governmental authority. Organizations must comply with regulations such as GDPR or HIPAA to avoid penalties.",
+    "termNl": "Regelgeving",
+    "definitionNl": "Regelgeving is een juridisch bindende regel uitgevaardigd door een overheidsinstantie. Organisaties moeten voldoen aan regelgeving zoals de AVG (GDPR) of HIPAA om boetes te vermijden."
+  },
+  {
+    "id": 26,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Due Care",
+    "definition": "Due care means taking reasonable steps to protect information systems and data. Organizations demonstrate due care by implementing security controls and enforcing policies.",
+    "termNl": "Due care",
+    "definitionNl": "Due care betekent redelijke stappen nemen om informatiesystemen en gegevens te beschermen. Organisaties tonen due care aan door beveiligingsmaatregelen te implementeren en beleid af te dwingen."
+  },
+  {
+    "id": 27,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Due Diligence",
+    "definition": "Due diligence refers to continuously monitoring, evaluating, and improving security practices. It ensures that security controls remain effective over time.",
+    "termNl": "Due diligence",
+    "definitionNl": "Due diligence verwijst naar het continu monitoren, evalueren en verbeteren van beveiligingspraktijken. Het zorgt ervoor dat beveiligingsmaatregelen in de loop van de tijd effectief blijven."
+  },
+  {
+    "id": 28,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Awareness",
+    "definition": "Security awareness programs educate employees about cybersecurity risks and safe practices, such as recognizing phishing emails and protecting passwords.",
+    "termNl": "Security awareness",
+    "definitionNl": "Security awareness-programma's informeren medewerkers over cybersecurity-risico's en veilige praktijken, zoals het herkennen van phishing-e-mails en het beschermen van wachtwoorden."
+  },
+  {
+    "id": 29,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Training",
+    "definition": "Security training provides employees with practical skills and knowledge needed to perform their roles securely, often including technical or role-specific cybersecurity instruction.",
+    "termNl": "Security training",
+    "definitionNl": "Security training biedt medewerkers praktische vaardigheden en kennis die nodig zijn om hun rol veilig uit te voeren, vaak inclusief technische of rol-specifieke cybersecurity-instructie."
+  },
+  {
+    "id": 30,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Ethics",
+    "definition": "Ethics refers to moral principles guiding professional behavior in cybersecurity. Security professionals are expected to protect society, respect privacy, and act responsibly.",
+    "termNl": "Ethiek",
+    "definitionNl": "Ethiek verwijst naar morele principes die professioneel gedrag in cybersecurity sturen. Beveiligingsprofessionals worden verwacht de maatschappij te beschermen, privacy te respecteren en verantwoordelijk te handelen."
+  },
+  {
+    "id": 31,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Accountability",
+    "definition": "Accountability ensures individuals are responsible for their actions within information systems. Logging, auditing, and authentication mechanisms help enforce accountability.",
+    "termNl": "Verantwoordingsplicht",
+    "definitionNl": "Verantwoordingsplicht (accountability) zorgt ervoor dat individuen verantwoordelijk zijn voor hun acties binnen informatiesystemen. Logging, auditing en authenticatiemechanismen helpen verantwoordingsplicht af te dwingen."
+  },
+  {
+    "id": 32,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Non-repudiation",
+    "definition": "Non-repudiation ensures that a person cannot deny performing an action, such as sending a message or approving a transaction. Digital signatures commonly support non-repudiation.",
+    "termNl": "Non-repudiation",
+    "definitionNl": "Non-repudiation zorgt ervoor dat een persoon een uitgevoerde actie niet kan ontkennen, zoals het verzenden van een bericht of het goedkeuren van een transactie. Digitale handtekeningen ondersteunen doorgaans non-repudiation."
+  },
+  {
+    "id": 33,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Culture",
+    "definition": "Security culture describes the shared attitudes and behaviors within an organization regarding cybersecurity responsibilities and safe digital practices.",
+    "termNl": "Securitycultuur",
+    "definitionNl": "Securitycultuur beschrijft de gedeelde attitudes en gedragingen binnen een organisatie met betrekking tot cybersecurity-verantwoordelijkheden en veilige digitale praktijken."
+  },
+  {
+    "id": 34,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Audit",
+    "definition": "An audit is a formal review of systems, processes, and controls to verify compliance with security policies, regulations, and standards.",
+    "termNl": "Audit",
+    "definitionNl": "Een audit is een formele beoordeling van systemen, processen en controles om naleving van beveiligingsbeleid, regelgeving en standaarden te verifiëren."
+  },
+  {
+    "id": 35,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Business Continuity",
+    "definition": "Business continuity ensures that critical business functions continue operating during and after disruptions such as cyberattacks, power failures, or natural disasters.",
+    "termNl": "Bedrijfscontinuïteit",
+    "definitionNl": "Bedrijfscontinuïteit zorgt ervoor dat kritieke bedrijfsfuncties blijven opereren tijdens en na verstoringen zoals cyberaanvallen, stroomstoringen of natuurrampen."
+  },
+  {
+    "id": 36,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Business Impact Analysis",
+    "definition": "A business impact analysis identifies critical processes and evaluates the consequences of disruptions. It helps organizations prioritize recovery strategies.",
+    "termNl": "Business Impact Analysis (BIA)",
+    "definitionNl": "Een Business Impact Analysis identificeert kritieke processen en evalueert de gevolgen van verstoringen. Het helpt organisaties herstelstrategieën te prioriteren."
+  },
+  {
+    "id": 37,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Disaster Recovery",
+    "definition": "Disaster recovery focuses on restoring IT infrastructure, applications, and data after major disruptions. Recovery plans define procedures and recovery time objectives.",
+    "termNl": "Disaster recovery",
+    "definitionNl": "Disaster recovery richt zich op het herstellen van IT-infrastructuur, applicaties en gegevens na grote verstoringen. Herstelplannen definiëren procedures en recovery time objectives (RTO's)."
+  },
+  {
+    "id": 38,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Incident Response",
+    "definition": "Incident response is the structured process for detecting, analyzing, containing, and recovering from security incidents such as cyberattacks or data breaches.",
+    "termNl": "Incident response",
+    "definitionNl": "Incident response is het gestructureerde proces voor het detecteren, analyseren, isoleren en herstellen van beveiligingsincidenten zoals cyberaanvallen of datalekken."
+  },
+  {
+    "id": 39,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Third-Party Risk",
+    "definition": "Third-party risk arises when vendors, partners, or service providers introduce security weaknesses into an organization’s systems or data environment.",
+    "termNl": "Derdenrisico",
+    "definitionNl": "Derdenrisico ontstaat wanneer leveranciers, partners of dienstverleners beveiligingszwakheden introduceren in de systemen of gegevensomgeving van een organisatie."
+  },
+  {
+    "id": 40,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Vendor Risk Management",
+    "definition": "Vendor risk management evaluates and monitors suppliers to ensure they maintain appropriate security practices when handling organizational data or services.",
+    "termNl": "Leveranciersrisicobeheer",
+    "definitionNl": "Leveranciersrisicobeheer evalueert en monitort leveranciers om te waarborgen dat zij passende beveiligingspraktijken hanteren bij het verwerken van organisatiegegevens of -diensten."
+  },
+  {
+    "id": 41,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Privacy",
+    "definition": "Privacy refers to individuals’ rights to control how their personal information is collected, processed, stored, and shared by organizations.",
+    "termNl": "Privacy",
+    "definitionNl": "Privacy verwijst naar het recht van individuen om te bepalen hoe hun persoonsgegevens door organisaties worden verzameld, verwerkt, opgeslagen en gedeeld."
+  },
+  {
+    "id": 42,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Personal Data",
+    "definition": "Personal data is any information that can identify an individual directly or indirectly, such as names, identification numbers, or online identifiers.",
+    "termNl": "Persoonsgegevens",
+    "definitionNl": "Persoonsgegevens is alle informatie waarmee een individu direct of indirect kan worden geïdentificeerd, zoals namen, identificatienummers of online identificatoren."
+  },
+  {
+    "id": 43,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Data Protection",
+    "definition": "Data protection involves implementing technical and organizational measures to safeguard personal and sensitive information from unauthorized access or misuse.",
+    "termNl": "Gegevensbescherming",
+    "definitionNl": "Gegevensbescherming omvat het implementeren van technische en organisatorische maatregelen om persoonlijke en gevoelige informatie te beschermen tegen ongeautoriseerde toegang of misbruik."
+  },
+  {
+    "id": 44,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Intellectual Property",
+    "definition": "Intellectual property includes creations such as software, inventions, designs, and written works that are legally protected to preserve ownership rights.",
+    "termNl": "Intellectueel eigendom",
+    "definitionNl": "Intellectueel eigendom omvat creaties zoals software, uitvindingen, ontwerpen en geschreven werken die juridisch worden beschermd om eigendomsrechten te behouden."
+  },
+  {
+    "id": 45,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Copyright",
+    "definition": "Copyright protects original works of authorship such as books, music, and software from unauthorized reproduction or distribution.",
+    "termNl": "Auteursrecht",
+    "definitionNl": "Auteursrecht beschermt originele werken van auteurschap zoals boeken, muziek en software tegen ongeautoriseerde reproductie of distributie."
+  },
+  {
+    "id": 46,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Patent",
+    "definition": "A patent grants inventors exclusive rights to produce and sell an invention for a limited period in exchange for publicly disclosing the invention.",
+    "termNl": "Octrooi",
+    "definitionNl": "Een octrooi verleent uitvinders exclusieve rechten om een uitvinding te produceren en te verkopen gedurende een beperkte periode, in ruil voor openbaarmaking van de uitvinding."
+  },
+  {
+    "id": 47,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Trade Secret",
+    "definition": "A trade secret is confidential business information that provides a competitive advantage, such as algorithms, formulas, or manufacturing processes.",
+    "termNl": "Bedrijfsgeheim",
+    "definitionNl": "Een bedrijfsgeheim is vertrouwelijke bedrijfsinformatie die een concurrentievoordeel biedt, zoals algoritmen, formules of productieprocessen."
+  },
+  {
+    "id": 48,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Strategy",
+    "definition": "A security strategy defines long-term goals, priorities, and investments that guide how an organization protects its information systems and data.",
+    "termNl": "Securitystrategie",
+    "definitionNl": "Een securitystrategie definieert langetermijndoelen, prioriteiten en investeringen die sturen hoe een organisatie haar informatiesystemen en gegevens beschermt."
+  },
+  {
+    "id": 49,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Security Program",
+    "definition": "A security program is the organized collection of policies, technologies, procedures, and people responsible for protecting an organization’s information assets.",
+    "termNl": "Securityprogramma",
+    "definitionNl": "Een securityprogramma is de georganiseerde verzameling van beleid, technologieën, procedures en mensen die verantwoordelijk zijn voor het beschermen van de informatie-assets van een organisatie."
+  },
+  {
+    "id": 50,
+    "domain": 1,
+    "domainName": "Security and Risk Management",
+    "domainNameNl": "Beveiliging en risicobeheer",
+    "term": "Governance Framework",
+    "definition": "A governance framework defines the structures, roles, and processes used to manage cybersecurity activities and ensure accountability across the organization.",
+    "termNl": "Governance framework",
+    "definitionNl": "Een governance framework definieert de structuren, rollen en processen die worden gebruikt om cybersecurity-activiteiten te beheren en verantwoordingsplicht in de organisatie te waarborgen."
+  },
+  {
+    "id": 51,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Classification",
+    "definition": "Data classification is the process of assigning labels to information based on its sensitivity and value. These labels determine what security controls are required to protect the data.",
+    "termNl": "Gegevensclassificatie",
+    "definitionNl": "Gegevensclassificatie is het proces van het toekennen van labels aan informatie op basis van gevoeligheid en waarde. Deze labels bepalen welke beveiligingsmaatregelen nodig zijn om de gegevens te beschermen."
+  },
+  {
+    "id": 52,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Owner",
+    "definition": "A data owner is responsible for determining how specific data should be classified, protected, and used. This role typically belongs to a business manager rather than an IT specialist.",
+    "termNl": "Data-eigenaar",
+    "definitionNl": "Een data-eigenaar is verantwoordelijk voor het bepalen hoe specifieke gegevens moeten worden geclassificeerd, beschermd en gebruikt. Deze rol behoort doorgaans toe aan een businessmanager in plaats van een IT-specialist."
+  },
+  {
+    "id": 53,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Custodian",
+    "definition": "A data custodian manages and maintains systems that store or process data. Custodians implement the security controls defined by the data owner.",
+    "termNl": "Data-custodian",
+    "definitionNl": "Een data-custodian beheert en onderhoudt systemen die gegevens opslaan of verwerken. Custodians implementeren de beveiligingsmaatregelen die door de data-eigenaar zijn vastgesteld."
+  },
+  {
+    "id": 54,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Steward",
+    "definition": "A data steward focuses on maintaining data quality and integrity. This role ensures that information remains accurate, consistent, and usable across systems and processes.",
+    "termNl": "Data steward",
+    "definitionNl": "Een data steward richt zich op het handhaven van gegevenskwaliteit en -integriteit. Deze rol zorgt ervoor dat informatie nauwkeurig, consistent en bruikbaar blijft in systemen en processen."
+  },
+  {
+    "id": 55,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Asset",
+    "definition": "An information asset is any data or information resource that has value to an organization and therefore requires protection against unauthorized access, alteration, or loss.",
+    "termNl": "Informatie-asset",
+    "definitionNl": "Een informatie-asset is elke gegevens- of informatiebron die waarde heeft voor een organisatie en daarom bescherming vereist tegen ongeautoriseerde toegang, wijziging of verlies."
+  },
+  {
+    "id": 56,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Sensitive Data",
+    "definition": "Sensitive data refers to information that must be protected from unauthorized disclosure because it could harm individuals or organizations if exposed.",
+    "termNl": "Gevoelige gegevens",
+    "definitionNl": "Gevoelige gegevens verwijzen naar informatie die beschermd moet worden tegen ongeautoriseerde openbaarmaking omdat blootstelling schade kan toebrengen aan individuen of organisaties."
+  },
+  {
+    "id": 57,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Lifecycle",
+    "definition": "The data lifecycle describes the stages data goes through during its existence, including creation, storage, usage, sharing, archival, and secure destruction.",
+    "termNl": "Gegevenslevenscyclus",
+    "definitionNl": "De gegevenslevenscyclus beschrijft de fasen die gegevens doorlopen tijdens hun bestaan, inclusief creatie, opslag, gebruik, delen, archivering en veilige vernietiging."
+  },
+  {
+    "id": 58,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Creation",
+    "definition": "Data creation occurs when new information is generated by users, systems, or processes. Security controls should ensure that data is correctly classified from the moment it is created.",
+    "termNl": "Gegevenscreatie",
+    "definitionNl": "Gegevenscreatie vindt plaats wanneer nieuwe informatie wordt gegenereerd door gebruikers, systemen of processen. Beveiligingsmaatregelen moeten ervoor zorgen dat gegevens vanaf het moment van creatie correct worden geclassificeerd."
+  },
+  {
+    "id": 59,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Storage",
+    "definition": "Data storage refers to how information is stored in databases, file systems, or cloud services. Secure storage requires encryption, access control, and monitoring mechanisms.",
+    "termNl": "Gegevensopslag",
+    "definitionNl": "Gegevensopslag verwijst naar hoe informatie wordt opgeslagen in databases, bestandssystemen of clouddiensten. Veilige opslag vereist encryptie, toegangscontrole en monitoringmechanismen."
+  },
+  {
+    "id": 60,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Usage",
+    "definition": "Data usage describes how information is accessed and processed by users or applications. Security policies define who can use the data and under what conditions.",
+    "termNl": "Gegevensgebruik",
+    "definitionNl": "Gegevensgebruik beschrijft hoe informatie wordt benaderd en verwerkt door gebruikers of applicaties. Beveiligingsbeleid definieert wie de gegevens mag gebruiken en onder welke voorwaarden."
+  },
+  {
+    "id": 61,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Sharing",
+    "definition": "Data sharing involves distributing information to other users, departments, or organizations. Proper authorization and encryption are necessary to prevent unauthorized disclosure.",
+    "termNl": "Gegevensdeling",
+    "definitionNl": "Gegevensdeling omvat het verspreiden van informatie naar andere gebruikers, afdelingen of organisaties. Juiste autorisatie en encryptie zijn nodig om ongeautoriseerde openbaarmaking te voorkomen."
+  },
+  {
+    "id": 62,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Archiving",
+    "definition": "Data archiving moves inactive information to long-term storage while preserving it for future reference, compliance, or legal requirements.",
+    "termNl": "Gegevensarchivering",
+    "definitionNl": "Gegevensarchivering verplaatst inactieve informatie naar langetermijnopslag terwijl deze bewaard blijft voor toekomstige referentie, compliance of wettelijke vereisten."
+  },
+  {
+    "id": 63,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Retention",
+    "definition": "Data retention policies define how long information should be stored before it is archived or deleted. Legal regulations often influence retention requirements.",
+    "termNl": "Gegevensretentie",
+    "definitionNl": "Gegevensretentiebeleid definieert hoe lang informatie moet worden bewaard voordat deze wordt gearchiveerd of verwijderd. Wettelijke regelgeving beïnvloedt vaak retentievereisten."
+  },
+  {
+    "id": 64,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Disposal",
+    "definition": "Data disposal is the process of permanently removing information when it is no longer needed. Proper disposal prevents attackers from recovering sensitive data.",
+    "termNl": "Gegevensverwijdering",
+    "definitionNl": "Gegevensverwijdering is het proces van het permanent verwijderen van informatie wanneer deze niet langer nodig is. Correcte verwijdering voorkomt dat aanvallers gevoelige gegevens kunnen herstellen."
+  },
+  {
+    "id": 65,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure Deletion",
+    "definition": "Secure deletion ensures that deleted data cannot be recovered. Techniques include overwriting storage sectors or physically destroying storage media.",
+    "termNl": "Veilige verwijdering",
+    "definitionNl": "Veilige verwijdering zorgt ervoor dat verwijderde gegevens niet kunnen worden hersteld. Technieken omvatten het overschrijven van opslagsectoren of fysieke vernietiging van opslagmedia."
+  },
+  {
+    "id": 66,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Media Sanitization",
+    "definition": "Media sanitization removes data from storage devices before they are reused or discarded. This process prevents unauthorized recovery of previously stored information.",
+    "termNl": "Media-sanitisatie",
+    "definitionNl": "Media-sanitisatie verwijdert gegevens van opslagapparaten voordat ze opnieuw worden gebruikt of weggegooid. Dit proces voorkomt ongeautoriseerd herstel van eerder opgeslagen informatie."
+  },
+  {
+    "id": 67,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Masking",
+    "definition": "Data masking replaces sensitive information with fictitious values so that the data can be used safely for testing or analysis without revealing confidential information.",
+    "termNl": "Data masking",
+    "definitionNl": "Data masking vervangt gevoelige informatie door fictieve waarden zodat de gegevens veilig kunnen worden gebruikt voor testen of analyse zonder vertrouwelijke informatie prijs te geven."
+  },
+  {
+    "id": 68,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Tokenization",
+    "definition": "Tokenization replaces sensitive data with random identifiers called tokens. The real data is stored separately in a secure system.",
+    "termNl": "Tokenisatie",
+    "definitionNl": "Tokenisatie vervangt gevoelige gegevens door willekeurige identificatoren, tokens genoemd. De echte gegevens worden apart opgeslagen in een beveiligd systeem."
+  },
+  {
+    "id": 69,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Encryption at Rest",
+    "definition": "Encryption at rest protects stored data by converting it into unreadable form unless the correct cryptographic key is used to decrypt it.",
+    "termNl": "Encryptie at rest",
+    "definitionNl": "Encryptie at rest beschermt opgeslagen gegevens door ze om te zetten in onleesbare vorm tenzij de juiste cryptografische sleutel wordt gebruikt om ze te ontsleutelen."
+  },
+  {
+    "id": 70,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure Storage",
+    "definition": "Secure storage refers to the use of technical and administrative controls to protect stored information from unauthorized access, alteration, or loss.",
+    "termNl": "Veilige opslag",
+    "definitionNl": "Veilige opslag verwijst naar het gebruik van technische en administratieve controles om opgeslagen informatie te beschermen tegen ongeautoriseerde toegang, wijziging of verlies."
+  },
+  {
+    "id": 71,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Backup",
+    "definition": "A backup is a copy of data stored separately from the original source so it can be restored if the primary data is lost or corrupted.",
+    "termNl": "Back-up",
+    "definitionNl": "Een back-up is een kopie van gegevens die apart van de oorspronkelijke bron wordt opgeslagen, zodat deze kan worden hersteld als de primaire gegevens verloren gaan of beschadigd raken."
+  },
+  {
+    "id": 72,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Backup Strategy",
+    "definition": "A backup strategy defines how often backups occur, where they are stored, and how quickly data can be restored after an incident.",
+    "termNl": "Back-upstrategie",
+    "definitionNl": "Een back-upstrategie definieert hoe vaak back-ups worden gemaakt, waar ze worden opgeslagen en hoe snel gegevens kunnen worden hersteld na een incident."
+  },
+  {
+    "id": 73,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Full Backup",
+    "definition": "A full backup copies all selected data during each backup operation. Although reliable, full backups require more storage space and time.",
+    "termNl": "Volledige back-up",
+    "definitionNl": "Een volledige back-up kopieert alle geselecteerde gegevens bij elke back-upoperatie. Hoewel betrouwbaar, vereisen volledige back-ups meer opslagruimte en tijd."
+  },
+  {
+    "id": 74,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Incremental Backup",
+    "definition": "An incremental backup stores only data that has changed since the previous backup. This method saves storage space and reduces backup time.",
+    "termNl": "Incrementele back-up",
+    "definitionNl": "Een incrementele back-up slaat alleen gegevens op die zijn gewijzigd sinds de vorige back-up. Deze methode bespaart opslagruimte en verkort de back-uptijd."
+  },
+  {
+    "id": 75,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Differential Backup",
+    "definition": "A differential backup stores all changes made since the last full backup. It provides faster recovery than incremental backups.",
+    "termNl": "Differentiële back-up",
+    "definitionNl": "Een differentiële back-up slaat alle wijzigingen op sinds de laatste volledige back-up. Het biedt sneller herstel dan incrementele back-ups."
+  },
+  {
+    "id": 76,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Cold Backup",
+    "definition": "A cold backup is performed when the system is offline. This method ensures data consistency but requires system downtime.",
+    "termNl": "Cold back-up",
+    "definitionNl": "Een cold back-up wordt uitgevoerd wanneer het systeem offline is. Deze methode garandeert gegevensconsistentie maar vereist systeemuitvaltijd."
+  },
+  {
+    "id": 77,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Hot Backup",
+    "definition": "A hot backup is performed while the system is running. This allows continuous system operation but requires mechanisms to maintain data consistency.",
+    "termNl": "Hot back-up",
+    "definitionNl": "Een hot back-up wordt uitgevoerd terwijl het systeem actief is. Dit maakt continue systeemwerking mogelijk maar vereist mechanismen om gegevensconsistentie te handhaven."
+  },
+  {
+    "id": 78,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Redundancy",
+    "definition": "Data redundancy stores multiple copies of data in different locations to improve reliability and availability.",
+    "termNl": "Gegevensredundantie",
+    "definitionNl": "Gegevensredundantie slaat meerdere kopieën van gegevens op verschillende locaties op om betrouwbaarheid en beschikbaarheid te verbeteren."
+  },
+  {
+    "id": 79,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Replication",
+    "definition": "Data replication automatically copies data from one system to another to ensure availability and disaster recovery readiness.",
+    "termNl": "Gegevensreplicatie",
+    "definitionNl": "Gegevensreplicatie kopieert automatisch gegevens van het ene systeem naar het andere om beschikbaarheid en disaster recovery-gereedheid te waarborgen."
+  },
+  {
+    "id": 80,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Storage Encryption",
+    "definition": "Storage encryption protects data stored on disks, databases, or cloud storage systems using cryptographic algorithms.",
+    "termNl": "Opslagencryptie",
+    "definitionNl": "Opslagencryptie beschermt gegevens opgeslagen op schijven, databases of cloudopslagsystemen met cryptografische algoritmen."
+  },
+  {
+    "id": 81,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure File Transfer",
+    "definition": "Secure file transfer protocols ensure that files are transmitted between systems without exposing sensitive information during transmission.",
+    "termNl": "Veilige bestandsoverdracht",
+    "definitionNl": "Veilige bestandsoverdrachtprotocollen zorgen ervoor dat bestanden tussen systemen worden verzonden zonder gevoelige informatie bloot te stellen tijdens de overdracht."
+  },
+  {
+    "id": 82,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Leakage",
+    "definition": "Data leakage occurs when sensitive information is unintentionally exposed to unauthorized parties through misconfiguration, user error, or insecure systems.",
+    "termNl": "Gegevenslek",
+    "definitionNl": "Een gegevenslek treedt op wanneer gevoelige informatie onbedoeld wordt blootgesteld aan ongeautoriseerde partijen door verkeerde configuratie, gebruikersfouten of onveilige systemen."
+  },
+  {
+    "id": 83,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Loss Prevention",
+    "definition": "Data loss prevention technologies monitor and control data movement to prevent sensitive information from leaving the organization without authorization.",
+    "termNl": "Data Loss Prevention (DLP)",
+    "definitionNl": "Data Loss Prevention-technologieën monitoren en controleren gegevensbeweging om te voorkomen dat gevoelige informatie de organisatie verlaat zonder autorisatie."
+  },
+  {
+    "id": 84,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Labeling",
+    "definition": "Information labeling involves marking data with classification labels that indicate its sensitivity level and handling requirements.",
+    "termNl": "Informatielabeling",
+    "definitionNl": "Informatielabeling omvat het markeren van gegevens met classificatielabels die het gevoeligheidsniveau en de behandelingsvereisten aangeven."
+  },
+  {
+    "id": 85,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Minimization",
+    "definition": "Data minimization is the principle of collecting and storing only the data necessary for a specific purpose to reduce privacy and security risks.",
+    "termNl": "Gegevensminimalisatie",
+    "definitionNl": "Gegevensminimalisatie is het principe om alleen de gegevens te verzamelen en op te slaan die nodig zijn voor een specifiek doel, om privacy- en beveiligingsrisico's te verminderen."
+  },
+  {
+    "id": 86,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Governance",
+    "definition": "Data governance defines policies, procedures, and responsibilities for managing data throughout its lifecycle within an organization.",
+    "termNl": "Data governance",
+    "definitionNl": "Data governance definieert beleid, procedures en verantwoordelijkheden voor het beheren van gegevens gedurende hun levenscyclus binnen een organisatie."
+  },
+  {
+    "id": 87,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Metadata",
+    "definition": "Metadata is data that describes other data, such as file creation dates, authorship, and classification labels.",
+    "termNl": "Metadata",
+    "definitionNl": "Metadata is gegevens die andere gegevens beschrijven, zoals aanmaakdatums van bestanden, auteurschap en classificatielabels."
+  },
+  {
+    "id": 88,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Database Security",
+    "definition": "Database security includes the controls that protect databases from unauthorized access, misuse, or modification.",
+    "termNl": "Databasebeveiliging",
+    "definitionNl": "Databasebeveiliging omvat de controles die databases beschermen tegen ongeautoriseerde toegang, misbruik of wijziging."
+  },
+  {
+    "id": 89,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Record Management",
+    "definition": "Record management ensures that organizational records are stored, retained, and disposed of according to legal and operational requirements.",
+    "termNl": "Recordbeheer",
+    "definitionNl": "Recordbeheer zorgt ervoor dat organisatierecords worden opgeslagen, bewaard en vernietigd volgens wettelijke en operationele vereisten."
+  },
+  {
+    "id": 90,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Sensitivity",
+    "definition": "Information sensitivity measures how harmful the exposure or alteration of specific data could be to individuals or organizations.",
+    "termNl": "Informatiegevoeligheid",
+    "definitionNl": "Informatiegevoeligheid meet hoe schadelijk de blootstelling of wijziging van specifieke gegevens kan zijn voor individuen of organisaties."
+  },
+  {
+    "id": 91,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Storage Security Controls",
+    "definition": "Storage security controls include encryption, access controls, monitoring, and physical protections used to secure data storage systems.",
+    "termNl": "Opslagbeveiligingscontroles",
+    "definitionNl": "Opslagbeveiligingscontroles omvatten encryptie, toegangscontroles, monitoring en fysieke bescherming die worden gebruikt om gegevensopslagsystemen te beveiligen."
+  },
+  {
+    "id": 92,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure Data Handling",
+    "definition": "Secure data handling ensures that employees follow appropriate procedures when accessing, processing, or transferring sensitive information.",
+    "termNl": "Veilige gegevensbehandeling",
+    "definitionNl": "Veilige gegevensbehandeling zorgt ervoor dat medewerkers passende procedures volgen bij het benaderen, verwerken of overdragen van gevoelige informatie."
+  },
+  {
+    "id": 93,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Asset Inventory",
+    "definition": "An information asset inventory lists all data assets owned by an organization so they can be properly classified and protected.",
+    "termNl": "Informatie-assetinventaris",
+    "definitionNl": "Een informatie-assetinventaris somt alle gegevensassets op die een organisatie bezit, zodat ze correct kunnen worden geclassificeerd en beschermd."
+  },
+  {
+    "id": 94,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Escrow",
+    "definition": "Data escrow stores encrypted copies of critical information with a trusted third party so the data can be recovered if necessary.",
+    "termNl": "Data escrow",
+    "definitionNl": "Data escrow slaat versleutelde kopieën van kritieke informatie op bij een vertrouwde derde partij, zodat de gegevens indien nodig kunnen worden hersteld."
+  },
+  {
+    "id": 95,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure Media Transport",
+    "definition": "Secure media transport ensures that physical storage devices containing sensitive data are transported safely and tracked during movement.",
+    "termNl": "Veilig mediatransport",
+    "definitionNl": "Veilig mediatransport zorgt ervoor dat fysieke opslagapparaten met gevoelige gegevens veilig worden vervoerd en gevolgd tijdens het transport."
+  },
+  {
+    "id": 96,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Classification Policy",
+    "definition": "An information classification policy defines how data should be categorized and protected within the organization.",
+    "termNl": "Informatieclassificatiebeleid",
+    "definitionNl": "Een informatieclassificatiebeleid definieert hoe gegevens binnen de organisatie moeten worden gecategoriseerd en beschermd."
+  },
+  {
+    "id": 97,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Handling Policy",
+    "definition": "A data handling policy specifies how classified information must be stored, transmitted, and destroyed to prevent unauthorized disclosure.",
+    "termNl": "Gegevensbehandelingsbeleid",
+    "definitionNl": "Een gegevensbehandelingsbeleid specificeert hoe geclassificeerde informatie moet worden opgeslagen, verzonden en vernietigd om ongeautoriseerde openbaarmaking te voorkomen."
+  },
+  {
+    "id": 98,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Secure Archiving",
+    "definition": "Secure archiving protects stored historical data using encryption and strict access controls.",
+    "termNl": "Veilig archiveren",
+    "definitionNl": "Veilig archiveren beschermt opgeslagen historische gegevens met encryptie en strikte toegangscontroles."
+  },
+  {
+    "id": 99,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Information Lifecycle Management",
+    "definition": "Information lifecycle management ensures that data is managed appropriately from creation through destruction according to business and legal requirements.",
+    "termNl": "Information Lifecycle Management (ILM)",
+    "definitionNl": "Information Lifecycle Management zorgt ervoor dat gegevens van creatie tot vernietiging passend worden beheerd volgens bedrijfs- en wettelijke vereisten."
+  },
+  {
+    "id": 100,
+    "domain": 2,
+    "domainName": "Asset Security",
+    "domainNameNl": "Beveiliging van assets",
+    "term": "Data Protection Controls",
+    "definition": "Data protection controls include encryption, access management, monitoring, and backup mechanisms designed to protect sensitive information.",
+    "termNl": "Gegevensbeschermingscontroles",
+    "definitionNl": "Gegevensbeschermingscontroles omvatten encryptie, toegangsbeheer, monitoring en back-upmechanismen die zijn ontworpen om gevoelige informatie te beschermen."
+  },
+  {
+    "id": 101,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Security Architecture",
+    "definition": "Structured design of security controls across systems, networks, and applications to ensure consistent protection aligned with organizational policies and risk management objectives.",
+    "termNl": "Beveiligingsarchitectuur",
+    "definitionNl": "Gestructureerd ontwerp van beveiligingsmaatregelen in systemen, netwerken en applicaties om consistente bescherming te waarborgen, afgestemd op organisatiebeleid en risicobeheerdoelstellingen."
+  },
+  {
+    "id": 102,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Security Engineering",
+    "definition": "Discipline that applies engineering principles to design, implement, and maintain secure systems capable of resisting attacks while meeting performance and reliability requirements.",
+    "termNl": "Security engineering",
+    "definitionNl": "Discipline die engineeringprincipes toepast om veilige systemen te ontwerpen, implementeren en onderhouden die bestand zijn tegen aanvallen en tegelijkertijd prestatie- en betrouwbaarheidseisen halen."
+  },
+  {
+    "id": 103,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Defense in Depth",
+    "definition": "Security strategy that uses multiple layers of controls so that failure of one mechanism does not result in complete system compromise.",
+    "termNl": "Defense in Depth",
+    "definitionNl": "Beveiligingsstrategie die meerdere lagen controles gebruikt, zodat het falen van één mechanisme niet leidt tot volledige compromittering van het systeem."
+  },
+  {
+    "id": 104,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Security Model",
+    "definition": "Formal representation of security policies that defines how subjects access objects while maintaining confidentiality, integrity, or other security goals.",
+    "termNl": "Beveiligingsmodel",
+    "definitionNl": "Formele representatie van beveiligingsbeleid die definieert hoe subjects toegang krijgen tot objects terwijl vertrouwelijkheid, integriteit of andere beveiligingsdoelen worden gehandhaafd."
+  },
+  {
+    "id": 105,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Trusted Computing Base",
+    "definition": "Set of hardware, software, and controls responsible for enforcing security policy and therefore must be protected from tampering or compromise.",
+    "termNl": "Trusted Computing Base (TCB)",
+    "definitionNl": "Verzameling hardware, software en controles die verantwoordelijk zijn voor het afdwingen van beveiligingsbeleid en daarom beschermd moeten worden tegen manipulatie of compromittering."
+  },
+  {
+    "id": 106,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Reference Monitor",
+    "definition": "Concept ensuring every access request is validated against security policy and that the mechanism enforcing it is tamper-proof and always invoked.",
+    "termNl": "Reference Monitor",
+    "definitionNl": "Concept dat garandeert dat elk toegangsverzoek wordt gevalideerd tegen beveiligingsbeleid en dat het mechanisme dat dit afdwingt manipulatiebestendig is en altijd wordt aangeroepen."
+  },
+  {
+    "id": 107,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Security Kernel",
+    "definition": "Core component of an operating system that implements access control and enforces security policies reliably and securely.",
+    "termNl": "Security kernel",
+    "definitionNl": "Kerncomponent van een besturingssysteem die toegangscontrole implementeert en beveiligingsbeleid betrouwbaar en veilig afdwingt."
+  },
+  {
+    "id": 108,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Bell-LaPadula",
+    "definition": "Security model focused on confidentiality that prevents unauthorized data disclosure by restricting read and write operations across classification levels.",
+    "termNl": "Bell-LaPadula-model",
+    "definitionNl": "Beveiligingsmodel gericht op vertrouwelijkheid dat ongeautoriseerde gegevensopenbaarmaking voorkomt door lees- en schrijfoperaties te beperken over classificatieniveaus."
+  },
+  {
+    "id": 109,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Biba Model",
+    "definition": "Integrity-focused model that prevents data corruption by restricting how subjects read and write information based on integrity levels.",
+    "termNl": "Biba-model",
+    "definitionNl": "Integriteitsgericht model dat gegevenscorruptie voorkomt door te beperken hoe subjects informatie lezen en schrijven op basis van integriteitsniveaus."
+  },
+  {
+    "id": 110,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Clark-Wilson Model",
+    "definition": "Integrity model that enforces well-formed transactions and separation of duties to ensure data remains accurate and consistent.",
+    "termNl": "Clark-Wilson-model",
+    "definitionNl": "Integriteitsmodel dat goed gevormde transacties en functiescheiding afdwingt om te waarborgen dat gegevens nauwkeurig en consistent blijven."
+  },
+  {
+    "id": 111,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Cryptography",
+    "definition": "Practice of securing information using mathematical techniques such as encryption and hashing to ensure confidentiality, integrity, and authenticity.",
+    "termNl": "Cryptografie",
+    "definitionNl": "Praktijk van het beveiligen van informatie met wiskundige technieken zoals encryptie en hashing om vertrouwelijkheid, integriteit en authenticiteit te waarborgen."
+  },
+  {
+    "id": 112,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Symmetric Encryption",
+    "definition": "Encryption method using a single shared key for both encryption and decryption, providing efficient protection for large amounts of data.",
+    "termNl": "Symmetrische encryptie",
+    "definitionNl": "Encryptiemethode die één gedeelde sleutel gebruikt voor zowel encryptie als decryptie, en efficiënte bescherming biedt voor grote hoeveelheden gegevens."
+  },
+  {
+    "id": 113,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Asymmetric Encryption",
+    "definition": "Encryption method using a public and private key pair, commonly used for secure key exchange and digital signatures.",
+    "termNl": "Asymmetrische encryptie",
+    "definitionNl": "Encryptiemethode die een publiek-privésleutelpaar gebruikt, veelal voor veilige sleuteluitwisseling en digitale handtekeningen."
+  },
+  {
+    "id": 114,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Hash Function",
+    "definition": "Mathematical function that converts data into a fixed-length value used to verify data integrity without revealing original content.",
+    "termNl": "Hashfunctie",
+    "definitionNl": "Wiskundige functie die gegevens omzet in een waarde van vaste lengte, gebruikt om gegevensintegriteit te verifiëren zonder de oorspronkelijke inhoud prijs te geven."
+  },
+  {
+    "id": 115,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Digital Signature",
+    "definition": "Cryptographic mechanism that verifies authenticity and integrity of data using private key encryption and public key verification.",
+    "termNl": "Digitale handtekening",
+    "definitionNl": "Cryptografisch mechanisme dat authenticiteit en integriteit van gegevens verifieert met privésleutel-encryptie en publiekesleutelverificatie."
+  },
+  {
+    "id": 116,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "PKI",
+    "definition": "Public Key Infrastructure manages digital certificates and keys to support secure communication and identity verification across systems.",
+    "termNl": "PKI",
+    "definitionNl": "Public Key Infrastructure beheert digitale certificaten en sleutels om veilige communicatie en identiteitsverificatie tussen systemen te ondersteunen."
+  },
+  {
+    "id": 117,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Certificate Authority",
+    "definition": "Trusted organization that issues and manages digital certificates linking public keys with identities.",
+    "termNl": "Certificaatautoriteit (CA)",
+    "definitionNl": "Vertrouwde organisatie die digitale certificaten uitgeeft en beheert die publieke sleutels koppelen aan identiteiten."
+  },
+  {
+    "id": 118,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Boot",
+    "definition": "Process ensuring that only trusted and verified software is loaded during system startup to prevent malware execution.",
+    "termNl": "Secure Boot",
+    "definitionNl": "Proces dat garandeert dat alleen vertrouwde en geverifieerde software wordt geladen tijdens systeemopstart om malware-uitvoering te voorkomen."
+  },
+  {
+    "id": 119,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "TPM",
+    "definition": "Hardware component that securely stores cryptographic keys and supports platform integrity verification mechanisms.",
+    "termNl": "TPM",
+    "definitionNl": "Trusted Platform Module is een hardwarecomponent die cryptografische sleutels veilig opslaat en platformintegriteitsverificatiemechanismen ondersteunt."
+  },
+  {
+    "id": 120,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "HSM",
+    "definition": "Dedicated hardware device that securely generates, stores, and manages cryptographic keys while performing encryption operations.",
+    "termNl": "HSM",
+    "definitionNl": "Hardware Security Module is een speciaal hardwareapparaat dat cryptografische sleutels veilig genereert, opslaat en beheert terwijl het encryptieoperaties uitvoert."
+  },
+  {
+    "id": 121,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Least Privilege",
+    "definition": "Principle that users and systems should only be granted permissions necessary to perform their tasks, reducing potential damage from misuse.",
+    "termNl": "Least Privilege",
+    "definitionNl": "Principe dat gebruikers en systemen alleen de rechten krijgen die nodig zijn om hun taken uit te voeren, waardoor potentiële schade door misbruik wordt verminderd."
+  },
+  {
+    "id": 122,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Zero Trust",
+    "definition": "Security model requiring continuous verification of identity and context, assuming no implicit trust based on network location.",
+    "termNl": "Zero Trust",
+    "definitionNl": "Beveiligingsmodel dat continue verificatie van identiteit en context vereist, waarbij geen impliciet vertrouwen wordt gegeven op basis van netwerklocatie."
+  },
+  {
+    "id": 123,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Virtualization",
+    "definition": "Technology allowing multiple virtual systems to run on a single physical machine, requiring isolation to maintain security.",
+    "termNl": "Virtualisatie",
+    "definitionNl": "Technologie waarmee meerdere virtuele systemen op één fysieke machine kunnen draaien, waarbij isolatie nodig is om beveiliging te handhaven."
+  },
+  {
+    "id": 124,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Hypervisor",
+    "definition": "Software layer that manages virtual machines and ensures separation between them to prevent cross-VM attacks.",
+    "termNl": "Hypervisor",
+    "definitionNl": "Softwarelaag die virtuele machines beheert en scheiding tussen hen waarborgt om cross-VM-aanvallen te voorkomen."
+  },
+  {
+    "id": 125,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Containers",
+    "definition": "Lightweight virtualization method packaging applications and dependencies, requiring isolation and runtime security controls.",
+    "termNl": "Containers",
+    "definitionNl": "Lichtgewicht virtualisatiemethode die applicaties en afhankelijkheden bundelt, waarbij isolatie en runtime-beveiligingscontroles vereist zijn."
+  },
+  {
+    "id": 126,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Sandboxing",
+    "definition": "Technique for executing code in a restricted environment to prevent it from affecting the rest of the system.",
+    "termNl": "Sandboxing",
+    "definitionNl": "Techniek om code uit te voeren in een beperkte omgeving om te voorkomen dat het de rest van het systeem beïnvloedt."
+  },
+  {
+    "id": 127,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Memory Protection",
+    "definition": "Mechanism that isolates process memory spaces to prevent unauthorized access or modification by other processes.",
+    "termNl": "Geheugenbescherming",
+    "definitionNl": "Mechanisme dat geheugenruimten van processen isoleert om ongeautoriseerde toegang of wijziging door andere processen te voorkomen."
+  },
+  {
+    "id": 128,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "ASLR",
+    "definition": "Security technique that randomizes memory addresses to make exploitation of vulnerabilities more difficult.",
+    "termNl": "ASLR",
+    "definitionNl": "Address Space Layout Randomization is een beveiligingstechniek die geheugenadressen randomiseert om het misbruiken van kwetsbaarheden moeilijker te maken."
+  },
+  {
+    "id": 129,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Fault Tolerance",
+    "definition": "Capability of a system to continue operating despite failures in hardware or software components.",
+    "termNl": "Fouttolerantie",
+    "definitionNl": "Vermogen van een systeem om te blijven functioneren ondanks storingen in hardware- of softwarecomponenten."
+  },
+  {
+    "id": 130,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Redundancy",
+    "definition": "Duplication of system components or data to improve reliability and availability in case of failure.",
+    "termNl": "Redundantie",
+    "definitionNl": "Duplicatie van systeemcomponenten of gegevens om betrouwbaarheid en beschikbaarheid te verbeteren bij storingen."
+  },
+  {
+    "id": 131,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Resilience",
+    "definition": "Ability of a system to recover quickly from disruptions and maintain essential operations.",
+    "termNl": "Resilience",
+    "definitionNl": "Vermogen van een systeem om snel te herstellen van verstoringen en essentiële operaties te handhaven."
+  },
+  {
+    "id": 132,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Design",
+    "definition": "Approach that integrates security considerations into system architecture from the beginning of development.",
+    "termNl": "Veilig ontwerp",
+    "definitionNl": "Aanpak die beveiligingsoverwegingen integreert in systeemarchitectuur vanaf het begin van de ontwikkeling."
+  },
+  {
+    "id": 133,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Hardware",
+    "definition": "Hardware designed to resist tampering, unauthorized access, and physical attacks.",
+    "termNl": "Veilige hardware",
+    "definitionNl": "Hardware ontworpen om bestand te zijn tegen manipulatie, ongeautoriseerde toegang en fysieke aanvallen."
+  },
+  {
+    "id": 134,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Embedded Systems",
+    "definition": "Special-purpose computing systems requiring security controls tailored to limited resources and specific operational contexts.",
+    "termNl": "Embedded systemen",
+    "definitionNl": "Speciaaldoelcomputersystemen die beveiligingscontroles vereisen afgestemd op beperkte middelen en specifieke operationele contexten."
+  },
+  {
+    "id": 135,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "ICS",
+    "definition": "Industrial Control Systems manage industrial processes and require high availability and specialized security protections.",
+    "termNl": "ICS",
+    "definitionNl": "Industrial Control Systems beheren industriële processen en vereisen hoge beschikbaarheid en gespecialiseerde beveiligingsmaatregelen."
+  },
+  {
+    "id": 136,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "SCADA",
+    "definition": "Supervisory Control and Data Acquisition systems monitor and control large-scale industrial operations and infrastructure.",
+    "termNl": "SCADA",
+    "definitionNl": "Supervisory Control and Data Acquisition-systemen monitoren en besturen grootschalige industriële operaties en infrastructuur."
+  },
+  {
+    "id": 137,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Isolation",
+    "definition": "Separation of systems or components to prevent unauthorized interaction or spread of compromise.",
+    "termNl": "Isolatie",
+    "definitionNl": "Scheiding van systemen of componenten om ongeautoriseerde interactie of verspreiding van compromittering te voorkomen."
+  },
+  {
+    "id": 138,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Abstraction",
+    "definition": "Design principle that simplifies complex systems by separating layers, aiding security management and control.",
+    "termNl": "Abstractie",
+    "definitionNl": "Ontwerpprincipe dat complexe systemen vereenvoudigt door lagen te scheiden, wat beveiligingsbeheer en -controle ondersteunt."
+  },
+  {
+    "id": 139,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Platform Security",
+    "definition": "Protection of operating systems, firmware, and hardware to ensure a trusted computing environment.",
+    "termNl": "Platformbeveiliging",
+    "definitionNl": "Bescherming van besturingssystemen, firmware en hardware om een vertrouwde computeromgeving te waarborgen."
+  },
+  {
+    "id": 140,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Trusted Path",
+    "definition": "Secure communication channel between user and system for sensitive operations such as authentication.",
+    "termNl": "Trusted Path",
+    "definitionNl": "Veilig communicatiekanaal tussen gebruiker en systeem voor gevoelige operaties zoals authenticatie."
+  },
+  {
+    "id": 141,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Firmware",
+    "definition": "Firmware designed with protections against unauthorized modification or exploitation.",
+    "termNl": "Veilige firmware",
+    "definitionNl": "Firmware ontworpen met bescherming tegen ongeautoriseerde wijziging of exploitatie."
+  },
+  {
+    "id": 142,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Side-Channel Attack",
+    "definition": "Attack exploiting physical characteristics like timing or power consumption to extract sensitive information.",
+    "termNl": "Side-channel-aanval",
+    "definitionNl": "Aanval die fysieke kenmerken zoals timing of stroomverbruik misbruikt om gevoelige informatie te extraheren."
+  },
+  {
+    "id": 143,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Trusted Computing",
+    "definition": "Concept ensuring systems operate as expected by verifying integrity of hardware and software components.",
+    "termNl": "Trusted Computing",
+    "definitionNl": "Concept dat garandeert dat systemen werken zoals verwacht door de integriteit van hardware- en softwarecomponenten te verifiëren."
+  },
+  {
+    "id": 144,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Principles",
+    "definition": "Guidelines such as least privilege and defense in depth used to design secure systems.",
+    "termNl": "Beveiligingsprincipes",
+    "definitionNl": "Richtlijnen zoals least privilege en defense in depth die worden gebruikt om veilige systemen te ontwerpen."
+  },
+  {
+    "id": 145,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Fail Secure",
+    "definition": "System behavior that defaults to a secure state when a failure occurs.",
+    "termNl": "Fail Secure",
+    "definitionNl": "Systeemgedrag dat standaard naar een veilige staat gaat wanneer een storing optreedt."
+  },
+  {
+    "id": 146,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Security Boundary",
+    "definition": "Logical or physical separation that defines trust limits between systems or components.",
+    "termNl": "Beveiligingsgrens",
+    "definitionNl": "Logische of fysieke scheiding die vertrouwenslimieten definieert tussen systemen of componenten."
+  },
+  {
+    "id": 147,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Root of Trust",
+    "definition": "Trusted component that establishes the basis for system security and integrity verification.",
+    "termNl": "Root of Trust",
+    "definitionNl": "Vertrouwd component dat de basis legt voor systeembeveiliging en integriteitsverificatie."
+  },
+  {
+    "id": 148,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Secure Architecture Pattern",
+    "definition": "Reusable design solutions addressing common security challenges within system architectures.",
+    "termNl": "Veilig architectuurpatroon",
+    "definitionNl": "Herbruikbare ontwerpoplossingen die veelvoorkomende beveiligingsuitdagingen in systeemarchitecturen aanpakken."
+  },
+  {
+    "id": 149,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Threat Modeling",
+    "definition": "Process of identifying and evaluating potential threats during system design.",
+    "termNl": "Threat modeling",
+    "definitionNl": "Proces van het identificeren en evalueren van potentiële dreigingen tijdens systeemontwerp."
+  },
+  {
+    "id": 150,
+    "domain": 3,
+    "domainName": "Security Architecture & Engineering",
+    "domainNameNl": "Beveiligingsarchitectuur en engineering",
+    "term": "Attack Surface",
+    "definition": "Total set of points where an attacker can attempt to exploit vulnerabilities within a system.",
+    "termNl": "Aanvalsoppervlak",
+    "definitionNl": "Totale verzameling punten waar een aanvaller kan proberen kwetsbaarheden te misbruiken binnen een systeem."
+  },
+  {
+    "id": 151,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Network Architecture",
+    "definition": "Design of networks including devices, paths, protocols, and controls enabling secure communication.",
+    "termNl": "Netwerkarchitectuur",
+    "definitionNl": "Ontwerp van netwerken inclusief apparaten, paden, protocollen en controles die veilige communicatie mogelijk maken."
+  },
+  {
+    "id": 152,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "OSI Model",
+    "definition": "Seven-layer framework describing how data moves through networks from physical transmission to applications.",
+    "termNl": "OSI-model",
+    "definitionNl": "Zevenslagenframework dat beschrijft hoe gegevens door netwerken bewegen van fysieke transmissie tot applicaties."
+  },
+  {
+    "id": 153,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "TCP/IP Model",
+    "definition": "Four-layer model used on the internet defining data transmission and routing.",
+    "termNl": "TCP/IP-model",
+    "definitionNl": "Viervlagenmodel gebruikt op internet dat gegevensoverdracht en routing definieert."
+  },
+  {
+    "id": 154,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Network Protocol",
+    "definition": "Rules governing how devices communicate and exchange data.",
+    "termNl": "Netwerkprotocol",
+    "definitionNl": "Regels die bepalen hoe apparaten communiceren en gegevens uitwisselen."
+  },
+  {
+    "id": 155,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Packet",
+    "definition": "Small unit of data transmitted across networks and reassembled at destination.",
+    "termNl": "Pakket",
+    "definitionNl": "Kleine gegevenseenheid die over netwerken wordt verzonden en op de bestemming opnieuw wordt samengesteld."
+  },
+  {
+    "id": 156,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Firewall",
+    "definition": "Filters network traffic based on rules to prevent unauthorized access.",
+    "termNl": "Firewall",
+    "definitionNl": "Filtert netwerkverkeer op basis van regels om ongeautoriseerde toegang te voorkomen."
+  },
+  {
+    "id": 157,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Packet Filtering",
+    "definition": "Filters packets using headers like IP and port.",
+    "termNl": "Pakketfiltering",
+    "definitionNl": "Filtert pakketten met headers zoals IP-adres en poort."
+  },
+  {
+    "id": 158,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Stateful Firewall",
+    "definition": "Tracks connections and filters traffic based on session state.",
+    "termNl": "Stateful firewall",
+    "definitionNl": "Houdt verbindingen bij en filtert verkeer op basis van sessiestatus."
+  },
+  {
+    "id": 159,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Application Firewall",
+    "definition": "Inspects application-layer traffic for attacks.",
+    "termNl": "Applicatiefirewall",
+    "definitionNl": "Inspecteert verkeer op applicatielaag op aanvallen."
+  },
+  {
+    "id": 160,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "DMZ",
+    "definition": "Network zone for public-facing systems separated from internal network.",
+    "termNl": "DMZ",
+    "definitionNl": "Demilitarized Zone is een netwerkzone voor publiek toegankelijke systemen, gescheiden van het interne netwerk."
+  },
+  {
+    "id": 161,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Segmentation",
+    "definition": "Dividing networks to limit attack spread.",
+    "termNl": "Segmentatie",
+    "definitionNl": "Verdeling van netwerken om de verspreiding van aanvallen te beperken."
+  },
+  {
+    "id": 162,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Isolation",
+    "definition": "Separating systems to prevent unauthorized interaction.",
+    "termNl": "Isolatie",
+    "definitionNl": "Scheiding van systemen om ongeautoriseerde interactie te voorkomen."
+  },
+  {
+    "id": 163,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "VPN",
+    "definition": "Encrypted tunnel for secure remote access.",
+    "termNl": "VPN",
+    "definitionNl": "Virtual Private Network is een versleutelde tunnel voor veilige externe toegang."
+  },
+  {
+    "id": 164,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Encryption in Transit",
+    "definition": "Protecting data while traveling across networks.",
+    "termNl": "Encryptie in transit",
+    "definitionNl": "Bescherming van gegevens terwijl ze over netwerken worden verzonden."
+  },
+  {
+    "id": 165,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "TLS",
+    "definition": "Protocol securing communication with encryption and integrity.",
+    "termNl": "TLS",
+    "definitionNl": "Transport Layer Security is een protocol dat communicatie beveiligt met encryptie en integriteit."
+  },
+  {
+    "id": 166,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "SSH",
+    "definition": "Secure remote administration protocol.",
+    "termNl": "SSH",
+    "definitionNl": "Secure Shell is een protocol voor veilige externe systeembeheer."
+  },
+  {
+    "id": 167,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "HTTPS",
+    "definition": "HTTP over TLS providing secure web communication.",
+    "termNl": "HTTPS",
+    "definitionNl": "HTTP over TLS biedt veilige webcommunicatie."
+  },
+  {
+    "id": 168,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "DNS",
+    "definition": "Translates domain names to IP addresses.",
+    "termNl": "DNS",
+    "definitionNl": "Domain Name System vertaalt domeinnamen naar IP-adressen."
+  },
+  {
+    "id": 169,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "DNSSEC",
+    "definition": "Adds integrity and authenticity to DNS responses.",
+    "termNl": "DNSSEC",
+    "definitionNl": "DNS Security Extensions voegen integriteit en authenticiteit toe aan DNS-antwoorden."
+  },
+  {
+    "id": 170,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "NAT",
+    "definition": "Maps private addresses to public addresses.",
+    "termNl": "NAT",
+    "definitionNl": "Network Address Translation koppelt private adressen aan publieke adressen."
+  },
+  {
+    "id": 171,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Routing",
+    "definition": "Determining paths for packets across networks.",
+    "termNl": "Routing",
+    "definitionNl": "Bepalen van paden voor pakketten over netwerken."
+  },
+  {
+    "id": 172,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Router",
+    "definition": "Forwards packets between networks.",
+    "termNl": "Router",
+    "definitionNl": "Stuurt pakketten door tussen netwerken."
+  },
+  {
+    "id": 173,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Switch",
+    "definition": "Connects devices within a LAN.",
+    "termNl": "Switch",
+    "definitionNl": "Verbindt apparaten binnen een LAN."
+  },
+  {
+    "id": 174,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Load Balancer",
+    "definition": "Distributes traffic across servers.",
+    "termNl": "Load balancer",
+    "definitionNl": "Verdeelt verkeer over meerdere servers."
+  },
+  {
+    "id": 175,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Proxy",
+    "definition": "Intermediary handling requests and filtering traffic.",
+    "termNl": "Proxy",
+    "definitionNl": "Tussenpersoon die verzoeken afhandelt en verkeer filtert."
+  },
+  {
+    "id": 176,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "NAC",
+    "definition": "Controls device access to networks.",
+    "termNl": "NAC",
+    "definitionNl": "Network Access Control regelt apparaattoegang tot netwerken."
+  },
+  {
+    "id": 177,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "IDS",
+    "definition": "Detects suspicious network activity.",
+    "termNl": "IDS",
+    "definitionNl": "Intrusion Detection System detecteert verdachte netwerkactiviteit."
+  },
+  {
+    "id": 178,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "IPS",
+    "definition": "Blocks malicious traffic automatically.",
+    "termNl": "IPS",
+    "definitionNl": "Intrusion Prevention System blokkeert automatisch kwaadaardig verkeer."
+  },
+  {
+    "id": 179,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Monitoring",
+    "definition": "Observing network activity continuously.",
+    "termNl": "Monitoring",
+    "definitionNl": "Continue observatie van netwerkactiviteit."
+  },
+  {
+    "id": 180,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Logging",
+    "definition": "Recording network events for analysis.",
+    "termNl": "Logging",
+    "definitionNl": "Registratie van netwerkgebeurtenissen voor analyse."
+  },
+  {
+    "id": 181,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Wireless Network",
+    "definition": "Communication using radio signals instead of cables.",
+    "termNl": "Draadloos netwerk",
+    "definitionNl": "Communicatie via radiosignalen in plaats van kabels."
+  },
+  {
+    "id": 182,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Wireless Encryption",
+    "definition": "Protecting Wi‑Fi traffic with encryption.",
+    "termNl": "Draadloze encryptie",
+    "definitionNl": "Bescherming van Wi-Fi-verkeer met encryptie."
+  },
+  {
+    "id": 183,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "WPA3",
+    "definition": "Modern Wi‑Fi security protocol.",
+    "termNl": "WPA3",
+    "definitionNl": "Modern Wi-Fi-beveiligingsprotocol."
+  },
+  {
+    "id": 184,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Wireless Authentication",
+    "definition": "Verifying users/devices on Wi‑Fi.",
+    "termNl": "Draadloze authenticatie",
+    "definitionNl": "Verificatie van gebruikers en apparaten op Wi-Fi."
+  },
+  {
+    "id": 185,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Hardening",
+    "definition": "Reducing attack surface through configuration.",
+    "termNl": "Hardening",
+    "definitionNl": "Vermindering van het aanvalsoppervlak door configuratie."
+  },
+  {
+    "id": 186,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "DPI",
+    "definition": "Inspecting packet contents for threats.",
+    "termNl": "DPI",
+    "definitionNl": "Deep Packet Inspection inspecteert pakketinhoud op dreigingen."
+  },
+  {
+    "id": 187,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Perimeter",
+    "definition": "Boundary between trusted and untrusted networks.",
+    "termNl": "Perimeter",
+    "definitionNl": "Grens tussen vertrouwde en niet-vertrouwde netwerken."
+  },
+  {
+    "id": 188,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Gateway",
+    "definition": "Connects networks and translates protocols.",
+    "termNl": "Gateway",
+    "definitionNl": "Verbindt netwerken en vertaalt protocollen."
+  },
+  {
+    "id": 189,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Bandwidth",
+    "definition": "Maximum data transmission capacity.",
+    "termNl": "Bandbreedte",
+    "definitionNl": "Maximale gegevensoverdrachtscapaciteit."
+  },
+  {
+    "id": 190,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Latency",
+    "definition": "Delay in network communication.",
+    "termNl": "Latency",
+    "definitionNl": "Vertraging in netwerkcommunicatie."
+  },
+  {
+    "id": 191,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Multicast",
+    "definition": "Sending data to multiple recipients efficiently.",
+    "termNl": "Multicast",
+    "definitionNl": "Efficiënt verzenden van gegevens naar meerdere ontvangers."
+  },
+  {
+    "id": 192,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Reliability",
+    "definition": "Consistent delivery of network services.",
+    "termNl": "Betrouwbaarheid",
+    "definitionNl": "Consistente levering van netwerkdiensten."
+  },
+  {
+    "id": 193,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Availability",
+    "definition": "Ensuring network services remain accessible.",
+    "termNl": "Beschikbaarheid",
+    "definitionNl": "Waarborgen dat netwerkdiensten toegankelijk blijven."
+  },
+  {
+    "id": 194,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Traffic Analysis",
+    "definition": "Examining patterns for anomalies.",
+    "termNl": "Verkeersanalyse",
+    "definitionNl": "Onderzoeken van patronen op afwijkingen."
+  },
+  {
+    "id": 195,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Network Forensics",
+    "definition": "Investigating traffic after incidents.",
+    "termNl": "Netwerkforensisch onderzoek",
+    "definitionNl": "Onderzoek van verkeer na incidenten."
+  },
+  {
+    "id": 196,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Secure Routing",
+    "definition": "Protecting routing protocols.",
+    "termNl": "Veilig routing",
+    "definitionNl": "Bescherming van routingprotocollen."
+  },
+  {
+    "id": 197,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "SDN",
+    "definition": "Centralized software-based network control.",
+    "termNl": "SDN",
+    "definitionNl": "Software-Defined Networking biedt gecentraliseerde softwarematige netwerkcontrole."
+  },
+  {
+    "id": 198,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Infrastructure",
+    "definition": "Physical and logical network components.",
+    "termNl": "Infrastructuur",
+    "definitionNl": "Fysieke en logische netwerkcomponenten."
+  },
+  {
+    "id": 199,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Service Availability",
+    "definition": "Ensuring uptime of services.",
+    "termNl": "Dienstbeschikbaarheid",
+    "definitionNl": "Waarborgen van uptime van diensten."
+  },
+  {
+    "id": 200,
+    "domain": 4,
+    "domainName": "Communication & Network Security",
+    "domainNameNl": "Communicatie- en netwerkbeveiliging",
+    "term": "Secure Communication",
+    "definition": "Ensuring confidentiality, integrity, and authenticity in data transmission.",
+    "termNl": "Veilige communicatie",
+    "definitionNl": "Waarborgen van vertrouwelijkheid, integriteit en authenticiteit bij gegevensoverdracht."
+  },
+  {
+    "id": 201,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity",
+    "definition": "A unique digital representation of a user, system, or service that enables authentication, authorization, and accountability within an information system environment.",
+    "termNl": "Identiteit",
+    "definitionNl": "Een unieke digitale representatie van een gebruiker, systeem of dienst die authenticatie, autorisatie en verantwoordingsplicht mogelijk maakt binnen een informatiesysteemomgeving."
+  },
+  {
+    "id": 202,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Authentication",
+    "definition": "The process of verifying a claimed identity using credentials such as passwords, tokens, or biometrics before granting access to systems or data.",
+    "termNl": "Authenticatie",
+    "definitionNl": "Het proces van het verifiëren van een geclaimde identiteit met credentials zoals wachtwoorden, tokens of biometrie voordat toegang tot systemen of gegevens wordt verleend."
+  },
+  {
+    "id": 203,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Authorization",
+    "definition": "The process of determining what actions an authenticated identity is allowed to perform, based on policies, roles, or contextual attributes.",
+    "termNl": "Autorisatie",
+    "definitionNl": "Het proces van bepalen welke acties een geauthenticeerde identiteit mag uitvoeren, op basis van beleid, rollen of contextuele attributen."
+  },
+  {
+    "id": 204,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Access Control",
+    "definition": "A set of mechanisms and policies that restrict access to resources, ensuring only authorized users or systems can perform specific actions.",
+    "termNl": "Toegangscontrole",
+    "definitionNl": "Een verzameling mechanismen en beleidsregels die toegang tot resources beperken, zodat alleen geautoriseerde gebruikers of systemen specifieke acties kunnen uitvoeren."
+  },
+  {
+    "id": 205,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "MFA",
+    "definition": "Multi-factor authentication requires multiple independent credentials, such as something you know, have, or are, significantly improving resistance to credential theft attacks.",
+    "termNl": "MFA",
+    "definitionNl": "Multi-Factor Authentication vereist meerdere onafhankelijke credentials, zoals iets dat je weet, hebt of bent, en verbetert aanzienlijk de weerstand tegen diefstal van inloggegevens."
+  },
+  {
+    "id": 206,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "RBAC",
+    "definition": "Role-Based Access Control assigns permissions based on predefined roles within an organization, simplifying management and ensuring consistent access rights aligned with job functions.",
+    "termNl": "RBAC",
+    "definitionNl": "Role-Based Access Control wijst rechten toe op basis van vooraf gedefinieerde rollen binnen een organisatie, wat beheer vereenvoudigt en consistente toegangsrechten afgestemd op functies waarborgt."
+  },
+  {
+    "id": 207,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "ABAC",
+    "definition": "Attribute-Based Access Control evaluates multiple attributes such as user role, device, time, and location to dynamically determine whether access should be granted.",
+    "termNl": "ABAC",
+    "definitionNl": "Attribute-Based Access Control evalueert meerdere attributen zoals gebruikersrol, apparaat, tijd en locatie om dynamisch te bepalen of toegang moet worden verleend."
+  },
+  {
+    "id": 208,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Least Privilege",
+    "definition": "A security principle ensuring users and systems receive only the minimum permissions necessary to perform tasks, reducing potential damage from misuse or compromise.",
+    "termNl": "Least Privilege",
+    "definitionNl": "Beveiligingsprincipe dat garandeert dat gebruikers en systemen alleen de minimale rechten ontvangen die nodig zijn om taken uit te voeren, waardoor potentiële schade door misbruik of compromittering wordt verminderd."
+  },
+  {
+    "id": 209,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Provisioning",
+    "definition": "The process of creating user accounts and assigning appropriate roles and permissions based on job responsibilities and organizational policies.",
+    "termNl": "Provisioning",
+    "definitionNl": "Het proces van het aanmaken van gebruikersaccounts en het toewijzen van passende rollen en rechten op basis van functieverantwoordelijkheden en organisatiebeleid."
+  },
+  {
+    "id": 210,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Deprovisioning",
+    "definition": "The process of removing user accounts and revoking access rights when they are no longer required, such as after role changes or termination.",
+    "termNl": "Deprovisioning",
+    "definitionNl": "Het proces van het verwijderen van gebruikersaccounts en het intrekken van toegangsrechten wanneer deze niet langer nodig zijn, bijvoorbeeld na functiewijzigingen of beëindiging."
+  },
+  {
+    "id": 211,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Lifecycle",
+    "definition": "The complete management process of identities from creation and maintenance to eventual removal, ensuring access rights remain appropriate over time.",
+    "termNl": "Identiteitslevenscyclus",
+    "definitionNl": "Het volledige beheerproces van identiteiten van creatie en onderhoud tot uiteindelijke verwijdering, zodat toegangsrechten in de loop van de tijd passend blijven."
+  },
+  {
+    "id": 212,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "SSO",
+    "definition": "Single Sign-On allows users to authenticate once and access multiple systems without re-entering credentials, improving usability while requiring strong security controls.",
+    "termNl": "SSO",
+    "definitionNl": "Single Sign-On stelt gebruikers in staat één keer te authenticeren en toegang te krijgen tot meerdere systemen zonder opnieuw in te loggen, wat gebruiksgemak verbetert maar sterke beveiligingscontroles vereist."
+  },
+  {
+    "id": 213,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Federation",
+    "definition": "An identity management approach that enables multiple organizations or systems to share authentication information through trusted relationships and standardized protocols.",
+    "termNl": "Federatie",
+    "definitionNl": "Een identiteitsbeheeraanpak waarmee meerdere organisaties of systemen authenticatie-informatie kunnen delen via vertrouwensrelaties en gestandaardiseerde protocollen."
+  },
+  {
+    "id": 214,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Kerberos",
+    "definition": "A network authentication protocol that uses tickets and symmetric cryptography to securely verify identities without transmitting passwords over the network.",
+    "termNl": "Kerberos",
+    "definitionNl": "Een netwerkauthenticatieprotocol dat tickets en symmetrische cryptografie gebruikt om identiteiten veilig te verifiëren zonder wachtwoorden over het netwerk te verzenden."
+  },
+  {
+    "id": 215,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "SAML",
+    "definition": "Security Assertion Markup Language is a standard for exchanging authentication and authorization data between identity providers and service providers in federated environments.",
+    "termNl": "SAML",
+    "definitionNl": "Security Assertion Markup Language is een standaard voor het uitwisselen van authenticatie- en autorisatiegegevens tussen identity providers en service providers in gefedereerde omgevingen."
+  },
+  {
+    "id": 216,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "OAuth",
+    "definition": "An authorization framework that allows applications to access user resources on another service without exposing user credentials directly.",
+    "termNl": "OAuth",
+    "definitionNl": "Een autorisatieframework waarmee applicaties toegang krijgen tot gebruikersresources op een andere dienst zonder gebruikerscredentials direct bloot te stellen."
+  },
+  {
+    "id": 217,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "OpenID Connect",
+    "definition": "An authentication protocol built on OAuth that verifies user identity and provides standardized identity information to applications.",
+    "termNl": "OpenID Connect",
+    "definitionNl": "Een authenticatieprotocol gebouwd op OAuth dat gebruikersidentiteit verifieert en gestandaardiseerde identiteitsinformatie aan applicaties levert."
+  },
+  {
+    "id": 218,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Privileged Account",
+    "definition": "An account with elevated permissions capable of modifying system configurations, managing users, or accessing sensitive data, requiring strict monitoring and controls.",
+    "termNl": "Bevoorrechte account",
+    "definitionNl": "Een account met verhoogde rechten dat systeemconfiguraties kan wijzigen, gebruikers kan beheren of toegang heeft tot gevoelige gegevens, en strikte monitoring en controles vereist."
+  },
+  {
+    "id": 219,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "PAM",
+    "definition": "Privileged Access Management focuses on securing, monitoring, and controlling privileged accounts to reduce the risk of misuse or compromise.",
+    "termNl": "PAM",
+    "definitionNl": "Privileged Access Management richt zich op het beveiligen, monitoren en controleren van bevoorrechte accounts om het risico op misbruik of compromittering te verminderen."
+  },
+  {
+    "id": 220,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Directory Service",
+    "definition": "A centralized system that stores identity information, authentication data, and access permissions for users and devices within an organization.",
+    "termNl": "Directory service",
+    "definitionNl": "Een gecentraliseerd systeem dat identiteitsinformatie, authenticatiegegevens en toegangsrechten opslaat voor gebruikers en apparaten binnen een organisatie."
+  },
+  {
+    "id": 221,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Biometrics",
+    "definition": "An authentication method using unique physical or behavioral characteristics such as fingerprints, facial recognition, or voice patterns to verify identity.",
+    "termNl": "Biometrie",
+    "definitionNl": "Een authenticatiemethode die unieke fysieke of gedragskenmerken gebruikt, zoals vingerafdrukken, gezichtsherkenning of stempatronen, om identiteit te verifiëren."
+  },
+  {
+    "id": 222,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Token",
+    "definition": "A physical or digital device used to generate or store authentication credentials, often as part of multi-factor authentication systems.",
+    "termNl": "Token",
+    "definitionNl": "Een fysiek of digitaal apparaat dat authenticatiecredentials genereert of opslaat, vaak als onderdeel van multi-factor authenticatiesystemen."
+  },
+  {
+    "id": 223,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Password Policy",
+    "definition": "A set of rules defining password complexity, length, expiration, and reuse to reduce the risk of weak or compromised credentials.",
+    "termNl": "Wachtwoordbeleid",
+    "definitionNl": "Een set regels die wachtwoordcomplexiteit, lengte, vervaldatum en hergebruik definiëren om het risico op zwakke of gecompromitteerde credentials te verminderen."
+  },
+  {
+    "id": 224,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Session Management",
+    "definition": "The process of securely maintaining user sessions after authentication, including handling session tokens, timeouts, and protection against hijacking attacks.",
+    "termNl": "Sessiebeheer",
+    "definitionNl": "Het proces van het veilig onderhouden van gebruikerssessies na authenticatie, inclusief het afhandelen van sessietokens, time-outs en bescherming tegen hijacking-aanvallen."
+  },
+  {
+    "id": 225,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Access Review",
+    "definition": "A periodic process of evaluating user permissions to ensure access rights remain appropriate and aligned with current roles and responsibilities.",
+    "termNl": "Toegangsreview",
+    "definitionNl": "Een periodiek proces van het evalueren van gebruikersrechten om te waarborgen dat toegangsrechten passend blijven en aansluiten bij huidige rollen en verantwoordelijkheden."
+  },
+  {
+    "id": 226,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Provider",
+    "definition": "A system responsible for authenticating users and issuing identity assertions that can be used by other systems for access decisions.",
+    "termNl": "Identity Provider (IdP)",
+    "definitionNl": "Een systeem dat verantwoordelijk is voor het authenticeren van gebruikers en het uitgeven van identiteitsasserties die door andere systemen kunnen worden gebruikt voor toegangsbeslissingen."
+  },
+  {
+    "id": 227,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Service Provider",
+    "definition": "An application or system that relies on an external identity provider to authenticate users and grant access to its resources.",
+    "termNl": "Service Provider (SP)",
+    "definitionNl": "Een applicatie of systeem dat afhankelijk is van een externe identity provider om gebruikers te authenticeren en toegang te verlenen tot zijn resources."
+  },
+  {
+    "id": 228,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Adaptive Authentication",
+    "definition": "An authentication approach that dynamically adjusts required security measures based on contextual risk factors such as location or device.",
+    "termNl": "Adaptieve authenticatie",
+    "definitionNl": "Een authenticatieaanpak die vereiste beveiligingsmaatregelen dynamisch aanpast op basis van contextuele risicofactoren zoals locatie of apparaat."
+  },
+  {
+    "id": 229,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Account Lockout",
+    "definition": "A security control that disables an account after a number of failed login attempts to prevent brute force attacks.",
+    "termNl": "Accountvergrendeling",
+    "definitionNl": "Een beveiligingscontrole die een account uitschakelt na een aantal mislukte inlogpogingen om brute-force-aanvallen te voorkomen."
+  },
+  {
+    "id": 230,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Credential Management",
+    "definition": "The processes and tools used to securely store, manage, and protect authentication credentials throughout their lifecycle.",
+    "termNl": "Credentialbeheer",
+    "definitionNl": "De processen en tools die worden gebruikt om authenticatiecredentials veilig op te slaan, te beheren en te beschermen gedurende hun levenscyclus."
+  },
+  {
+    "id": 231,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Zero Trust",
+    "definition": "A security model that assumes no implicit trust and requires continuous verification of identity and context for every access request.",
+    "termNl": "Zero Trust",
+    "definitionNl": "Een beveiligingsmodel dat geen impliciet vertrouwen aanneemt en continue verificatie van identiteit en context vereist voor elk toegangsverzoek."
+  },
+  {
+    "id": 232,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Governance",
+    "definition": "A framework ensuring identity and access management processes comply with policies, regulations, and business requirements through oversight and controls.",
+    "termNl": "Identity governance",
+    "definitionNl": "Een framework dat waarborgt dat identiteits- en toegangsbeheerprocessen voldoen aan beleid, regelgeving en bedrijfsvereisten via toezicht en controles."
+  },
+  {
+    "id": 233,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "ACL",
+    "definition": "An Access Control List specifies which users or systems have access to a resource and defines the permitted actions for each entity.",
+    "termNl": "ACL",
+    "definitionNl": "Een Access Control List specificeert welke gebruikers of systemen toegang hebben tot een resource en definieert de toegestane acties per entiteit."
+  },
+  {
+    "id": 234,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Role Engineering",
+    "definition": "The process of designing and defining roles and associated permissions within an organization to support efficient and secure access control.",
+    "termNl": "Role engineering",
+    "definitionNl": "Het proces van het ontwerpen en definiëren van rollen en bijbehorende rechten binnen een organisatie om efficiënte en veilige toegangscontrole te ondersteunen."
+  },
+  {
+    "id": 235,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Assurance",
+    "definition": "The level of confidence that an identity has been correctly verified, often based on the strength of authentication methods used.",
+    "termNl": "Identity assurance",
+    "definitionNl": "Het niveau van vertrouwen dat een identiteit correct is geverifieerd, vaak gebaseerd op de sterkte van gebruikte authenticatiemethoden."
+  },
+  {
+    "id": 236,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Verification",
+    "definition": "The process of confirming an individual’s real-world identity before granting access to systems or sensitive information.",
+    "termNl": "Identiteitsverificatie",
+    "definitionNl": "Het proces van het bevestigen van de echte identiteit van een individu voordat toegang tot systemen of gevoelige informatie wordt verleend."
+  },
+  {
+    "id": 237,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Authentication Server",
+    "definition": "A system responsible for validating user credentials and confirming identity during login attempts.",
+    "termNl": "Authenticatieserver",
+    "definitionNl": "Een systeem dat verantwoordelijk is voor het valideren van gebruikerscredentials en het bevestigen van identiteit tijdens inlogpogingen."
+  },
+  {
+    "id": 238,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Authorization Server",
+    "definition": "A system that issues access tokens and enforces access control policies for authenticated users.",
+    "termNl": "Autorisatieserver",
+    "definitionNl": "Een systeem dat toegangstokens uitgeeft en toegangscontrolebeleid afdwingt voor geauthenticeerde gebruikers."
+  },
+  {
+    "id": 239,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Access Token",
+    "definition": "A credential issued after authentication that allows a user or system to access protected resources for a limited time.",
+    "termNl": "Toegangstoken",
+    "definitionNl": "Een credential uitgegeven na authenticatie dat een gebruiker of systeem gedurende beperkte tijd toegang geeft tot beschermde resources."
+  },
+  {
+    "id": 240,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Federated Identity",
+    "definition": "An identity management approach that enables users to authenticate across multiple systems using a single identity provider.",
+    "termNl": "Gefedereerde identiteit",
+    "definitionNl": "Een identiteitsbeheeraanpak waarmee gebruikers zich kunnen authenticeren over meerdere systemen met één identity provider."
+  },
+  {
+    "id": 241,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Single Factor Authentication",
+    "definition": "An authentication method using only one type of credential, typically a password, which provides lower security compared to multi-factor approaches.",
+    "termNl": "Single Factor Authentication",
+    "definitionNl": "Een authenticatiemethode die slechts één type credential gebruikt, doorgaans een wachtwoord, wat lagere beveiliging biedt dan multi-factor benaderingen."
+  },
+  {
+    "id": 242,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Strong Authentication",
+    "definition": "An authentication method using multiple or high-assurance factors to significantly reduce the likelihood of unauthorized access.",
+    "termNl": "Sterke authenticatie",
+    "definitionNl": "Een authenticatiemethode die meerdere of hoogwaardige factoren gebruikt om de kans op ongeautoriseerde toegang aanzienlijk te verminderen."
+  },
+  {
+    "id": 243,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Credential Stuffing",
+    "definition": "An attack where stolen credentials from one service are reused to gain unauthorized access to other systems.",
+    "termNl": "Credential stuffing",
+    "definitionNl": "Een aanval waarbij gestolen credentials van één dienst worden hergebruikt om ongeautoriseerde toegang tot andere systemen te verkrijgen."
+  },
+  {
+    "id": 244,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Brute Force Attack",
+    "definition": "An attack method that systematically attempts many password combinations until the correct one is found.",
+    "termNl": "Brute-force-aanval",
+    "definitionNl": "Een aanvalsmethode die systematisch veel wachtwoordcombinaties probeert totdat de juiste wordt gevonden."
+  },
+  {
+    "id": 245,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Session Hijacking",
+    "definition": "An attack where an attacker takes over an active user session to gain unauthorized access to a system.",
+    "termNl": "Sessiehijacking",
+    "definitionNl": "Een aanval waarbij een aanvaller een actieve gebruikerssessie overneemt om ongeautoriseerde toegang tot een systeem te verkrijgen."
+  },
+  {
+    "id": 246,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Store",
+    "definition": "A repository that contains user credentials, identity attributes, and authentication data used by identity management systems.",
+    "termNl": "Identiteitsopslag",
+    "definitionNl": "Een repository die gebruikerscredentials, identiteitsattributen en authenticatiegegevens bevat die door identiteitsbeheersystemen worden gebruikt."
+  },
+  {
+    "id": 247,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Access Policy",
+    "definition": "A set of rules defining who can access resources and under what conditions, based on organizational security requirements.",
+    "termNl": "Toegangsbeleid",
+    "definitionNl": "Een set regels die definieert wie toegang heeft tot resources en onder welke voorwaarden, gebaseerd op organisatiebeveiligingsvereisten."
+  },
+  {
+    "id": 248,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Delegation",
+    "definition": "The process of granting authority to another user or system to perform actions on behalf of an identity.",
+    "termNl": "Delegatie",
+    "definitionNl": "Het proces van het verlenen van autoriteit aan een andere gebruiker of systeem om acties uit te voeren namens een identiteit."
+  },
+  {
+    "id": 249,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Separation of Duties",
+    "definition": "A security principle that divides responsibilities among multiple individuals to reduce the risk of fraud or unauthorized actions.",
+    "termNl": "Functiescheiding",
+    "definitionNl": "Een beveiligingsprincipe dat verantwoordelijkheden verdeelt over meerdere personen om het risico op fraude of ongeautoriseerde acties te verminderen."
+  },
+  {
+    "id": 250,
+    "domain": 5,
+    "domainName": "Identity & Access Management",
+    "domainNameNl": "Identiteits- en toegangsbeheer",
+    "term": "Identity Federation Protocol",
+    "definition": "A standardized protocol such as SAML or OAuth that enables secure sharing of identity and authentication information across systems.",
+    "termNl": "Identiteitsfederatieprotocol",
+    "definitionNl": "Een gestandaardiseerd protocol zoals SAML of OAuth dat veilige uitwisseling van identiteits- en authenticatie-informatie tussen systemen mogelijk maakt."
+  },
+  {
+    "id": 251,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Assessment",
+    "definition": "A structured evaluation of security controls to determine whether they are properly implemented and effective in protecting systems and data.",
+    "termNl": "Beveiligingsbeoordeling",
+    "definitionNl": "Een gestructureerde evaluatie van beveiligingscontroles om te bepalen of ze correct zijn geïmplementeerd en effectief zijn in het beschermen van systemen en gegevens."
+  },
+  {
+    "id": 252,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Vulnerability Assessment",
+    "definition": "The process of identifying, classifying, and prioritizing vulnerabilities in systems, applications, and networks.",
+    "termNl": "Kwetsbaarheidsbeoordeling",
+    "definitionNl": "Het proces van identificeren, classificeren en prioriteren van kwetsbaarheden in systemen, applicaties en netwerken."
+  },
+  {
+    "id": 253,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Penetration Testing",
+    "definition": "A simulated attack on a system to identify exploitable vulnerabilities and assess real-world security defenses.",
+    "termNl": "Penetratietest",
+    "definitionNl": "Een gesimuleerde aanval op een systeem om exploiteerbare kwetsbaarheden te identificeren en realistische beveiligingsverdediging te beoordelen."
+  },
+  {
+    "id": 254,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Audit",
+    "definition": "A formal review of systems and processes to ensure compliance with policies, standards, and regulations.",
+    "termNl": "Audit",
+    "definitionNl": "Een formele beoordeling van systemen en processen om naleving van beleid, standaarden en regelgeving te waarborgen."
+  },
+  {
+    "id": 255,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Monitoring",
+    "definition": "Continuous observation of systems and networks to detect anomalies, threats, or policy violations.",
+    "termNl": "Monitoring",
+    "definitionNl": "Continue observatie van systemen en netwerken om afwijkingen, dreigingen of beleidsovertredingen te detecteren."
+  },
+  {
+    "id": 256,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "SAST",
+    "definition": "Static Application Security Testing analyzes source code without executing it to identify vulnerabilities early in development.",
+    "termNl": "SAST",
+    "definitionNl": "Static Application Security Testing analyseert broncode zonder uitvoering om kwetsbaarheden vroeg in de ontwikkeling te identificeren."
+  },
+  {
+    "id": 257,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "DAST",
+    "definition": "Dynamic Application Security Testing evaluates running applications to identify vulnerabilities during execution.",
+    "termNl": "DAST",
+    "definitionNl": "Dynamic Application Security Testing evalueert actieve applicaties om kwetsbaarheden tijdens uitvoering te identificeren."
+  },
+  {
+    "id": 258,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Testing",
+    "definition": "The process of evaluating systems to identify vulnerabilities, misconfigurations, and weaknesses that could be exploited.",
+    "termNl": "Security testing",
+    "definitionNl": "Het proces van het evalueren van systemen om kwetsbaarheden, verkeerde configuraties en zwakheden te identificeren die kunnen worden misbruikt."
+  },
+  {
+    "id": 259,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Test Plan",
+    "definition": "A documented approach outlining scope, objectives, and methods used during security testing activities.",
+    "termNl": "Testplan",
+    "definitionNl": "Een gedocumenteerde aanpak die scope, doelstellingen en methoden beschrijft die worden gebruikt tijdens security testing-activiteiten."
+  },
+  {
+    "id": 260,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Test Coverage",
+    "definition": "The extent to which testing activities evaluate different components, functions, and scenarios within a system.",
+    "termNl": "Testdekking",
+    "definitionNl": "De mate waarin testactiviteiten verschillende componenten, functies en scenario's binnen een systeem evalueren."
+  },
+  {
+    "id": 261,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Threat Modeling",
+    "definition": "The process of identifying potential threats and vulnerabilities during system design and development.",
+    "termNl": "Threat modeling",
+    "definitionNl": "Het proces van het identificeren van potentiële dreigingen en kwetsbaarheden tijdens systeemontwerp en -ontwikkeling."
+  },
+  {
+    "id": 262,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Code Review",
+    "definition": "Manual or automated examination of source code to identify security flaws and ensure compliance with coding standards.",
+    "termNl": "Code review",
+    "definitionNl": "Handmatig of geautomatiseerd onderzoek van broncode om beveiligingsfouten te identificeren en naleving van coderingsstandaarden te waarborgen."
+  },
+  {
+    "id": 263,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Configuration Review",
+    "definition": "Evaluation of system configurations to ensure secure settings and compliance with security policies.",
+    "termNl": "Configuratiereview",
+    "definitionNl": "Evaluatie van systeemconfiguraties om veilige instellingen en naleving van beveiligingsbeleid te waarborgen."
+  },
+  {
+    "id": 264,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Log Analysis",
+    "definition": "The process of reviewing system and application logs to detect suspicious activities and security incidents.",
+    "termNl": "Loganalyse",
+    "definitionNl": "Het proces van het beoordelen van systeem- en applicatielogs om verdachte activiteiten en beveiligingsincidenten te detecteren."
+  },
+  {
+    "id": 265,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Continuous Monitoring",
+    "definition": "Ongoing assessment of systems and controls to detect changes, vulnerabilities, or threats in real time.",
+    "termNl": "Continue monitoring",
+    "definitionNl": "Doorlopende beoordeling van systemen en controles om wijzigingen, kwetsbaarheden of dreigingen in realtime te detecteren."
+  },
+  {
+    "id": 266,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Risk Assessment",
+    "definition": "The process of identifying and evaluating risks to determine their potential impact and likelihood.",
+    "termNl": "Risicobeoordeling",
+    "definitionNl": "Het proces van identificeren en evalueren van risico's om hun potentiële impact en waarschijnlijkheid te bepalen."
+  },
+  {
+    "id": 267,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Metrics",
+    "definition": "Quantitative measures used to evaluate the effectiveness of security controls and overall security posture.",
+    "termNl": "Security metrics",
+    "definitionNl": "Kwantitatieve maatstaven om de effectiviteit van beveiligingscontroles en de algehele beveiligingspositie te evalueren."
+  },
+  {
+    "id": 268,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Compliance Testing",
+    "definition": "Verifying that systems and processes meet regulatory, legal, and policy requirements.",
+    "termNl": "Compliance testing",
+    "definitionNl": "Verifiëren dat systemen en processen voldoen aan regelgevings-, wettelijke en beleidsvereisten."
+  },
+  {
+    "id": 269,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Baseline",
+    "definition": "A standard configuration or performance level used as a reference point for security assessments.",
+    "termNl": "Baseline",
+    "definitionNl": "Een standaardconfiguratie of prestatiemiveau gebruikt als referentiepunt voor beveiligingsbeoordelingen."
+  },
+  {
+    "id": 270,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Scanning",
+    "definition": "Automated process of identifying vulnerabilities or misconfigurations within systems or networks.",
+    "termNl": "Scanning",
+    "definitionNl": "Geautomatiseerd proces van het identificeren van kwetsbaarheden of verkeerde configuraties in systemen of netwerken."
+  },
+  {
+    "id": 271,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "False Positive",
+    "definition": "A test result indicating a vulnerability that does not actually exist, requiring validation.",
+    "termNl": "False positive",
+    "definitionNl": "Een testresultaat dat een kwetsbaarheid aangeeft die in werkelijkheid niet bestaat en validatie vereist."
+  },
+  {
+    "id": 272,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "False Negative",
+    "definition": "A failure to detect an existing vulnerability, potentially leaving systems exposed.",
+    "termNl": "False negative",
+    "definitionNl": "Een falen om een bestaande kwetsbaarheid te detecteren, waardoor systemen mogelijk blootgesteld blijven."
+  },
+  {
+    "id": 273,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Exploit",
+    "definition": "A method or tool used to take advantage of a vulnerability in a system.",
+    "termNl": "Exploit",
+    "definitionNl": "Een methode of tool om misbruik te maken van een kwetsbaarheid in een systeem."
+  },
+  {
+    "id": 274,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Control Testing",
+    "definition": "Evaluating whether implemented controls function correctly and effectively mitigate risks.",
+    "termNl": "Beveiligingscontroletest",
+    "definitionNl": "Evalueren of geïmplementeerde controles correct functioneren en risico's effectief mitigeren."
+  },
+  {
+    "id": 275,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Red Team",
+    "definition": "A group that simulates adversary attacks to test organizational security defenses.",
+    "termNl": "Red Team",
+    "definitionNl": "Een groep die aanvallerssimulaties uitvoert om de beveiligingsverdediging van een organisatie te testen."
+  },
+  {
+    "id": 276,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Blue Team",
+    "definition": "A group responsible for defending systems against attacks and responding to incidents.",
+    "termNl": "Blue Team",
+    "definitionNl": "Een groep verantwoordelijk voor het verdedigen van systemen tegen aanvallen en het reageren op incidenten."
+  },
+  {
+    "id": 277,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Purple Team",
+    "definition": "A collaborative approach combining red and blue team efforts to improve security testing and defense.",
+    "termNl": "Purple Team",
+    "definitionNl": "Een collaboratieve aanpak die red team- en blue team-inspanningen combineert om security testing en verdediging te verbeteren."
+  },
+  {
+    "id": 278,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Testing Tools",
+    "definition": "Software used to automate vulnerability scanning, testing, and analysis activities.",
+    "termNl": "Security testing tools",
+    "definitionNl": "Software voor het automatiseren van kwetsbaarheidsscanning, testen en analyse-activiteiten."
+  },
+  {
+    "id": 279,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Assessment Report",
+    "definition": "A document summarizing findings, vulnerabilities, and recommendations identified during testing.",
+    "termNl": "Beveiligingsbeoordelingsrapport",
+    "definitionNl": "Een document dat bevindingen, kwetsbaarheden en aanbevelingen samenvat die tijdens testen zijn geïdentificeerd."
+  },
+  {
+    "id": 280,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Remediation",
+    "definition": "The process of fixing identified vulnerabilities and improving security controls.",
+    "termNl": "Remediatie",
+    "definitionNl": "Het proces van het oplossen van geïdentificeerde kwetsbaarheden en het verbeteren van beveiligingscontroles."
+  },
+  {
+    "id": 281,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Patch Management",
+    "definition": "The process of updating systems to fix vulnerabilities and improve security.",
+    "termNl": "Patchbeheer",
+    "definitionNl": "Het proces van het bijwerken van systemen om kwetsbaarheden te verhelpen en beveiliging te verbeteren."
+  },
+  {
+    "id": 282,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Penetration Scope",
+    "definition": "The defined boundaries and targets included in a penetration test engagement.",
+    "termNl": "Penetratietestscope",
+    "definitionNl": "De gedefinieerde grenzen en doelen die zijn opgenomen in een penetratietestopdracht."
+  },
+  {
+    "id": 283,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Test Environment",
+    "definition": "A controlled setting where security tests are performed without impacting production systems.",
+    "termNl": "Testomgeving",
+    "definitionNl": "Een gecontroleerde setting waar security tests worden uitgevoerd zonder impact op productiesystemen."
+  },
+  {
+    "id": 284,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Live Testing",
+    "definition": "Security testing conducted on operational systems, requiring careful planning to avoid disruption.",
+    "termNl": "Live testing",
+    "definitionNl": "Security testing uitgevoerd op operationele systemen, wat zorgvuldige planning vereist om verstoring te voorkomen."
+  },
+  {
+    "id": 285,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Internal Testing",
+    "definition": "Testing performed from within the organization’s network to simulate insider threats.",
+    "termNl": "Interne test",
+    "definitionNl": "Testen uitgevoerd vanuit het interne netwerk van de organisatie om insider-dreigingen te simuleren."
+  },
+  {
+    "id": 286,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "External Testing",
+    "definition": "Testing conducted from outside the network to simulate external attacker behavior.",
+    "termNl": "Externe test",
+    "definitionNl": "Testen uitgevoerd van buiten het netwerk om extern aanvallersgedrag te simuleren."
+  },
+  {
+    "id": 287,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Black Box Testing",
+    "definition": "Testing without prior knowledge of the system, simulating an external attacker’s perspective.",
+    "termNl": "Black box testing",
+    "definitionNl": "Testen zonder voorafgaande kennis van het systeem, wat het perspectief van een externe aanvaller simuleert."
+  },
+  {
+    "id": 288,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "White Box Testing",
+    "definition": "Testing with full knowledge of the system, including source code and architecture.",
+    "termNl": "White box testing",
+    "definitionNl": "Testen met volledige kennis van het systeem, inclusief broncode en architectuur."
+  },
+  {
+    "id": 289,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Gray Box Testing",
+    "definition": "Testing with partial knowledge of the system to balance realism and efficiency.",
+    "termNl": "Gray box testing",
+    "definitionNl": "Testen met gedeeltelijke kennis van het systeem om realisme en efficiëntie in balans te brengen."
+  },
+  {
+    "id": 290,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Benchmark",
+    "definition": "A standard guideline used to evaluate system configurations and security practices.",
+    "termNl": "Security benchmark",
+    "definitionNl": "Een standaardrichtlijn voor het evalueren van systeemconfiguraties en beveiligingspraktijken."
+  },
+  {
+    "id": 291,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Posture",
+    "definition": "The overall strength of an organization’s security controls and readiness against threats.",
+    "termNl": "Beveiligingspositie",
+    "definitionNl": "De algehele sterkte van de beveiligingscontroles en paraatheid van een organisatie tegen dreigingen."
+  },
+  {
+    "id": 292,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Control Validation",
+    "definition": "Confirming that security controls are correctly implemented and operating as intended.",
+    "termNl": "Controlevalidatie",
+    "definitionNl": "Bevestigen dat beveiligingscontroles correct zijn geïmplementeerd en werken zoals bedoeld."
+  },
+  {
+    "id": 293,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Evidence Collection",
+    "definition": "Gathering data during testing to support findings and conclusions.",
+    "termNl": "Bewijsverzameling",
+    "definitionNl": "Verzamelen van gegevens tijdens testen ter ondersteuning van bevindingen en conclusies."
+  },
+  {
+    "id": 294,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Forensic Readiness",
+    "definition": "Preparation to collect and preserve evidence for investigations.",
+    "termNl": "Forensische gereedheid",
+    "definitionNl": "Voorbereiding om bewijs te verzamelen en bewaren voor onderzoeken."
+  },
+  {
+    "id": 295,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Testing Framework",
+    "definition": "A structured approach guiding testing processes and methodologies.",
+    "termNl": "Security testing framework",
+    "definitionNl": "Een gestructureerde aanpak die testprocessen en -methodologieën stuurt."
+  },
+  {
+    "id": 296,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Automation",
+    "definition": "Using tools to perform repetitive testing tasks efficiently and consistently.",
+    "termNl": "Automatisering",
+    "definitionNl": "Gebruik van tools om repetitieve testtaken efficiënt en consistent uit te voeren."
+  },
+  {
+    "id": 297,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Manual Testing",
+    "definition": "Human-driven testing that identifies complex vulnerabilities tools may miss.",
+    "termNl": "Handmatig testen",
+    "definitionNl": "Door mensen uitgevoerd testen dat complexe kwetsbaarheden identificeert die tools kunnen missen."
+  },
+  {
+    "id": 298,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Risk-Based Testing",
+    "definition": "Prioritizing testing efforts based on risk levels and potential impact.",
+    "termNl": "Risicogebaseerd testen",
+    "definitionNl": "Prioriteren van testinspanningen op basis van risiconiveaus en potentiële impact."
+  },
+  {
+    "id": 299,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Continuous Improvement",
+    "definition": "Ongoing enhancement of security controls based on testing results and evolving threats.",
+    "termNl": "Continue verbetering",
+    "definitionNl": "Doorlopende verbetering van beveiligingscontroles op basis van testresultaten en evoluerende dreigingen."
+  },
+  {
+    "id": 300,
+    "domain": 6,
+    "domainName": "Security Assessment & Testing",
+    "domainNameNl": "Beveiligingsbeoordeling en testen",
+    "term": "Security Validation",
+    "definition": "The process of ensuring systems meet security requirements and perform as expected under testing conditions.",
+    "termNl": "Security validatie",
+    "definitionNl": "Het proces van waarborgen dat systemen voldoen aan beveiligingsvereisten en presteren zoals verwacht onder testomstandigheden."
+  },
+  {
+    "id": 301,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Security Operations",
+    "definition": "The ongoing activities required to monitor, manage, and protect information systems from security threats and incidents in real time.",
+    "termNl": "Beveiligingsoperaties",
+    "definitionNl": "De doorlopende activiteiten die nodig zijn om informatiesystemen in realtime te monitoren, beheren en beschermen tegen beveiligingsdreigingen en incidenten."
+  },
+  {
+    "id": 302,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "SOC",
+    "definition": "A Security Operations Center is a centralized team responsible for monitoring, detecting, and responding to cybersecurity incidents.",
+    "termNl": "SOC",
+    "definitionNl": "Een Security Operations Center is een gecentraliseerd team dat verantwoordelijk is voor het monitoren, detecteren en reageren op cybersecurity-incidenten."
+  },
+  {
+    "id": 303,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "SIEM",
+    "definition": "A platform that collects, analyzes, and correlates log data from multiple sources to detect security incidents and support investigations.",
+    "termNl": "SIEM",
+    "definitionNl": "Een platform dat loggegevens van meerdere bronnen verzamelt, analyseert en correleert om beveiligingsincidenten te detecteren en onderzoeken te ondersteunen."
+  },
+  {
+    "id": 304,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Incident Response",
+    "definition": "The structured process of identifying, containing, and resolving security incidents to minimize impact and restore normal operations.",
+    "termNl": "Incident response",
+    "definitionNl": "Het gestructureerde proces van identificeren, isoleren en oplossen van beveiligingsincidenten om impact te minimaliseren en normale operaties te herstellen."
+  },
+  {
+    "id": 305,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Forensics",
+    "definition": "The process of collecting, analyzing, and preserving digital evidence for investigation and potential legal proceedings.",
+    "termNl": "Forensisch onderzoek",
+    "definitionNl": "Het proces van verzamelen, analyseren en bewaren van digitaal bewijs voor onderzoek en mogelijke juridische procedures."
+  },
+  {
+    "id": 306,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Event",
+    "definition": "An observable occurrence in a system or network that may or may not indicate a security issue.",
+    "termNl": "Gebeurtenis",
+    "definitionNl": "Een waarneembare gebeurtenis in een systeem of netwerk die wel of niet op een beveiligingsprobleem kan wijzen."
+  },
+  {
+    "id": 307,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Alert",
+    "definition": "A notification generated when a potential security event or anomaly is detected by monitoring systems.",
+    "termNl": "Alert",
+    "definitionNl": "Een melding gegenereerd wanneer een potentieel beveiligingsgebeurtenis of afwijking wordt gedetecteerd door monitorsystemen."
+  },
+  {
+    "id": 308,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Incident",
+    "definition": "A confirmed security event that poses a threat to confidentiality, integrity, or availability of systems or data.",
+    "termNl": "Incident",
+    "definitionNl": "Een bevestigde beveiligingsgebeurtenis die een dreiging vormt voor vertrouwelijkheid, integriteit of beschikbaarheid van systemen of gegevens."
+  },
+  {
+    "id": 309,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Log Management",
+    "definition": "The process of collecting, storing, and analyzing logs to support monitoring, troubleshooting, and security investigations.",
+    "termNl": "Logbeheer",
+    "definitionNl": "Het proces van verzamelen, opslaan en analyseren van logs ter ondersteuning van monitoring, troubleshooting en beveiligingsonderzoeken."
+  },
+  {
+    "id": 310,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Threat Intelligence",
+    "definition": "Information about potential or existing threats used to inform security decisions and improve defenses.",
+    "termNl": "Threat intelligence",
+    "definitionNl": "Informatie over potentiële of bestaande dreigingen die wordt gebruikt om beveiligingsbeslissingen te informeren en verdediging te verbeteren."
+  },
+  {
+    "id": 311,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Playbook",
+    "definition": "A predefined set of procedures used to respond to specific types of security incidents.",
+    "termNl": "Playbook",
+    "definitionNl": "Een vooraf gedefinieerde set procedures voor het reageren op specifieke typen beveiligingsincidenten."
+  },
+  {
+    "id": 312,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Runbook",
+    "definition": "A detailed operational guide outlining steps to perform routine security tasks or incident responses.",
+    "termNl": "Runbook",
+    "definitionNl": "Een gedetailleerde operationele handleiding met stappen voor routinematige beveiligingstaken of incidentrespons."
+  },
+  {
+    "id": 313,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Containment",
+    "definition": "The process of limiting the spread or impact of a security incident within an organization.",
+    "termNl": "Containment",
+    "definitionNl": "Het proces van het beperken van de verspreiding of impact van een beveiligingsincident binnen een organisatie."
+  },
+  {
+    "id": 314,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Eradication",
+    "definition": "Removing the root cause of a security incident, such as malware or unauthorized access.",
+    "termNl": "Eradicatie",
+    "definitionNl": "Verwijderen van de hoofdoorzaak van een beveiligingsincident, zoals malware of ongeautoriseerde toegang."
+  },
+  {
+    "id": 315,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Recovery",
+    "definition": "Restoring systems and operations to normal after a security incident has been contained and resolved.",
+    "termNl": "Herstel",
+    "definitionNl": "Herstellen van systemen en operaties naar normaal nadat een beveiligingsincident is geïsoleerd en opgelost."
+  },
+  {
+    "id": 316,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Lessons Learned",
+    "definition": "A review process after incidents to identify improvements and prevent recurrence.",
+    "termNl": "Lessons learned",
+    "definitionNl": "Een evaluatieproces na incidenten om verbeteringen te identificeren en herhaling te voorkomen."
+  },
+  {
+    "id": 317,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Business Continuity",
+    "definition": "Ensuring essential functions continue during and after disruptions or incidents.",
+    "termNl": "Bedrijfscontinuïteit",
+    "definitionNl": "Waarborgen dat essentiële functies doorgaan tijdens en na verstoringen of incidenten."
+  },
+  {
+    "id": 318,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Disaster Recovery",
+    "definition": "Processes for restoring IT systems and data after major disruptions or catastrophic events.",
+    "termNl": "Disaster recovery",
+    "definitionNl": "Processen voor het herstellen van IT-systemen en gegevens na grote verstoringen of catastrofale gebeurtenissen."
+  },
+  {
+    "id": 319,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Backup",
+    "definition": "Copy of data used to restore systems in case of failure or data loss.",
+    "termNl": "Back-up",
+    "definitionNl": "Kopie van gegevens gebruikt om systemen te herstellen bij storing of gegevensverlies."
+  },
+  {
+    "id": 320,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Redundancy",
+    "definition": "Duplication of critical components to maintain system availability during failures.",
+    "termNl": "Redundantie",
+    "definitionNl": "Duplicatie van kritieke componenten om systeembeschikbaarheid te handhaven bij storingen."
+  },
+  {
+    "id": 321,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "High Availability",
+    "definition": "Design ensuring systems remain operational with minimal downtime.",
+    "termNl": "Hoge beschikbaarheid",
+    "definitionNl": "Ontwerp dat garandeert dat systemen operationeel blijven met minimale uitvaltijd."
+  },
+  {
+    "id": 322,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Monitoring",
+    "definition": "Continuous observation of systems to detect anomalies and security issues.",
+    "termNl": "Monitoring",
+    "definitionNl": "Continue observatie van systemen om afwijkingen en beveiligingsproblemen te detecteren."
+  },
+  {
+    "id": 323,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Endpoint Security",
+    "definition": "Protection of individual devices such as computers and mobile devices from threats.",
+    "termNl": "Endpointbeveiliging",
+    "definitionNl": "Bescherming van individuele apparaten zoals computers en mobiele apparaten tegen dreigingen."
+  },
+  {
+    "id": 324,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "EDR",
+    "definition": "Endpoint Detection and Response tools monitor and respond to threats on endpoints.",
+    "termNl": "EDR",
+    "definitionNl": "Endpoint Detection and Response-tools monitoren en reageren op dreigingen op endpoints."
+  },
+  {
+    "id": 325,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Threat Hunting",
+    "definition": "Proactive search for hidden threats within systems that evade automated detection.",
+    "termNl": "Threat hunting",
+    "definitionNl": "Proactief zoeken naar verborgen dreigingen in systemen die geautomatiseerde detectie ontwijken."
+  },
+  {
+    "id": 326,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Malware Analysis",
+    "definition": "Examination of malicious software to understand its behavior and impact.",
+    "termNl": "Malware-analyse",
+    "definitionNl": "Onderzoek van kwaadaardige software om gedrag en impact te begrijpen."
+  },
+  {
+    "id": 327,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Indicators of Compromise",
+    "definition": "Evidence suggesting a system has been breached or compromised.",
+    "termNl": "Indicators of Compromise (IoC)",
+    "definitionNl": "Bewijs dat suggereert dat een systeem is binnengedrongen of gecompromitteerd."
+  },
+  {
+    "id": 328,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Indicators of Attack",
+    "definition": "Signals indicating an attack is currently in progress.",
+    "termNl": "Indicators of Attack (IoA)",
+    "definitionNl": "Signalen die aangeven dat een aanval momenteel gaande is."
+  },
+  {
+    "id": 329,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Chain of Custody",
+    "definition": "Documentation process ensuring integrity of collected evidence.",
+    "termNl": "Chain of custody",
+    "definitionNl": "Documentatieproces dat de integriteit van verzameld bewijs waarborgt."
+  },
+  {
+    "id": 330,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Time Synchronization",
+    "definition": "Ensuring consistent timestamps across systems for accurate event correlation.",
+    "termNl": "Tijdsynchronisatie",
+    "definitionNl": "Waarborgen van consistente tijdstempels over systemen voor nauwkeurige gebeurteniscorrelatie."
+  },
+  {
+    "id": 331,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Logging",
+    "definition": "Recording system and network activities for monitoring and analysis.",
+    "termNl": "Logging",
+    "definitionNl": "Registratie van systeem- en netwerkactiviteiten voor monitoring en analyse."
+  },
+  {
+    "id": 332,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Correlation",
+    "definition": "Combining multiple data sources to identify patterns and detect threats.",
+    "termNl": "Correlatie",
+    "definitionNl": "Combineren van meerdere gegevensbronnen om patronen te identificeren en dreigingen te detecteren."
+  },
+  {
+    "id": 333,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Automation",
+    "definition": "Using tools to perform repetitive operational tasks efficiently.",
+    "termNl": "Automatisering",
+    "definitionNl": "Gebruik van tools om repetitieve operationele taken efficiënt uit te voeren."
+  },
+  {
+    "id": 334,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "SOAR",
+    "definition": "Security Orchestration, Automation, and Response platforms automate incident response workflows.",
+    "termNl": "SOAR",
+    "definitionNl": "Security Orchestration, Automation, and Response-platforms automatiseren incident response-workflows."
+  },
+  {
+    "id": 335,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Security Metrics",
+    "definition": "Measurements used to evaluate effectiveness of security operations.",
+    "termNl": "Security metrics",
+    "definitionNl": "Metingen om de effectiviteit van beveiligingsoperaties te evalueren."
+  },
+  {
+    "id": 336,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "MTTD",
+    "definition": "Mean Time to Detect measures how quickly incidents are identified.",
+    "termNl": "MTTD",
+    "definitionNl": "Mean Time to Detect meet hoe snel incidenten worden geïdentificeerd."
+  },
+  {
+    "id": 337,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "MTTR",
+    "definition": "Mean Time to Respond measures how quickly incidents are resolved.",
+    "termNl": "MTTR",
+    "definitionNl": "Mean Time to Respond meet hoe snel incidenten worden opgelost."
+  },
+  {
+    "id": 338,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Vulnerability Management",
+    "definition": "Continuous process of identifying, prioritizing, and fixing vulnerabilities.",
+    "termNl": "Kwetsbaarheidsbeheer",
+    "definitionNl": "Doorlopend proces van identificeren, prioriteren en verhelpen van kwetsbaarheden."
+  },
+  {
+    "id": 339,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Patch Management",
+    "definition": "Applying updates to systems to fix vulnerabilities and improve security.",
+    "termNl": "Patchbeheer",
+    "definitionNl": "Toepassen van updates op systemen om kwetsbaarheden te verhelpen en beveiliging te verbeteren."
+  },
+  {
+    "id": 340,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Change Management",
+    "definition": "Controlled process for implementing system changes safely.",
+    "termNl": "Change management",
+    "definitionNl": "Gecontroleerd proces voor het veilig implementeren van systeemwijzigingen."
+  },
+  {
+    "id": 341,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Configuration Management",
+    "definition": "Maintaining consistent and secure system configurations.",
+    "termNl": "Configuratiebeheer",
+    "definitionNl": "Handhaven van consistente en veilige systeemconfiguraties."
+  },
+  {
+    "id": 342,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Data Loss Prevention",
+    "definition": "Controls that prevent unauthorized data exfiltration.",
+    "termNl": "Data Loss Prevention (DLP)",
+    "definitionNl": "Controles die ongeautoriseerde gegevensexfiltratie voorkomen."
+  },
+  {
+    "id": 343,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Incident Classification",
+    "definition": "Categorizing incidents based on severity and type.",
+    "termNl": "Incidentclassificatie",
+    "definitionNl": "Categoriseren van incidenten op basis van ernst en type."
+  },
+  {
+    "id": 344,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Escalation",
+    "definition": "Process of involving higher-level personnel when incidents exceed initial response capability.",
+    "termNl": "Escalatie",
+    "definitionNl": "Proces van het betrekken van hoger personeel wanneer incidenten de initiële responscapaciteit overschrijden."
+  },
+  {
+    "id": 345,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Threat Detection",
+    "definition": "Identifying malicious activities through monitoring and analysis.",
+    "termNl": "Dreigingsdetectie",
+    "definitionNl": "Identificeren van kwaadaardige activiteiten via monitoring en analyse."
+  },
+  {
+    "id": 346,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Security Baseline",
+    "definition": "Minimum security configuration standard for systems.",
+    "termNl": "Security baseline",
+    "definitionNl": "Minimale beveiligingsconfiguratiestandaard voor systemen."
+  },
+  {
+    "id": 347,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Resilience",
+    "definition": "Ability of systems to withstand and recover from disruptions.",
+    "termNl": "Resilience",
+    "definitionNl": "Vermogen van systemen om verstoringen te weerstaan en te herstellen."
+  },
+  {
+    "id": 348,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Incident Documentation",
+    "definition": "Recording details of incidents for analysis and compliance.",
+    "termNl": "Incidentdocumentatie",
+    "definitionNl": "Registreren van incidentdetails voor analyse en compliance."
+  },
+  {
+    "id": 349,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Operational Security",
+    "definition": "Protecting information through day-to-day operational practices.",
+    "termNl": "Operationele beveiliging",
+    "definitionNl": "Bescherming van informatie via dagelijkse operationele praktijken."
+  },
+  {
+    "id": 350,
+    "domain": 7,
+    "domainName": "Security Operations",
+    "domainNameNl": "Beveiligingsoperaties",
+    "term": "Continuous Improvement",
+    "definition": "Ongoing enhancement of security operations based on experience and evolving threats.",
+    "termNl": "Continue verbetering",
+    "definitionNl": "Doorlopende verbetering van beveiligingsoperaties op basis van ervaring en evoluerende dreigingen."
+  },
+  {
+    "id": 351,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "SDLC",
+    "definition": "The structured process of planning, designing, building, testing, deploying, and maintaining software systems with integrated security practices.",
+    "termNl": "SDLC",
+    "definitionNl": "Software Development Life Cycle is het gestructureerde proces van plannen, ontwerpen, bouwen, testen, implementeren en onderhouden van softwaresystemen met geïntegreerde beveiligingspraktijken."
+  },
+  {
+    "id": 352,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Coding",
+    "definition": "Practices that ensure software is written to prevent vulnerabilities such as injection, buffer overflows, and improper input handling.",
+    "termNl": "Veilig programmeren",
+    "definitionNl": "Praktijken die garanderen dat software wordt geschreven om kwetsbaarheden zoals injectie, buffer overflows en onjuiste inputafhandeling te voorkomen."
+  },
+  {
+    "id": 353,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Threat Modeling",
+    "definition": "A process used during design to identify potential threats, vulnerabilities, and mitigations before implementation begins.",
+    "termNl": "Threat modeling",
+    "definitionNl": "Een proces gebruikt tijdens ontwerp om potentiële dreigingen, kwetsbaarheden en mitigaties te identificeren voordat implementatie begint."
+  },
+  {
+    "id": 354,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "SAST",
+    "definition": "Static Application Security Testing analyzes source code without execution to identify vulnerabilities early in the development process.",
+    "termNl": "SAST",
+    "definitionNl": "Static Application Security Testing analyseert broncode zonder uitvoering om kwetsbaarheden vroeg in het ontwikkelproces te identificeren."
+  },
+  {
+    "id": 355,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "DAST",
+    "definition": "Dynamic Application Security Testing evaluates running applications to identify vulnerabilities during execution.",
+    "termNl": "DAST",
+    "definitionNl": "Dynamic Application Security Testing evalueert actieve applicaties om kwetsbaarheden tijdens uitvoering te identificeren."
+  },
+  {
+    "id": 356,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "IAST",
+    "definition": "Interactive Application Security Testing combines static and dynamic techniques by analyzing applications during runtime with instrumentation.",
+    "termNl": "IAST",
+    "definitionNl": "Interactive Application Security Testing combineert statische en dynamische technieken door applicaties tijdens runtime te analyseren met instrumentatie."
+  },
+  {
+    "id": 357,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "RASP",
+    "definition": "Runtime Application Self-Protection monitors application behavior and blocks attacks during execution in real time.",
+    "termNl": "RASP",
+    "definitionNl": "Runtime Application Self-Protection monitort applicatiegedrag en blokkeert aanvallen tijdens uitvoering in realtime."
+  },
+  {
+    "id": 358,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Fuzz Testing",
+    "definition": "Testing technique that sends random or malformed input to identify unexpected behavior and vulnerabilities.",
+    "termNl": "Fuzz testing",
+    "definitionNl": "Testtechniek die willekeurige of misvormde input verzendt om onverwacht gedrag en kwetsbaarheden te identificeren."
+  },
+  {
+    "id": 359,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Code Review",
+    "definition": "Manual or automated examination of source code to identify security flaws and ensure adherence to secure coding standards.",
+    "termNl": "Code review",
+    "definitionNl": "Handmatig of geautomatiseerd onderzoek van broncode om beveiligingsfouten te identificeren en naleving van veilige coderingsstandaarden te waarborgen."
+  },
+  {
+    "id": 360,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Input Validation",
+    "definition": "Ensuring that user input is properly checked and sanitized to prevent injection and other attacks.",
+    "termNl": "Inputvalidatie",
+    "definitionNl": "Waarborgen dat gebruikersinput correct wordt gecontroleerd en gesanitiseerd om injectie en andere aanvallen te voorkomen."
+  },
+  {
+    "id": 361,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Output Encoding",
+    "definition": "Encoding data before output to prevent injection attacks such as cross-site scripting.",
+    "termNl": "Output encoding",
+    "definitionNl": "Encoderen van gegevens vóór output om injectieaanvallen zoals cross-site scripting te voorkomen."
+  },
+  {
+    "id": 362,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Authentication Logic",
+    "definition": "Code that verifies user identity and must be implemented securely to prevent bypass or exploitation.",
+    "termNl": "Authenticatielogica",
+    "definitionNl": "Code die gebruikersidentiteit verifieert en veilig moet worden geïmplementeerd om bypass of exploitatie te voorkomen."
+  },
+  {
+    "id": 363,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Session Management",
+    "definition": "Handling user sessions securely, including session tokens, expiration, and protection against hijacking.",
+    "termNl": "Sessiebeheer",
+    "definitionNl": "Veilig afhandelen van gebruikerssessies, inclusief sessietokens, vervaldatum en bescherming tegen hijacking."
+  },
+  {
+    "id": 364,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Dependency Management",
+    "definition": "Managing third-party libraries to ensure they are secure and up to date.",
+    "termNl": "Dependencybeheer",
+    "definitionNl": "Beheren van third-party bibliotheken om te waarborgen dat ze veilig en up-to-date zijn."
+  },
+  {
+    "id": 365,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "OWASP Top 10",
+    "definition": "A widely recognized list of common web application security risks used as a guideline for secure development.",
+    "termNl": "OWASP Top 10",
+    "definitionNl": "Een algemeen erkende lijst van veelvoorkomende webapplicatiebeveiligingsrisico's, gebruikt als richtlijn voor veilige ontwikkeling."
+  },
+  {
+    "id": 366,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Buffer Overflow",
+    "definition": "A vulnerability where data exceeds allocated memory, potentially allowing execution of malicious code.",
+    "termNl": "Buffer overflow",
+    "definitionNl": "Een kwetsbaarheid waarbij gegevens toegewezen geheugen overschrijden, wat mogelijk uitvoering van kwaadaardige code mogelijk maakt."
+  },
+  {
+    "id": 367,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "SQL Injection",
+    "definition": "An attack that manipulates database queries through unsanitized input to access or modify data.",
+    "termNl": "SQL-injectie",
+    "definitionNl": "Een aanval die databasequeries manipuleert via ongesanitiseerde input om gegevens te benaderen of te wijzigen."
+  },
+  {
+    "id": 368,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "XSS",
+    "definition": "Cross-site scripting allows attackers to inject malicious scripts into web applications viewed by other users.",
+    "termNl": "XSS",
+    "definitionNl": "Cross-Site Scripting stelt aanvallers in staat kwaadaardige scripts te injecteren in webapplicaties die door andere gebruikers worden bekeken."
+  },
+  {
+    "id": 369,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "CSRF",
+    "definition": "Cross-site request forgery tricks users into performing unintended actions on authenticated applications.",
+    "termNl": "CSRF",
+    "definitionNl": "Cross-Site Request Forgery misleidt gebruikers om onbedoelde acties uit te voeren op geauthenticeerde applicaties."
+  },
+  {
+    "id": 370,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Design",
+    "definition": "Incorporating security principles into system architecture from the beginning of development.",
+    "termNl": "Veilig ontwerp",
+    "definitionNl": "Integreren van beveiligingsprincipes in systeemarchitectuur vanaf het begin van de ontwikkeling."
+  },
+  {
+    "id": 371,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "DevSecOps",
+    "definition": "Integrating security practices into DevOps workflows to ensure continuous security throughout development.",
+    "termNl": "DevSecOps",
+    "definitionNl": "Integreren van beveiligingspraktijken in DevOps-workflows om continue beveiliging gedurende de ontwikkeling te waarborgen."
+  },
+  {
+    "id": 372,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "CI/CD",
+    "definition": "Continuous integration and deployment pipelines that automate building, testing, and deploying software.",
+    "termNl": "CI/CD",
+    "definitionNl": "Continuous Integration/Continuous Deployment-pipelines die het bouwen, testen en implementeren van software automatiseren."
+  },
+  {
+    "id": 373,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Code Signing",
+    "definition": "Using digital signatures to verify the authenticity and integrity of software code.",
+    "termNl": "Code signing",
+    "definitionNl": "Gebruik van digitale handtekeningen om de authenticiteit en integriteit van softwarecode te verifiëren."
+  },
+  {
+    "id": 374,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Build",
+    "definition": "Ensuring that build processes are protected against tampering and produce trusted outputs.",
+    "termNl": "Veilige build",
+    "definitionNl": "Waarborgen dat buildprocessen beschermd zijn tegen manipulatie en betrouwbare output produceren."
+  },
+  {
+    "id": 375,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secrets Management",
+    "definition": "Secure handling of credentials such as API keys and passwords within applications.",
+    "termNl": "Secrets management",
+    "definitionNl": "Veilig afhandelen van credentials zoals API-sleutels en wachtwoorden binnen applicaties."
+  },
+  {
+    "id": 376,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Static Analysis",
+    "definition": "Analyzing code without execution to identify vulnerabilities and coding issues.",
+    "termNl": "Statische analyse",
+    "definitionNl": "Analyseren van code zonder uitvoering om kwetsbaarheden en coderingsproblemen te identificeren."
+  },
+  {
+    "id": 377,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Dynamic Analysis",
+    "definition": "Analyzing applications during execution to detect runtime vulnerabilities.",
+    "termNl": "Dynamische analyse",
+    "definitionNl": "Analyseren van applicaties tijdens uitvoering om runtime-kwetsbaarheden te detecteren."
+  },
+  {
+    "id": 378,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Software Assurance",
+    "definition": "Confidence that software is free from vulnerabilities and functions as intended securely.",
+    "termNl": "Software assurance",
+    "definitionNl": "Vertrouwen dat software vrij is van kwetsbaarheden en veilig functioneert zoals bedoeld."
+  },
+  {
+    "id": 379,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Security Requirements",
+    "definition": "Defined security expectations that must be met during software development.",
+    "termNl": "Beveiligingsvereisten",
+    "definitionNl": "Gedefinieerde beveiligingsexpectaties die tijdens softwareontwikkeling moeten worden gehaald."
+  },
+  {
+    "id": 380,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure API",
+    "definition": "Designing APIs with proper authentication, validation, and access controls to prevent misuse.",
+    "termNl": "Veilige API",
+    "definitionNl": "Ontwerpen van API's met juiste authenticatie, validatie en toegangscontroles om misbruik te voorkomen."
+  },
+  {
+    "id": 381,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Microservices Security",
+    "definition": "Protecting distributed services through secure communication and isolation.",
+    "termNl": "Microservices-beveiliging",
+    "definitionNl": "Beschermen van gedistribueerde diensten via veilige communicatie en isolatie."
+  },
+  {
+    "id": 382,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Container Security",
+    "definition": "Ensuring containers are securely configured and isolated from other environments.",
+    "termNl": "Containerbeveiliging",
+    "definitionNl": "Waarborgen dat containers veilig zijn geconfigureerd en geïsoleerd van andere omgevingen."
+  },
+  {
+    "id": 383,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Supply Chain Security",
+    "definition": "Protecting software from vulnerabilities introduced through third-party components or processes.",
+    "termNl": "Supply chain-beveiliging",
+    "definitionNl": "Beschermen van software tegen kwetsbaarheden geïntroduceerd via third-party componenten of processen."
+  },
+  {
+    "id": 384,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Vulnerability Management",
+    "definition": "Identifying, prioritizing, and fixing software vulnerabilities throughout its lifecycle.",
+    "termNl": "Kwetsbaarheidsbeheer",
+    "definitionNl": "Identificeren, prioriteren en verhelpen van softwarekwetsbaarheden gedurende de levenscyclus."
+  },
+  {
+    "id": 385,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Patch Management",
+    "definition": "Applying updates to fix software vulnerabilities and improve security.",
+    "termNl": "Patchbeheer",
+    "definitionNl": "Toepassen van updates om softwarekwetsbaarheden te verhelpen en beveiliging te verbeteren."
+  },
+  {
+    "id": 386,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Security Testing",
+    "definition": "Evaluating applications to identify vulnerabilities and weaknesses.",
+    "termNl": "Security testing",
+    "definitionNl": "Evalueren van applicaties om kwetsbaarheden en zwakheden te identificeren."
+  },
+  {
+    "id": 387,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Deployment",
+    "definition": "Ensuring applications are deployed in hardened and secure environments.",
+    "termNl": "Veilige implementatie",
+    "definitionNl": "Waarborgen dat applicaties worden geïmplementeerd in geharde en veilige omgevingen."
+  },
+  {
+    "id": 388,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Logging",
+    "definition": "Recording application events to support monitoring and incident investigation.",
+    "termNl": "Logging",
+    "definitionNl": "Registreren van applicatiegebeurtenissen ter ondersteuning van monitoring en incidentonderzoek."
+  },
+  {
+    "id": 389,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Monitoring",
+    "definition": "Observing application behavior to detect anomalies and threats.",
+    "termNl": "Monitoring",
+    "definitionNl": "Observeren van applicatiegedrag om afwijkingen en dreigingen te detecteren."
+  },
+  {
+    "id": 390,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Configuration",
+    "definition": "Applying secure settings to systems and applications to reduce attack surface.",
+    "termNl": "Veilige configuratie",
+    "definitionNl": "Toepassen van veilige instellingen op systemen en applicaties om het aanvalsoppervlak te verkleinen."
+  },
+  {
+    "id": 391,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Hardening",
+    "definition": "Reducing vulnerabilities by disabling unnecessary features and applying secure configurations.",
+    "termNl": "Hardening",
+    "definitionNl": "Verminderen van kwetsbaarheden door onnodige functies uit te schakelen en veilige configuraties toe te passen."
+  },
+  {
+    "id": 392,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Defaults",
+    "definition": "Designing systems with secure configurations enabled by default.",
+    "termNl": "Veilige standaardinstellingen",
+    "definitionNl": "Ontwerpen van systemen met veilige configuraties standaard ingeschakeld."
+  },
+  {
+    "id": 393,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Error Handling",
+    "definition": "Managing errors securely to avoid revealing sensitive information.",
+    "termNl": "Foutafhandeling",
+    "definitionNl": "Veilig afhandelen van fouten om te voorkomen dat gevoelige informatie wordt onthuld."
+  },
+  {
+    "id": 394,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Code Quality",
+    "definition": "Maintaining high standards in code to reduce bugs and vulnerabilities.",
+    "termNl": "Codekwaliteit",
+    "definitionNl": "Handhaven van hoge standaarden in code om bugs en kwetsbaarheden te verminderen."
+  },
+  {
+    "id": 395,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Security Review",
+    "definition": "Evaluating software for compliance with security requirements and best practices.",
+    "termNl": "Security review",
+    "definitionNl": "Evalueren van software op naleving van beveiligingsvereisten en best practices."
+  },
+  {
+    "id": 396,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Penetration Testing",
+    "definition": "Simulating attacks against applications to identify exploitable vulnerabilities.",
+    "termNl": "Penetratietest",
+    "definitionNl": "Simuleren van aanvallen tegen applicaties om exploiteerbare kwetsbaarheden te identificeren."
+  },
+  {
+    "id": 397,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Compliance",
+    "definition": "Ensuring software meets regulatory and organizational security standards.",
+    "termNl": "Compliance",
+    "definitionNl": "Waarborgen dat software voldoet aan regelgevings- en organisatiebeveiligingsstandaarden."
+  },
+  {
+    "id": 398,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Security Architecture",
+    "definition": "Designing application structures that enforce security principles and controls.",
+    "termNl": "Beveiligingsarchitectuur",
+    "definitionNl": "Ontwerpen van applicatiestructuren die beveiligingsprincipes en -controles afdwingen."
+  },
+  {
+    "id": 399,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Continuous Improvement",
+    "definition": "Iteratively improving software security based on testing results and emerging threats.",
+    "termNl": "Continue verbetering",
+    "definitionNl": "Iteratief verbeteren van softwarebeveiliging op basis van testresultaten en opkomende dreigingen."
+  },
+  {
+    "id": 400,
+    "domain": 8,
+    "domainName": "Software Development Security",
+    "domainNameNl": "Beveiliging bij softwareontwikkeling",
+    "term": "Secure Lifecycle",
+    "definition": "Integrating security practices throughout all phases of software development and maintenance.",
+    "termNl": "Veilige levenscyclus",
+    "definitionNl": "Integreren van beveiligingspraktijken in alle fasen van softwareontwikkeling en -onderhoud."
+  }
+]

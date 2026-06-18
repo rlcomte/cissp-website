@@ -1,8 +1,21 @@
-# CISSP Static Website
+# CISSP Learning Platform
 
-This is a static HTML/CSS site. You can run it locally with Python's built-in HTTP server.
+Dit project bevat:
 
-## Run Locally
+1. **Statische HTML-site** — originele leermaterialen per domein
+2. **Next.js-app** (`cissp-app/`) — interactief leerplatform met 400 begrippen, zoekfunctie, flashcards en EN/NL-taalwissel
+
+## Next.js-app (aanbevolen)
+
+```bash
+cd cissp-app
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Statische HTML-site
 
 From the project root:
 
@@ -15,15 +28,3 @@ Then open:
 ```text
 http://localhost:8000/
 ```
-
-If port `8000` is already in use, choose another port:
-
-```bash
-python3 -m http.server 8080
-```
-
-Then open `http://localhost:8080/`.
-
-## Stop the Server
-
-Press `Ctrl+C` in the terminal where the server is running.
