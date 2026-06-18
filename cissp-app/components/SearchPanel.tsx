@@ -150,18 +150,18 @@ const TermCard = memo(function TermCard({
           </CardTitle>
           <p className="text-xs text-muted-foreground truncate">{domain}</p>
         </div>
-        <div className="flex shrink-0 gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button variant="ghost" size="icon-xs" onClick={onToggleKnown} title="Known">
+        <div className="flex shrink-0 gap-0.5 sm:gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+          <Button variant="ghost" size="icon-xs" onClick={onToggleKnown} title="Known" className="size-8 sm:size-6">
             <Check className={cn("size-3.5", isKnown && "text-success")} />
           </Button>
-          <Button variant="ghost" size="icon-xs" onClick={onToggleFavorite}>
+          <Button variant="ghost" size="icon-xs" onClick={onToggleFavorite} className="size-8 sm:size-6">
             {isFavorite ? (
               <Star className="size-3.5 fill-primary text-primary" />
             ) : (
               <StarOff className="size-3.5" />
             )}
           </Button>
-          <Button variant="ghost" size="icon-xs" onClick={onCopy}>
+          <Button variant="ghost" size="icon-xs" onClick={onCopy} className="size-8 sm:size-6">
             {isCopied ? <Check className="size-3.5 text-success" /> : <Copy className="size-3.5" />}
           </Button>
         </div>

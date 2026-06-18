@@ -30,8 +30,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative min-h-screen vercel-grid">
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4">
-          <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:gap-4">
+          <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight shrink-0">
             <span className="flex size-7 items-center justify-center rounded-md border border-border bg-card text-xs font-bold">
               C
             </span>
@@ -64,7 +64,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             })}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {ready && (
+              <div className="flex lg:hidden items-center gap-1.5 min-w-0">
+                <Progress value={progressPct} className="h-1.5 w-12 sm:w-20" />
+                <span className="text-[10px] sm:text-xs text-muted-foreground font-mono">{progressPct}%</span>
+              </div>
+            )}
             {ready && (
               <div className="hidden lg:flex items-center gap-2 min-w-[120px]">
                 <Progress value={progressPct} className="h-1.5 w-20" />
@@ -95,9 +101,47 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">{children}</main>
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 pb-24 sm:py-8 md:pb-8">{children}</main>
 
-      <footer className="border-t border-border/60 py-6 text-center text-xs text-muted-foreground">
+      <nav
+        className="fixed inset-x-0 bottom-0 z-50 border-t border-border/60 bg-background/90 backdrop-blur-xl md:hidden pb-[env(safe-area-inset-bottom,0px)]"
+        aria-label={language === "nl" ? "Hoofdnavigatie" : "Main navigation"}
+      >
+        <div className="mx-auto flex max-w-6xl items-stretch justify-around px-1">
+          {nav.map((item) => {
+            const active =
+              item.href === "/"
+                ? pathname === "/"
+                : item.href === "/learn"
+                  ? pathname.startsWith("/learn")
+                  : pathname.startsWith("/glossary") && item.href.includes("mode=");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex flex-1 flex-col items-center justify-center gap-0.5 py-2 px-0.5 text-[10px] font-medium transition-colors min-w-0",
+                  active
+                    ? "text-foreground"
+                    : "text-muted-foreground",
+                )}
+              >
+                <span
+                  className={cn(
+                    "flex size-8 items-center justify-center rounded-lg transition-colors",
+                    active && "bg-secondary",
+                  )}
+                >
+                  <item.icon className="size-4" />
+                </span>
+                <span className="truncate max-w-full">{item.label[language]}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+
+      <footer className="border-t border-border/60 py-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px)+4rem)] md:pb-6 text-center text-xs text-muted-foreground">
         <div className="mx-auto max-w-6xl px-4 flex flex-wrap items-center justify-center gap-2">
           <span>CISSP Leerplatform</span>
           <Badge variant="secondary" className="font-mono text-[10px]">

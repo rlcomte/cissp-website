@@ -197,16 +197,26 @@ export function CommandTrigger() {
   const { language } = useLanguage();
 
   return (
-    <button
-      type="button"
-      onClick={() => setOpen(true)}
-      className="hidden sm:flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-    >
-      <Search className="size-3.5" />
-      <span>{language === "nl" ? "Zoeken…" : "Search…"}</span>
-      <kbd className="pointer-events-none ml-2 hidden h-5 select-none items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-        ⌘K
-      </kbd>
-    </button>
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="flex md:hidden size-8 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary/50 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+        aria-label={language === "nl" ? "Zoeken" : "Search"}
+      >
+        <Search className="size-3.5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="hidden md:flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+      >
+        <Search className="size-3.5" />
+        <span>{language === "nl" ? "Zoeken…" : "Search…"}</span>
+        <kbd className="pointer-events-none ml-2 hidden h-5 select-none items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 lg:flex">
+          ⌘K
+        </kbd>
+      </button>
+    </>
   );
 }

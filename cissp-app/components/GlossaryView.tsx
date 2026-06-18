@@ -48,24 +48,26 @@ export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
 
   return (
     <Tabs value={mode} onValueChange={onTabChange} className="space-y-6">
-      <TabsList className="bg-secondary/50 border border-border h-auto flex-wrap gap-1 p-1">
-        <TabsTrigger value="search" className="gap-1.5 data-[state=active]:bg-background">
-          <Search className="size-3.5" />
-          {language === "nl" ? "Zoeken" : "Search"}
-        </TabsTrigger>
-        <TabsTrigger value="table" className="gap-1.5 data-[state=active]:bg-background">
-          <Table2 className="size-3.5" />
-          {language === "nl" ? "Tabel" : "Table"}
-        </TabsTrigger>
-        <TabsTrigger value="cards" className="gap-1.5 data-[state=active]:bg-background">
-          <Layers className="size-3.5" />
-          Flashcards
-        </TabsTrigger>
-        <TabsTrigger value="quiz" className="gap-1.5 data-[state=active]:bg-background">
-          <Sparkles className="size-3.5" />
-          Quiz
-        </TabsTrigger>
-      </TabsList>
+      <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0 scrollbar-none">
+        <TabsList className="bg-secondary/50 border border-border h-auto w-max min-w-full md:min-w-0 md:w-fit flex-nowrap gap-1 p-1">
+          <TabsTrigger value="search" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
+            <Search className="size-3.5 shrink-0" />
+            <span className="max-sm:sr-only">{language === "nl" ? "Zoeken" : "Search"}</span>
+          </TabsTrigger>
+          <TabsTrigger value="table" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
+            <Table2 className="size-3.5 shrink-0" />
+            <span className="max-sm:sr-only">{language === "nl" ? "Tabel" : "Table"}</span>
+          </TabsTrigger>
+          <TabsTrigger value="cards" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
+            <Layers className="size-3.5 shrink-0" />
+            <span className="max-sm:sr-only">Flashcards</span>
+          </TabsTrigger>
+          <TabsTrigger value="quiz" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
+            <Sparkles className="size-3.5 shrink-0" />
+            <span className="max-sm:sr-only">Quiz</span>
+          </TabsTrigger>
+        </TabsList>
+      </div>
 
       <TabsContent value="search" className="mt-0">
         <SearchPanel domainFilter={domainFilter} initialQuery={initialQuery} />

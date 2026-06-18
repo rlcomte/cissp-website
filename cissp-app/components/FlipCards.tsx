@@ -151,15 +151,15 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             ))}
           </SelectContent>
         </Select>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => resetDeck(true)}>
+        <div className="flex flex-wrap items-center gap-2">
+          <Button variant="outline" size="sm" onClick={() => resetDeck(true)} className="flex-1 sm:flex-none">
             <Shuffle className="size-3.5" />
             {t("shuffle", language)}
           </Button>
-          <Badge variant="secondary" className="font-mono">
+          <Badge variant="secondary" className="font-mono shrink-0">
             {index + 1}/{deck.length}
           </Badge>
-          <Badge variant="outline" className="font-mono text-success border-success/30">
+          <Badge variant="outline" className="font-mono text-success border-success/30 text-[10px] sm:text-xs">
             {knownCount} {t("learned", language)} · {pool.length}{" "}
             {language === "nl" ? "te oefenen" : "left"}
           </Badge>
@@ -174,32 +174,38 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
           className="w-full text-left"
           onClick={() => setFlipped((f) => !f)}
         >
-          <div className={cn("flip-inner relative min-h-[340px]", flipped && "flipped")}>
+          <div className={cn("flip-inner relative min-h-[260px] sm:min-h-[340px]", flipped && "flipped")}>
             <Card
               className={cn(
-                "flip-face absolute inset-0 flex flex-col items-center justify-center p-8 text-center glow-border",
+                "flip-face absolute inset-0 flex flex-col items-center justify-center p-5 sm:p-8 text-center glow-border",
                 isKnown && "border-success/40",
               )}
             >
-              <Badge variant="secondary" className="mb-4 font-mono text-[10px]">
+              <Badge variant="secondary" className="mb-3 sm:mb-4 font-mono text-[10px] max-w-full truncate">
                 D{current.domain} · {domainLabel}
               </Badge>
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 {t("term", language)}
               </p>
-              <h2 className="text-2xl font-semibold tracking-tight">{frontLabel}</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight px-2">{frontLabel}</h2>
               <p className="mt-auto text-xs text-muted-foreground flex items-center gap-2">
-                {t("flipHint", language)} <Kbd>Space</Kbd>
+                {t("flipHint", language)}{" "}
+                <span className="hidden sm:inline-flex">
+                  <Kbd>Space</Kbd>
+                </span>
+                <span className="sm:hidden text-muted-foreground/80">
+                  {language === "nl" ? "(tik)" : "(tap)"}
+                </span>
               </p>
             </Card>
-            <Card className="flip-face flip-back absolute inset-0 flex flex-col items-center justify-center p-8 text-center glow-border bg-card">
-              <Badge variant="outline" className="mb-4 font-mono text-[10px]">
+            <Card className="flip-face flip-back absolute inset-0 flex flex-col items-center justify-center p-5 sm:p-8 text-center glow-border bg-card">
+              <Badge variant="outline" className="mb-3 sm:mb-4 font-mono text-[10px]">
                 #{current.id}
               </Badge>
               <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 {t("definition", language)}
               </p>
-              <p className="text-sm leading-relaxed text-muted-foreground max-h-[200px] overflow-y-auto">
+              <p className="text-sm leading-relaxed text-muted-foreground max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
                 {backText}
               </p>
             </Card>
@@ -207,23 +213,23 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
         </button>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-2">
-        <Button variant="outline" size="sm" onClick={prevCard}>
+      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
+        <Button variant="outline" size="sm" onClick={prevCard} className="col-span-1">
           <ChevronLeft className="size-4" />
-          {t("previous", language)}
+          <span className="max-sm:sr-only">{t("previous", language)}</span>
         </Button>
-        <Button variant="destructive" size="sm" onClick={() => nextCard(false)}>
+        <Button variant="outline" size="sm" onClick={() => nextCard()} className="col-span-1">
+          <span className="max-sm:sr-only">{t("next", language)}</span>
+          <ChevronRight className="size-4" />
+        </Button>
+        <Button variant="destructive" size="sm" onClick={() => nextCard(false)} className="col-span-1">
           <RotateCcw className="size-3.5" />
           {t("stillLearning", language)}
-          <Kbd className="ml-1">1</Kbd>
+          <Kbd className="ml-1 hidden sm:inline-flex">1</Kbd>
         </Button>
-        <Button size="sm" onClick={() => nextCard(true)}>
+        <Button size="sm" onClick={() => nextCard(true)} className="col-span-1">
           {t("gotIt", language)}
-          <Kbd className="ml-1 bg-primary-foreground/20">2</Kbd>
-        </Button>
-        <Button variant="outline" size="sm" onClick={() => nextCard()}>
-          {t("next", language)}
-          <ChevronRight className="size-4" />
+          <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20">2</Kbd>
         </Button>
       </div>
     </div>

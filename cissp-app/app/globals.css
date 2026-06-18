@@ -148,4 +148,11 @@
   .dark .search-highlight {
     @apply bg-primary/25;
   }
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -98,6 +98,10 @@
   border-collapse: collapse;
   font-size: 0.95rem;
   margin: 1rem 0;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .learn-content th {
@@ -313,4 +317,33 @@
 .learn-page-nav a:hover {
   color: var(--foreground);
   background: var(--secondary);
+}
+
+@media (max-width: 640px) {
+  .learn-content {
+    font-size: 1rem;
+  }
+
+  .learn-content .card,
+  .learn-content section.card {
+    padding: 1rem;
+  }
+
+  .learn-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .learn-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .learn-content th,
+  .learn-content td {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.875rem;
+  }
+
+  .learn-content table {
+    font-size: 0.875rem;
+  }
 }

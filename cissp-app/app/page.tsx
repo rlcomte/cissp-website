@@ -68,12 +68,12 @@ export default function HomePage() {
           <Zap className="size-3 mr-1 inline" />
           {language === "nl" ? "400 begrippen · 8 domeinen" : "400 terms · 8 domains"}
         </Badge>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gradient max-w-2xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gradient max-w-2xl">
           {language === "nl"
             ? "Leer CISSP-begrippen razendsnel"
             : "Learn CISSP terms at lightning speed"}
         </h1>
-        <p className="max-w-xl text-muted-foreground text-lg">
+        <p className="max-w-xl text-muted-foreground text-base sm:text-lg">
           {language === "nl"
             ? "Zoek, oefen en test je kennis. Nederlands en Engels. Druk ⌘K om overal te zoeken."
             : "Search, practice, and test your knowledge. Dutch and English. Press ⌘K to search anywhere."}

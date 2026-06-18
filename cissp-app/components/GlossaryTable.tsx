@@ -46,14 +46,14 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
   const rowVirtualizer = useVirtualizer({
     count: results.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 140,
+    estimateSize: () => 160,
     overscan: 8,
   });
 
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-        <div className="relative flex-1">
+        <div className="relative flex-1 min-w-0">
           <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={query}
@@ -75,12 +75,12 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
             ))}
           </SelectContent>
         </Select>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => setShowFavorites((v) => !v)}
             className={cn(
-              "flex items-center gap-1.5 rounded-lg border px-3 py-2 text-xs transition-colors",
+              "flex flex-1 items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-xs transition-colors sm:flex-none",
               showFavorites
                 ? "border-primary bg-primary/10 text-foreground"
                 : "border-border text-muted-foreground hover:text-foreground",
@@ -93,7 +93,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
             type="button"
             onClick={() => setShowUnknown((v) => !v)}
             className={cn(
-              "rounded-lg border px-3 py-2 text-xs transition-colors",
+              "flex flex-1 items-center justify-center rounded-lg border px-3 py-2 text-xs transition-colors sm:flex-none",
               showUnknown
                 ? "border-primary bg-primary/10 text-foreground"
                 : "border-border text-muted-foreground hover:text-foreground",
@@ -109,7 +109,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
       </p>
 
       <div className="rounded-xl border border-border overflow-hidden bg-card">
-        <div className="grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border bg-secondary/40 px-4 py-3.5 text-sm font-medium text-muted-foreground">
+        <div className="hidden md:grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border bg-secondary/40 px-4 py-3.5 text-sm font-medium text-muted-foreground">
           <span>#</span>
           <span>{t("term", language)}</span>
           <span>{t("definition", language)}</span>
@@ -126,24 +126,49 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
                   key={term.id}
                   data-index={virtualRow.index}
                   ref={rowVirtualizer.measureElement}
-                  className="absolute left-0 w-full grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border/50 px-4 py-3.5 text-base hover:bg-secondary/30 transition-colors"
+                  className="absolute left-0 w-full border-b border-border/50 px-4 py-3.5 hover:bg-secondary/30 transition-colors md:grid md:grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] md:gap-4 md:py-3.5"
                   style={{
                     transform: `translateY(${virtualRow.start}px)`,
                   }}
                 >
-                  <span className="font-mono text-xs text-muted-foreground pt-0.5">
+                  {/* Mobile card layout */}
+                  <div className="space-y-2 md:hidden">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-1.5 mb-1">
+                          <span className="font-mono text-xs text-muted-foreground">#{term.id}</span>
+                          <Badge variant="secondary" className="font-mono text-[10px]">
+                            D{term.domain}
+                          </Badge>
+                          {favoriteSet.has(term.id) && (
+                            <Star className="size-3 shrink-0 fill-primary text-primary" />
+                          )}
+                        </div>
+                        <p className="font-medium leading-snug">{getTermLabel(term, language)}</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {getTermDefinition(term, language)}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground">
+                      {getDomainLabel(term, language)}
+                    </p>
+                  </div>
+
+                  {/* Desktop table row */}
+                  <span className="hidden md:block font-mono text-xs text-muted-foreground pt-0.5">
                     {term.id}
                   </span>
-                  <span className="font-medium flex items-start gap-1.5">
+                  <span className="hidden md:flex font-medium items-start gap-1.5">
                     {favoriteSet.has(term.id) && (
                       <Star className="size-3 shrink-0 fill-primary text-primary mt-0.5" />
                     )}
                     {getTermLabel(term, language)}
                   </span>
-                  <p className="text-muted-foreground leading-relaxed whitespace-normal text-[1.05rem]">
+                  <p className="hidden md:block text-muted-foreground leading-relaxed whitespace-normal text-[1.05rem]">
                     {getTermDefinition(term, language)}
                   </p>
-                  <div>
+                  <div className="hidden md:block">
                     <Badge variant="secondary" className="font-mono text-[10px]">
                       D{term.domain}
                     </Badge>

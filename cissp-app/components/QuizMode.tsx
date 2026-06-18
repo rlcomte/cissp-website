@@ -139,19 +139,19 @@ export function QuizMode({ domainFilter }: QuizModeProps) {
             ))}
           </SelectContent>
         </Select>
-        <div className="flex gap-2">
-          <Badge variant="secondary" className="font-mono">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+          <Badge variant="secondary" className="font-mono text-[10px] sm:text-xs">
             {t("score", language)}: {score.correct}/{score.total}
           </Badge>
-          <Badge variant="outline" className="font-mono">
+          <Badge variant="outline" className="font-mono text-[10px] sm:text-xs">
             {accuracy}%
           </Badge>
           {streak > 1 && (
-            <Badge className="font-mono bg-success/20 text-success border-success/30">
+            <Badge className="font-mono text-[10px] sm:text-xs bg-success/20 text-success border-success/30">
               🔥 {streak}
             </Badge>
           )}
-          <Badge variant="outline" className="font-mono text-success border-success/30">
+          <Badge variant="outline" className="font-mono text-[10px] sm:text-xs text-success border-success/30">
             {pool.length} {language === "nl" ? "te oefenen" : "left"}
           </Badge>
         </div>
