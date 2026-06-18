@@ -96,7 +96,7 @@
     line-height: 1.65;
   }
   body {
-    @apply bg-background text-foreground min-h-screen text-base;
+    @apply bg-background text-foreground min-h-screen text-base overflow-x-clip;
     background-image: var(--surface-gradient);
   }
 }
@@ -128,8 +128,12 @@
   }
   .flip-scene {
     perspective: 1200px;
+    width: 100%;
+    overflow: hidden;
   }
   .flip-inner {
+    position: relative;
+    width: 100%;
     transform-style: preserve-3d;
     transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -137,10 +141,14 @@
     transform: rotateY(180deg);
   }
   .flip-face {
+    position: absolute;
+    inset: 0;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
   }
   .flip-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translate3d(0, 0, 0);
   }
   .search-highlight {
     @apply rounded-sm bg-primary/15 text-foreground font-medium;

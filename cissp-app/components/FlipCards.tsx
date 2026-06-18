@@ -168,68 +168,78 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
 
       <Progress value={deckProgress} className="h-1" />
 
-      <div className="flip-scene w-full">
-        <button
-          type="button"
-          className="w-full text-left"
-          onClick={() => setFlipped((f) => !f)}
+      <div
+        className="flip-scene w-full cursor-pointer select-none"
+        role="button"
+        tabIndex={0}
+        onClick={() => setFlipped((f) => !f)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setFlipped((f) => !f);
+          }
+        }}
+        aria-label={language === "nl" ? "Kaart omdraaien" : "Flip card"}
+      >
+        <div
+          className={cn(
+            "flip-inner min-h-[260px] sm:min-h-[340px]",
+            flipped && "flipped",
+          )}
         >
-          <div className={cn("flip-inner relative min-h-[260px] sm:min-h-[340px]", flipped && "flipped")}>
-            <Card
-              className={cn(
-                "flip-face absolute inset-0 flex flex-col items-center justify-center p-5 sm:p-8 text-center glow-border",
-                isKnown && "border-success/40",
-              )}
-            >
-              <Badge variant="secondary" className="mb-3 sm:mb-4 font-mono text-[10px] max-w-full truncate">
-                D{current.domain} · {domainLabel}
-              </Badge>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                {t("term", language)}
-              </p>
-              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight px-2">{frontLabel}</h2>
-              <p className="mt-auto text-xs text-muted-foreground flex items-center gap-2">
-                {t("flipHint", language)}{" "}
-                <span className="hidden sm:inline-flex">
-                  <Kbd>Space</Kbd>
-                </span>
-                <span className="sm:hidden text-muted-foreground/80">
-                  {language === "nl" ? "(tik)" : "(tap)"}
-                </span>
-              </p>
-            </Card>
-            <Card className="flip-face flip-back absolute inset-0 flex flex-col items-center justify-center p-5 sm:p-8 text-center glow-border bg-card">
-              <Badge variant="outline" className="mb-3 sm:mb-4 font-mono text-[10px]">
-                #{current.id}
-              </Badge>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                {t("definition", language)}
-              </p>
-              <p className="text-sm leading-relaxed text-muted-foreground max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
-                {backText}
-              </p>
-            </Card>
+          <div
+            className={cn(
+              "flip-face flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm",
+              isKnown && "border-success/40",
+            )}
+          >
+            <Badge variant="secondary" className="mb-3 sm:mb-4 font-mono text-[10px] max-w-[90%] truncate">
+              D{current.domain} · {domainLabel}
+            </Badge>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              {t("term", language)}
+            </p>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight px-2">{frontLabel}</h2>
+            <p className="mt-auto pt-4 text-xs text-muted-foreground">
+              {t("flipHint", language)}
+              <span className="hidden sm:inline">
+                {" "}
+                <Kbd>Space</Kbd>
+              </span>
+              <span className="sm:hidden"> ({language === "nl" ? "tik" : "tap"})</span>
+            </p>
           </div>
-        </button>
+          <div className="flip-face flip-back flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm">
+            <Badge variant="outline" className="mb-3 sm:mb-4 font-mono text-[10px]">
+              #{current.id}
+            </Badge>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              {t("definition", language)}
+            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
+              {backText}
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
-        <Button variant="outline" size="sm" onClick={prevCard} className="col-span-1">
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        <Button variant="outline" size="sm" onClick={prevCard}>
           <ChevronLeft className="size-4" />
-          <span className="max-sm:sr-only">{t("previous", language)}</span>
+          {t("previous", language)}
         </Button>
-        <Button variant="outline" size="sm" onClick={() => nextCard()} className="col-span-1">
-          <span className="max-sm:sr-only">{t("next", language)}</span>
-          <ChevronRight className="size-4" />
-        </Button>
-        <Button variant="destructive" size="sm" onClick={() => nextCard(false)} className="col-span-1">
+        <Button variant="destructive" size="sm" onClick={() => nextCard(false)}>
           <RotateCcw className="size-3.5" />
           {t("stillLearning", language)}
           <Kbd className="ml-1 hidden sm:inline-flex">1</Kbd>
         </Button>
-        <Button size="sm" onClick={() => nextCard(true)} className="col-span-1">
+        <Button size="sm" onClick={() => nextCard(true)}>
           {t("gotIt", language)}
           <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20">2</Kbd>
+        </Button>
+        <Button variant="outline" size="sm" onClick={() => nextCard()}>
+          {t("next", language)}
+          <ChevronRight className="size-4" />
         </Button>
       </div>
     </div>

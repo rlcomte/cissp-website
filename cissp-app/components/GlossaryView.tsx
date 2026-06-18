@@ -48,8 +48,8 @@ export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
 
   return (
     <Tabs value={mode} onValueChange={onTabChange} className="space-y-6">
-      <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0 scrollbar-none">
-        <TabsList className="bg-secondary/50 border border-border h-auto w-max min-w-full md:min-w-0 md:w-fit flex-nowrap gap-1 p-1">
+      <div className="overflow-x-auto px-4 -mx-4 md:mx-0 md:px-0 scrollbar-none">
+        <TabsList className="bg-secondary/50 border border-border h-auto w-fit mx-auto md:mx-0 flex-nowrap gap-1 p-1">
           <TabsTrigger value="search" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
             <Search className="size-3.5 shrink-0" />
             <span className="max-sm:sr-only">{language === "nl" ? "Zoeken" : "Search"}</span>
