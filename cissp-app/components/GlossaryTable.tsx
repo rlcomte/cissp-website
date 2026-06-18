@@ -46,8 +46,8 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
   const rowVirtualizer = useVirtualizer({
     count: results.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 72,
-    overscan: 12,
+    estimateSize: () => 120,
+    overscan: 8,
   });
 
   return (
@@ -109,7 +109,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
       </p>
 
       <div className="rounded-xl border border-border overflow-hidden bg-card">
-        <div className="grid grid-cols-[48px_1fr_2fr_120px] gap-4 border-b border-border bg-secondary/40 px-4 py-3 text-xs font-medium text-muted-foreground">
+        <div className="grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border bg-secondary/40 px-4 py-3 text-xs font-medium text-muted-foreground">
           <span>#</span>
           <span>{t("term", language)}</span>
           <span>{t("definition", language)}</span>
@@ -124,9 +124,10 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
               return (
                 <div
                   key={term.id}
-                  className="absolute left-0 w-full grid grid-cols-[48px_1fr_2fr_120px] gap-4 border-b border-border/50 px-4 py-3 text-sm hover:bg-secondary/30 transition-colors"
+                  data-index={virtualRow.index}
+                  ref={rowVirtualizer.measureElement}
+                  className="absolute left-0 w-full grid grid-cols-[48px_minmax(140px,1fr)_minmax(0,3fr)_130px] gap-4 border-b border-border/50 px-4 py-3 text-sm hover:bg-secondary/30 transition-colors"
                   style={{
-                    height: `${virtualRow.size}px`,
                     transform: `translateY(${virtualRow.start}px)`,
                   }}
                 >
@@ -139,14 +140,14 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
                     )}
                     {getTermLabel(term, language)}
                   </span>
-                  <span className="text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="text-muted-foreground leading-relaxed whitespace-normal">
                     {getTermDefinition(term, language)}
-                  </span>
+                  </p>
                   <div>
                     <Badge variant="secondary" className="font-mono text-[10px]">
                       D{term.domain}
                     </Badge>
-                    <p className="text-[10px] text-muted-foreground mt-1 line-clamp-2">
+                    <p className="text-[10px] text-muted-foreground mt-1">
                       {getDomainLabel(term, language)}
                     </p>
                   </div>
