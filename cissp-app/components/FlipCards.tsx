@@ -185,11 +185,11 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
         }}
         aria-label={language === "nl" ? "Kaart omdraaien" : "Flip card"}
       >
-        <div className={cn("flip-inner min-h-[260px] sm:min-h-[340px]", flipped && "flipped")}>
+        <div className={cn("flip-inner min-h-[260px] sm:min-h-[340px]", flipped && "is-flipped")}>
           <div
             aria-hidden={flipped}
             className={cn(
-              "flip-face flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm",
+              "flip-face flip-front flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm",
               isKnown && "border-success/40",
             )}
           >
@@ -219,8 +219,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
               {t("definition", language)}
             </p>
-            {/* scroll lives on an inner child, not the backface element itself —
-                a scrollable backface breaks backface-visibility in Chrome and bleeds through */}
+            {/* scroll lives on an inner child, never on the backface element itself */}
             <div className="max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
               <p className="text-sm leading-relaxed text-muted-foreground">{backText}</p>
             </div>
