@@ -274,7 +274,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
         </Button>
         <Button size="sm" onClick={() => rate("known")}>
           {t("gotIt", language)}
-          <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20">3</Kbd>
+          <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20 text-primary-foreground">3</Kbd>
         </Button>
         <Button variant="ghost" size="icon-sm" onClick={() => go(1)} aria-label={t("next", language)}>
           <ChevronRight className="size-4" />
