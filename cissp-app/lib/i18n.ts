@@ -30,6 +30,26 @@ export const ui = {
   score: { en: "Score", nl: "Score" },
   showFavorites: { en: "Favorites only", nl: "Alleen favorieten" },
   showUnknown: { en: "Not learned yet", nl: "Nog niet geleerd" },
+  saveCode: { en: "Save code", nl: "Code opslaan" },
+  syncTitle: { en: "Save & continue elsewhere", nl: "Opslaan & elders verder" },
+  syncDesc: {
+    en: "Save your progress to get a 4-digit code. Enter that code on another device to continue.",
+    nl: "Sla je voortgang op en krijg een 4-cijferige code. Vul die code op een ander apparaat in om verder te gaan.",
+  },
+  saveProgress: { en: "Save progress", nl: "Voortgang opslaan" },
+  saving: { en: "Saving…", nl: "Opslaan…" },
+  yourCode: { en: "Your code", nl: "Jouw code" },
+  codeHint: {
+    en: "Write this code down. Use it anywhere to restore your progress.",
+    nl: "Schrijf deze code op. Gebruik 'm overal om je voortgang terug te zetten.",
+  },
+  copied: { en: "Copied!", nl: "Gekopieerd!" },
+  enterCode: { en: "Have a code?", nl: "Heb je een code?" },
+  restore: { en: "Restore", nl: "Terugzetten" },
+  restoring: { en: "Restoring…", nl: "Terugzetten…" },
+  restored: { en: "Progress restored!", nl: "Voortgang teruggezet!" },
+  codeNotFound: { en: "Code not found.", nl: "Code niet gevonden." },
+  syncError: { en: "Something went wrong. Try again.", nl: "Er ging iets mis. Probeer opnieuw." },
 } as const;
 
 export function t(key: keyof typeof ui, lang: Language) {

@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Kbd } from "@/components/ui/kbd";
+import { ProgressSync } from "@/components/ProgressSync";
 import { ChevronLeft, ChevronRight, RotateCcw, Shuffle } from "lucide-react";
 
 type FlipCardsProps = {
@@ -158,6 +159,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             <Shuffle className="size-3.5" />
             {t("shuffle", language)}
           </Button>
+          <ProgressSync />
           <Badge variant="secondary" className="font-mono shrink-0">
             {index + 1}/{deck.length}
           </Badge>
@@ -171,7 +173,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
       <Progress value={deckProgress} className="h-1" />
 
       <div
-        className="relative w-full min-h-[260px] sm:min-h-[340px] cursor-pointer select-none"
+        className="flip-scene w-full cursor-pointer select-none"
         role="button"
         tabIndex={0}
         onClick={() => setFlipped((f) => !f)}
@@ -183,46 +185,46 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
         }}
         aria-label={language === "nl" ? "Kaart omdraaien" : "Flip card"}
       >
-        <div
-          aria-hidden={flipped}
-          className={cn(
-            "absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm transition-opacity duration-200",
-            flipped ? "pointer-events-none opacity-0" : "opacity-100",
-            isKnown && "border-success/40",
-          )}
-        >
-          <Badge variant="secondary" className="mb-3 sm:mb-4 font-mono text-[10px] max-w-[90%] truncate">
-            D{current.domain} · {domainLabel}
-          </Badge>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            {t("term", language)}
-          </p>
-          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight px-2">{frontLabel}</h2>
-          <p className="mt-auto pt-4 text-xs text-muted-foreground">
-            {t("flipHint", language)}
-            <span className="hidden sm:inline">
-              {" "}
-              <Kbd>Space</Kbd>
-            </span>
-            <span className="sm:hidden"> ({language === "nl" ? "tik" : "tap"})</span>
-          </p>
-        </div>
-        <div
-          aria-hidden={!flipped}
-          className={cn(
-            "absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm transition-opacity duration-200",
-            flipped ? "opacity-100" : "pointer-events-none opacity-0",
-          )}
-        >
-          <Badge variant="outline" className="mb-3 sm:mb-4 font-mono text-[10px]">
-            #{current.id}
-          </Badge>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            {t("definition", language)}
-          </p>
-          <p className="text-sm leading-relaxed text-muted-foreground max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
-            {backText}
-          </p>
+        <div className={cn("flip-inner min-h-[260px] sm:min-h-[340px]", flipped && "flipped")}>
+          <div
+            aria-hidden={flipped}
+            className={cn(
+              "flip-face flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm",
+              isKnown && "border-success/40",
+            )}
+          >
+            <Badge variant="secondary" className="mb-3 sm:mb-4 font-mono text-[10px] max-w-[90%] truncate">
+              D{current.domain} · {domainLabel}
+            </Badge>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              {t("term", language)}
+            </p>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight px-2">{frontLabel}</h2>
+            <p className="mt-auto pt-4 text-xs text-muted-foreground">
+              {t("flipHint", language)}
+              <span className="hidden sm:inline">
+                {" "}
+                <Kbd>Space</Kbd>
+              </span>
+              <span className="sm:hidden"> ({language === "nl" ? "tik" : "tap"})</span>
+            </p>
+          </div>
+          <div
+            aria-hidden={!flipped}
+            className="flip-face flip-back flex flex-col items-center justify-center rounded-xl border border-border bg-card p-5 sm:p-8 text-center shadow-sm"
+          >
+            <Badge variant="outline" className="mb-3 sm:mb-4 font-mono text-[10px]">
+              #{current.id}
+            </Badge>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              {t("definition", language)}
+            </p>
+            {/* scroll lives on an inner child, not the backface element itself —
+                a scrollable backface breaks backface-visibility in Chrome and bleeds through */}
+            <div className="max-h-[180px] sm:max-h-[200px] overflow-y-auto px-2">
+              <p className="text-sm leading-relaxed text-muted-foreground">{backText}</p>
+            </div>
+          </div>
         </div>
       </div>
 
