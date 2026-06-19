@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useProgress } from "@/hooks/use-progress";
 import { domains, getDomainLabel, getTermDefinition, getTermLabel, glossary } from "@/lib/glossary";
@@ -20,15 +20,18 @@ import {
 } from "@/components/ui/select";
 import { Kbd } from "@/components/ui/kbd";
 import { ProgressSync } from "@/components/ProgressSync";
-import { ChevronLeft, ChevronRight, RotateCcw, Shuffle } from "lucide-react";
+import { ChevronLeft, ChevronRight, Shuffle } from "lucide-react";
 
 type FlipCardsProps = {
   domainFilter?: number;
 };
 
+// How many cards before a "Hard"-rated card reappears (spaced repetition, session-local).
+const HARD_GAP = 3;
+
 export function FlipCards({ domainFilter }: FlipCardsProps) {
   const { language } = useLanguage();
-  const { knownSet, markKnown, knownCount } = useProgress();
+  const { knownSet, markKnown, knownCount, ready } = useProgress();
   const [selectedDomain, setSelectedDomain] = useState<string>(
     domainFilter ? String(domainFilter) : "all",
   );
@@ -36,60 +39,81 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
 
-  const pool = useMemo(() => {
+  // Latest values mirrored into refs so the keyboard handler and rating callbacks
+  // stay stable and never read stale state.
+  const knownSetRef = useRef(knownSet);
+  knownSetRef.current = knownSet;
+  const deckRef = useRef(deck);
+  deckRef.current = deck;
+  const indexRef = useRef(index);
+  indexRef.current = index;
+
+  // Build a fresh shuffled deck of not-yet-known terms for the selected domain.
+  const buildDeck = useCallback(() => {
     const domainPool =
       selectedDomain === "all"
         ? glossary
-        : glossary.filter((t) => t.domain === Number(selectedDomain));
-    return domainPool.filter((t) => !knownSet.has(t.id));
-  }, [selectedDomain, knownSet]);
+        : glossary.filter((term) => term.domain === Number(selectedDomain));
+    return shuffle(domainPool.filter((term) => !knownSetRef.current.has(term.id)));
+  }, [selectedDomain]);
 
-  const resetDeck = useCallback(
-    (shuffled = true) => {
-      setDeck(shuffled ? shuffle(pool) : [...pool]);
-      setIndex(0);
-      setFlipped(false);
-    },
-    [pool],
-  );
-
-  useEffect(() => {
-    setDeck(shuffle(pool));
+  const resetDeck = useCallback(() => {
+    setDeck(buildDeck());
     setIndex(0);
     setFlipped(false);
-  }, [selectedDomain, pool]);
+  }, [buildDeck]);
+
+  // Build the deck once progress is loaded and whenever the domain changes.
+  // Crucially NOT on every knownSet change — that was resetting the deck mid-session.
+  useEffect(() => {
+    if (!ready) return;
+    setDeck(buildDeck());
+    setIndex(0);
+    setFlipped(false);
+  }, [ready, buildDeck]);
 
   const current = deck[index];
 
-  const nextCard = useCallback(
-    (mark?: boolean) => {
-      if (!current) return;
+  // Rate the current card: "hard" requeues it soon, "easy" sends it to the back,
+  // "known" removes it from the session and persists it as learned.
+  const rate = useCallback(
+    (kind: "hard" | "easy" | "known") => {
+      const prev = deckRef.current;
+      if (prev.length === 0) return;
       setFlipped(false);
 
-      if (mark === true) {
-        markKnown(current.id, true);
-        setDeck((prev) => {
-          const next = prev.filter((t) => t.id !== current.id);
-          return next;
-        });
-        setIndex((i) => {
-          const remaining = deck.length - 1;
-          if (remaining <= 0) return 0;
-          return i >= remaining ? 0 : i;
-        });
-        return;
+      const idx = Math.min(indexRef.current, prev.length - 1);
+      const arr = [...prev];
+      const [card] = arr.splice(idx, 1);
+
+      let newIndex: number;
+      if (kind === "known") {
+        markKnown(card.id, true);
+        // card stays out of the deck; show whatever shifted into this slot
+        newIndex = idx >= arr.length ? 0 : idx;
+      } else {
+        if (kind === "hard") {
+          arr.splice(Math.min(idx + HARD_GAP, arr.length), 0, card);
+        } else {
+          arr.push(card);
+        }
+        // deck length unchanged; advance unless we were on the last card
+        newIndex = idx >= arr.length - 1 ? 0 : idx;
       }
 
-      if (mark === false) markKnown(current.id, false);
-      setIndex((i) => (deck.length <= 1 ? 0 : i + 1 >= deck.length ? 0 : i + 1));
+      setDeck(arr);
+      setIndex(newIndex);
     },
-    [current, deck.length, markKnown],
+    [markKnown],
   );
 
-  const prevCard = useCallback(() => {
+  // Plain navigation (skip / go back) without changing what's learned.
+  const go = useCallback((dir: 1 | -1) => {
+    const len = deckRef.current.length;
+    if (len === 0) return;
     setFlipped(false);
-    setIndex((i) => (i - 1 < 0 ? deck.length - 1 : i - 1));
-  }, [deck.length]);
+    setIndex((i) => (dir === 1 ? (i + 1) % len : (i - 1 + len) % len));
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -97,16 +121,25 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
       if (e.code === "Space") {
         e.preventDefault();
         setFlipped((f) => !f);
-      } else if (e.code === "ArrowRight") nextCard();
-      else if (e.code === "ArrowLeft") prevCard();
-      else if (e.key === "1") nextCard(false);
-      else if (e.key === "2") nextCard(true);
+      } else if (e.code === "ArrowRight") go(1);
+      else if (e.code === "ArrowLeft") go(-1);
+      else if (e.key === "1") rate("hard");
+      else if (e.key === "2") rate("easy");
+      else if (e.key === "3") rate("known");
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [nextCard, prevCard]);
+  }, [rate, go]);
 
-  if (pool.length === 0) {
+  if (!ready) {
+    return (
+      <Card className="py-16 text-center text-muted-foreground">
+        {language === "nl" ? "Laden…" : "Loading…"}
+      </Card>
+    );
+  }
+
+  if (deck.length === 0) {
     return (
       <Card className="py-16 text-center space-y-2">
         <p className="text-lg font-medium">
@@ -155,7 +188,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
           </SelectContent>
         </Select>
         <div className="flex flex-wrap items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => resetDeck(true)} className="flex-1 sm:flex-none">
+          <Button variant="outline" size="sm" onClick={resetDeck} className="flex-1 sm:flex-none">
             <Shuffle className="size-3.5" />
             {t("shuffle", language)}
           </Button>
@@ -164,7 +197,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             {index + 1}/{deck.length}
           </Badge>
           <Badge variant="outline" className="font-mono text-success border-success/30 text-[10px] sm:text-xs">
-            {knownCount} {t("learned", language)} · {pool.length}{" "}
+            {knownCount} {t("learned", language)} · {deck.length}{" "}
             {language === "nl" ? "te oefenen" : "left"}
           </Badge>
         </div>
@@ -228,24 +261,27 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
-        <Button variant="outline" size="sm" onClick={prevCard}>
+        <Button variant="ghost" size="icon-sm" onClick={() => go(-1)} aria-label={t("previous", language)}>
           <ChevronLeft className="size-4" />
-          {t("previous", language)}
         </Button>
-        <Button variant="destructive" size="sm" onClick={() => nextCard(false)}>
-          <RotateCcw className="size-3.5" />
-          {t("stillLearning", language)}
+        <Button variant="destructive" size="sm" onClick={() => rate("hard")}>
+          {t("hard", language)}
           <Kbd className="ml-1 hidden sm:inline-flex">1</Kbd>
         </Button>
-        <Button size="sm" onClick={() => nextCard(true)}>
-          {t("gotIt", language)}
-          <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20">2</Kbd>
+        <Button variant="secondary" size="sm" onClick={() => rate("easy")}>
+          {t("easy", language)}
+          <Kbd className="ml-1 hidden sm:inline-flex">2</Kbd>
         </Button>
-        <Button variant="outline" size="sm" onClick={() => nextCard()}>
-          {t("next", language)}
+        <Button size="sm" onClick={() => rate("known")}>
+          {t("gotIt", language)}
+          <Kbd className="ml-1 hidden sm:inline-flex bg-primary-foreground/20">3</Kbd>
+        </Button>
+        <Button variant="ghost" size="icon-sm" onClick={() => go(1)} aria-label={t("next", language)}>
           <ChevronRight className="size-4" />
         </Button>
       </div>
+
+      <p className="text-center text-xs text-muted-foreground">{t("srHint", language)}</p>
     </div>
   );
 }

@@ -14,6 +14,12 @@ export const ui = {
   next: { en: "Next", nl: "Volgende" },
   stillLearning: { en: "Still learning", nl: "Nog oefenen" },
   gotIt: { en: "Got it", nl: "Ken ik" },
+  hard: { en: "Hard", nl: "Moeilijk" },
+  easy: { en: "Easy", nl: "Makkelijk" },
+  srHint: {
+    en: "Hard comes back sooner · easy later",
+    nl: "Moeilijk komt sneller terug · makkelijk later",
+  },
   flipHint: { en: "Space to flip", nl: "Spatie om te draaien" },
   term: { en: "Term", nl: "Begrip" },
   definition: { en: "Definition", nl: "Definitie" },
