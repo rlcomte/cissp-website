@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CISSP — 400 Begrippen",
+  title: "CISSP · 400 Begrippen",
   description:
     "Leer 400 CISSP-begrippen met snelle zoekfunctie, flashcards, quiz en voortgangstracking.",
 };

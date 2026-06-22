@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
   const meta = getPageMeta(slug);
   if (!meta) return { title: "Not found" };
   return {
-    title: `${meta.title} — CISSP`,
+    title: `${meta.title} · CISSP`,
     description: meta.description,
   };
 }

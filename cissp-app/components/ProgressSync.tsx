@@ -61,7 +61,7 @@ export function ProgressSync() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      /* clipboard unavailable — code is shown on screen anyway */
+      /* clipboard unavailable - code is shown on screen anyway */
     }
   }
 

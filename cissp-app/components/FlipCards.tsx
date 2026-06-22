@@ -64,7 +64,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
   }, [buildDeck]);
 
   // Build the deck once progress is loaded and whenever the domain changes.
-  // Crucially NOT on every knownSet change — that was resetting the deck mid-session.
+  // Crucially NOT on every knownSet change - that was resetting the deck mid-session.
   useEffect(() => {
     if (!ready) return;
     setDeck(buildDeck());
@@ -182,7 +182,7 @@ export function FlipCards({ domainFilter }: FlipCardsProps) {
             <SelectItem value="all">{t("allDomains", language)}</SelectItem>
             {domains.map((d) => (
               <SelectItem key={d.id} value={String(d.id)}>
-                D{d.id} — {language === "nl" ? d.nameNl : d.name}
+                D{d.id} · {language === "nl" ? d.nameNl : d.name}
               </SelectItem>
             ))}
           </SelectContent>

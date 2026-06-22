@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import {
   ArrowRight,
+  GraduationCap,
   Layers,
   Search,
   Sparkles,
@@ -23,8 +24,8 @@ const modes = [
     icon: Search,
     title: { en: "Instant search", nl: "Direct zoeken" },
     desc: {
-      en: "MiniSearch index — fuzzy, prefix, <5ms for 400 terms.",
-      nl: "MiniSearch-index — fuzzy, prefix, <5ms voor 400 begrippen.",
+      en: "MiniSearch index: fuzzy, prefix, <5ms for 400 terms.",
+      nl: "MiniSearch-index: fuzzy, prefix, <5ms voor 400 begrippen.",
     },
   },
   {
@@ -50,8 +51,8 @@ const modes = [
     icon: Sparkles,
     title: { en: "Quiz mode", nl: "Quiz-modus" },
     desc: {
-      en: "Multiple choice — pick the correct definition.",
-      nl: "Meerkeuze — kies de juiste definitie.",
+      en: "Multiple choice: pick the correct definition.",
+      nl: "Meerkeuze: kies de juiste definitie.",
     },
   },
 ];
@@ -90,7 +91,8 @@ export default function HomePage() {
             href="/learn"
             className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-background px-4 text-sm font-medium hover:bg-muted transition-colors"
           >
-            {language === "nl" ? "Leermateriaal (21 pagina's)" : "Learning material (21 pages)"}
+            <GraduationCap className="size-4" />
+            {language === "nl" ? "Theorie & scenario's" : "Theory & scenarios"}
           </Link>
         </div>
       </section>
@@ -112,7 +114,7 @@ export default function HomePage() {
       )}
 
       <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
-        {language === "nl" ? "Leermethoden" : "Learning modes"}
+        {language === "nl" ? "Begrippen oefenen" : "Practice terms"}
       </h2>
       <div className="grid gap-3 sm:grid-cols-2 mb-12">
         {modes.map((m) => (

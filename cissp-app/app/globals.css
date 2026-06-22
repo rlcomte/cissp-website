@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Light mode (default) — clean, high contrast */
+/* Light mode (default) - clean, high contrast */
 :root {
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.18 0.02 260);
@@ -126,7 +126,7 @@
       0 0 0 1px oklch(1 0 0 / 10%),
       0 0 24px oklch(1 0 0 / 4%);
   }
-  /* 3D flip card — canonical, no will-change (it breaks backface-visibility in Chrome) */
+  /* 3D flip card - canonical, no will-change (it breaks backface-visibility in Chrome) */
   .flip-scene {
     perspective: 1500px;
   }

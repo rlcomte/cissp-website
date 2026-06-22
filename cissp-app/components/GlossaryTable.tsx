@@ -70,7 +70,7 @@ export function GlossaryTable({ domainFilter }: GlossaryTableProps) {
             <SelectItem value="all">{t("allDomains", language)}</SelectItem>
             {domains.map((d) => (
               <SelectItem key={d.id} value={String(d.id)}>
-                D{d.id} — {language === "nl" ? d.nameNl : d.name}
+                D{d.id} · {language === "nl" ? d.nameNl : d.name}
               </SelectItem>
             ))}
           </SelectContent>

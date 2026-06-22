@@ -2,6 +2,7 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 import { CommandTrigger } from "@/components/command-menu";
 import { PrimaryNav, PrimaryNavFallback } from "@/components/primary-nav";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { StatusIndicator } from "@/components/status-indicator";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const { language, setLanguage } = useLanguage();
@@ -21,9 +23,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:gap-4">
           <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight shrink-0">
-            <span className="flex size-7 items-center justify-center rounded-md border border-border bg-card text-xs font-bold">
-              C
-            </span>
+            <Image
+              src="/images/logo.webp"
+              alt="CISSP"
+              width={28}
+              height={26}
+              priority
+              className="size-7 object-contain"
+            />
             <span className="hidden sm:inline">CISSP</span>
           </Link>
 
@@ -85,6 +92,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               {knownCount}/400 {language === "nl" ? "geleerd" : "learned"}
             </Badge>
           )}
+          <StatusIndicator />
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-/* Learning content — light & dark via CSS variables */
+/* Learning content - light & dark via CSS variables */
 .learn-content {
   --lc-card: oklch(1 0 0);
   --lc-border: oklch(0.88 0.005 260);

@@ -17,8 +17,8 @@ const categoryIcon = {
 };
 
 const categoryLabel = {
-  domain: { en: "Domain pages", nl: "Domeinpagina's" },
-  case: { en: "Case studies", nl: "Casestudies" },
+  domain: { en: "Theory", nl: "Theorie" },
+  case: { en: "Scenarios", nl: "Scenario's" },
   opdracht: { en: "Assignments", nl: "Opdrachten" },
   overview: { en: "Overview", nl: "Overzicht" },
   other: { en: "Other", nl: "Overig" },
@@ -90,8 +90,8 @@ export function LearnIndex({ pages, compact }: LearnIndexProps) {
                             D{page.domainId}
                           </Badge>
                         )}
-                        <Badge variant="secondary" className="text-[10px] capitalize">
-                          {page.category}
+                        <Badge variant="secondary" className="text-[10px]">
+                          {categoryLabel[page.category][language]}
                         </Badge>
                       </div>
                       <CardTitle className="text-sm leading-snug">

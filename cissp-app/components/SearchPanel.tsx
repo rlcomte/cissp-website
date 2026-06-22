@@ -90,7 +90,7 @@ export function SearchPanel({ domainFilter, initialQuery = "" }: SearchPanelProp
         ))}
         {results.length > 80 && (
           <p className="text-sm text-muted-foreground py-4 text-center">
-            +{results.length - 80} {language === "nl" ? "meer — verfijn zoekopdracht" : "more — refine search"}
+            +{results.length - 80} {language === "nl" ? "meer, verfijn zoekopdracht" : "more, refine search"}
           </p>
         )}
         {results.length === 0 && (

@@ -3,8 +3,8 @@ import { LearnIndex } from "@/components/learn-index";
 import { getAllPages } from "@/lib/pages";
 
 export const metadata = {
-  title: "Leermateriaal — CISSP",
-  description: "Alle domeinpagina's, casestudies en opdrachten uit het originele leermateriaal.",
+  title: "Theorie & scenario's · CISSP",
+  description: "Domeintheorie, TrailBlaze-scenario's en opdrachten, los van de begrippen.",
 };
 
 export default function LearnOverviewPage() {
@@ -13,10 +13,10 @@ export default function LearnOverviewPage() {
   return (
     <AppShell>
       <div className="mb-8 space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Leermateriaal</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Theorie &amp; scenario&apos;s</h1>
         <p className="text-muted-foreground max-w-xl">
-          Alle {pages.length} originele HTML-leerpagina&apos;s — domeinintroducties, TrailBlaze
-          casestudies en opdrachten — volledig leesbaar in de app.
+          De {pages.length} leerpagina&apos;s achter de begrippen: domeintheorie, TrailBlaze-scenario&apos;s
+          en opdrachten. De losse begrippen vind je onder Zoeken, Tabel, Kaarten en Quiz.
         </p>
       </div>
       <LearnIndex pages={pages} />
