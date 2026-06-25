@@ -24,6 +24,10 @@
 </nav>
 <main class="wrap">
 
+<section class="card image-panel">
+<img class="panel-image" src="images/domain7-overview.png" alt="CISSP Domain 7 overview" />
+</section>
+
 <section id="intro" class="card">
 <h2>Introduction</h2>
 <p>This domain focuses on the operational side of cybersecurity, including monitoring systems, detecting incidents, responding to threats, and ensuring business continuity.</p>
@@ -59,6 +63,17 @@
 <div>Investigate</div>
 <div>Respond</div>
 <div>Improve</div>
+</div>
+<div class="thumbnail-row thumbnail-row-three">
+<button class="thumbnail-button" type="button" data-dialog-target="domain7-monitoring-dialog" aria-label="Open security monitoring image">
+<img src="images/domain7-monitoring.png" alt="Security operations monitoring overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain7-respond-dialog" aria-label="Open incident response image">
+<img src="images/domain7-respond.png" alt="Incident response overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain7-soc-dialog" aria-label="Open SOC image">
+<img src="images/domain7-soc.png" alt="Security Operations Center overview" />
+</button>
 </div>
 </div>
 </section>
@@ -135,5 +150,38 @@
 </section>
 
 </main>
+
+<dialog class="image-dialog" id="domain7-monitoring-dialog" aria-label="Security monitoring image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain7-monitoring.png" alt="Security operations monitoring overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain7-respond-dialog" aria-label="Incident response image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain7-respond.png" alt="Incident response overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain7-soc-dialog" aria-label="SOC image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain7-soc.png" alt="Security Operations Center overview" />
+</dialog>
+
+<script>
+const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+imageDialogTriggers.forEach((trigger) => {
+const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+trigger.addEventListener("click", () => {
+dialog.showModal();
+});
+});
+
+document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+button.addEventListener("click", () => {
+button.closest("dialog").close();
+});
+});
+</script>
 </body>
 </html>

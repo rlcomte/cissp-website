@@ -24,6 +24,10 @@
 </nav>
 <main class="wrap">
 
+<section class="card image-panel">
+<img class="panel-image" src="images/domain8-overview.png" alt="CISSP Domain 8 overview" />
+</section>
+
 <section id="intro" class="card">
 <h2>Introduction</h2>
 <p>This domain focuses on embedding security throughout the Software Development Life Cycle (SDLC), including requirements, design, implementation, testing, deployment, and maintenance phases.</p>
@@ -57,6 +61,14 @@
 <div>RASP</div>
 <div>Fuzzing</div>
 <div>Code Review</div>
+</div>
+<div class="thumbnail-row">
+<button class="thumbnail-button" type="button" data-dialog-target="domain8-devops-dialog" aria-label="Open DevSecOps image">
+<img src="images/domain8-devops.png" alt="DevSecOps overview" />
+</button>
+<button class="thumbnail-button" type="button" data-dialog-target="domain8-cloud-dialog" aria-label="Open cloud application security image">
+<img src="images/domain8-cloud.png" alt="Cloud application security overview" />
+</button>
 </div>
 </div>
 </section>
@@ -133,5 +145,33 @@
 </section>
 
 </main>
+
+<dialog class="image-dialog" id="domain8-devops-dialog" aria-label="DevSecOps image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain8-devops.png" alt="DevSecOps overview" />
+</dialog>
+
+<dialog class="image-dialog" id="domain8-cloud-dialog" aria-label="Cloud application security image">
+<button class="dialog-close" type="button" data-dialog-close aria-label="Close image">Close</button>
+<img src="images/domain8-cloud.png" alt="Cloud application security overview" />
+</dialog>
+
+<script>
+const imageDialogTriggers = document.querySelectorAll("[data-dialog-target]");
+
+imageDialogTriggers.forEach((trigger) => {
+const dialog = document.getElementById(trigger.dataset.dialogTarget);
+
+trigger.addEventListener("click", () => {
+dialog.showModal();
+});
+});
+
+document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+button.addEventListener("click", () => {
+button.closest("dialog").close();
+});
+});
+</script>
 </body>
 </html>
