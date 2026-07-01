@@ -1,17 +1,40 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { TermStats } from "@/lib/difficulty";
 
 const STORAGE_KEY = "cissp-progress-v1";
 
 export type ProgressData = {
   known: number[];
   favorites: number[];
+  /** Per-term quiz results, the real signal behind difficulty ranking. */
+  stats: TermStats;
   /** Last 4-digit sync code this device saved to, so re-saving updates the same record. */
   code?: string;
 };
 
-const defaultData: ProgressData = { known: [], favorites: [] };
+const defaultData: ProgressData = { known: [], favorites: [], stats: {} };
+
+function sanitizeStats(value: unknown): TermStats {
+  if (!value || typeof value !== "object") return {};
+  const out: TermStats = {};
+  for (const [key, raw] of Object.entries(value as Record<string, unknown>)) {
+    const id = Number(key);
+    const s = raw as { seen?: unknown; wrong?: unknown };
+    if (
+      Number.isInteger(id) &&
+      s &&
+      Number.isFinite(Number(s.seen)) &&
+      Number.isFinite(Number(s.wrong))
+    ) {
+      const seen = Math.max(0, Math.floor(Number(s.seen)));
+      const wrong = Math.max(0, Math.min(seen, Math.floor(Number(s.wrong))));
+      if (seen > 0) out[id] = { seen, wrong };
+    }
+  }
+  return out;
+}
 
 function readStorage(): ProgressData {
   if (typeof window === "undefined") return defaultData;
@@ -22,6 +45,7 @@ function readStorage(): ProgressData {
     return {
       known: Array.isArray(parsed.known) ? parsed.known : [],
       favorites: Array.isArray(parsed.favorites) ? parsed.favorites : [],
+      stats: sanitizeStats(parsed.stats),
       code: typeof parsed.code === "string" ? parsed.code : undefined,
     };
   } catch {
@@ -68,6 +92,23 @@ export function useProgress() {
     });
   }, []);
 
+  /** Record a single quiz answer for a term (drives measured difficulty). */
+  const recordAttempt = useCallback((id: number, correct: boolean) => {
+    setData((prev) => {
+      const prevStat = prev.stats[id] ?? { seen: 0, wrong: 0 };
+      const stats = {
+        ...prev.stats,
+        [id]: {
+          seen: prevStat.seen + 1,
+          wrong: prevStat.wrong + (correct ? 0 : 1),
+        },
+      };
+      const next = { ...prev, stats };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
   const toggleFavorite = useCallback((id: number) => {
     setData((prev) => {
       const favorites = prev.favorites.includes(id)
@@ -85,11 +126,17 @@ export function useProgress() {
 
   /** Merge progress restored from a sync code into local progress (union, never loses data). */
   const importProgress = useCallback(
-    (incoming: { known?: number[]; favorites?: number[]; code?: string }) => {
+    (incoming: { known?: number[]; favorites?: number[]; stats?: TermStats; code?: string }) => {
       setData((prev) => {
         const known = [...new Set([...prev.known, ...(incoming.known ?? [])])];
         const favorites = [...new Set([...prev.favorites, ...(incoming.favorites ?? [])])];
-        const next: ProgressData = { known, favorites, code: incoming.code ?? prev.code };
+        const stats: TermStats = { ...prev.stats };
+        for (const [key, s] of Object.entries(incoming.stats ?? {})) {
+          const id = Number(key);
+          const base = stats[id] ?? { seen: 0, wrong: 0 };
+          stats[id] = { seen: base.seen + s.seen, wrong: base.wrong + s.wrong };
+        }
+        const next: ProgressData = { known, favorites, stats, code: incoming.code ?? prev.code };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
         return next;
       });
@@ -113,10 +160,12 @@ export function useProgress() {
     ready,
     known: data.known,
     favorites: data.favorites,
+    stats: data.stats,
     knownSet,
     favoriteSet,
     toggleKnown,
     markKnown,
+    recordAttempt,
     toggleFavorite,
     resetProgress,
     importProgress,

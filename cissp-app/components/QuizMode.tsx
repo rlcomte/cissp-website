@@ -43,7 +43,7 @@ type QuizModeProps = {
 
 export function QuizMode({ domainFilter }: QuizModeProps) {
   const { language } = useLanguage();
-  const { markKnown, knownSet, knownCount } = useProgress();
+  const { markKnown, recordAttempt, knownSet, knownCount } = useProgress();
   const [selectedDomain, setSelectedDomain] = useState<string>(
     domainFilter ? String(domainFilter) : "all",
   );
@@ -93,6 +93,7 @@ export function QuizMode({ domainFilter }: QuizModeProps) {
       correct: s.correct + (correct ? 1 : 0),
       total: s.total + 1,
     }));
+    if (current) recordAttempt(current.id, correct);
     if (correct) {
       setStreak((s) => s + 1);
       if (current) markKnown(current.id, true);

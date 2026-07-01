@@ -8,7 +8,7 @@ import { SearchPanel } from "@/components/SearchPanel";
 import { GlossaryTable } from "@/components/GlossaryTable";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Layers, Search, Sparkles, Table2 } from "lucide-react";
+import { Flame, Layers, Search, Sparkles, Table2 } from "lucide-react";
 
 const FlipCards = dynamic(
   () => import("@/components/FlipCards").then((m) => m.FlipCards),
@@ -20,7 +20,14 @@ const QuizMode = dynamic(
   { loading: () => <Skeleton className="h-[400px] w-full rounded-xl" /> },
 );
 
-type Mode = "search" | "table" | "cards" | "quiz";
+const HardestTerms = dynamic(
+  () => import("@/components/HardestTerms").then((m) => m.HardestTerms),
+  { loading: () => <Skeleton className="h-[400px] w-full rounded-xl" /> },
+);
+
+type Mode = "search" | "table" | "cards" | "quiz" | "hard";
+
+const MODES: Mode[] = ["search", "table", "cards", "quiz", "hard"];
 
 export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
   const { language } = useLanguage();
@@ -29,12 +36,12 @@ export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
   const paramMode = (searchParams.get("mode") as Mode) || "search";
   const initialQuery = searchParams.get("q") ?? "";
   const [mode, setMode] = useState<Mode>(
-    ["search", "table", "cards", "quiz"].includes(paramMode) ? paramMode : "search",
+    MODES.includes(paramMode) ? paramMode : "search",
   );
 
   useEffect(() => {
     const m = searchParams.get("mode") as Mode;
-    if (m && ["search", "table", "cards", "quiz"].includes(m)) setMode(m);
+    if (m && MODES.includes(m)) setMode(m);
   }, [searchParams]);
 
   function onTabChange(value: string) {
@@ -66,6 +73,10 @@ export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
             <Sparkles className="size-3.5 shrink-0" />
             <span className="max-sm:sr-only">Quiz</span>
           </TabsTrigger>
+          <TabsTrigger value="hard" className="gap-1.5 px-2.5 sm:px-3 data-[state=active]:bg-background">
+            <Flame className="size-3.5 shrink-0" />
+            <span className="max-sm:sr-only">{language === "nl" ? "Moeilijkst" : "Hardest"}</span>
+          </TabsTrigger>
         </TabsList>
       </div>
 
@@ -80,6 +91,12 @@ export function GlossaryView({ domainFilter }: { domainFilter?: number }) {
       </TabsContent>
       <TabsContent value="quiz" className="mt-0">
         <QuizMode domainFilter={domainFilter} />
+      </TabsContent>
+      <TabsContent value="hard" className="mt-0">
+        <HardestTerms
+          domainFilter={domainFilter}
+          onPractice={() => onTabChange("quiz")}
+        />
       </TabsContent>
     </Tabs>
   );
