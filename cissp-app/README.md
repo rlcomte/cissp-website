@@ -32,8 +32,10 @@ voert `npm run build` eerst de migratie uit. Daardoor worden de tabellen ook
 tijdens een Vercel-deployment aangemaakt.
 
 De oefentoets staat op [http://localhost:3000/exams](http://localhost:3000/exams)
-en bevat 40 vragen, vijf per CISSP-domein. Antwoorden worden na iedere keuze
-opgeslagen en een open poging wordt na een refresh hervat.
+en heeft twee modi. Oefenen gebruikt 24 vragen met directe feedback. De volledige
+toets gebruikt 40 vragen en toont de uitleg pas na afronding. De vragenbank bevat
+theorie, casussen en vragen over alle 400 begrippen. Antwoorden worden na iedere
+keuze opgeslagen en een open poging wordt na een refresh hervat.
 
 ## Productie-build
 

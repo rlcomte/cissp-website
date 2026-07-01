@@ -1,8 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { examQuestions, EXAM_QUESTION_COUNT } from "@/lib/exam-questions";
-import { cn } from "@/lib/utils";
+import {
+  examQuestions,
+  GLOSSARY_QUESTION_COUNT,
+  glossaryQuestions,
+  type ExamQuestion,
+} from "@/lib/exam-questions";
+import { cn, shuffle } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,12 +15,12 @@ import { Progress } from "@/components/ui/progress";
 import {
   ArrowLeft,
   ArrowRight,
+  BookOpenCheck,
   CheckCircle2,
   CircleAlert,
   ClipboardCheck,
   Database,
   Loader2,
-  RefreshCw,
   RotateCcw,
   Save,
   Trophy,
@@ -26,17 +31,22 @@ const LEARNER_KEY = "cissp-exam-learner-v1";
 const ACTIVE_ATTEMPT_KEY = "cissp-exam-active-v1";
 
 type Answers = Record<string, number>;
+type AttemptMode = "practice" | "exam";
 type AttemptStatus = "in_progress" | "completed";
-type View = "loading" | "dashboard" | "exam" | "result";
+type View = "loading" | "dashboard" | "questions" | "result";
 
 type AttemptSummary = {
   id: string;
+  mode: AttemptMode;
   current_index: number;
   status: AttemptStatus;
   score: number;
   total: number;
   started_at: string;
 };
+
+const questionById = new Map(examQuestions.map((question) => [question.id, question]));
+const glossaryIds = new Set(glossaryQuestions.map((question) => question.id));
 
 function getOrCreateLearnerId() {
   const existing = localStorage.getItem(LEARNER_KEY);
@@ -46,11 +56,25 @@ function getOrCreateLearnerId() {
   return learnerId;
 }
 
+function buildQuestionOrder(mode: AttemptMode) {
+  const selected: ExamQuestion[] = [];
+  for (let domain = 1; domain <= 8; domain++) {
+    const domainQuestions = examQuestions.filter((question) => question.domain === domain);
+    const knowledge = domainQuestions.filter((question) => !glossaryIds.has(question.id));
+    const terms = domainQuestions.filter((question) => glossaryIds.has(question.id));
+    if (mode === "practice") {
+      selected.push(...shuffle(knowledge).slice(0, 1), ...shuffle(terms).slice(0, 2));
+    } else {
+      selected.push(...shuffle(knowledge).slice(0, 3), ...shuffle(terms).slice(0, 2));
+    }
+  }
+  return shuffle(selected).map((question) => question.id);
+}
+
 function formatDate(value: string) {
   return new Intl.DateTimeFormat("nl-NL", {
     day: "2-digit",
     month: "short",
-    year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));
@@ -61,22 +85,31 @@ export function ExamPractice() {
   const [learnerId, setLearnerId] = useState("");
   const [attemptId, setAttemptId] = useState("");
   const [startedAt, setStartedAt] = useState("");
+  const [mode, setMode] = useState<AttemptMode>("exam");
+  const [questionOrder, setQuestionOrder] = useState<string[]>([]);
   const [answers, setAnswers] = useState<Answers>({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [history, setHistory] = useState<AttemptSummary[]>([]);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const activeQuestions = useMemo(
+    () =>
+      questionOrder
+        .map((questionId) => questionById.get(questionId))
+        .filter((question): question is ExamQuestion => Boolean(question)),
+    [questionOrder],
+  );
+  const currentQuestion = activeQuestions[currentIndex];
+  const answeredCount = Object.keys(answers).length;
   const score = useMemo(
     () =>
-      examQuestions.reduce(
+      activeQuestions.reduce(
         (total, question) => total + (answers[question.id] === question.correctIndex ? 1 : 0),
         0,
       ),
-    [answers],
+    [activeQuestions, answers],
   );
-  const answeredCount = Object.keys(answers).length;
-  const currentQuestion = examQuestions[currentIndex];
 
   const loadHistory = useCallback(async (id: string) => {
     const response = await fetch(`/api/exams?learnerId=${id}`, { cache: "no-store" });
@@ -91,28 +124,31 @@ export function ExamPractice() {
       setLearnerId(id);
       try {
         await loadHistory(id);
-        const activeAttemptId = localStorage.getItem(ACTIVE_ATTEMPT_KEY);
-        if (!activeAttemptId) {
+        const activeId = localStorage.getItem(ACTIVE_ATTEMPT_KEY);
+        if (!activeId) {
           setView("dashboard");
           return;
         }
-        const response = await fetch(
-          `/api/exams?learnerId=${id}&attemptId=${activeAttemptId}`,
-          { cache: "no-store" },
-        );
-        if (!response.ok) {
+        const response = await fetch(`/api/exams?learnerId=${id}&attemptId=${activeId}`, {
+          cache: "no-store",
+        });
+        if (!response.ok) throw new Error("attempt_failed");
+        const { attempt } = await response.json();
+        if (!Array.isArray(attempt.question_order) || attempt.question_order.length === 0) {
           localStorage.removeItem(ACTIVE_ATTEMPT_KEY);
           setView("dashboard");
           return;
         }
-        const { attempt } = await response.json();
         setAttemptId(attempt.id);
         setStartedAt(attempt.started_at);
+        setMode(attempt.mode === "practice" ? "practice" : "exam");
+        setQuestionOrder(attempt.question_order);
         setAnswers(attempt.answers ?? {});
         setCurrentIndex(attempt.current_index ?? 0);
-        setView(attempt.status === "completed" ? "result" : "exam");
+        setView(attempt.status === "completed" ? "result" : "questions");
       } catch {
-        setError("De database is niet bereikbaar. Controleer POSTGRES_URL of DATABASE_URL.");
+        localStorage.removeItem(ACTIVE_ATTEMPT_KEY);
+        setError("De database is niet bereikbaar of de poging kon niet worden geladen.");
         setView("dashboard");
       }
     }
@@ -124,9 +160,19 @@ export function ExamPractice() {
       nextAnswers: Answers,
       nextIndex: number,
       status: AttemptStatus,
-      id = attemptId,
-      start = startedAt,
+      values?: {
+        id: string;
+        start: string;
+        attemptMode: AttemptMode;
+        order: string[];
+      },
     ) => {
+      const target = values ?? {
+        id: attemptId,
+        start: startedAt,
+        attemptMode: mode,
+        order: questionOrder,
+      };
       setSaving(true);
       setError(null);
       try {
@@ -134,12 +180,14 @@ export function ExamPractice() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            attemptId: id,
+            attemptId: target.id,
             learnerId,
+            mode: target.attemptMode,
+            questionOrder: target.order,
             answers: nextAnswers,
             currentIndex: nextIndex,
             status,
-            startedAt: start,
+            startedAt: target.start,
           }),
         });
         if (!response.ok) throw new Error("save_failed");
@@ -151,47 +199,51 @@ export function ExamPractice() {
         setSaving(false);
       }
     },
-    [attemptId, learnerId, startedAt],
+    [attemptId, learnerId, mode, questionOrder, startedAt],
   );
 
-  async function startExam() {
+  async function startAttempt(attemptMode: AttemptMode) {
     const id = crypto.randomUUID();
     const start = new Date().toISOString();
-    if (!(await persistAttempt({}, 0, "in_progress", id, start))) return;
+    const order = buildQuestionOrder(attemptMode);
+    const values = { id, start, attemptMode, order };
+    if (!(await persistAttempt({}, 0, "in_progress", values))) return;
     setAttemptId(id);
     setStartedAt(start);
+    setMode(attemptMode);
+    setQuestionOrder(order);
     setAnswers({});
     setCurrentIndex(0);
     localStorage.setItem(ACTIVE_ATTEMPT_KEY, id);
-    setView("exam");
+    setView("questions");
   }
 
   async function selectAnswer(optionIndex: number) {
+    if (!currentQuestion || (mode === "practice" && answers[currentQuestion.id] !== undefined)) {
+      return;
+    }
     const nextAnswers = { ...answers, [currentQuestion.id]: optionIndex };
     setAnswers(nextAnswers);
     await persistAttempt(nextAnswers, currentIndex, "in_progress");
   }
 
   async function moveTo(index: number) {
-    const nextIndex = Math.min(EXAM_QUESTION_COUNT - 1, Math.max(0, index));
+    const nextIndex = Math.min(activeQuestions.length - 1, Math.max(0, index));
     setCurrentIndex(nextIndex);
     await persistAttempt(answers, nextIndex, "in_progress");
   }
 
-  async function finishExam() {
-    if (answeredCount !== EXAM_QUESTION_COUNT) return;
+  async function finishAttempt() {
+    if (answeredCount !== activeQuestions.length) return;
     if (!(await persistAttempt(answers, currentIndex, "completed"))) return;
     localStorage.removeItem(ACTIVE_ATTEMPT_KEY);
     setView("result");
     await loadHistory(learnerId);
   }
 
-  function returnToDashboard() {
+  function showDashboard() {
     setView("dashboard");
-    setAttemptId("");
-    setStartedAt("");
-    setAnswers({});
-    setCurrentIndex(0);
+    setError(null);
   }
 
   if (view === "loading") {
@@ -203,39 +255,76 @@ export function ExamPractice() {
   }
 
   if (view === "dashboard") {
-    const completed = history.filter((attempt) => attempt.status === "completed");
-    const bestScore = completed.length ? Math.max(...completed.map((attempt) => attempt.score)) : null;
+    const completedExams = history.filter(
+      (attempt) => attempt.mode === "exam" && attempt.status === "completed",
+    );
+    const bestScore = completedExams.length
+      ? Math.max(...completedExams.map((attempt) => attempt.score))
+      : null;
+
     return (
       <div className="space-y-8">
         <section className="max-w-3xl space-y-4">
           <Badge variant="secondary" className="font-mono text-[10px]">
-            <ClipboardCheck className="mr-1 size-3" />
-            40 vragen · 8 domeinen
+            {examQuestions.length} vragen · {GLOSSARY_QUESTION_COUNT} begrippen
           </Badge>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Oefentoets CISSP</h1>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            CISSP oefenen en toetsen
+          </h1>
           <p className="text-base text-muted-foreground sm:text-lg">
-            Oefen met theorievragen en realistische casussen. Iedere toets bevat vijf
-            vragen per domein en je voortgang wordt na elk antwoord in de database opgeslagen.
+            Kies directe feedback tijdens het oefenen of maak een volledige toets van
+            40 vragen. Beide modi gebruiken theorie, casussen en de 400 begrippen.
           </p>
         </section>
 
         {error && <ErrorMessage text={error} />}
 
-        <div className="grid gap-4 md:grid-cols-3">
-          <StatCard label="Omvang" value="40 vragen" text="Exact volgens de opdracht, verdeeld over alle kennisdomeinen." />
-          <StatCard label="Vraagtypen" value="Theorie + casus" text="Kies steeds het beste antwoord uit vier mogelijkheden." />
-          <StatCard label="Beste resultaat" value={bestScore === null ? "Nog geen" : `${bestScore}/40`} text="Na afloop krijg je uitleg en een score per domein." />
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card className="glow-border">
+            <CardHeader>
+              <div className="flex size-10 items-center justify-center rounded-lg bg-secondary">
+                <BookOpenCheck className="size-5" />
+              </div>
+              <CardTitle>Modus oefenen</CardTitle>
+              <CardDescription>
+                Je ziet na ieder antwoord direct of het goed is, inclusief het juiste
+                antwoord en de uitleg.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button onClick={() => void startAttempt("practice")} disabled={saving}>
+                Oefenen starten
+                <ArrowRight className="size-4" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="glow-border">
+            <CardHeader>
+              <div className="flex size-10 items-center justify-center rounded-lg bg-secondary">
+                <ClipboardCheck className="size-5" />
+              </div>
+              <CardTitle>Volledige toets</CardTitle>
+              <CardDescription>
+                40 willekeurige vragen, vijf per domein. Antwoorden en uitleg worden
+                pas na afronding getoond.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-wrap items-center gap-3">
+              <Button onClick={() => void startAttempt("exam")} disabled={saving}>
+                Toets starten
+                <ArrowRight className="size-4" />
+              </Button>
+              <span className="text-xs text-muted-foreground">
+                Beste score: {bestScore === null ? "nog geen" : `${bestScore}/40`}
+              </span>
+            </CardContent>
+          </Card>
         </div>
 
-        <div className="flex flex-wrap gap-3">
-          <Button onClick={startExam} disabled={saving || !learnerId}>
-            {saving ? <Loader2 className="size-4 animate-spin" /> : <ClipboardCheck className="size-4" />}
-            Nieuwe oefentoets starten
-          </Button>
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Database className="size-3.5" />
-            Automatisch opgeslagen
-          </div>
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <Database className="size-3.5" />
+          Antwoorden worden na iedere keuze opgeslagen
         </div>
 
         {history.length > 0 && (
@@ -246,13 +335,20 @@ export function ExamPractice() {
                 <Card key={attempt.id} className="py-0">
                   <CardContent className="flex flex-wrap items-center justify-between gap-3 p-4">
                     <div>
-                      <p className="text-sm font-medium">{formatDate(attempt.started_at)}</p>
+                      <p className="text-sm font-medium">
+                        {attempt.mode === "practice" ? "Oefenen" : "Volledige toets"}
+                      </p>
                       <p className="text-xs text-muted-foreground">
-                        {attempt.status === "completed" ? "Afgerond" : `Bezig, vraag ${attempt.current_index + 1}`}
+                        {formatDate(attempt.started_at)} ·{" "}
+                        {attempt.status === "completed"
+                          ? "afgerond"
+                          : `bezig bij vraag ${attempt.current_index + 1}`}
                       </p>
                     </div>
                     <Badge variant={attempt.status === "completed" ? "secondary" : "outline"}>
-                      {attempt.status === "completed" ? `${attempt.score}/${attempt.total}` : "Open"}
+                      {attempt.status === "completed"
+                        ? `${attempt.score}/${attempt.total}`
+                        : "Open"}
                     </Badge>
                   </CardContent>
                 </Card>
@@ -265,36 +361,40 @@ export function ExamPractice() {
   }
 
   if (view === "result") {
+    const percentage = activeQuestions.length
+      ? Math.round((score / activeQuestions.length) * 100)
+      : 0;
     const domainScores = Array.from({ length: 8 }, (_, offset) => {
       const domain = offset + 1;
-      const questions = examQuestions.filter((question) => question.domain === domain);
+      const questions = activeQuestions.filter((question) => question.domain === domain);
       return {
         domain,
         score: questions.filter((question) => answers[question.id] === question.correctIndex).length,
         total: questions.length,
       };
     });
-    const percentage = Math.round((score / EXAM_QUESTION_COUNT) * 100);
 
     return (
       <div className="space-y-8">
         <Card className="glow-border">
           <CardContent className="flex flex-col items-center gap-4 p-8 text-center">
-            <div className="flex size-14 items-center justify-center rounded-full bg-secondary">
-              <Trophy className="size-7" />
-            </div>
+            <Trophy className="size-12" />
             <div>
-              <p className="text-sm text-muted-foreground">Eindscore</p>
-              <h1 className="text-4xl font-bold">{score}/40</h1>
+              <p className="text-sm text-muted-foreground">
+                {mode === "practice" ? "Oefenresultaat" : "Toetsresultaat"}
+              </p>
+              <h1 className="text-4xl font-bold">
+                {score}/{activeQuestions.length}
+              </h1>
               <p className="mt-1 text-sm text-muted-foreground">{percentage}% correct</p>
             </div>
             <Progress value={percentage} className="h-2 max-w-sm" />
             <div className="flex flex-wrap justify-center gap-2">
-              <Button onClick={startExam} disabled={saving}>
+              <Button onClick={() => void startAttempt(mode)} disabled={saving}>
                 <RotateCcw className="size-4" />
-                Nieuwe poging
+                Opnieuw
               </Button>
-              <Button variant="outline" onClick={returnToDashboard}>Overzicht</Button>
+              <Button variant="outline" onClick={showDashboard}>Overzicht</Button>
             </div>
           </CardContent>
         </Card>
@@ -305,153 +405,220 @@ export function ExamPractice() {
             {domainScores.map((domain) => (
               <Card key={domain.domain}>
                 <CardContent className="space-y-2 p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Domein {domain.domain}</span>
-                    <span className="font-mono text-sm">{domain.score}/{domain.total}</span>
+                  <div className="flex items-center justify-between text-sm">
+                    <span>Domein {domain.domain}</span>
+                    <span className="font-mono">{domain.score}/{domain.total}</span>
                   </div>
-                  <Progress value={(domain.score / domain.total) * 100} className="h-1.5" />
+                  <Progress value={domain.total ? (domain.score / domain.total) * 100 : 0} className="h-1.5" />
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-lg font-semibold">Antwoorden en uitleg</h2>
-          {examQuestions.map((question, index) => {
-            const selected = answers[question.id];
-            const correct = selected === question.correctIndex;
-            return (
-              <Card key={question.id}>
-                <CardHeader>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Badge variant="secondary">Vraag {index + 1}</Badge>
-                    <Badge variant="outline">Domein {question.domain}</Badge>
-                    <Badge variant="outline">{question.type === "case" ? "Casus" : "Theorie"}</Badge>
-                    {correct ? <CheckCircle2 className="ml-auto size-5 text-success" /> : <XCircle className="ml-auto size-5 text-destructive" />}
-                  </div>
-                  <CardTitle className="text-base leading-relaxed">{question.question}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm">
-                  {!correct && <p className="text-destructive">Jouw antwoord: {question.options[selected]}</p>}
-                  <p className="text-success">Juiste antwoord: {question.options[question.correctIndex]}</p>
-                  <p className="rounded-lg bg-secondary/60 p-3 text-muted-foreground">{question.explanation}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </section>
+        {mode === "exam" && (
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold">Antwoorden en uitleg</h2>
+            {activeQuestions.map((question, index) => (
+              <AnswerReview
+                key={question.id}
+                question={question}
+                index={index}
+                selected={answers[question.id]}
+              />
+            ))}
+          </section>
+        )}
       </div>
     );
   }
 
+  if (!currentQuestion) return null;
+
   const selectedAnswer = answers[currentQuestion.id];
-  const isLastQuestion = currentIndex === EXAM_QUESTION_COUNT - 1;
+  const showFeedback = mode === "practice" && selectedAnswer !== undefined;
+  const isCorrect = selectedAnswer === currentQuestion.correctIndex;
+  const isLastQuestion = currentIndex === activeQuestions.length - 1;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_260px]">
       <section className="space-y-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-sm text-muted-foreground">Vraag {currentIndex + 1} van {EXAM_QUESTION_COUNT}</p>
-            <h1 className="text-xl font-semibold">Oefentoets CISSP</h1>
+            <Badge variant="secondary" className="mb-2">
+              {mode === "practice" ? "Oefenen · directe feedback" : "Toets · feedback na afloop"}
+            </Badge>
+            <p className="text-sm text-muted-foreground">
+              Vraag {currentIndex + 1} van {activeQuestions.length}
+            </p>
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            {saving ? <><Loader2 className="size-3.5 animate-spin" />Opslaan</> : <><Save className="size-3.5" />Opgeslagen</>}
+            {saving ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
+            {saving ? "Opslaan" : "Opgeslagen"}
           </div>
         </div>
-        <Progress value={(answeredCount / EXAM_QUESTION_COUNT) * 100} className="h-2" />
+
+        <Progress value={(answeredCount / activeQuestions.length) * 100} className="h-2" />
         {error && <ErrorMessage text={error} />}
 
         <Card className="glow-border">
           <CardHeader>
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary">Domein {currentQuestion.domain}</Badge>
-              <Badge variant="outline">{currentQuestion.type === "case" ? "Casusvraag" : "Theorievraag"}</Badge>
+              <Badge variant="outline">
+                {currentQuestion.id.startsWith("term-")
+                  ? "Begrip"
+                  : currentQuestion.type === "case"
+                    ? "Casus"
+                    : "Theorie"}
+              </Badge>
             </div>
-            <CardTitle className="pt-2 text-lg leading-relaxed sm:text-xl">{currentQuestion.question}</CardTitle>
+            <CardTitle className="pt-2 text-lg leading-relaxed sm:text-xl">
+              {currentQuestion.question}
+            </CardTitle>
             <CardDescription>Kies het beste antwoord.</CardDescription>
           </CardHeader>
           <CardContent className="grid gap-3">
-            {currentQuestion.options.map((option, optionIndex) => (
-              <button
-                key={option}
-                type="button"
-                disabled={saving}
-                onClick={() => void selectAnswer(optionIndex)}
-                className={cn(
-                  "flex items-start gap-3 rounded-lg border p-4 text-left text-sm leading-relaxed transition-colors",
-                  "disabled:cursor-wait disabled:opacity-70",
-                  selectedAnswer === optionIndex
-                    ? "border-primary bg-primary/10"
-                    : "border-border hover:border-foreground/30 hover:bg-secondary/40",
-                )}
-              >
-                <span className={cn(
-                  "flex size-6 shrink-0 items-center justify-center rounded-full border font-mono text-xs",
-                  selectedAnswer === optionIndex && "border-primary bg-primary text-primary-foreground",
-                )}>
-                  {String.fromCharCode(65 + optionIndex)}
-                </span>
-                {option}
-              </button>
-            ))}
+            {currentQuestion.options.map((option, optionIndex) => {
+              const optionIsCorrect = optionIndex === currentQuestion.correctIndex;
+              const optionIsSelected = optionIndex === selectedAnswer;
+              return (
+                <button
+                  key={`${optionIndex}-${option}`}
+                  type="button"
+                  disabled={saving || showFeedback}
+                  onClick={() => void selectAnswer(optionIndex)}
+                  className={cn(
+                    "flex items-start gap-3 rounded-lg border p-4 text-left text-sm leading-relaxed transition-colors",
+                    !showFeedback && optionIsSelected && "border-primary bg-primary/10",
+                    !showFeedback && !optionIsSelected && "hover:border-foreground/30 hover:bg-secondary/40",
+                    showFeedback && optionIsCorrect && "border-success/50 bg-success/10",
+                    showFeedback && optionIsSelected && !optionIsCorrect && "border-destructive/50 bg-destructive/10",
+                  )}
+                >
+                  <span className="flex size-6 shrink-0 items-center justify-center rounded-full border font-mono text-xs">
+                    {String.fromCharCode(65 + optionIndex)}
+                  </span>
+                  {option}
+                </button>
+              );
+            })}
           </CardContent>
         </Card>
 
+        {showFeedback && (
+          <Card className={isCorrect ? "border-success/40" : "border-destructive/40"}>
+            <CardContent className="space-y-2 p-4">
+              <p className={cn("flex items-center gap-2 font-medium", isCorrect ? "text-success" : "text-destructive")}>
+                {isCorrect ? <CheckCircle2 className="size-5" /> : <XCircle className="size-5" />}
+                {isCorrect ? "Goed beantwoord" : "Niet goed"}
+              </p>
+              {!isCorrect && (
+                <p className="text-sm">
+                  Juiste antwoord: {currentQuestion.options[currentQuestion.correctIndex]}
+                </p>
+              )}
+              <p className="text-sm text-muted-foreground">{currentQuestion.explanation}</p>
+            </CardContent>
+          </Card>
+        )}
+
         <div className="flex items-center justify-between gap-3">
-          <Button variant="outline" onClick={() => void moveTo(currentIndex - 1)} disabled={currentIndex === 0 || saving}>
-            <ArrowLeft className="size-4" />Vorige
+          <Button
+            variant="outline"
+            onClick={() => void moveTo(currentIndex - 1)}
+            disabled={currentIndex === 0 || saving}
+          >
+            <ArrowLeft className="size-4" />
+            Vorige
           </Button>
           {isLastQuestion ? (
-            <Button onClick={finishExam} disabled={answeredCount !== EXAM_QUESTION_COUNT || saving}>
-              Toets afronden<CheckCircle2 className="size-4" />
+            <Button onClick={finishAttempt} disabled={answeredCount !== activeQuestions.length || saving}>
+              Afronden
+              <CheckCircle2 className="size-4" />
             </Button>
           ) : (
-            <Button onClick={() => void moveTo(currentIndex + 1)} disabled={selectedAnswer === undefined || saving}>
-              Volgende<ArrowRight className="size-4" />
+            <Button
+              onClick={() => void moveTo(currentIndex + 1)}
+              disabled={selectedAnswer === undefined || saving}
+            >
+              Volgende
+              <ArrowRight className="size-4" />
             </Button>
           )}
         </div>
-        {isLastQuestion && answeredCount !== EXAM_QUESTION_COUNT && (
-          <p className="text-right text-xs text-muted-foreground">
-            Beantwoord nog {EXAM_QUESTION_COUNT - answeredCount} vraag of vragen.
-          </p>
-        )}
       </section>
 
       <aside className="space-y-4 lg:sticky lg:top-20 lg:self-start">
         <Card>
           <CardHeader>
             <CardTitle className="text-sm">Voortgang</CardTitle>
-            <CardDescription>{answeredCount}/40 beantwoord</CardDescription>
+            <CardDescription>{answeredCount}/{activeQuestions.length} beantwoord</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-8 gap-1.5 lg:grid-cols-5">
-              {examQuestions.map((question, index) => (
-                <button
-                  key={question.id}
-                  type="button"
-                  onClick={() => void moveTo(index)}
-                  disabled={saving}
-                  aria-label={`Ga naar vraag ${index + 1}`}
-                  className={cn(
-                    "flex aspect-square items-center justify-center rounded-md border text-xs transition-colors",
-                    index === currentIndex && "ring-2 ring-primary ring-offset-2 ring-offset-background",
-                    answers[question.id] !== undefined ? "border-primary/40 bg-primary/15" : "border-border hover:bg-secondary",
-                  )}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
+            {mode === "exam" ? (
+              <div className="grid grid-cols-8 gap-1.5 lg:grid-cols-5">
+                {activeQuestions.map((question, index) => (
+                  <button
+                    key={question.id}
+                    type="button"
+                    onClick={() => void moveTo(index)}
+                    disabled={saving}
+                    className={cn(
+                      "flex aspect-square items-center justify-center rounded-md border text-xs",
+                      index === currentIndex && "ring-2 ring-primary ring-offset-2 ring-offset-background",
+                      answers[question.id] !== undefined ? "border-primary/40 bg-primary/15" : "border-border",
+                    )}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>Goed: <span className="font-mono text-success">{score}</span></p>
+                <p>Nog te oefenen: <span className="font-mono">{activeQuestions.length - answeredCount}</span></p>
+                <p>Inclusief alle {GLOSSARY_QUESTION_COUNT} begrippen.</p>
+              </div>
+            )}
           </CardContent>
         </Card>
-        <Button variant="outline" className="w-full" onClick={() => void persistAttempt(answers, currentIndex, "in_progress")} disabled={saving}>
-          <RefreshCw className="size-4" />Opnieuw opslaan
+        <Button variant="outline" className="w-full" onClick={showDashboard}>
+          Terug naar overzicht
         </Button>
       </aside>
     </div>
+  );
+}
+
+function AnswerReview({
+  question,
+  index,
+  selected,
+}: {
+  question: ExamQuestion;
+  index: number;
+  selected: number;
+}) {
+  const correct = selected === question.correctIndex;
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          <Badge variant="secondary">Vraag {index + 1}</Badge>
+          <Badge variant="outline">Domein {question.domain}</Badge>
+          {correct
+            ? <CheckCircle2 className="ml-auto size-5 text-success" />
+            : <XCircle className="ml-auto size-5 text-destructive" />}
+        </div>
+        <CardTitle className="text-base leading-relaxed">{question.question}</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-2 text-sm">
+        {!correct && <p className="text-destructive">Jouw antwoord: {question.options[selected]}</p>}
+        <p className="text-success">Juiste antwoord: {question.options[question.correctIndex]}</p>
+        <p className="rounded-lg bg-secondary/60 p-3 text-muted-foreground">{question.explanation}</p>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -461,17 +628,5 @@ function ErrorMessage({ text }: { text: string }) {
       <CircleAlert className="mt-0.5 size-4 shrink-0" />
       {text}
     </div>
-  );
-}
-
-function StatCard({ label, value, text }: { label: string; value: string; text: string }) {
-  return (
-    <Card>
-      <CardHeader>
-        <CardDescription>{label}</CardDescription>
-        <CardTitle className="text-2xl">{value}</CardTitle>
-      </CardHeader>
-      <CardContent className="text-sm text-muted-foreground">{text}</CardContent>
-    </Card>
   );
 }

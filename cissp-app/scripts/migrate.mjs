@@ -30,6 +30,8 @@ try {
       create table if not exists exam_attempts (
         id uuid primary key,
         learner_id uuid not null,
+        mode text not null default 'exam',
+        question_order jsonb not null default '[]'::jsonb,
         answers jsonb not null default '{}'::jsonb,
         current_index integer not null default 0,
         status text not null default 'in_progress'
@@ -40,6 +42,12 @@ try {
         completed_at timestamptz,
         updated_at timestamptz not null default now()
       )
+    `;
+
+    await transaction`
+      alter table exam_attempts
+        add column if not exists mode text not null default 'exam',
+        add column if not exists question_order jsonb not null default '[]'::jsonb
     `;
 
     await transaction`
