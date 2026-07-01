@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:pages": "node ../scripts/build-pages.mjs",
-    "prebuild": "node ../scripts/build-pages.mjs",
+    "prebuild": "node ../scripts/build-pages.mjs && node scripts/migrate.mjs",
+    "migrate": "node scripts/migrate.mjs",
     "start": "next start",
     "lint": "eslint"
   },

@@ -20,6 +20,21 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+Voor database-opslag van leer- en toetsvoortgang is een PostgreSQL-verbinding nodig:
+
+```env
+POSTGRES_URL=postgresql://user:password@host:5432/database
+```
+
+`DATABASE_URL` wordt ook ondersteund. De benodigde tabellen worden bij de eerste
+API-aanroep automatisch aangemaakt. Wanneer een databasevariabele beschikbaar is,
+voert `npm run build` eerst de migratie uit. Daardoor worden de tabellen ook
+tijdens een Vercel-deployment aangemaakt.
+
+De oefentoets staat op [http://localhost:3000/exams](http://localhost:3000/exams)
+en bevat 40 vragen, vijf per CISSP-domein. Antwoorden worden na iedere keuze
+opgeslagen en een open poging wordt na een refresh hervat.
+
 ## Productie-build
 
 ```bash

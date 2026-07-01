@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { ensureSchema, sql } from "@/lib/db";
+import { ensureSchema, getSql } from "@/lib/db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -41,6 +41,7 @@ export async function GET(req: NextRequest) {
   }
 
   await ensureSchema();
+  const sql = getSql();
   const rows = await sql<{ data: ProgressPayload }[]>`
     select data from progress_codes where code = ${code}
   `;
@@ -68,6 +69,7 @@ export async function POST(req: NextRequest) {
   const data = sanitizePayload(body);
   const requestedCode = (body as Record<string, unknown>)?.code;
   await ensureSchema();
+  const sql = getSql();
 
   // Update in place when the client already owns a code.
   if (typeof requestedCode === "string" && CODE_RE.test(requestedCode)) {

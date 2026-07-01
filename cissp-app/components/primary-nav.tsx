@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/components/LanguageProvider";
 import { cn } from "@/lib/utils";
-import { GraduationCap, Home, Layers, Search, Sparkles, Table2 } from "lucide-react";
+import { ClipboardCheck, GraduationCap, Home, Layers, Search, Sparkles, Table2 } from "lucide-react";
 
 /** Two groups: theory/scenario material vs. the 400 glossary terms. Rendered with a divider between. */
 const theoryNav = [
   { href: "/", label: { en: "Home", nl: "Home" }, icon: Home },
   { href: "/learn", label: { en: "Theory", nl: "Theorie" }, icon: GraduationCap },
+  { href: "/exams", label: { en: "Exam", nl: "Toets" }, icon: ClipboardCheck },
 ];
 
 const glossaryNav = [
@@ -19,9 +20,8 @@ const glossaryNav = [
   { href: "/glossary?mode=quiz", label: { en: "Quiz", nl: "Quiz" }, icon: Sparkles },
 ];
 
-const nav = [...theoryNav, ...glossaryNav];
-
 type Variant = "desktop" | "mobile";
+type NavItem = (typeof theoryNav)[number] | (typeof glossaryNav)[number];
 
 function modeOf(href: string): string | null {
   const i = href.indexOf("mode=");
@@ -38,7 +38,7 @@ function NavMarkup({
   const { language } = useLanguage();
 
   if (variant === "desktop") {
-    const renderLink = (item: (typeof nav)[number]) => {
+    const renderLink = (item: NavItem) => {
       const active = isActive(item.href);
       return (
         <Link
@@ -66,7 +66,7 @@ function NavMarkup({
     );
   }
 
-  const renderTab = (item: (typeof nav)[number]) => {
+  const renderTab = (item: NavItem) => {
     const active = isActive(item.href);
     return (
       <Link
@@ -113,6 +113,7 @@ export function PrimaryNav({ variant }: { variant: Variant }) {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/learn") return pathname.startsWith("/learn");
+    if (href === "/exams") return pathname.startsWith("/exams");
     if (!pathname.startsWith("/glossary")) return false;
     return modeOf(href) === mode;
   };
@@ -127,6 +128,7 @@ export function PrimaryNavFallback({ variant }: { variant: Variant }) {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/learn") return pathname.startsWith("/learn");
+    if (href === "/exams") return pathname.startsWith("/exams");
     // default glossary view is "search"
     if (!pathname.startsWith("/glossary")) return false;
     return modeOf(href) === "search";

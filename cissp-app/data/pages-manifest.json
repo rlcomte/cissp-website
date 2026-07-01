@@ -5,7 +5,7 @@
     "category": "domain",
     "domainId": 1,
     "title": "Security and Risk Management",
-    "titleNl": "Domein 1 · Beveiliging en risicobeheer",
+    "titleNl": "Domein 1 — Beveiliging en risicobeheer",
     "description": "A student-friendly introduction to governance, risk, compliance, security principles, business continuity, incident response, privacy, and professional responsibility.",
     "eyebrow": "CISSP Domain 1 · Teaching Web Page",
     "nav": [
@@ -37,7 +37,7 @@
     "category": "domain",
     "domainId": 2,
     "title": "Asset Security",
-    "titleNl": "Domein 2 · Beveiliging van assets",
+    "titleNl": "Domein 2 — Beveiliging van assets",
     "description": "A teaching page about identifying, classifying, protecting, retaining, and securely disposing of information assets throughout their lifecycle.",
     "eyebrow": "CISSP Domain 2 · Teaching Web Page",
     "nav": [
@@ -69,7 +69,7 @@
     "category": "domain",
     "domainId": 3,
     "title": "Security Architecture and Engineering",
-    "titleNl": "Domein 3 · Beveiligingsarchitectuur en engineering",
+    "titleNl": "Domein 3 — Beveiligingsarchitectuur en engineering",
     "description": "Designing and building secure systems using models, cryptography, trusted components, and resilient architectures.",
     "eyebrow": "CISSP Domain 3 · Teaching Web Page",
     "nav": [
@@ -101,7 +101,7 @@
     "category": "domain",
     "domainId": 4,
     "title": "Communication and Network Security",
-    "titleNl": "Domein 4 · Communicatie- en netwerkbeveiliging",
+    "titleNl": "Domein 4 — Communicatie- en netwerkbeveiliging",
     "description": "Protecting data in transit, securing network architectures, and applying protocols and controls to maintain confidentiality, integrity, and availability.",
     "eyebrow": "CISSP Domain 4 · Teaching Web Page",
     "nav": [
@@ -133,7 +133,7 @@
     "category": "domain",
     "domainId": 5,
     "title": "Identity and Access Management",
-    "titleNl": "Domein 5 · Identiteits- en toegangsbeheer",
+    "titleNl": "Domein 5 — Identiteits- en toegangsbeheer",
     "description": "",
     "eyebrow": "",
     "nav": [
@@ -161,7 +161,7 @@
     "category": "domain",
     "domainId": 6,
     "title": "Security Assessment and Testing",
-    "titleNl": "Domein 6 · Beveiligingsbeoordeling en testen",
+    "titleNl": "Domein 6 — Beveiligingsbeoordeling en testen",
     "description": "",
     "eyebrow": "",
     "nav": [
@@ -189,7 +189,7 @@
     "category": "domain",
     "domainId": 7,
     "title": "Security Operations",
-    "titleNl": "Domein 7 · Beveiligingsoperaties",
+    "titleNl": "Domein 7 — Beveiligingsoperaties",
     "description": "",
     "eyebrow": "",
     "nav": [
@@ -217,7 +217,7 @@
     "category": "domain",
     "domainId": 8,
     "title": "Software Development Security",
-    "titleNl": "Domein 8 · Beveiliging bij softwareontwikkeling",
+    "titleNl": "Domein 8 — Beveiliging bij softwareontwikkeling",
     "description": "",
     "eyebrow": "",
     "nav": [
@@ -244,7 +244,7 @@
     "file": "trailblaze_adventures_case_security_swot.html",
     "category": "overview",
     "title": "TrailBlaze Adventures – Company Case and Security SWOT",
-    "titleNl": "TrailBlaze · Security SWOT",
+    "titleNl": "TrailBlaze — Security SWOT",
     "description": "A global outdoor experience company used as a teaching scenario for CISSP knowledge and capabilities.",
     "eyebrow": "CISSP Integrated Case Scenario",
     "nav": [
@@ -280,7 +280,7 @@
     "category": "case",
     "domainId": 1,
     "title": "Security and Risk Management",
-    "titleNl": "TrailBlaze case · Domein 1",
+    "titleNl": "TrailBlaze case — Domein 1",
     "description": "A classroom and workshop case about governance, risk management, compliance, accountability, and security strategy in a fast-growing global adventure travel company.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 1 Case",
     "nav": [
@@ -316,7 +316,7 @@
     "category": "case",
     "domainId": 2,
     "title": "Asset Security",
-    "titleNl": "TrailBlaze case · Domein 2",
+    "titleNl": "TrailBlaze case — Domein 2",
     "description": "A classroom and workshop case about protecting information assets, classifying data, assigning ownership, managing lifecycle risks, and securing storage and disposal.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 2 Case",
     "nav": [
@@ -352,7 +352,7 @@
     "category": "case",
     "domainId": 3,
     "title": "Security Architecture and Engineering",
-    "titleNl": "TrailBlaze case · Domein 3",
+    "titleNl": "TrailBlaze case — Domein 3",
     "description": "A classroom and workshop case about secure design, trusted components, cryptography, resilience, and engineering decisions in TrailBlaze’s global platform.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 3 Case",
     "nav": [
@@ -388,7 +388,7 @@
     "category": "case",
     "domainId": 3,
     "title": "Security Architecture and Engineering",
-    "titleNl": "TrailBlaze case · Domein 3",
+    "titleNl": "TrailBlaze case — Domein 3",
     "description": "A classroom and workshop case about secure system design, cloud architecture, cryptography, mobile and IoT security, trusted components, and resilience.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 3 Case",
     "nav": [
@@ -424,7 +424,7 @@
     "category": "case",
     "domainId": 4,
     "title": "Communication and Network Security",
-    "titleNl": "TrailBlaze case · Domein 4",
+    "titleNl": "TrailBlaze case — Domein 4",
     "description": "A classroom and workshop case about securing global connectivity, APIs, mobile communications, partner networks, field operations, and data in transit.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 4 Case",
     "nav": [
@@ -464,7 +464,7 @@
     "category": "case",
     "domainId": 4,
     "title": "Communication and Network Security",
-    "titleNl": "TrailBlaze case · Domein 4",
+    "titleNl": "TrailBlaze case — Domein 4",
     "description": "A classroom and workshop case about secure data transmission, network zoning, remote access, wireless risks, and monitoring across TrailBlaze’s global operations.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 4 Case",
     "nav": [
@@ -504,7 +504,7 @@
     "category": "case",
     "domainId": 5,
     "title": "Identity and Access Management",
-    "titleNl": "TrailBlaze case · Domein 5",
+    "titleNl": "TrailBlaze case — Domein 5",
     "description": "A classroom and workshop case about identities, authentication, authorization, privileged access, federation, and access governance in a global adventure travel platform.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 5 Case",
     "nav": [
@@ -540,7 +540,7 @@
     "category": "case",
     "domainId": 6,
     "title": "Security Assessment and Testing",
-    "titleNl": "TrailBlaze case · Domein 6",
+    "titleNl": "TrailBlaze case — Domein 6",
     "description": "A classroom and workshop case about vulnerability assessment, penetration testing, control validation, audit evidence, security metrics, and continuous monitoring.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 6 Case",
     "nav": [
@@ -576,7 +576,7 @@
     "category": "case",
     "domainId": 7,
     "title": "Security Operations",
-    "titleNl": "TrailBlaze case · Domein 7",
+    "titleNl": "TrailBlaze case — Domein 7",
     "description": "A classroom and workshop case about monitoring, incident response, forensics, threat intelligence, recovery, and operational resilience in a global adventure travel company.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 7 Case",
     "nav": [
@@ -612,7 +612,7 @@
     "category": "case",
     "domainId": 8,
     "title": "Software Development Security",
-    "titleNl": "TrailBlaze case · Domein 8",
+    "titleNl": "TrailBlaze case — Domein 8",
     "description": "A classroom and workshop case about secure SDLC, DevSecOps, secure coding, API security, dependency risk, CI/CD pipelines, and secure release practices.",
     "eyebrow": "TrailBlaze Adventures · CISSP Domain 8 Case",
     "nav": [

@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import {
   ArrowRight,
+  ClipboardCheck,
   GraduationCap,
   Layers,
   Search,
@@ -81,8 +82,15 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-3 pt-2">
           <Link
-            href="/glossary?mode=search"
+            href="/exams"
             className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/80 transition-colors"
+          >
+            <ClipboardCheck className="size-4" />
+            {language === "nl" ? "Start oefentoets" : "Start practice exam"}
+          </Link>
+          <Link
+            href="/glossary?mode=search"
+            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-background px-4 text-sm font-medium hover:bg-muted transition-colors"
           >
             {language === "nl" ? "Begin met zoeken" : "Start searching"}
             <ArrowRight className="size-4" />
