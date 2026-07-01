@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Light mode (default) - clean, high contrast */
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.18 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
+  --primary: oklch(0.25 0.04 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.005 260);
+  --secondary-foreground: oklch(0.25 0.04 260);
+  --muted: oklch(0.96 0.005 260);
+  --muted-foreground: oklch(0.42 0.02 260);
+  --accent: oklch(0.94 0.01 260);
+  --accent-foreground: oklch(0.25 0.04 260);
+  --destructive: oklch(0.55 0.2 25);
+  --border: oklch(0.9 0.005 260);
+  --input: oklch(0.92 0.005 260);
+  --ring: oklch(0.55 0.04 260);
+  --radius: 0.625rem;
+  --success: oklch(0.45 0.14 155);
+  --surface-gradient: linear-gradient(to bottom, oklch(0.98 0.005 260), oklch(0.99 0 0));
+  --grid-line: oklch(0.2 0.02 260 / 6%);
+  --text-gradient-from: oklch(0.15 0.03 260);
+  --text-gradient-to: oklch(0.4 0.03 260);
+}
+
+.dark {
+  --background: oklch(0.12 0.01 260);
+  --foreground: oklch(0.95 0.005 260);
+  --card: oklch(0.16 0.012 260);
+  --card-foreground: oklch(0.95 0.005 260);
+  --popover: oklch(0.16 0.012 260);
+  --popover-foreground: oklch(0.95 0.005 260);
+  --primary: oklch(0.95 0.005 260);
+  --primary-foreground: oklch(0.15 0.02 260);
+  --secondary: oklch(0.22 0.015 260);
+  --secondary-foreground: oklch(0.95 0.005 260);
+  --muted: oklch(0.22 0.015 260);
+  --muted-foreground: oklch(0.68 0.01 260);
+  --accent: oklch(0.24 0.015 260);
+  --accent-foreground: oklch(0.95 0.005 260);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.55 0 0);
+  --success: oklch(0.72 0.17 155);
+  --surface-gradient: linear-gradient(to bottom, oklch(0.1 0.01 260), oklch(0.12 0.01 260));
+  --grid-line: oklch(1 0 0 / 5%);
+  --text-gradient-from: oklch(0.98 0 0);
+  --text-gradient-to: oklch(0.65 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen text-base overflow-x-clip;
+    background-image: var(--surface-gradient);
+  }
+}
+
+@layer utilities {
+  .vercel-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      var(--text-gradient-from) 30%,
+      var(--text-gradient-to)
+    );
+  }
+  .glow-border {
+    box-shadow:
+      0 0 0 1px var(--border),
+      0 1px 3px oklch(0 0 0 / 6%);
+  }
+  .dark .glow-border {
+    box-shadow:
+      0 0 0 1px oklch(1 0 0 / 10%),
+      0 0 24px oklch(1 0 0 / 4%);
+  }
+  /* 3D flip card - canonical, no will-change (it breaks backface-visibility in Chrome) */
+  .flip-scene {
+    perspective: 1500px;
+  }
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flip-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* opacity safeguard: the away-facing side is fully transparent by the time the
+       card is edge-on, so it can never bleed through even if a browser mishandles
+       backface-visibility (e.g. with a scroll container inside) */
+    transition: opacity 0s linear 0.275s;
+  }
+  .flip-front {
+    opacity: 1;
+  }
+  .flip-inner.is-flipped .flip-front {
+    opacity: 0;
+  }
+  .flip-back {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  .flip-inner.is-flipped .flip-back {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flip-inner {
+      transition: none;
+    }
+    .flip-face {
+      transition: none;
+    }
+  }
+  .search-highlight {
+    @apply rounded-sm bg-primary/15 text-foreground font-medium;
+  }
+  .dark .search-highlight {
+    @apply bg-primary/25;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
